@@ -1,4 +1,4 @@
-const { chromium } = require("playwright");
+import { chromium } from "playwright";
 
 (async () => {
   const browser = await chromium.launch({
@@ -34,17 +34,27 @@ const { chromium } = require("playwright");
   let articles = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
-      await page.waitForSelector('.ih-title');
+      await page.waitForSelector('.ih-item');
       // get the title of each article
       const articlesPerPage = await page.$$eval(
-        ".ih-title",
+        ".ih-item",
         (headerArticle) => {
           return headerArticle.map((article) => {
-            const title = article.innerText;
+            const title = article.querySelector(".row div h2.ih-title").innerText;
+            const description = article.querySelector(".row div p").innerText;
+            const linkSrc = article.querySelector(".row div a:not(.hidden)").href;
+            const linkText = article.querySelector(".row div a:not(.hidden)").innerText;
+            const imgSrc = article.querySelector(".row div img:not(.hidden)").src;
+            const imgAlt = article.querySelector(".row div img:not(.hidden)").alt;
 
             return JSON.stringify({
               title,
-            });
+              description,
+              linkSrc,
+              linkText,
+              imgSrc,
+              imgAlt,
+            }, null, 2);
           });
         }
       );
