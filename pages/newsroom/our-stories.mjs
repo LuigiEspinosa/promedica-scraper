@@ -2,10 +2,9 @@ import fs from 'fs'
 import { chromium } from "playwright";
 
 (async () => {
-  const browser = await chromium.launch({
-    headless: true, // false if you can see the browser
-  });
-  const page = await browser.newPage();
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
   // navigate and wait until network is idle
   await page.goto(
@@ -36,26 +35,26 @@ import { chromium } from "playwright";
   for (let i = 1; i <= totalPages; i++) {
     try {
       await page.waitForSelector('.ih-item');
-      // get the title of each article
+      // get the content of each card
       const articlesPerPage = await page.$$eval(
         ".ih-item",
-        (headerArticle) => {
-          return headerArticle.map((article) => {
+        (itemArticle) => {
+          return itemArticle.map((article) => {
             const title = article.querySelector(".row div h2.ih-title").innerText;
             const description = article.querySelector(".row div p").innerText;
             const linkSrc = article.querySelector(".row div a:not(.hidden)").href;
             const linkText = article.querySelector(".row div a:not(.hidden)").innerText;
             const imgSrc = article.querySelector(".row div img:not(.hidden)").src;
             const imgAlt = article.querySelector(".row div img:not(.hidden)").alt;
-
-            return JSON.stringify({
+            
+            return {
               title,
               description,
               linkSrc,
               linkText,
               imgSrc,
-              imgAlt,
-            });
+              imgAlt
+            };
           });
         }
       );
@@ -71,19 +70,66 @@ import { chromium } from "playwright";
         articles: articlesPerPage,
       });
 
-      console.log('Our Stories Page', i);
+      console.log('Our Stories Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
   }
 
-  const jsonContent = JSON.stringify(articles, null, 2)
-  fs.writeFile("./json/our-stories.json", jsonContent, 'utf8', function (err) {
+  const allArticlesLink = articles.map(item => item.articles.map(src => src.linkSrc))
+  const mergeLinks = [...new Set([].concat(...allArticlesLink.map((src) => src)))]
+
+  // Articles content
+  let articlesBody = [];
+  for (let i = 0; i <= mergeLinks.length; i++) {
+    if (mergeLinks[i] !== undefined) 
+      await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' })
+
+    try {
+      await page.waitForSelector('.ih-content-column');
+
+      // get the content of each article
+      const articlesTitle = await page.$eval(
+        ".ih-content-column",
+        (itemArticle) => {
+          return itemArticle.querySelector("#ih-page-body > div:first-of-type").innerText
+        }
+      );
+
+      // get the content of each article
+      const articleContent = await page.$eval(
+        ".ih-content-column",
+        (itemArticle) => {
+          return itemArticle.querySelector("#ih-page-body").innerHTML;
+        }
+      );
+
+      articlesBody.push({
+        id: i + 1,
+        site: articlesTitle,
+        content: articleContent,
+      });
+
+      console.log('Our Stories Article', i, 'Done');
+    } catch (error) {
+      console.log({ error });
+    }
+  }
+  
+  const jsonArticles = JSON.stringify(articles, null, 2)
+  fs.writeFile("./json/newsroom/Our Stories/our-stories.json", jsonArticles, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log("Our Stories Imported!");
+  });
+  
+  const jsonArticlesContent = JSON.stringify(articlesBody, null, 2)
+  fs.writeFile("./json/newsroom/Our Stories/our-stories-articles.json", jsonArticlesContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("Our Stories Articles Imported!");
   });
 
   // close page and browser
   await page.close();
   await browser.close();
 })();
+

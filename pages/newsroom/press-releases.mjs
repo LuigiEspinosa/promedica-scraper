@@ -9,7 +9,7 @@ import { chromium } from "playwright";
 
   // navigate and wait until network is idle
   await page.goto(
-    "https://www.promedica.org/newsroom/news/?",
+    "https://www.promedica.org/newsroom/press-releases/?",
     { waitUntil: 'networkidle' }
   );
 
@@ -66,21 +66,21 @@ import { chromium } from "playwright";
       }
 
       articles.push({
-        site: 'News',
+        site: 'Press Releases',
         page: i,
         articles: articlesPerPage,
       });
 
-      console.log('News Page', i);
+      console.log('Press Releases Page', i);
     } catch (error) {
       console.log({ error });
     }
   }
 
   const jsonContent = JSON.stringify(articles, null, 2)
-  fs.writeFile("./json/news.json", jsonContent, 'utf8', function (err) {
+  fs.writeFile("./json/newsroom/press-releases.json", jsonContent, 'utf8', function (err) {
     if (err) return console.log(err);
-    console.log("News Imported!");
+    console.log("Press Releases Imported!");
   });
 
   // close page and browser
