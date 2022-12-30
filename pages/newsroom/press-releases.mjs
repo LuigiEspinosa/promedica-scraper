@@ -80,7 +80,7 @@ import { chromium } from "playwright";
   const jsonContent = JSON.stringify(articles, null, 2)
   fs.writeFile("./json/newsroom/press-releases.json", jsonContent, 'utf8', function (err) {
     if (err) return console.log(err);
-    console.log("Press Releases Imported!");
+    console.log("\nPress Releases Imported!\n");
   });
 
   // close page and browser

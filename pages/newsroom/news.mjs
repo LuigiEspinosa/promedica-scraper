@@ -80,7 +80,7 @@ import { chromium } from "playwright";
   const jsonContent = JSON.stringify(articles, null, 2)
   fs.writeFile("./json/newsroom/news.json", jsonContent, 'utf8', function (err) {
     if (err) return console.log(err);
-    console.log("News Imported!");
+    console.log("\nNews Imported!\n");
   });
 
   // close page and browser

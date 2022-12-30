@@ -110,7 +110,7 @@ import { chromium } from "playwright";
           content: articleContent,
         });
 
-        console.log('Our Stories Article', i, 'Done');
+        console.log('Our Stories Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
       }
@@ -120,13 +120,13 @@ import { chromium } from "playwright";
   const jsonArticles = JSON.stringify(articles, null, 2)
   fs.writeFile("./json/newsroom/Our Stories/our-stories.json", jsonArticles, 'utf8', (err) => {
     if (err) return console.log(err);
-    console.log("Our Stories Imported!");
+    console.log("\nOur Stories Imported!\n");
   });
   
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2)
   fs.writeFile("./json/newsroom/Our Stories/our-stories-articles.json", jsonArticlesContent, 'utf8', (err) => {
     if (err) return console.log(err);
-    console.log("Our Stories Articles Imported!");
+    console.log("\nOur Stories Articles Imported!\n");
   });
 
   // close page and browser
