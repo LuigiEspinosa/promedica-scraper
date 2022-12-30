@@ -82,37 +82,38 @@ import { chromium } from "playwright";
   // Articles content
   let articlesBody = [];
   for (let i = 0; i <= mergeLinks.length; i++) {
-    if (mergeLinks[i] !== undefined) 
+    if (mergeLinks[i] !== undefined && mergeLinks[i].includes('https://www.promedica.org')) {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' })
 
-    try {
-      await page.waitForSelector('.ih-content-column');
+      try {
+        await page.waitForSelector('.ih-content-column');
 
-      // get the content of each article
-      const articlesTitle = await page.$eval(
-        ".ih-content-column",
-        (itemArticle) => {
-          return itemArticle.querySelector("#ih-page-body > div:first-of-type").innerText
-        }
-      );
+        // get the content of each article
+        const articlesTitle = await page.$eval(
+          ".ih-content-column",
+          (itemArticle) => {
+            return itemArticle.querySelector("#ih-page-body > div:first-of-type").innerText
+          }
+        );
 
-      // get the content of each article
-      const articleContent = await page.$eval(
-        ".ih-content-column",
-        (itemArticle) => {
-          return itemArticle.querySelector("#ih-page-body").innerHTML;
-        }
-      );
+        // get the content of each article
+        const articleContent = await page.$eval(
+          ".ih-content-column",
+          (itemArticle) => {
+            return itemArticle.querySelector("#ih-page-body").innerHTML;
+          }
+        );
 
-      articlesBody.push({
-        id: i + 1,
-        site: articlesTitle,
-        content: articleContent,
-      });
+        articlesBody.push({
+          id: i + 1,
+          site: articlesTitle,
+          content: articleContent,
+        });
 
-      console.log('Our Stories Article', i, 'Done');
-    } catch (error) {
-      console.log({ error });
+        console.log('Our Stories Article', i, 'Done');
+      } catch (error) {
+        console.log({ error });
+      }
     }
   }
   

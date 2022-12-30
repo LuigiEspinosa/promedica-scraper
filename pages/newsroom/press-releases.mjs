@@ -48,14 +48,14 @@ import { chromium } from "playwright";
             const imgSrc = article.querySelector(".row div img:not(.hidden)").src;
             const imgAlt = article.querySelector(".row div img:not(.hidden)").alt;
 
-            return JSON.stringify({
+            return {
               title,
               description,
               linkSrc,
               linkText,
               imgSrc,
               imgAlt,
-            });
+            };
           });
         }
       );
@@ -71,7 +71,7 @@ import { chromium } from "playwright";
         articles: articlesPerPage,
       });
 
-      console.log('Press Releases Page', i);
+      console.log('Press Releases Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
