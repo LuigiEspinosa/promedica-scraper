@@ -76,10 +76,16 @@ import { chromium } from "playwright";
     }
   }
 
+  const jsonArticles = JSON.stringify(articles, null, 2)
+  fs.writeFile("./json/newsroom/Our Stories/our-stories.json", jsonArticles, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nOur Stories Imported!\n");
+  });
+
+  // Articles content
   const allArticlesLink = articles.map(item => item.articles.map(src => src.linkSrc))
   const mergeLinks = [...new Set([].concat(...allArticlesLink.map((src) => src)))]
 
-  // Articles content
   let articlesBody = [];
   for (let i = 0; i <= mergeLinks.length; i++) {
     if (mergeLinks[i] !== undefined && mergeLinks[i].includes('https://www.promedica.org')) {
@@ -88,21 +94,8 @@ import { chromium } from "playwright";
       try {
         await page.waitForSelector('.ih-content-column');
 
-        // get the content of each article
-        const articlesTitle = await page.$eval(
-          ".ih-content-column",
-          (itemArticle) => {
-            return itemArticle.querySelector("#ih-page-body > div:first-of-type").innerText
-          }
-        );
-
-        // get the content of each article
-        const articleContent = await page.$eval(
-          ".ih-content-column",
-          (itemArticle) => {
-            return itemArticle.querySelector("#ih-page-body").innerHTML;
-          }
-        );
+        const articlesTitle = await page.$eval(".ih-content-column", i => i.querySelector("#ih-page-body > div:first-of-type").innerText);
+        const articleContent = await page.$eval(".ih-content-column", i => i.querySelector("#ih-page-body").innerHTML);
 
         articlesBody.push({
           id: i + 1,
@@ -116,12 +109,6 @@ import { chromium } from "playwright";
       }
     }
   }
-  
-  const jsonArticles = JSON.stringify(articles, null, 2)
-  fs.writeFile("./json/newsroom/Our Stories/our-stories.json", jsonArticles, 'utf8', (err) => {
-    if (err) return console.log(err);
-    console.log("\nOur Stories Imported!\n");
-  });
   
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2)
   fs.writeFile("./json/newsroom/Our Stories/our-stories-articles.json", jsonArticlesContent, 'utf8', (err) => {

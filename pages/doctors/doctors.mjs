@@ -80,10 +80,161 @@ import { chromium } from "playwright";
     }
   }
 
-  const jsonContent = JSON.stringify(doctors, null, 2)
-  fs.writeFile("./json/doctors/doctors.json", jsonContent, 'utf8', (err) => {
+  const jsonDoctors = JSON.stringify(doctors, null, 2)
+  fs.writeFile("./json/doctors/doctors.json", jsonDoctors, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log("\nDoctors Imported!\n");
+  });
+
+  // Doctors Details
+  const allDoctorsLink = doctors.map(item => item.doctors.map(src => src.linkSrc))
+  const mergeLinks = [...new Set([].concat(...allDoctorsLink.map((src) => src)))]
+
+  let doctorsDetails = [];
+  for (let i = 0; i <= mergeLinks.length; i++) {
+    if (mergeLinks[i] !== undefined && mergeLinks[i].includes('https://www.promedica.org')) {
+      await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' })
+
+      try {
+        await page.waitForSelector('ih-static-zone');
+
+        const imgSrc = await page.$eval("ih-static-zone", i => {
+          let img = i.querySelector(".ih-field-image > img");
+          if (img) img = img.src;
+          return img;
+        });
+        
+        const imgAlt = await page.$eval("ih-static-zone", i => {
+          let img = i.querySelector(".ih-field-image > img");
+          if (img) img = img.alt;
+          return img;
+        });
+        
+        const videoSrc = await page.$eval("ih-static-zone", i => {
+          let video = i.querySelector("#providerVideo > .video-module-inner > iframe");
+          if (video) video = video.src;
+          return video;
+        });
+
+        const name = await page.$eval("ih-static-zone", i => {
+          let name = i.querySelector(".ih-field-providername > h1");
+          if (name) name = name.innerText;
+          return name;
+        });
+        
+        const services = await page.$eval("ih-static-zone", i => {
+          let services = i.querySelector(".ih-field-primaryspecialty > a");
+          if (services) services = services.innerText;
+          return services;
+        });
+
+        const specialties = await page.$$eval("ih-static-zone div.ih-field-specialties > ul.ih-field-specialties", ul => {
+          return ul.map((li) => {
+            let specialties = li.querySelector('li')
+            if (specialties) specialties = specialties.innerText
+            return specialties
+          })
+        });
+
+        const location = await page.$eval("ih-static-zone", i => {
+          let location = i.querySelector(".ih-field-primarylocationname > div");
+          if (location) location = location.innerText;
+          return location;
+        });
+        
+        const gender = await page.$eval("ih-static-zone", i => {
+          let gender = i.querySelector(".form-group > div > #genderAndAge");
+          if (gender) gender = gender.innerText;
+          return gender;
+        });
+        
+        const language = await page.$eval("ih-static-zone", i => {
+          let language = i.querySelector(".ih-field-providerlanguages > span");
+          if (language) language = language.innerText;
+          return language;
+        });
+
+        const virtual = await page.$eval("ih-static-zone", i => {
+          let virtual = i.querySelector(".form-group.ih-field-conditionalfield > div > .ih-telehealth");
+          if (virtual) virtual = true;
+          return virtual;
+        });
+        
+        const phone = await page.$eval("ih-static-zone", i => {
+          let phone = i.querySelector(".ih-field-primarylocationphone > div > a");
+          if (phone) phone = phone.innerText;
+          return phone;
+        });
+        
+        const fax = await page.$eval("ih-static-zone", i => {
+          let fax = i.querySelector(".ih-field-primaryfax > div");
+          if (fax) fax = fax.innerText;
+          return fax;
+        });
+        
+        const appointment = await page.$eval("ih-static-zone", i => {
+          let appointment = i.querySelector(".form-group .mychart-appointment__button > a");
+          if (appointment) appointment = appointment.src;
+          return appointment;
+        });
+
+        const badge = await page.$eval("ih-static-zone", i => {
+          let badge = i.querySelector(".form-group.ih-field-conditionalfield > div.ih-ppg-badge > p");
+          if (badge) badge = badge.innerText;
+          return badge;
+        });
+
+        await page.waitForSelector('ih-tabbed-zone');
+
+        // let locations = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+        // let hospitals = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+        // let conditions = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+        // let biography = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+        // let education = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+        // let news = await page.$eval("ih-static-zone", i => i.querySelector('ih-field-image > img'));
+
+        // if (locations) locations = locations;
+        // if (hospitals) hospitals = hospitals;
+        // if (conditions) conditions = conditions;
+        // if (biography) biography = biography;
+        // if (education) education = education;
+        // if (news) news = news;
+
+        doctorsDetails.push({
+          id: i + 1,
+          imgSrc,
+          imgAlt,
+          videoSrc,
+          name,
+          services,
+          specialties,
+          location,
+          gender,
+          language,
+          virtual,
+          phone,
+          fax,
+          appointment,
+          badge,
+          // locations,
+          // hospitals,
+          // conditions,
+          // biography,
+          // education,
+          // news
+        });
+
+        console.log('Doctor', i + 1, 'Details Done');
+      } catch (error) {
+        console.log({ error });
+      }
+    }
+  }
+  
+  const jsonDoctorsDetails = JSON.stringify(doctorsDetails, null, 2)
+  fs.writeFile("./json/doctors/doctors-details.json", jsonDoctorsDetails, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nDoctors Details Imported!\n");
   });
 
   // close page and browser
