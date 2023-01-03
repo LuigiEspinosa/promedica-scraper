@@ -1,18 +1,16 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
 
-export default async function Pressreleases() {
+export default async function News() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  await page.goto('https://www.promedica.org/newsroom/press-releases/?', {
-    waitUntil: 'networkidle',
-  });
+  await page.goto('https://www.promedica.org/newsroom/news/?', { waitUntil: 'networkidle' });
 
   await page.waitForSelector("a[aria-label='Next']");
   await page.click("a[aria-label='Next']");
 
-  // Get the elements in pagination
+  // get the elements in pagination
   await page.waitForSelector('ul.pagination li.active a');
   const numberPages = await page.$$eval('ul.pagination li.active a', (numberpages) => {
     return numberpages.map((numberPage) => {
@@ -55,78 +53,27 @@ export default async function Pressreleases() {
       }
 
       articles.push({
-        articles: articlesPerPage,
+        news: articlesPerPage,
       });
 
-      console.log('Press Releases Page', i, 'Done');
+      console.log('News Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
   }
 
   const eachItem = articles.map((item) =>
-    item.articles.map((card, idx) => {
+    item.news.map((card, idx) => {
       return { id: idx + 1, card };
     })
   );
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
 
   const jsonContent = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile(
-    './json/newsroom/Press Releases/press-releases.json',
-    jsonContent,
-    'utf8',
-    function (err) {
-      if (err) return console.log(err);
-      console.log('\nPress Releases Imported!\n');
-    }
-  );
-
-  // Press Release content
-  const mergeLinks = mergeItems.map((item) => {
-    if (item.card.linkSrc.startsWith('https://www.promedica.org/')) {
-      return item.card.linkSrc;
-    }
+  fs.writeFile('./json/newsroom/news.json', jsonContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nNews Imported!\n');
   });
-
-  let articlesBody = [];
-  for (let i = 0; i <= mergeLinks.length; i++) {
-    if (mergeLinks[i] !== undefined) {
-      await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
-
-      try {
-        await page.waitForSelector('.ih-content-column');
-
-        const articlesTitle = await page.title();
-        const articleContent = await page.$eval(
-          '.ih-content-column',
-          (i) => i.querySelector('#ih-page-body').innerHTML
-        );
-
-        articlesBody.push({
-          id: i + 1,
-          title: articlesTitle,
-          url: mergeLinks[i],
-          content: articleContent,
-        });
-
-        console.log('Press Releases Article', i + 1, 'Done');
-      } catch (error) {
-        console.log({ error });
-      }
-    }
-  }
-
-  const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
-  fs.writeFile(
-    './json/newsroom/Press Releases/press-releases-articles.json',
-    jsonArticlesContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nPress Releases Articles Imported!\n');
-    }
-  );
 
   await page.close();
   await browser.close();
