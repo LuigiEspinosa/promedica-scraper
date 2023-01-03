@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./index.mjs"
+    "dev": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,3 +14,4 @@
     "playwright": "^1.29.1"
   }
 }
+
