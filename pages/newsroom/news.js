@@ -62,9 +62,9 @@ export default async function News() {
     }
   }
 
-  const eachItem = articles.map((item) =>
-    item.news.map((card, idx) => {
-      return { id: idx + 1, card };
+  const eachItem = articles.map((item, idx) =>
+    item.news.map((card, i) => {
+      return { id: parseFloat(`${idx + 1}.${i}`), card };
     })
   );
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
