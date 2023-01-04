@@ -58,7 +58,7 @@ export default async function Pressreleases() {
         articles: articlesPerPage,
       });
 
-      console.log('Press Releases Page', i, 'Done');
+      console.log('Press Releases Page', i, 'out of', totalPages, 'Done');
     } catch (error) {
       console.log({ error });
     }
@@ -110,7 +110,7 @@ export default async function Pressreleases() {
           content: articleContent,
         });
 
-        console.log('Press Releases Article', i + 1, 'Done');
+        console.log('Press Releases Article', i + 1, 'out of', mergeLinks.length, 'Done');
       } catch (error) {
         console.log({ error });
       }

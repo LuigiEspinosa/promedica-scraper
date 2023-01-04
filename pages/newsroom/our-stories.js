@@ -57,7 +57,7 @@ export default async function OurStories() {
         articles: articlesPerPage,
       });
 
-      console.log('Our Stories Page', i, 'Done');
+      console.log('Our Stories Page', i, 'out of', totalPages, 'Done');
     } catch (error) {
       console.log({ error });
     }
@@ -104,7 +104,7 @@ export default async function OurStories() {
           content: articleContent,
         });
 
-        console.log('Our Stories Article', i + 1, 'Done');
+        console.log('Our Stories Article', i + 1, 'out of', mergeLinks.length, 'Done');
       } catch (error) {
         console.log({ error });
       }

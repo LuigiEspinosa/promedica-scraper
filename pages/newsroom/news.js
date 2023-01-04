@@ -56,7 +56,7 @@ export default async function News() {
         news: articlesPerPage,
       });
 
-      console.log('News Page', i, 'Done');
+      console.log('News Page', i, 'out of', totalPages, 'Done');
     } catch (error) {
       console.log({ error });
     }

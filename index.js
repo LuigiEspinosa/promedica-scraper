@@ -1,9 +1,7 @@
 import PressReleases from './pages/newsroom/press-releases.js';
 import News from './pages/newsroom/news.js';
 import OurStories from './pages/newsroom/our-stories.js';
-
-// // Locations
-// import './pages/locations/locations.mjs'
+import Locations from './pages/locations/locations.js';
 
 // // Doctors
 // import './pages/doctors/doctors.mjs'
@@ -12,3 +10,6 @@ import OurStories from './pages/newsroom/our-stories.js';
 PressReleases();
 News();
 OurStories();
+
+// Locations
+Locations();
