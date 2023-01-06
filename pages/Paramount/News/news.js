@@ -68,14 +68,16 @@ export default async function ParamountNews() {
 
         const articlesTitle = await page.title();
 
-        const banner = await page.$eval('#article-banner > div.article-banner', (i) => {
-          let img = i.querySelector('img');
-          if (img) img.src;
+        const banner = await page.$eval('#article-banner', (i) => {
+          let banner = i.querySelector('#article-banner > div > img');
+          if (banner) banner = banner.src;
+          return banner;
         });
 
-        const bannerAlt = await page.$eval('#article-banner > div.article-banner', (i) => {
-          let imgAlt = i.querySelector('img');
-          if (imgAlt) imgAlt = imgAlt.alt;
+        const bannerAlt = await page.$eval('#article-banner', (i) => {
+          let bannerAlt = i.querySelector('#article-banner > div > img');
+          if (bannerAlt) bannerAlt = bannerAlt.alt;
+          return bannerAlt;
         });
 
         const articleContent = await page.$eval(
@@ -90,7 +92,7 @@ export default async function ParamountNews() {
           content: {
             banner,
             bannerAlt,
-            content: articleContent,
+            body: articleContent,
           },
         });
 

@@ -73,14 +73,16 @@ export default async function EducationalArticles() {
 
         const articlesTitle = await page.title();
 
-        const banner = await page.$eval('#article-banner > div.article-banner', (i) => {
+        const banner = await page.$eval('#article-banner div.article-banner', (i) => {
           let img = i.querySelector('img');
-          if (img) img.src;
+          if (img) img = img.src;
+          return img;
         });
 
-        const bannerAlt = await page.$eval('#article-banner > div.article-banner', (i) => {
+        const bannerAlt = await page.$eval('#article-banner div.article-banner', (i) => {
           let imgAlt = i.querySelector('img');
           if (imgAlt) imgAlt = imgAlt.alt;
+          return imgAlt;
         });
 
         const articleContent = await page.$eval(
@@ -95,7 +97,7 @@ export default async function EducationalArticles() {
           content: {
             banner,
             bannerAlt,
-            content: articleContent,
+            body: articleContent,
           },
         });
 
