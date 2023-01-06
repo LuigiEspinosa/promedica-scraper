@@ -102,7 +102,7 @@ export default async function Locations() {
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
 
   const jsonContent = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile('./json/locations/locations.json', jsonContent, 'utf8', (err) => {
+  fs.writeFile('./json/ProMedica/locations/locations.json', jsonContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nLocations Imported!\n');
   });
@@ -213,10 +213,15 @@ export default async function Locations() {
   }
 
   const jsonArticlesContent = JSON.stringify(locationsContent, null, 2);
-  fs.writeFile('./json/locations/locations-details.json', jsonArticlesContent, 'utf8', (err) => {
-    if (err) return console.log(err);
-    console.log('\nLocations Details Imported!\n');
-  });
+  fs.writeFile(
+    './json/ProMedica/locations/locations-details.json',
+    jsonArticlesContent,
+    'utf8',
+    (err) => {
+      if (err) return console.log(err);
+      console.log('\nLocations Details Imported!\n');
+    }
+  );
 
   // close page and browser
   await page.close();

@@ -2,6 +2,17 @@
   {
     "id": 1,
     "card": {
+      "title": "3 Ways to Have a Healthy Holiday Season",
+      "description": "Keeping healthy habits in mind during the holiday season can make a big difference in one’s overall health.",
+      "linkSrc": "https://www.promedica.org/newsroom/our-stories/3-ways-to-have-a-healthy-holiday-season",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/our-stories/woman-and-child-decorating-cookies.jpg",
+      "imgAlt": "3 Ways to Have a Healthy Holiday Season"
+    }
+  },
+  {
+    "id": 1.1,
+    "card": {
       "title": "Understanding Prediabetes",
       "description": "According to the CDC, more than one in three or 96 million people in the United States aged 18 or older have prediabetes.",
       "linkSrc": "https://www.promedica.org/newsroom/our-stories/understanding-prediabetes",
@@ -11,7 +22,7 @@
     }
   },
   {
-    "id": 1.1,
+    "id": 1.2,
     "card": {
       "title": "Don't be misled: Colonoscopies are critical to preventing cancer",
       "description": "The bottom line: Colonoscopies save lives!",
@@ -22,7 +33,7 @@
     }
   },
   {
-    "id": 1.2,
+    "id": 1.3,
     "card": {
       "title": "Awareness is Power: Breast Cancer Awareness Month",
       "description": "According to the American Cancer Society, there are more than 3.8 million breast cancer survivors in the United States.",
@@ -33,7 +44,7 @@
     }
   },
   {
-    "id": 1.3,
+    "id": 1.4,
     "card": {
       "title": "Take Action This Prostate Cancer Awareness Month",
       "description": "According to the American Cancer Society, one in eight men will be diagnosed with prostate cancer in their lifetime.",
@@ -44,7 +55,7 @@
     }
   },
   {
-    "id": 1.4,
+    "id": 1.5,
     "card": {
       "title": "Returning to Play: Bouncing Back After an Injury",
       "description": "Physical activity is one of the most important things people can do for their health.",
@@ -55,7 +66,7 @@
     }
   },
   {
-    "id": 1.5,
+    "id": 2,
     "card": {
       "title": "Mental Health Matters: Knowing the Difference Between Mental Health and Mental Illness",
       "description": "At what point does poor mental health become mental illness?",
@@ -66,7 +77,7 @@
     }
   },
   {
-    "id": 2,
+    "id": 2.1,
     "card": {
       "title": "World Sickle Cell Day: Raising Awareness of Sickle Cell Disease",
       "description": "Sickle cell disease (SCD) is the most common single-gene disorder in the world.",
@@ -77,7 +88,7 @@
     }
   },
   {
-    "id": 2.1,
+    "id": 2.2,
     "card": {
       "title": "Stroke Awareness Month: Be stroke aware and prepared",
       "description": "May is Stroke Awareness Month and the perfect opportunity to familiarize oneself with the signs and symptoms of a stroke.",
@@ -88,7 +99,7 @@
     }
   },
   {
-    "id": 2.2,
+    "id": 2.3,
     "card": {
       "title": "Addressing racial disparities in health care",
       "description": "April is Minority Health Month – an opportunity to build awareness of health disparities.",
@@ -99,7 +110,7 @@
     }
   },
   {
-    "id": 2.3,
+    "id": 2.4,
     "card": {
       "title": "Early Screening Can Help Prevent Colorectal Cancer",
       "description": "According to the American Cancer Society, colorectal cancer is expected to cause around 52,580 deaths in 2022 alone.",
@@ -110,7 +121,7 @@
     }
   },
   {
-    "id": 2.4,
+    "id": 2.5,
     "card": {
       "title": "Year-Round Heart Health Could Save Your Life",
       "description": "February is American Heart Month which reminds us to focus on our cardiovascular health.",
@@ -121,7 +132,7 @@
     }
   },
   {
-    "id": 2.5,
+    "id": 3,
     "card": {
       "title": "Cancer Screenings - Get them While You Feel Great!",
       "description": "Cancer screenings are down due to the pandemic across our system, across the state and across the country.",
@@ -132,7 +143,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 3.1,
     "card": {
       "title": "Orthopaedic Experts at ProMedica Defiance Regional Hospital",
       "description": "Orthopaedic Experts at ProMedica Defiance Regional Hospital",
@@ -143,7 +154,7 @@
     }
   },
   {
-    "id": 3.1,
+    "id": 3.2,
     "card": {
       "title": "ProMedica Announces Two Summer Movie Night Series",
       "description": "ProMedica Announces Two Summer Movie Night Series",
@@ -154,7 +165,7 @@
     }
   },
   {
-    "id": 3.2,
+    "id": 3.3,
     "card": {
       "title": "Men's Health Month - Prostate Cancer Awareness",
       "description": "Men’s Health Month – Prostate Cancer Awareness",
@@ -165,7 +176,7 @@
     }
   },
   {
-    "id": 3.3,
+    "id": 3.4,
     "card": {
       "title": "City of Toledo Presents Key to the City to ProMedica",
       "description": "ProMedica Receives Key to the City of Toledo",
@@ -176,7 +187,7 @@
     }
   },
   {
-    "id": 3.4,
+    "id": 3.5,
     "card": {
       "title": "A Q&A with Dr. Jessica Burns Committed to the Community",
       "description": "Jessica Burns, MD, is a ProMedica physician specializing in breast surgical oncology in Sylvania, Ohio. Dr. Burns is the region's only",
@@ -187,7 +198,7 @@
     }
   },
   {
-    "id": 3.5,
+    "id": 4,
     "card": {
       "title": "ProMedica-UToledo College of Medicine Academic Affiliation Helps to Advance Patient Safety",
       "description": "Patient safety has long been a challenge for the health care industry. According to the World Health Organization, as many as one in 10",
@@ -198,7 +209,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 4.1,
     "card": {
       "title": "ProMedica and UToledo Researchers Work Together to Advance Medicine and Learning",
       "description": "Collaborative research plays an important role in advancing medicine and eventually improving patient health outcomes.",
@@ -209,7 +220,7 @@
     }
   },
   {
-    "id": 4.1,
+    "id": 4.2,
     "card": {
       "title": "Two New Financial Opportunity Centers Offer Financial and Employment Coaching to Northwest Ohio Residents",
       "description": "Two new Financial Opportunity Centers (FOC) have recently opened in Fremont and Defiance offering tailored services designed to help pa",
@@ -220,7 +231,7 @@
     }
   },
   {
-    "id": 4.2,
+    "id": 4.3,
     "card": {
       "title": "ProMedica Toledo Children's Hospital Is Now ProMedica Russell J. Ebeid Children's Hospital",
       "description": "We've changed our name in honor of a local hero and philanthropist.",
@@ -231,7 +242,7 @@
     }
   },
   {
-    "id": 4.3,
+    "id": 4.4,
     "card": {
       "title": "Patient Finds Relief After Carotid Artery Diagnosis",
       "description": "Betty's symptoms were so bad, she felt confined to the house. Now, she's regained her independence.",
@@ -242,7 +253,7 @@
     }
   },
   {
-    "id": 4.4,
+    "id": 4.5,
     "card": {
       "title": "Labor and Delivery Team Donates to Victims of Domestic Violence",
       "description": "Employees at ProMedica Bixby Hospital gathered items for local charity.",
@@ -253,7 +264,7 @@
     }
   },
   {
-    "id": 4.5,
+    "id": 5,
     "card": {
       "title": "After Vascular Treatment, This Man Is Weight Training Again",
       "description": "Complications from peripheral artery disease and diabetes kept Ken from doing what he loved.",
@@ -264,7 +275,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 5.1,
     "card": {
       "title": "Collaboration Saves Limbs, Provides Quality of Life",
       "description": "ProMedica's Limb Preservation Board helped save this husband and father's foot.",
@@ -275,7 +286,7 @@
     }
   },
   {
-    "id": 5.1,
+    "id": 5.2,
     "card": {
       "title": "ProMedica Physicians Welcomes New Breast Surgeon, Dr. Jessica Burns",
       "description": "Dr. Burns joins ProMedica Physicians Breast Surgery and Surgical Oncology in Sylvania.",
@@ -286,7 +297,7 @@
     }
   },
   {
-    "id": 5.2,
+    "id": 5.3,
     "card": {
       "title": "Starving for a Solution: Hunger as a Health Issue",
       "description": "In countless kitchens, pantries and dining rooms across the country, one of America’s most dire public health crises is being served up",
@@ -297,7 +308,7 @@
     }
   },
   {
-    "id": 5.3,
+    "id": 5.4,
     "card": {
       "title": "Becoming True Care Integrators To Improve Population Health",
       "description": "As healthcare leaders, we often think primarily in terms of three- to five-year plans. But let’s consider the next 50 years and questio",
@@ -308,7 +319,7 @@
     }
   },
   {
-    "id": 5.4,
+    "id": 5.5,
     "card": {
       "title": "ProMedica Teaming Up with LISC Toledo to Address Affordable Housing",
       "description": "The YR 16 Initiative helps individuals find safe and affordable housing",
@@ -319,7 +330,7 @@
     }
   },
   {
-    "id": 5.5,
+    "id": 6,
     "card": {
       "title": "Art at Toledo Hospital Filled With Love and Healing",
       "description": "Leilani Schweitzer lost her son in 2005. Now, she hopes to bring hope and healing through her artwork.",
@@ -330,7 +341,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 6.1,
     "card": {
       "title": "Innovative Technology Helps Neurosurgeons with 3D Map of Brain",
       "description": "Toledo Hospital is the first in Ohio to use this leading-edge brain surgery technology",
@@ -341,7 +352,7 @@
     }
   },
   {
-    "id": 6.1,
+    "id": 6.2,
     "card": {
       "title": "Erectile Dysfunction Could Be a Telltale Sign of a Vascular Issue",
       "description": "Many underline reasons could contribute to the cause of erectile dysfunction (ED). These issues vary from a long list of medical proble",
@@ -352,7 +363,7 @@
     }
   },
   {
-    "id": 6.2,
+    "id": 6.3,
     "card": {
       "title": "Know the Signs, Know the Symptoms. May Is National Stroke Awareness Month.",
       "description": "Do you know the signs and symptoms of a stroke? You should. According to the National Stroke Awareness Association (NSA), every 40 seco",
@@ -363,7 +374,7 @@
     }
   },
   {
-    "id": 6.3,
+    "id": 6.4,
     "card": {
       "title": "Raising Awareness of Pelvic Pain",
       "description": "Many people think this common condition is normal, but it isn't. Raising awareness can help get people the help they need.",
@@ -374,7 +385,7 @@
     }
   },
   {
-    "id": 6.4,
+    "id": 6.5,
     "card": {
       "title": "ProMedica Celebrates National Nurses Week",
       "description": "Nurses at ProMedica and throughout the country were honored May 6-12. Hear why they're passionate about what they do.",
@@ -385,7 +396,7 @@
     }
   },
   {
-    "id": 6.5,
+    "id": 7,
     "card": {
       "title": "ProMedica Foundations Announces 2019 Philanthropy Awards Recipients",
       "description": "Individuals and organizations whose commitment to philanthropy have helped ProMedica achieve its Mission were recently recognized.",
@@ -396,7 +407,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 7.1,
     "card": {
       "title": "Generations Tower at ProMedica Toledo Hospital Opens",
       "description": "The 13-story tower brings advancements in patient care and team collaboration",
@@ -407,7 +418,7 @@
     }
   },
   {
-    "id": 7.1,
+    "id": 7.2,
     "card": {
       "title": "The Tooth Fairy Visits Toledo Children's Hospital",
       "description": "6-year-old Ean had a fun surprise when he woke up from surgery.",
@@ -418,7 +429,7 @@
     }
   },
   {
-    "id": 7.2,
+    "id": 7.3,
     "card": {
       "title": "Could a Live Concert Improve Your Health?",
       "description": "Music has many health benefits, from reducing pain to improving sleep. But live music may have additional perks.",
@@ -429,7 +440,7 @@
     }
   },
   {
-    "id": 7.3,
+    "id": 7.4,
     "card": {
       "title": "Local Students Complete Mural at ProMedica Sleep Center",
       "description": "Students from Cardinal Stritch High School used their talent to make patient stays at ProMedica Bay Park Hospital more enjoyable.",
@@ -440,7 +451,7 @@
     }
   },
   {
-    "id": 7.4,
+    "id": 7.5,
     "card": {
       "title": "When A Cardiologist Becomes A Heart Patient",
       "description": "After years of helping others have healthier hearts, Dr. Bingle found himself experiencing an abnormal heart rhythm.",
@@ -451,7 +462,7 @@
     }
   },
   {
-    "id": 7.5,
+    "id": 8,
     "card": {
       "title": "Get Involved This Stroke Awareness Month",
       "description": "In the U.S., someone suffers from stroke every 40 seconds. Here's how you can help.",
@@ -462,7 +473,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 8.1,
     "card": {
       "title": "Winter Blood Shortage",
       "description": "The American Red Cross is looking for blood and platelet donors across the country. According to the Red Cross, they collected 27,000 f",
@@ -473,7 +484,7 @@
     }
   },
   {
-    "id": 8.1,
+    "id": 8.2,
     "card": {
       "title": "ProMedica Neurosurgery and Spine Program Named Among Best",
       "description": "ProMedica recognized among 100 national programs by Becker's Hospital Review",
@@ -484,7 +495,7 @@
     }
   },
   {
-    "id": 8.2,
+    "id": 8.3,
     "card": {
       "title": "Veggie Mobile Delivers Nutrition Throughout Lenawee County",
       "description": "A plant-based diet is good for our bodies, but many people don't have access to reasonably-priced fresh fruits and vegetables. The Vegg",
@@ -495,7 +506,7 @@
     }
   },
   {
-    "id": 8.3,
+    "id": 8.4,
     "card": {
       "title": "Randy Oostra and Steve Cavanaugh Speak at the 5th Annual ProMedica Innovations Summit",
       "description": "The healthcare leaders discussed how the industry is transforming and what lies ahead for ProMedica and HCR ManorCare.",
@@ -506,7 +517,7 @@
     }
   },
   {
-    "id": 8.4,
+    "id": 8.5,
     "card": {
       "title": "Widowmaker: A Recovery Story",
       "description": "When Janet woke up, she didn’t realize she was having a heart attack.",
@@ -517,7 +528,7 @@
     }
   },
   {
-    "id": 8.5,
+    "id": 9,
     "card": {
       "title": "Protecting Young Players on the Field",
       "description": "Parents, coaches and doctors must work together to keep kids safe from brain injuries",
@@ -528,7 +539,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 9.1,
     "card": {
       "title": "The Basics about Brain Aneurysms",
       "description": "An estimated 1 in 50 people have an unruptured brain aneurysm. Here's what you should know about the condition.",
@@ -539,7 +550,7 @@
     }
   },
   {
-    "id": 9.1,
+    "id": 9.2,
     "card": {
       "title": "Gluing Veins Shut Can Help Treat Varicose Veins",
       "description": "A vein condition caused Rochelle to have swelling and pain in her legs for decades. Thanks to a relatively new procedure with Dr. Fish,",
@@ -550,7 +561,7 @@
     }
   },
   {
-    "id": 9.2,
+    "id": 9.3,
     "card": {
       "title": "Teacher One of First in Ohio for Vascular Procedure",
       "description": "As a kindergarten teacher, Katie Bernath’s day is pretty much non-stop. “Lots of hands-on, lots of tying shoes, bending over at tables",
@@ -561,7 +572,7 @@
     }
   },
   {
-    "id": 9.3,
+    "id": 9.4,
     "card": {
       "title": "#OhioWearsBlue to Raise Awareness of Child Abuse and Neglect",
       "description": "On April 11, residents throughout Ohio donned blue to raise awareness of child abuse and neglect in our communities.",
@@ -572,7 +583,7 @@
     }
   },
   {
-    "id": 9.4,
+    "id": 9.5,
     "card": {
       "title": "New FDA-Approved Drug May Help Those With Migraines",
       "description": "Kris Gilmore Tolek has had migraines since her early teens and now gets them nearly every day. “I get bad migraines a couple times a we",
@@ -583,7 +594,7 @@
     }
   },
   {
-    "id": 9.5,
+    "id": 10,
     "card": {
       "title": "Embracing an Anchor Mission: ProMedica’s all-in strategy",
       "description": "This report offers an in-depth look at how the Toledo, Ohio based health system aligned its institutional operations and clinical pract",
@@ -594,7 +605,7 @@
     }
   },
   {
-    "id": 10,
+    "id": 10.1,
     "card": {
       "title": "How Contagious Is Hepatitis A From a Restaurant?",
       "description": "A recent case of Hepatitis A at a Toledo Dave and Buster’s is concerning local patrons who recently dined there. But how contagious is",
@@ -605,7 +616,7 @@
     }
   },
   {
-    "id": 10.1,
+    "id": 10.2,
     "card": {
       "title": "All in the Family",
       "description": "Imagine waking up in a hospital without any memory of why you are there. Something very serious has happened, but you don't know what.",

@@ -73,7 +73,7 @@ export default async function Pressreleases() {
 
   const jsonContent = JSON.stringify(mergeItems, null, 2);
   fs.writeFile(
-    './json/newsroom/Press Releases/press-releases.json',
+    './json/ProMedica/newsroom/Press Releases/press-releases.json',
     jsonContent,
     'utf8',
     function (err) {
@@ -119,7 +119,7 @@ export default async function Pressreleases() {
 
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
   fs.writeFile(
-    './json/newsroom/Press Releases/press-releases-articles.json',
+    './json/ProMedica/newsroom/Press Releases/press-releases-articles.json',
     jsonArticlesContent,
     'utf8',
     (err) => {

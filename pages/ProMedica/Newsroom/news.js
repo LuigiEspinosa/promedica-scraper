@@ -70,7 +70,7 @@ export default async function News() {
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
 
   const jsonContent = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile('./json/newsroom/news.json', jsonContent, 'utf8', (err) => {
+  fs.writeFile('./json/ProMedica/newsroom/news.json', jsonContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nNews Imported!\n');
   });

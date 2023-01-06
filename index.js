@@ -1,15 +1,17 @@
-import PressReleases from './pages/newsroom/press-releases.js';
-import News from './pages/newsroom/news.js';
-import OurStories from './pages/newsroom/our-stories.js';
-import Locations from './pages/locations/locations.js';
+import PressReleases from './pages/ProMedica/Newsroom/press-releases.js';
+import News from './pages/ProMedica/Newsroom/news.js';
+import OurStories from './pages/ProMedica/Newsroom/our-stories.js';
+import Locations from './pages/ProMedica/Locations/locations.js';
+// import './pages/ProMedica/doctors/doctors.mjs'
+import EducationalArticles from './pages/Paramount/EducationalArticles/educational-articles.js';
+import ParamountNews from './pages/Paramount/News/news.js';
 
-// // Doctors
-// import './pages/doctors/doctors.mjs'
-
-// Newsroom
+// ProMedica
 PressReleases();
 News();
 OurStories();
-
-// Locations
 Locations();
+
+// Paramount
+EducationalArticles();
+ParamountNews();

@@ -71,10 +71,15 @@ export default async function OurStories() {
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
 
   const jsonArticles = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile('./json/newsroom/Our Stories/our-stories.json', jsonArticles, 'utf8', (err) => {
-    if (err) return console.log(err);
-    console.log('\nOur Stories Imported!\n');
-  });
+  fs.writeFile(
+    './json/ProMedica/newsroom/Our Stories/our-stories.json',
+    jsonArticles,
+    'utf8',
+    (err) => {
+      if (err) return console.log(err);
+      console.log('\nOur Stories Imported!\n');
+    }
+  );
 
   // Articles content
   const mergeLinks = mergeItems.map((item) => {
@@ -113,7 +118,7 @@ export default async function OurStories() {
 
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
   fs.writeFile(
-    './json/newsroom/Our Stories/our-stories-articles.json',
+    './json/ProMedica/newsroom/Our Stories/our-stories-articles.json',
     jsonArticlesContent,
     'utf8',
     (err) => {
