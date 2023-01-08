@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
 
-(async () => {
+export default async function DoctorsProviders() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -102,6 +102,16 @@ import { chromium } from 'playwright';
   fs.writeFile('./json/ProMedica/doctors/doctors.json', jsonDoctors, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nDoctors Imported!\n');
+  });
+
+  // Doctors Images
+  const allDoctorsImages = doctors.map((item) => item.doctors.map((src) => src.imgSrc));
+  const mergeImagesLinks = [...new Set([].concat(...allDoctorsImages.map((src) => src)))];
+
+  const jsonDoctorsImages = JSON.stringify(mergeImagesLinks, null, 2);
+  fs.writeFile('./json/ProMedica/doctors/doctors-images.json', jsonDoctorsImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nDoctors Images Imported!\n');
   });
 
   // Doctors Details
@@ -270,4 +280,4 @@ import { chromium } from 'playwright';
   // close page and browser
   await page.close();
   await browser.close();
-})();
+}

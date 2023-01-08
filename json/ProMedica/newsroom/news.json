@@ -1267,17 +1267,6 @@
   {
     "id": 20.1,
     "card": {
-      "title": "The Blade: Digital Jungle / Is social media harming children and teens? It's complicated.",
-      "description": "Jackie Van Zile, a behavioral therapist with ProMedica, comments on social media addiction in children.",
-      "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/26/digital-jungle-is-social-media-harming-children-and-teens-it-s-complicated/stories/20220617129",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/tablet-time-two-girls.jpg",
-      "imgAlt": "The Blade: Digital Jungle / Is social media harming children and teens? It's complicated."
-    }
-  },
-  {
-    "id": 20.2,
-    "card": {
       "title": "The Blade: Persisting on your journey to quit smoking",
       "description": "Joel Nofziger, registered respiratory therapist at ProMedica, shares how compassion and positivity can help you on the journey to quit.",
       "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/26/persisting-on-your-journey-to-quit-smoking/stories/20220626020",
@@ -1287,7 +1276,7 @@
     }
   },
   {
-    "id": 20.3,
+    "id": 20.2,
     "card": {
       "title": "The Blade: Dentures, implants, or veneers? Dental patients have multiple options",
       "description": "Terry Norris, DMD, of Owensboro, KY, the lead consulting dentist for Paramount Dental, compares dental technology.",
@@ -1298,7 +1287,7 @@
     }
   },
   {
-    "id": 20.4,
+    "id": 20.3,
     "card": {
       "title": "The Blade Grill safely and mindfully this cookout season",
       "description": "Take steps to build a balanced plate and promote grill safety this cookout season.",
@@ -1306,6 +1295,17 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/cookout.jpg",
       "imgAlt": "The Blade Grill safely and mindfully this cookout season"
+    }
+  },
+  {
+    "id": 20.4,
+    "card": {
+      "title": "The Blade: Digital Jungle / Is social media harming children and teens? It's complicated.",
+      "description": "Jackie Van Zile, a behavioral therapist with ProMedica, comments on social media addiction in children.",
+      "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/26/digital-jungle-is-social-media-harming-children-and-teens-it-s-complicated/stories/20220617129",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/tablet-time-two-girls.jpg",
+      "imgAlt": "The Blade: Digital Jungle / Is social media harming children and teens? It's complicated."
     }
   },
   {
@@ -1333,6 +1333,17 @@
   {
     "id": 21.1,
     "card": {
+      "title": "The Blade: Swim lessons could benefit kids, while adults must be wary of overconfidence",
+      "description": "Gina Veres, Injury Prevention Supervisor at ProMedica, explains that not all adult drownings stem from poor swimming skills.",
+      "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/19/swim-lessons-could-benefit-kids-while-adults-must-be-wary-of-overconfidence/stories/20220619015",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/swim-lessons.jpg",
+      "imgAlt": "The Blade: Swim lessons could benefit kids, while adults must be wary of overconfidence"
+    }
+  },
+  {
+    "id": 21.2,
+    "card": {
       "title": "The Blade: Young adults with sickle cell disease need extra support",
       "description": "World Sickle Cell Day on June 19 is an opportunity to raise awareness and support for those with this inherited blood disorder.",
       "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/19/young-adults-with-sickle-cell-disease-need-extra-support/stories/20220619019",
@@ -1342,7 +1353,7 @@
     }
   },
   {
-    "id": 21.2,
+    "id": 21.3,
     "card": {
       "title": "The Blade: Life after trauma PTSD affects more people than you'd think, but treatment is possible",
       "description": "Kendall Reiter, a behavioral health therapist at ProMedica, explains how traumatic things on TV can affect kids.",
@@ -1353,7 +1364,7 @@
     }
   },
   {
-    "id": 21.3,
+    "id": 21.4,
     "card": {
       "title": "The Blade: Encourage kids to make healthier choices",
       "description": "Jennifer L. Mullen, pediatrician at ProMedica, shares tips on how to encourage kids to try new, healthy foods.",
@@ -1361,17 +1372,6 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/boy-eating-apple-with-dad.jpg",
       "imgAlt": "The Blade: Encourage kids to make healthier choices"
-    }
-  },
-  {
-    "id": 21.4,
-    "card": {
-      "title": "The Blade: Swim lessons could benefit kids, while adults must be wary of overconfidence",
-      "description": "Gina Veres, Injury Prevention Supervisor at ProMedica, explains that not all adult drownings stem from poor swimming skills.",
-      "linkSrc": "https://www.toledoblade.com/health-well-being/2022/06/19/swim-lessons-could-benefit-kids-while-adults-must-be-wary-of-overconfidence/stories/20220619015",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/swim-lessons.jpg",
-      "imgAlt": "The Blade: Swim lessons could benefit kids, while adults must be wary of overconfidence"
     }
   },
   {
@@ -2587,6 +2587,17 @@
   {
     "id": 40.1,
     "card": {
+      "title": "WTOL 11: Shoveling safety during the winter",
+      "description": "Rob Witte, PA-C, ProMedica Physicians Karamali and Cassavar Cardiology, shares tips on keeping your heart safe while shoveling snow.",
+      "linkSrc": "https://youtu.be/PdIMeN3lzqk",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/wtol-11-practice-safety-while-shoveling.png",
+      "imgAlt": "WTOL 11: Shoveling safety during the winter"
+    }
+  },
+  {
+    "id": 40.2,
+    "card": {
       "title": "Baltimore Fishbowl: U.S. housing secretary touts $105M healthy housing investment, including to address lead exposure",
       "description": "The U.S. Department of Housing and Urban Development announced awards of $105M across 29 states to create safe, healthy housing",
       "linkSrc": "https://baltimorefishbowl.com/stories/u-s-housing-secretary-touts-105m-healthy-housing-investment-including-to-address-lead-exposure-during-baltimore-visit/",
@@ -2596,7 +2607,7 @@
     }
   },
   {
-    "id": 40.2,
+    "id": 40.3,
     "card": {
       "title": "The Baltimore Sun: U.S. HUD Secretary Marcia Fudge visits Baltimore to tout federal home health grants",
       "description": "The U.S. Department of Housing and Urban Development announced awards of $105M across 29 states to create safe, healthy housing",
@@ -2604,17 +2615,6 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/hands-holding-a-house.jpeg",
       "imgAlt": "The Baltimore Sun: U.S. HUD Secretary Marcia Fudge visits Baltimore to tout federal home health grants"
-    }
-  },
-  {
-    "id": 40.3,
-    "card": {
-      "title": "WTOL 11: Shoveling safety during the winter",
-      "description": "Rob Witte, PA-C, ProMedica Physicians Karamali and Cassavar Cardiology, shares tips on keeping your heart safe while shoveling snow.",
-      "linkSrc": "https://youtu.be/PdIMeN3lzqk",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/wtol-11-practice-safety-while-shoveling.png",
-      "imgAlt": "WTOL 11: Shoveling safety during the winter"
     }
   },
   {
@@ -2653,23 +2653,23 @@
   {
     "id": 41.1,
     "card": {
-      "title": "WTOL 11: Which face masks offer the best protection?",
-      "description": "Brenda Naylor, RN, ProMedica Infection Prevention and Control, explains the best types of masks that offer the most protection.",
-      "linkSrc": "https://youtu.be/kfvz8lCLtyw",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/wtol-11-which-face-masks-offer-the-best-protection_ccexpress.png",
-      "imgAlt": "WTOL 11: Which face masks offer the best protection?"
-    }
-  },
-  {
-    "id": 41.2,
-    "card": {
       "title": "13abc: COVID declines, health leaders optimistic",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, comments on the current status of omicron surge.",
       "linkSrc": "https://youtu.be/IJsB9AwD1Sc",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/13abc-covid-declines-health-leaders-optimistic_ccexpress.png",
       "imgAlt": "13abc: COVID declines, health leaders optimistic"
+    }
+  },
+  {
+    "id": 41.2,
+    "card": {
+      "title": "WTOL 11: Which face masks offer the best protection?",
+      "description": "Brenda Naylor, RN, ProMedica Infection Prevention and Control, explains the best types of masks that offer the most protection.",
+      "linkSrc": "https://youtu.be/kfvz8lCLtyw",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2022/wtol-11-which-face-masks-offer-the-best-protection_ccexpress.png",
+      "imgAlt": "WTOL 11: Which face masks offer the best protection?"
     }
   },
   {
@@ -2972,17 +2972,6 @@
   {
     "id": 46,
     "card": {
-      "title": "WTOL 11 11-year-old conquering heart defect donates gifts to ProMedica Children's Hospital",
-      "description": "Danielle Cisterino, manager of ambulatory and community programs at ProMedica Russell J. Ebeid Children's Hospital, accepts a donation",
-      "linkSrc": "https://www.youtube.com/watch?v=mbQPqMNccd8",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/wtol-11-11yearold-conquering-heart-defect-donates-gifts-to-promedica-childrens-hospital.png",
-      "imgAlt": "WTOL 11 11-year-old conquering heart defect donates gifts to ProMedica Children's Hospital"
-    }
-  },
-  {
-    "id": 46.1,
-    "card": {
       "title": "13abc Superheroes spread Halloween joy at ProMedica Children's Hospital",
       "description": "ProMedica Russell J. Ebied Children’s Hospital continued its annual tradition with the Toledo Police Department SWAT Team.",
       "linkSrc": "https://www.youtube.com/watch?v=EwoRGXgHqiA",
@@ -2992,7 +2981,7 @@
     }
   },
   {
-    "id": 46.2,
+    "id": 46.1,
     "card": {
       "title": "WTOL 11 Local hospitals delay elective procedures",
       "description": "Gregory Kasper, MD, FACS, ProMedica president of the Jobst Vascular Institute, discusses how local hospitals have delayed procedures.",
@@ -3000,6 +2989,17 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/wtol-11-local-hospitals-delay-elective-procedures.png",
       "imgAlt": "WTOL 11 Local hospitals delay elective procedures"
+    }
+  },
+  {
+    "id": 46.2,
+    "card": {
+      "title": "WTOL 11 11-year-old conquering heart defect donates gifts to ProMedica Children's Hospital",
+      "description": "Danielle Cisterino, manager of ambulatory and community programs at ProMedica Russell J. Ebeid Children's Hospital, accepts a donation",
+      "linkSrc": "https://www.youtube.com/watch?v=mbQPqMNccd8",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/wtol-11-11yearold-conquering-heart-defect-donates-gifts-to-promedica-childrens-hospital.png",
+      "imgAlt": "WTOL 11 11-year-old conquering heart defect donates gifts to ProMedica Children's Hospital"
     }
   },
   {
@@ -3016,23 +3016,23 @@
   {
     "id": 46.4,
     "card": {
-      "title": "WTOL 11 COVID-19 hospitalizations in northwest Ohio",
-      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, discusses a surge in COVID-19 hospitalizations.",
-      "linkSrc": "https://www.youtube.com/watch?v=DAUVMqeTt2Y",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/wtol-11-covid-19-hospitalizations-in-northwest-ohio.png",
-      "imgAlt": "WTOL 11 COVID-19 hospitalizations in northwest Ohio"
-    }
-  },
-  {
-    "id": 46.5,
-    "card": {
       "title": "WTOL 11 Vaccinations lagging in some neighborhoods",
       "description": "Dee Ann Bialecki-Haase, MD, chief medical officer at Paramount, shares more on what is being done to boost vaccination rates.",
       "linkSrc": "https://www.youtube.com/watch?v=w6Lopj1Vzpk&t=59s",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/wtol-11-vaccinations-lagging-in-some-neighborhoods.png",
       "imgAlt": "WTOL 11 Vaccinations lagging in some neighborhoods"
+    }
+  },
+  {
+    "id": 46.5,
+    "card": {
+      "title": "WTOL 11 Health disparities among Alzheimer's patients",
+      "description": "Mark Gloth, DO, chief medical officer of ProMedica Senior Care, comments on the potential of a nasal vaccine for Alzheimer's disease.",
+      "linkSrc": "https://www.youtube.com/watch?v=ocjH0N8MFBM",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/wtol-11-health-disparities-among-alzheimers-patients.png",
+      "imgAlt": "WTOL 11 Health disparities among Alzheimer's patients"
     }
   },
   {
@@ -4072,17 +4072,6 @@
   {
     "id": 62.4,
     "card": {
-      "title": "13abc Solheim Cup flower boxes to beautify downtown Toledo",
-      "description": "13abc: Solheim Cup flower boxes to beautify downtown Toledo",
-      "linkSrc": "https://www.promedica.org/newsroom/news/2021/13abc-solheim-cup-flower-boxes-to-beautify-downtown-toledo",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/solheimsponsorships.jpg",
-      "imgAlt": "13abc Solheim Cup flower boxes to beautify downtown Toledo"
-    }
-  },
-  {
-    "id": 62.5,
-    "card": {
       "title": "13abc Thousands expected downtown for The Solheim Cup opening ceremonies",
       "description": "13abc: Thousands expected downtown for The Solheim Cup opening ceremonies",
       "linkSrc": "https://youtu.be/MnfG1l0WzMA",
@@ -4092,7 +4081,7 @@
     }
   },
   {
-    "id": 63,
+    "id": 62.5,
     "card": {
       "title": "13abc Tax credit catalyzes UpTown tech transformation",
       "description": "13abc: Tax credit catalyzes UpTown tech transformation",
@@ -4103,7 +4092,7 @@
     }
   },
   {
-    "id": 63.1,
+    "id": 63,
     "card": {
       "title": "NBC 24 Tax credits helping construction projects preserve historical buildings across state",
       "description": "NBC24: Tax credits helping construction projects preserve historical buildings across state",
@@ -4111,6 +4100,17 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/press-releases/jefferson-center-rendering-exterior.jpg",
       "imgAlt": "NBC 24 Tax credits helping construction projects preserve historical buildings across state"
+    }
+  },
+  {
+    "id": 63.1,
+    "card": {
+      "title": "13abc Solheim Cup flower boxes to beautify downtown Toledo",
+      "description": "13abc: Solheim Cup flower boxes to beautify downtown Toledo",
+      "linkSrc": "https://www.promedica.org/newsroom/news/2021/13abc-solheim-cup-flower-boxes-to-beautify-downtown-toledo",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/solheimsponsorships.jpg",
+      "imgAlt": "13abc Solheim Cup flower boxes to beautify downtown Toledo"
     }
   },
   {
@@ -4501,23 +4501,23 @@
   {
     "id": 69.1,
     "card": {
-      "title": "ProMedica celebrates 35th anniversary of EMS crew",
-      "description": "Last week, ProMedica Air and Mobile celebrated its 35th anniversary of delivering the highest quality of patient care to Toledo.",
-      "linkSrc": "https://youtu.be/Ba7PRMGHQv0",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/garber-james.jpg",
-      "imgAlt": " ProMedica celebrates 35th anniversary of EMS crew"
-    }
-  },
-  {
-    "id": 69.2,
-    "card": {
       "title": "Seasonal allergies ramping up with warmer weather",
       "description": "Sarah Beaulieu, FNP, ProMedica Physicians Health Specialists of Lenawee, discusses seasonal allergies and ways to alleviate symptoms.",
       "linkSrc": "https://youtu.be/Vq2hd2YLH5Q",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/beaulieu-sarah.jpg",
       "imgAlt": "Seasonal allergies ramping up with warmer weather"
+    }
+  },
+  {
+    "id": 69.2,
+    "card": {
+      "title": "ProMedica celebrates 35th anniversary of EMS crew",
+      "description": "Last week, ProMedica Air and Mobile celebrated its 35th anniversary of delivering the highest quality of patient care to Toledo.",
+      "linkSrc": "https://youtu.be/Ba7PRMGHQv0",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/garber-james.jpg",
+      "imgAlt": " ProMedica celebrates 35th anniversary of EMS crew"
     }
   },
   {
@@ -5084,23 +5084,23 @@
   {
     "id": 78,
     "card": {
-      "title": "WTOL 11: ProMedica strives to stop distracted driving with simulator",
-      "description": "Taylor Meehan, ProMedica Russell J. Ebeid Children’s Hospital injury prevention specialist, expresses the importance of educated teenag",
-      "linkSrc": "https://youtu.be/3zh_i9w-fIo",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/wtol-distracted-driving.jpg",
-      "imgAlt": "WTOL 11: ProMedica strives to stop distracted driving with simulator"
-    }
-  },
-  {
-    "id": 78.1,
-    "card": {
       "title": "WTOL 11: Lucas Co. programs helps homebound residents get COVID-19 vaccine",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, addresses the community effort of local health systems comi",
       "linkSrc": "https://youtu.be/Rec1C7jmON0",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/bk-lucas-co-programs-helps-homebound-residents-get-covid-19-vaccin.jpg",
       "imgAlt": "WTOL 11: Lucas Co. programs helps homebound residents get COVID-19 vaccine"
+    }
+  },
+  {
+    "id": 78.1,
+    "card": {
+      "title": "WTOL 11: Michigan Medicine & other hospitals pausing elective procedures amid COVID surge",
+      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety reacts to the announcement of some Michigan hospitals resche",
+      "linkSrc": "https://youtu.be/gY16V2hZqo0",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/bk-michigan-medicine-other-hospitals-pausing-elective-procedures-amid-covid-surge.jpg",
+      "imgAlt": "WTOL 11: Michigan Medicine & other hospitals pausing elective procedures amid COVID surge"
     }
   },
   {
@@ -5425,23 +5425,23 @@
   {
     "id": 83.1,
     "card": {
-      "title": "NBC 24: Does double-masking provide more protection?",
-      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, discusses the Centers for Disease Control and Prevention’s",
-      "linkSrc": "https://youtu.be/N9boFgHPNdA",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/bk-does-double-masking-provide-more-protection.jpg",
-      "imgAlt": "NBC 24: Does double-masking provide more protection?"
-    }
-  },
-  {
-    "id": 83.2,
-    "card": {
       "title": "WTOL 11: One year later: Toledo health leaders reflect on coronavirus battle",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, reflects on the past year as we mark the one-year anniversa",
       "linkSrc": "https://youtu.be/Jws-nALo2Qc",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/bk-one-year-later-toledo-health-leaders-reflect-on-coronavirus-battle.jpg",
       "imgAlt": "WTOL 11: One year later: Toledo health leaders reflect on coronavirus battle"
+    }
+  },
+  {
+    "id": 83.2,
+    "card": {
+      "title": "NBC 24: Does double-masking provide more protection?",
+      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, discusses the Centers for Disease Control and Prevention’s",
+      "linkSrc": "https://youtu.be/N9boFgHPNdA",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/bk-does-double-masking-provide-more-protection.jpg",
+      "imgAlt": "NBC 24: Does double-masking provide more protection?"
     }
   },
   {
@@ -6008,6 +6008,17 @@
   {
     "id": 92,
     "card": {
+      "title": "WTOL 11: How cold weather could affect your health",
+      "description": "Mike Mattin, MD, medical director of ProMedica Toledo and Russel J. Ebeid Children’s Hospitals, discusses how colder temperatures can a",
+      "linkSrc": "https://youtu.be/b_U-v7fEtB0",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/mattin-mike.jpg",
+      "imgAlt": "WTOL 11: How cold weather could affect your health"
+    }
+  },
+  {
+    "id": 92.1,
+    "card": {
       "title": "13abc: Vaccines for local school employees",
       "description": "As a guest on a virtual meeting for employees of local K-12 schools led by the V Project, Brian Kaminski, DO, ProMedica vice president",
       "linkSrc": "https://youtu.be/eU7Uk9E9dtw",
@@ -6017,7 +6028,7 @@
     }
   },
   {
-    "id": 92.1,
+    "id": 92.2,
     "card": {
       "title": "NBC 24: ProMedica doctor talks new coronavirus variants, vaccine effectiveness",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, eases concerns over the available COVID-19 vaccines not bei",
@@ -6028,7 +6039,7 @@
     }
   },
   {
-    "id": 92.2,
+    "id": 92.3,
     "card": {
       "title": "WTOL 11: Double-masking is logical, but lack of data makes added safety unclear",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, answers the question of whether or not two masks are truly",
@@ -6039,7 +6050,7 @@
     }
   },
   {
-    "id": 92.3,
+    "id": 92.4,
     "card": {
       "title": "13abc: Outdoor events returning this summer",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, expresses his optimism for outdoor events to resume this su",
@@ -6050,7 +6061,7 @@
     }
   },
   {
-    "id": 92.4,
+    "id": 92.5,
     "card": {
       "title": "WTOL 11: Doctor's Orders Exercise tips for older adults",
       "description": "Erica Martin, MD, ProMedica Physicians Family and Sports Medicine, explains the importance of getting 150 minutes of moderate exercise",
@@ -6058,17 +6069,6 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/exercise-for-older-adults.jpg",
       "imgAlt": "WTOL 11: Doctor's Orders Exercise tips for older adults"
-    }
-  },
-  {
-    "id": 92.5,
-    "card": {
-      "title": "WTOL 11: How cold weather could affect your health",
-      "description": "Mike Mattin, MD, medical director of ProMedica Toledo and Russel J. Ebeid Children’s Hospitals, discusses how colder temperatures can a",
-      "linkSrc": "https://youtu.be/b_U-v7fEtB0",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/2021/mattin-mike.jpg",
-      "imgAlt": "WTOL 11: How cold weather could affect your health"
     }
   },
   {
@@ -6778,23 +6778,23 @@
   {
     "id": 103.4,
     "card": {
-      "title": "WTOL 11 Setting the record straight on common COVID-19 myths",
-      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, addresses 16 WTOL 11 viewers’ questions regarding the COVID",
-      "linkSrc": "https://youtu.be/JSo9xuCl26Q",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/bk-setting-the-record-straight-on-common-covid-19-myths.jpg",
-      "imgAlt": "WTOL 11 Setting the record straight on common COVID-19 myths"
-    }
-  },
-  {
-    "id": 103.5,
-    "card": {
       "title": "WTOL 11 Paramount encouraging pediatric immunizations",
       "description": "WTOL 11: Paramount encouraging pediatric immunizations",
       "linkSrc": "https://youtu.be/BAjKkQ0cz1o",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/paramount-immunizations.jpg",
       "imgAlt": "WTOL 11 Paramount encouraging pediatric immunizations"
+    }
+  },
+  {
+    "id": 103.5,
+    "card": {
+      "title": "WTOL 11 Setting the record straight on common COVID-19 myths",
+      "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, addresses 16 WTOL 11 viewers’ questions regarding the COVID",
+      "linkSrc": "https://youtu.be/JSo9xuCl26Q",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/bk-setting-the-record-straight-on-common-covid-19-myths.jpg",
+      "imgAlt": "WTOL 11 Setting the record straight on common COVID-19 myths"
     }
   },
   {
@@ -7262,23 +7262,23 @@
   {
     "id": 111,
     "card": {
-      "title": "WTOL 11 Super Fitness Weight Loss Challenge – Doctor’s Orders Healthy habits start at home",
-      "description": "Erica Martin, MD, ProMedica Physicians Family and Sports Medicine, offers advice to parents for healthier eating habits for their child",
-      "linkSrc": "https://youtu.be/Jql_mmU5lrM",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/news/martin-erica.jpg",
-      "imgAlt": "WTOL 11 Super Fitness Weight Loss Challenge – Doctor’s Orders Healthy habits start at home"
-    }
-  },
-  {
-    "id": 111.1,
-    "card": {
       "title": "WTOL 11 Sandusky County looking at hospital capacity as it goes red",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, explains how the community can help smaller, rural hospital",
       "linkSrc": "https://youtu.be/gUBHJWEhh74",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/news/bk-sandusky-county-looking-at-hospital-capacity-as-it-goes-red.jpg",
       "imgAlt": "WTOL 11 Sandusky County looking at hospital capacity as it goes red"
+    }
+  },
+  {
+    "id": 111.1,
+    "card": {
+      "title": "WTOL 11 Super Fitness Weight Loss Challenge – Doctor’s Orders Healthy habits start at home",
+      "description": "Erica Martin, MD, ProMedica Physicians Family and Sports Medicine, offers advice to parents for healthier eating habits for their child",
+      "linkSrc": "https://youtu.be/Jql_mmU5lrM",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/news/martin-erica.jpg",
+      "imgAlt": "WTOL 11 Super Fitness Weight Loss Challenge – Doctor’s Orders Healthy habits start at home"
     }
   },
   {
@@ -8780,28 +8780,6 @@
   {
     "id": 134,
     "card": {
-      "title": "WLEN: Additional Safety Features to be Added at New ProMedica Hospital; Results in Delayed Opening",
-      "description": "The opening date of the new ProMedica Charles and Virginia Hickman Hospital is looking at a short delay to equip the hospital with addi",
-      "linkSrc": "https://www.wlen.com/2020/05/28/additional-safety-features-to-be-added-at-new-promedica-hospital-results-in-delayed-opening/",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/announcements/wlen-additional-safety-features-to-be-added-at-new-promedica-hospital-results-in-delayed-opening_jpg.jpg",
-      "imgAlt": "WLEN: Additional Safety Features to be Added at New ProMedica Hospital; Results in Delayed Opening"
-    }
-  },
-  {
-    "id": 134.1,
-    "card": {
-      "title": "WTOL 11: Insulin cap could help many northwest Ohio diabetics on Medicare",
-      "description": "Rachel Rocha, ProMedica pharmacist and certified diabetes educator, shares how the cost of insulin becomes a major and sometimes danger",
-      "linkSrc": "https://youtu.be/qq7WHC7PhHs",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-physicians-group/wtol-11-insulin-cap-could-help-many-northwest-ohio-diabetics-on-medicare_jpg.jpg",
-      "imgAlt": "WTOL 11: Insulin cap could help many northwest Ohio diabetics on Medicare"
-    }
-  },
-  {
-    "id": 134.2,
-    "card": {
       "title": "WTOL 11: VERIFY - Even with precautions, can grocery bags carry COVID-19?",
       "description": "Grocery stores — like many businesses — have taken precautions to keep us safe. But even with safety measures in place, can the simples",
       "linkSrc": "https://youtu.be/dyyZQS144f8",
@@ -8811,7 +8789,7 @@
     }
   },
   {
-    "id": 134.3,
+    "id": 134.1,
     "card": {
       "title": "WTOL 11: How to protect kids as they return to the sports fields",
       "description": "Matthew Rennels, DO, ProMedica Physician, gives advice on how to keep children safe as they return to the sports fields.",
@@ -8822,18 +8800,29 @@
     }
   },
   {
-    "id": 134.4,
+    "id": 134.2,
     "card": {
-      "title": "WTOL 11: Local doctor and mother talks about life on the front lines",
-      "description": "Jessica Gombash, DO, ProMedica physician emergency medicine, explains the process she takes to ensure the safety of her family being a",
-      "linkSrc": "https://youtu.be/cTWwFh2WtaE",
+      "title": "The Daily Telegram: ProMedica delays hospital opening",
+      "description": "The ProMedica Charles and Virginia Hickman Hospital is now scheduled to open to patients on Sept. 24, about a month later than original",
+      "linkSrc": "https://www.lenconnect.com/news/20200527/promedica-delays-hospital-opening",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/wtol-11-local-doctor-and-mother-talks-about-life-on-the-front-lines_png.jpg",
-      "imgAlt": "WTOL 11: Local doctor and mother talks about life on the front lines"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/announcements/the-daily-telegram-promedica-delays-hospital-opening_jpg.jpg",
+      "imgAlt": "The Daily Telegram: ProMedica delays hospital opening"
     }
   },
   {
-    "id": 134.5,
+    "id": 134.3,
+    "card": {
+      "title": "WLEN: Additional Safety Features to be Added at New ProMedica Hospital; Results in Delayed Opening",
+      "description": "The opening date of the new ProMedica Charles and Virginia Hickman Hospital is looking at a short delay to equip the hospital with addi",
+      "linkSrc": "https://www.wlen.com/2020/05/28/additional-safety-features-to-be-added-at-new-promedica-hospital-results-in-delayed-opening/",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/announcements/wlen-additional-safety-features-to-be-added-at-new-promedica-hospital-results-in-delayed-opening_jpg.jpg",
+      "imgAlt": "WLEN: Additional Safety Features to be Added at New ProMedica Hospital; Results in Delayed Opening"
+    }
+  },
+  {
+    "id": 134.4,
     "card": {
       "title": "Review-Times: City’s hospital celebrating 90th",
       "description": "Becky Bouillon recalls coming home from school as a youngster, seeing “General Hospital” on TV and wanting to be like nurse character J",
@@ -8841,6 +8830,17 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-hospitals/review-times-citys-hospital-celebrating-90th_jpg.jpg",
       "imgAlt": "Review-Times: City’s hospital celebrating 90th"
+    }
+  },
+  {
+    "id": 134.5,
+    "card": {
+      "title": "WTOL 11: Local doctor and mother talks about life on the front lines",
+      "description": "Jessica Gombash, DO, ProMedica physician emergency medicine, explains the process she takes to ensure the safety of her family being a",
+      "linkSrc": "https://youtu.be/cTWwFh2WtaE",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/wtol-11-local-doctor-and-mother-talks-about-life-on-the-front-lines_png.jpg",
+      "imgAlt": "WTOL 11: Local doctor and mother talks about life on the front lines"
     }
   },
   {
@@ -8857,6 +8857,17 @@
   {
     "id": 135.1,
     "card": {
+      "title": "Review-Times: Nurse practitioner joins ProMedica Physicians",
+      "description": "Certified nurse practitioner Assumpta Nnaji is a new addition to ProMedica Physicians Family Medicine, located at 501 Van Buren St., Su",
+      "linkSrc": "https://reviewtimes.com/local-news/2020/05/21/nurse-practitioner-joins-promedica-physicians/",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-physicians-group/review-times-nurse-practitioner-joins-promedica-physicians_jpg.jpg",
+      "imgAlt": "Review-Times: Nurse practitioner joins ProMedica Physicians"
+    }
+  },
+  {
+    "id": 135.2,
+    "card": {
       "title": "NBC 24: Marina Lofts tour provides a glimpse of East Toledo riverfront revitalization",
       "description": "In a collaborative effort between ProMedica, Continental Real Estate Companies and the MetorParks Toledo, an update on the East Toledo",
       "linkSrc": "https://youtu.be/etuFEbRPggU",
@@ -8866,7 +8877,7 @@
     }
   },
   {
-    "id": 135.2,
+    "id": 135.3,
     "card": {
       "title": "WTOL 11: COVID-19 concerns at the pool or lake",
       "description": "How likely is it that one would contract COVID-19 while swimming? Brian Kaminski, DO, ProMedica vice president of quality and patient s",
@@ -8877,7 +8888,7 @@
     }
   },
   {
-    "id": 135.3,
+    "id": 135.4,
     "card": {
       "title": "WTOL 11: Is mandating masks constitutionally protected in Ohio?",
       "description": "Brian Kaminski, DO, ProMedica vice president of quality and patient safety, discusses the benefits of wearing a mask in public even tho",
@@ -8888,7 +8899,7 @@
     }
   },
   {
-    "id": 135.4,
+    "id": 135.5,
     "card": {
       "title": "13abc: Investing in Toledo post COVID",
       "description": "Randy Oostra, ProMedica president and CEO, explains that projects in place to revitalize Toledo must continue to move forward but may p",
@@ -8896,17 +8907,6 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/13abc-investing-in-toledo-post-covid_png.jpg",
       "imgAlt": "13abc: Investing in Toledo post COVID"
-    }
-  },
-  {
-    "id": 135.5,
-    "card": {
-      "title": "Review-Times: Nurse practitioner joins ProMedica Physicians",
-      "description": "Certified nurse practitioner Assumpta Nnaji is a new addition to ProMedica Physicians Family Medicine, located at 501 Van Buren St., Su",
-      "linkSrc": "https://reviewtimes.com/local-news/2020/05/21/nurse-practitioner-joins-promedica-physicians/",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-physicians-group/review-times-nurse-practitioner-joins-promedica-physicians_jpg.jpg",
-      "imgAlt": "Review-Times: Nurse practitioner joins ProMedica Physicians"
     }
   },
   {
@@ -9363,12 +9363,12 @@
   {
     "id": 142.5,
     "card": {
-      "title": "WTOL 11: ProMedica hospitals prepare to begin elective surgeries",
-      "description": "Brian Kaminski, DO, ProMedica vice president of quality and safety, provides an insight into the process ProMedica is taking to start e",
-      "linkSrc": "https://youtu.be/oZ0dsPnmVZg",
+      "title": "WTOL 11: Daughter spends weeks battling COVID-19 in ICU, learns disease claimed the life of her mom",
+      "description": "Behind the daily numbers are real people with stories of triumph and tragedy. Please join us in honoring them.",
+      "linkSrc": "https://youtu.be/yp6DV97YDJY",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/wtol-11-promedica-hospitals-prepare-to-begin-elective-surgeries_png.jpg",
-      "imgAlt": "WTOL 11: ProMedica hospitals prepare to begin elective surgeries"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/wtol-11-daughter-spends-weeks-battling-covid-19-in-icu-learns-disease-claimed-the-life-of-her-mom_png.jpg",
+      "imgAlt": "WTOL 11: Daughter spends weeks battling COVID-19 in ICU, learns disease claimed the life of her mom"
     }
   },
   {
@@ -9946,23 +9946,23 @@
   {
     "id": 151.4,
     "card": {
+      "title": "NBC 24: Commonly Contaminated Surfaces",
+      "description": "Brian Kaminski, DO, ProMedica vice president of Quality and Safety, advises on sanitizing surfaces and how long the coronavirus can las",
+      "linkSrc": "https://youtu.be/1lafCK9xHQE",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/nbc-24-commonly-contaminated-surfaces_png.jpg",
+      "imgAlt": "NBC 24: Commonly Contaminated Surfaces"
+    }
+  },
+  {
+    "id": 151.5,
+    "card": {
       "title": "13abc: Tele-medicine becomes the norm as COVID-19 forces patients online",
       "description": "Major health organizations in the area are now foregoing in-office patient visits and transitioning to tele-medicine appointments. Bria",
       "linkSrc": "https://youtu.be/E2Tu8uyYJPo",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/covid19/13abc-tele-medicine-becomes-the-norm-as-covid-19-forces-patients-online_jpg.jpg",
       "imgAlt": "13abc: Tele-medicine becomes the norm as COVID-19 forces patients online"
-    }
-  },
-  {
-    "id": 151.5,
-    "card": {
-      "title": "NBC 24: Doctors are seeing patients virtually as in-person appointments are being postponed",
-      "description": "During this time many medical offices are rescheduling nonessential patient visits. Dee Bialecki-Haase, MD, ProMedica Chief Medical Off",
-      "linkSrc": "https://youtu.be/XtcREiUZWK8",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/clinical-excellence/nbc-24-doctors-are-seeing-patients-virtually-as-in-person-appointments-are-being-postponed_png.jpg",
-      "imgAlt": "NBC 24: Doctors are seeing patients virtually as in-person appointments are being postponed"
     }
   },
   {
@@ -10342,23 +10342,23 @@
   {
     "id": 157.4,
     "card": {
-      "title": "WTOL: How sodium sneaks into our diet",
-      "description": "Liz Satterthwaite, ProMedica dietitian, explains that sticking to a low-sodium diet can help lower your blood pressure.",
-      "linkSrc": "https://youtu.be/TjA4R46xryM",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-how-sodium-sneaks-into-our-diet_png.jpg",
-      "imgAlt": "WTOL: How sodium sneaks into our diet"
-    }
-  },
-  {
-    "id": 157.5,
-    "card": {
       "title": "WTOL: ProMedica launches Men's Health and Wellness program",
       "description": "Brian Dolsey, MD, ProMedica physician cardiology, and Robin Charney, community liaison at the ProMedica Cancer Institute, speak on the",
       "linkSrc": "https://youtu.be/BoZ0ebpemJo",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-promedica-launches-mens-health-and-wellness-program_png.jpg",
       "imgAlt": "WTOL: ProMedica launches Men's Health and Wellness program"
+    }
+  },
+  {
+    "id": 157.5,
+    "card": {
+      "title": "WTOL: How sodium sneaks into our diet",
+      "description": "Liz Satterthwaite, ProMedica dietitian, explains that sticking to a low-sodium diet can help lower your blood pressure.",
+      "linkSrc": "https://youtu.be/TjA4R46xryM",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-how-sodium-sneaks-into-our-diet_png.jpg",
+      "imgAlt": "WTOL: How sodium sneaks into our diet"
     }
   },
   {
@@ -10529,6 +10529,28 @@
   {
     "id": 160.3,
     "card": {
+      "title": "NBC 24: ProMedica opens first local sickle cell clinic for adult patients",
+      "description": "Adults with sickle cell disease, a group of inherited red blood cell disorders, can now get treatment at ProMedica Toledo Hospital.",
+      "linkSrc": "https://youtu.be/ikIrPrEk4Hg",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/nbc-24-promedica-opens-first-local-sickle-cell-clinic-for-adult-patients_png.jpg",
+      "imgAlt": "NBC 24: ProMedica opens first local sickle cell clinic for adult patients"
+    }
+  },
+  {
+    "id": 160.4,
+    "card": {
+      "title": "13abc: Toledo Hospital adds adult sickle cell clinic",
+      "description": "Sickle cell disease patients are living longer than ever. With more adult patients comes a need for more doctors and facilities to trea",
+      "linkSrc": "https://youtu.be/U6DnoJUcTjA",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-toledo-hospital-adds-adult-sickle-cell-clinic_png.jpg",
+      "imgAlt": "13abc: Toledo Hospital adds adult sickle cell clinic"
+    }
+  },
+  {
+    "id": 160.5,
+    "card": {
       "title": "NBC 24: FICO scores are expected to change this coming summer",
       "description": "NBC 24: Millions of Americans will be seeing a change to their FICO credit score coming up later this year. Michelle Gorsuch, ProMedica",
       "linkSrc": "https://youtu.be/ExrvxHAUEi4",
@@ -10538,7 +10560,7 @@
     }
   },
   {
-    "id": 160.4,
+    "id": 161,
     "card": {
       "title": "WTOL: Report calls out automakers to prioritize kids’ safety in self-driving cars",
       "description": "Autonomous cars are becoming more popular as they appear as the stars of auto shows worldwide, but how safe are they for kids? Gina Ver",
@@ -10549,7 +10571,7 @@
     }
   },
   {
-    "id": 160.5,
+    "id": 161.1,
     "card": {
       "title": "WTOL: New Adult sickle cell clinic opens at ProMedica Toledo Hospital",
       "description": "ProMedica Toledo Hospital will now be able to treat adult patients with sickle cell disease. With the new addition, Crawford Strunk, MD",
@@ -10557,28 +10579,6 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-new-adult-sickle-cell-clinic-opens-at-promedica-toledo-hospital_png.jpg",
       "imgAlt": "WTOL: New Adult sickle cell clinic opens at ProMedica Toledo Hospital"
-    }
-  },
-  {
-    "id": 161,
-    "card": {
-      "title": "NBC 24: ProMedica opens first local sickle cell clinic for adult patients",
-      "description": "Adults with sickle cell disease, a group of inherited red blood cell disorders, can now get treatment at ProMedica Toledo Hospital.",
-      "linkSrc": "https://youtu.be/ikIrPrEk4Hg",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/nbc-24-promedica-opens-first-local-sickle-cell-clinic-for-adult-patients_png.jpg",
-      "imgAlt": "NBC 24: ProMedica opens first local sickle cell clinic for adult patients"
-    }
-  },
-  {
-    "id": 161.1,
-    "card": {
-      "title": "13abc: Toledo Hospital adds adult sickle cell clinic",
-      "description": "Sickle cell disease patients are living longer than ever. With more adult patients comes a need for more doctors and facilities to trea",
-      "linkSrc": "https://youtu.be/U6DnoJUcTjA",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-toledo-hospital-adds-adult-sickle-cell-clinic_png.jpg",
-      "imgAlt": "13abc: Toledo Hospital adds adult sickle cell clinic"
     }
   },
   {
@@ -10628,23 +10628,23 @@
   {
     "id": 162,
     "card": {
-      "title": "13abc: Ask the Expert 1/29/2020",
-      "description": "Judith Furlong, MD, ProMedica Physicians Family Medicine, answers questions regarding how to distinguish the differences between cold s",
-      "linkSrc": "https://youtu.be/9ulCPWBcbOw",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-ask-the-expert-1292020_png.jpg",
-      "imgAlt": "13abc: Ask the Expert 1/29/2020"
-    }
-  },
-  {
-    "id": 162.1,
-    "card": {
       "title": "NBC 24: Symptoms, treatments and detection of gastrointestinal cancers",
       "description": "Mahmood Darr, MD, ProMedica Physicians Internal Medicine, expresses the importance of discussing your symptoms of gastrointestinal canc",
       "linkSrc": "https://youtu.be/d7ukRDgw0Eg",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/nbc-24-symptoms-treatments-and-detection-of-gastrointestinal-cancers_png.jpg",
       "imgAlt": "NBC 24: Symptoms, treatments and detection of gastrointestinal cancers"
+    }
+  },
+  {
+    "id": 162.1,
+    "card": {
+      "title": "13abc: Ask the Expert 1/29/2020",
+      "description": "Judith Furlong, MD, ProMedica Physicians Family Medicine, answers questions regarding how to distinguish the differences between cold s",
+      "linkSrc": "https://youtu.be/9ulCPWBcbOw",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-ask-the-expert-1292020_png.jpg",
+      "imgAlt": "13abc: Ask the Expert 1/29/2020"
     }
   },
   {
@@ -11475,23 +11475,23 @@
   {
     "id": 174.5,
     "card": {
-      "title": "WTOL: What is CBD oil?",
-      "description": "John C Evanoff, MD, ProMedica Physicians Family Medicine - Metamora, explains what CBD oil is and what you need to know.",
-      "linkSrc": "https://youtu.be/4s6FXnZm8mg",
+      "title": "13abc: ProMedica and Columbia Gas of Ohio announced support for the Ebeid Neighborhood Promise",
+      "description": "Together, ProMedica and Columbia Gas of Ohio are supporting efforts of the Ebeid Neighborhood Promise (ENP) thanks to a $50,000 grant f",
+      "linkSrc": "https://www.toledoblade.com/development/2019/11/26/promedica-columbia-gas-of-ohio-support-toledo-housing-program",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-what-is-cbd-oil_png.jpg",
-      "imgAlt": "WTOL: What is CBD oil?"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/social-determinants-of-health/13abc-promedica-and-columbia-gas-of-ohio-announced-support-for-the-ebeid-neighborhood-promise_jpg.jpg",
+      "imgAlt": "13abc: ProMedica and Columbia Gas of Ohio announced support for the Ebeid Neighborhood Promise "
     }
   },
   {
     "id": 175,
     "card": {
-      "title": "WTOL: What is CBD oil?",
-      "description": "John C Evanoff, MD, ProMedica Physicians Family Medicine - Metamora, explains what CBD oil is and what you need to know.",
-      "linkSrc": "https://youtu.be/4s6FXnZm8mg",
+      "title": "13abc: ProMedica and Columbia Gas of Ohio announced support for the Ebeid Neighborhood Promise",
+      "description": "Together, ProMedica and Columbia Gas of Ohio are supporting efforts of the Ebeid Neighborhood Promise (ENP) thanks to a $50,000 grant f",
+      "linkSrc": "https://www.toledoblade.com/development/2019/11/26/promedica-columbia-gas-of-ohio-support-toledo-housing-program",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/wtol-what-is-cbd-oil_png.jpg",
-      "imgAlt": "WTOL: What is CBD oil?"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/social-determinants-of-health/13abc-promedica-and-columbia-gas-of-ohio-announced-support-for-the-ebeid-neighborhood-promise_jpg.jpg",
+      "imgAlt": "13abc: ProMedica and Columbia Gas of Ohio announced support for the Ebeid Neighborhood Promise "
     }
   },
   {
@@ -11673,23 +11673,23 @@
   {
     "id": 177.5,
     "card": {
-      "title": "Crescent News: ProMedica doctors demo DaVinci robot",
-      "description": "Robotic-assisted surgery has been available for about three decades now.",
-      "linkSrc": "https://www.crescent-news.com/news/local_health/promedica-doctors-demo-davinci-robot/article_0f069b7d-7501-5fe3-b0b0-6988faa92b49.html",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/crescent-news-promedica-doctors-demo-davinci-robot_jpg.jpg",
-      "imgAlt": "Crescent News: ProMedica doctors demo DaVinci robot"
-    }
-  },
-  {
-    "id": 178,
-    "card": {
       "title": "Crescent-News: Local podiatrist offers tips for student athletes",
       "description": "Dr. Matthew Reiner, DPM is a board-certified foot and ankle surgeon at ProMedica Defiance Regional Hospital. His interest in foot and a",
       "linkSrc": "https://www.crescent-news.com/news/local_health/local-podiatrist-offers-tips-for-student-athletes/article_92ef672d-93be-527b-845d-0e47a54fe45b.html",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/crescent-news-local-podiatrist-offers-tips-for-student-athletes_jpg.jpg",
       "imgAlt": "Crescent-News: Local podiatrist offers tips for student athletes"
+    }
+  },
+  {
+    "id": 178,
+    "card": {
+      "title": "Crescent News: ProMedica doctors demo DaVinci robot",
+      "description": "Robotic-assisted surgery has been available for about three decades now.",
+      "linkSrc": "https://www.crescent-news.com/news/local_health/promedica-doctors-demo-davinci-robot/article_0f069b7d-7501-5fe3-b0b0-6988faa92b49.html",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/crescent-news-promedica-doctors-demo-davinci-robot_jpg.jpg",
+      "imgAlt": "Crescent News: ProMedica doctors demo DaVinci robot"
     }
   },
   {
@@ -11761,17 +11761,6 @@
   {
     "id": 179.1,
     "card": {
-      "title": "WTOL: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital",
-      "description": "If a situation arises at ProMedica Toledo Children’s Hospital, never fear, because the superheroes are here! For the sixth year in a ro",
-      "linkSrc": "https://youtu.be/XJ7suE6GZJ0",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/wtol-superheroes-display-halloween-heroism-at-promedica-toledo-childrens-hospital_jpg.jpg",
-      "imgAlt": "WTOL: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital"
-    }
-  },
-  {
-    "id": 179.2,
-    "card": {
       "title": "Provider: ProMedica HCR ManorCare Sees Great Potential in Meals Program",
       "description": "​David Parker, president, ProMedica HCR ManorCare, tells Provider that the organization’s Meals-to-Go program to ensure patients who ar",
       "linkSrc": "http://www.providermagazine.com/news/Pages/2019/1019/ProMedica-HCR-ManorCare-Sees-Great-Potential-in-Meals-Program.aspx",
@@ -11781,7 +11770,7 @@
     }
   },
   {
-    "id": 179.3,
+    "id": 179.2,
     "card": {
       "title": "WTOL: Ways to have a healthy Halloween",
       "description": "Liz Satterthwaite, ProMedica dietitian, talks about ways parents can keep their children satisfied with their Halloween treats.",
@@ -11792,51 +11781,40 @@
     }
   },
   {
+    "id": 179.3,
+    "card": {
+      "title": "WTOL: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital",
+      "description": "If a situation arises at ProMedica Toledo Children’s Hospital, never fear, because the superheroes are here! For the sixth year in a ro",
+      "linkSrc": "https://youtu.be/XJ7suE6GZJ0",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/wtol-superheroes-display-halloween-heroism-at-promedica-toledo-childrens-hospital_jpg.jpg",
+      "imgAlt": "WTOL: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital"
+    }
+  },
+  {
     "id": 179.4,
     "card": {
-      "title": "NBC 24: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital",
-      "description": "If a situation arises at ProMedica Toledo Children’s Hospital, never fear, because the superheroes are here! For the sixth year in a ro",
-      "linkSrc": "https://youtu.be/Ok9kIAdInG4",
+      "title": "NBC 24: Mass casualty exercise at ProMedica Monroe Regional Hospital",
+      "description": "ProMedica Monroe Regional Hospital participated in a mass casualty drill.",
+      "linkSrc": "https://youtu.be/hJbCH3ffkIg",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/nbc-24-superheroes-display-halloween-heroism-at-promedica-toledo-childrens-hospital_jpg.jpg",
-      "imgAlt": "NBC 24: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-hospitals/nbc-24-mass-casualty-exercise-at-promedica-monroe-regional-hospital_jpg.jpg",
+      "imgAlt": "NBC 24: Mass casualty exercise at ProMedica Monroe Regional Hospital"
     }
   },
   {
     "id": 179.5,
     "card": {
-      "title": "The Blade: Superhero SWAT members swing down for children's hospital visit",
-      "description": "Not all children can be out and about on Halloween, such as the young patients at ProMedica Toledo Children’s Hospital.",
-      "linkSrc": "https://www.toledoblade.com/local/community-events/2019/10/30/superhero-swat-police-visit-promedica-toledo-children-hospital/stories/20191030182",
+      "title": "13abc: Ask the Expert - 10/30/19",
+      "description": "Judith Furlong, MD, ProMedica Physicians Family Medicine, answers questions about food allergies and adjusting your sleep schedule for",
+      "linkSrc": "https://youtu.be/I2xyA_Mhyz0",
       "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/the-blade-superhero-swat-members-swing-down-for-childrens-hospital-visit_jpg.jpg",
-      "imgAlt": "The Blade: Superhero SWAT members swing down for children's hospital visit"
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-ask-the-expert-103019_png.jpg",
+      "imgAlt": "13abc: Ask the Expert - 10/30/19"
     }
   },
   {
     "id": 180,
-    "card": {
-      "title": "NBC 24: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital",
-      "description": "If a situation arises at ProMedica Toledo Children’s Hospital, never fear, because the superheroes are here! For the sixth year in a ro",
-      "linkSrc": "https://youtu.be/Ok9kIAdInG4",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/nbc-24-superheroes-display-halloween-heroism-at-promedica-toledo-childrens-hospital_jpg.jpg",
-      "imgAlt": "NBC 24: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital"
-    }
-  },
-  {
-    "id": 180.1,
-    "card": {
-      "title": "The Blade: Superhero SWAT members swing down for children's hospital visit",
-      "description": "Not all children can be out and about on Halloween, such as the young patients at ProMedica Toledo Children’s Hospital.",
-      "linkSrc": "https://www.toledoblade.com/local/community-events/2019/10/30/superhero-swat-police-visit-promedica-toledo-children-hospital/stories/20191030182",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/the-blade-superhero-swat-members-swing-down-for-childrens-hospital-visit_jpg.jpg",
-      "imgAlt": "The Blade: Superhero SWAT members swing down for children's hospital visit"
-    }
-  },
-  {
-    "id": 180.2,
     "card": {
       "title": "13abc: Superheroes display Halloween heroism at ProMedica Toledo Children’s Hospital",
       "description": "If a situation arises at ProMedica Toledo Children’s Hospital, never fear, because the superheroes are here! For the sixth year in a ro",
@@ -11847,7 +11825,7 @@
     }
   },
   {
-    "id": 180.3,
+    "id": 180.1,
     "card": {
       "title": "NBC 24: Food allergy safety around Halloween",
       "description": "David Marquardt, MD, ProMedica Toledo Children’s Hospital pediatric critical care physician, discusses the symptoms of an allergic reac",
@@ -11855,6 +11833,28 @@
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/nbc-24-food-allergy-safety-around-halloween_jpg.jpg",
       "imgAlt": "NBC 24: Food allergy safety around Halloween"
+    }
+  },
+  {
+    "id": 180.2,
+    "card": {
+      "title": "NBC 24: Mass casualty exercise at ProMedica Monroe Regional Hospital",
+      "description": "ProMedica Monroe Regional Hospital participated in a mass casualty drill.",
+      "linkSrc": "https://youtu.be/hJbCH3ffkIg",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/promedica-hospitals/nbc-24-mass-casualty-exercise-at-promedica-monroe-regional-hospital_jpg.jpg",
+      "imgAlt": "NBC 24: Mass casualty exercise at ProMedica Monroe Regional Hospital"
+    }
+  },
+  {
+    "id": 180.3,
+    "card": {
+      "title": "13abc: Ask the Expert - 10/30/19",
+      "description": "Judith Furlong, MD, ProMedica Physicians Family Medicine, answers questions about food allergies and adjusting your sleep schedule for",
+      "linkSrc": "https://youtu.be/I2xyA_Mhyz0",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/diseases-and-conditions/13abc-ask-the-expert-103019_png.jpg",
+      "imgAlt": "13abc: Ask the Expert - 10/30/19"
     }
   },
   {
@@ -12179,23 +12179,23 @@
   {
     "id": 185.3,
     "card": {
-      "title": "13abc: Zantac safety concerns",
-      "description": "Bryan Coehrs, PharmD RPh, director of pharmacy operations at ProMedica, discusses current Zantac safety concerns and alternatives that",
-      "linkSrc": "https://youtu.be/4ywADxwL6f4",
-      "linkText": "More ",
-      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/13abc-zantac-safety-concerns_png.jpg",
-      "imgAlt": "13abc: Zantac safety concerns"
-    }
-  },
-  {
-    "id": 185.4,
-    "card": {
       "title": "WTOL: Maumee Cancer Center anniversary",
       "description": "Kara Hertzfeld, MD, radiation oncologist with ProMedica, discusses the significance of the Maumee Cancer Center and the resources it of",
       "linkSrc": "https://youtu.be/NpW-IRVWk_0",
       "linkText": "More ",
       "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/clinical-excellence/wtol-maumee-cancer-center-anniversary_png.jpg",
       "imgAlt": "WTOL: Maumee Cancer Center anniversary"
+    }
+  },
+  {
+    "id": 185.4,
+    "card": {
+      "title": "13abc: Zantac safety concerns",
+      "description": "Bryan Coehrs, PharmD RPh, director of pharmacy operations at ProMedica, discusses current Zantac safety concerns and alternatives that",
+      "linkSrc": "https://youtu.be/4ywADxwL6f4",
+      "linkText": "More ",
+      "imgSrc": "https://www.promedica.org/assets/images/news/thumbnails/community/13abc-zantac-safety-concerns_png.jpg",
+      "imgAlt": "13abc: Zantac safety concerns"
     }
   },
   {
