@@ -56,7 +56,7 @@ export default async function News() {
         news: articlesPerPage,
       });
 
-      console.log('News Page', i, 'out of', totalPages, 'Done');
+      console.log('News Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
@@ -70,10 +70,60 @@ export default async function News() {
   const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
 
   const jsonContent = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile('./json/ProMedica/newsroom/news.json', jsonContent, 'utf8', (err) => {
+  fs.writeFile('./json/ProMedica/newsroom/News/news.json', jsonContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nNews Imported!\n');
   });
+
+  // ProMedica News content
+  const mergeLinks = mergeItems.map((item) => {
+    if (
+      item.card.linkSrc.startsWith('https://www.promedica.org/') &&
+      item.card.linkSrc !== 'https://www.promedica.org/newsroom/news/?'
+    ) {
+      return item.card.linkSrc;
+    }
+  });
+
+  let newsBody = [];
+  for (let i = 0; i <= mergeLinks.length; i++) {
+    if (mergeLinks[i] !== undefined) {
+      await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
+
+      try {
+        await page.waitForSelector('.ih-content-column');
+
+        const newsTitle = await page.title();
+        const newsContent = await page.$eval('.ih-content-column', (i) => {
+          let content = i.querySelector('#ih-page-body');
+          if (content) content = content.innerHTML;
+          return content;
+        });
+
+        newsBody.push({
+          id: i + 1,
+          title: newsTitle,
+          url: mergeLinks[i],
+          content: newsContent,
+        });
+
+        console.log('News Articles', i + 1, 'Done');
+      } catch (error) {
+        console.log({ error });
+      }
+    }
+  }
+
+  const jsonNewsContent = JSON.stringify(newsBody, null, 2);
+  fs.writeFile(
+    './json/ProMedica/newsroom/News/news-articles.json',
+    jsonNewsContent,
+    'utf8',
+    (err) => {
+      if (err) return console.log(err);
+      console.log('\nNews Articles Imported!\n');
+    }
+  );
 
   await page.close();
   await browser.close();

@@ -58,7 +58,7 @@ export default async function Pressreleases() {
         articles: articlesPerPage,
       });
 
-      console.log('Press Releases Page', i, 'out of', totalPages, 'Done');
+      console.log('Press Releases Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
@@ -84,7 +84,10 @@ export default async function Pressreleases() {
 
   // Press Release content
   const mergeLinks = mergeItems.map((item) => {
-    if (item.card.linkSrc.startsWith('https://www.promedica.org/')) {
+    if (
+      item.card.linkSrc.startsWith('https://www.promedica.org/') &&
+      item.card.linkSrc !== 'https://www.promedica.org/newsroom/press-releases/?'
+    ) {
       return item.card.linkSrc;
     }
   });
@@ -110,7 +113,7 @@ export default async function Pressreleases() {
           content: articleContent,
         });
 
-        console.log('Press Releases Article', i + 1, 'out of', mergeLinks.length, 'Done');
+        console.log('Press Releases Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
       }
