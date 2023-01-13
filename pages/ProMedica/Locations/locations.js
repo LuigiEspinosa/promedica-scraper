@@ -88,7 +88,7 @@ export default async function Locations() {
         locations: locationsPerPage,
       });
 
-      console.log('Locations Page', i, 'out of', totalPages, 'Done');
+      console.log('Locations Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
@@ -147,8 +147,11 @@ export default async function Locations() {
           'ih-static-zone .ih-location-info-box .location-info .location-address',
           (item) => {
             return item.map((location) => {
-              const addressOne = location.querySelector('p:first-child').innerText;
-              const addressTwo = location.querySelector('p:last-child').innerText;
+              let addressOne = location.querySelector('p:nth-child(1)');
+              let addressTwo = location.querySelector('p:nth-child(2)');
+
+              if (addressOne) addressOne = addressOne.innerText;
+              if (addressTwo) addressTwo = addressTwo.innerText;
 
               return {
                 addressOne,
@@ -170,24 +173,172 @@ export default async function Locations() {
           return phone;
         });
 
+        const fax = await page.$eval('ih-static-zone', (i) => {
+          let fax = i.querySelector('.ih-location-info-box > div > p.location-fax');
+          if (fax) fax = fax.innerText;
+          return fax;
+        });
+
+        const campusMap = await page.$eval('ih-static-zone', (i) => {
+          let campusMap = i.querySelector('#downloadMap');
+          if (campusMap) campusMap = campusMap.href;
+          return campusMap;
+        });
+
+        const floorMap = await page.$eval('ih-static-zone', (i) => {
+          let floorMap = i.querySelector('#downloadFirstFloor');
+          if (floorMap) floorMap = floorMap.href;
+          return floorMap;
+        });
+
         const description = await page.$eval('ih-static-zone', (i) => {
           let description = i.querySelector('.form-group.ih-field-locationdescription');
           if (description) description = description.innerHTML;
           return description;
         });
 
+        const virtualTour = await page.$eval('#ih-page-body', (i) => {
+          let virtualTour = i.querySelector('a[href*="tourmkr.com"]');
+          if (virtualTour) virtualTour = virtualTour.href;
+          return virtualTour;
+        });
+
+        const operatingBody = await page.$eval('ih-tabbed-zone', (i) => {
+          let operatingBody = i.querySelector(
+            'div.tab-pane.ng-scope > div > div > div.form-group.ih-field-dynamiccol_locationoperatinghoursbodycopy > div'
+          );
+          if (operatingBody) operatingBody = operatingBody.innerHTML;
+          return operatingBody;
+        });
+
+        const operatingTable = await page.$eval('ih-tabbed-zone', (i) => {
+          let operatingTable = i.querySelector(
+            'div.tab-pane.ng-scope > div > div > div.form-group.ih-field-rawtextwithtokens > div > div[data-location-hours-prefix]'
+          );
+          console.log(operatingTable);
+          if (operatingTable) operatingTable = operatingTable.innerHTML;
+          return operatingTable;
+        });
+
         const operating = await page.$$eval(
-          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope.active > div > div > div.form-group.ih-field-conditionalfield > ul > li',
+          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.form-group.ih-field-conditionalfield > ul > li',
           (item) => {
             let hours = [];
-
-            item.forEach((item) => {
-              hours.push(item.innerText);
-            });
-
+            item.forEach((item) => hours.push(item.innerText));
             return hours;
           }
         );
+
+        const services = await page.$$eval(
+          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > .ih-tab-1 > div',
+          (item) => {
+            let services = [];
+
+            item.forEach((item) => {
+              let serviceName = item.querySelectorAll(
+                '.ih-field-services .ih-field-servicename > div'
+              );
+              if (serviceName) serviceName.forEach((service) => services.push(service.innerText));
+            });
+
+            return services;
+          }
+        );
+
+        const amenities = await page.$$eval(
+          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationamenities > div > ul > li',
+          (item) => {
+            let amenities = [];
+            item.forEach((item) => amenities.push(item.innerText));
+            return amenities;
+          }
+        );
+
+        const education = await page.$$eval(
+          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationeduprogcopy > div > ul > li',
+          (item) => {
+            let education = [];
+            item.forEach((item) => education.push(item.innerText));
+            return education;
+          }
+        );
+
+        const pricing = await page.$eval('.ih-location-detail-middle', (i) => {
+          let pricing = i.querySelector(
+            'ih-static-zone div.pricing-not-empty > div.card > div.cta-card-btm > a'
+          );
+          if (pricing) pricing = pricing.href;
+          return pricing;
+        });
+
+        const volunteer = await page.$eval('#ih-page-footer', (i) => {
+          let volunteer = i.querySelector(
+            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationvolunteeringcopy > div'
+          );
+          console.log(volunteer);
+          if (volunteer) volunteer = volunteer.innerHTML;
+          return volunteer;
+        });
+
+        const foundations = await page.$eval('#ih-page-footer', (i) => {
+          let foundations = i.querySelector(
+            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationfoundationcopy > div'
+          );
+          console.log(foundations);
+          if (foundations) foundations = foundations.innerHTML;
+          return foundations;
+        });
+
+        const PFAC = await page.$eval('#ih-page-footer', (i) => {
+          let PFAC = i.querySelector(
+            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationpfacouncil > div'
+          );
+          console.log(PFAC);
+          if (PFAC) PFAC = PFAC.innerHTML;
+          return PFAC;
+        });
+
+        const providers = await page.$$eval('#resultsWrapper_locationProviders > div', (item) => {
+          return item.map((item) => {
+            let imageSrc = item.querySelector('.card > img');
+            let imageAlt = item.querySelector('.card > img');
+            let name = item.querySelector('.card .prov-name');
+            let gender = item.querySelector('.card[data-gender]');
+            let phone = item.querySelector('.card .prov-phone');
+            let specialty = item.querySelector('.card .prov-specialty');
+            let location = item.querySelector('.card .prov-locations');
+            let newPatients = item.querySelector('.card .prov-accept-new');
+            let details = item.querySelector('.card a.btn.btn-primary');
+
+            if (imageSrc) imageSrc = imageSrc.src;
+            if (imageAlt) imageAlt = imageAlt.alt;
+            if (name) name = name.innerText;
+            if (gender) gender = gender.getAttribute('data-gender');
+            if (phone) phone = phone.innerText;
+            if (specialty) specialty = specialty.innerText;
+            if (location) location = location.innerText;
+            newPatients ? (newPatients = true) : (newPatients = false);
+            if (details) details = details.href;
+
+            return {
+              imageSrc,
+              imageAlt,
+              name,
+              gender,
+              phone,
+              specialty,
+              location,
+              newPatients,
+              details,
+            };
+          });
+        });
+
+        const moreProviders = await page.$eval('#ih-page-footer', (i) => {
+          let moreProviders = i.querySelector('.ih-location-providers #viewAllProviders');
+          if (moreProviders) moreProviders = moreProviders.href;
+          return moreProviders;
+        });
 
         locationsContent.push({
           id: i + 1,
@@ -200,12 +351,27 @@ export default async function Locations() {
             address,
             directions,
             phone,
+            fax,
+            campusMap,
+            floorMap,
             description,
+            virtualTour,
+            operatingBody,
+            operatingTable,
             operating,
+            services,
+            amenities,
+            education,
+            pricing,
+            volunteer,
+            foundations,
+            PFAC,
+            providers,
+            moreProviders,
           },
         });
 
-        console.log('Locations Details', i + 1, 'out of', mergeLinks.length, 'Done');
+        console.log('Locations Details', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
       }
