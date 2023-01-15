@@ -129,11 +129,101 @@ export default async function ServicesConditions() {
           return content;
         });
 
+        const providers = await page.$$eval(
+          '.related-providers #customList > div > div',
+          (item) => {
+            return item.map((item) => {
+              let imageSrc = item.querySelector('.card > a > img');
+              let imageAlt = item.querySelector('.card > a > img');
+              let name = item.querySelector('.card .prov-name');
+              let phone = item.querySelector('.card .prov-phone > a');
+              let specialty = item.querySelector('.card .prov-specialty');
+              let location = item.querySelector('.card .prov-locations');
+              let newPatients = item.querySelector('.card .prov-accept-new');
+              let details = item.querySelector('.card a.btn.btn-primary');
+
+              if (imageSrc) imageSrc = imageSrc.src;
+              if (imageAlt) imageAlt = imageAlt.alt;
+              if (name) name = name.innerText;
+              if (phone) phone = phone.innerText;
+              if (specialty) specialty = specialty.innerText;
+              if (location) location = location.innerText;
+              newPatients ? (newPatients = true) : (newPatients = false);
+              if (details) details = details.href;
+
+              return {
+                imageSrc,
+                imageAlt,
+                name,
+                phone,
+                specialty,
+                location,
+                newPatients,
+                details,
+              };
+            });
+          }
+        );
+
+        const moreProviders = await page.$eval('#ih-page-footer', (i) => {
+          let moreProviders = i.querySelector('.related-providers #viewMoreProv');
+          if (moreProviders) moreProviders = moreProviders.href;
+          return moreProviders;
+        });
+
+        const locations = await page.$$eval(
+          '.related-locations #customList > div > div',
+          (item) => {
+            return item.map((item) => {
+              let imageSrc = item.querySelector('.card > img');
+              let imageAlt = item.querySelector('.card > img');
+              let name = item.querySelector('.card .loc-name');
+              let city = item.querySelector('.card .loc-city');
+              let add1 = item.querySelector('.card .loc-add-1');
+              let add2 = item.querySelector('.card .loc-add-2');
+              let phone = item.querySelector('.card .loc-phone > a');
+              let details = item.querySelector('.card a.btn.btn-primary');
+
+              if (imageSrc) imageSrc = imageSrc.src;
+              if (imageAlt) imageAlt = imageAlt.alt;
+              if (name) name = name.innerText;
+              if (city) city = city.innerText;
+              if (add1) add1 = add1.innerText;
+              if (add2) add2 = add2.innerText;
+              if (phone) phone = phone.innerText;
+              if (details) details = details.href;
+
+              return {
+                imageSrc,
+                imageAlt,
+                name,
+                city,
+                add1,
+                add2,
+                phone,
+                details,
+              };
+            });
+          }
+        );
+
+        const moreLocations = await page.$eval('#ih-page-footer', (i) => {
+          let moreLocations = i.querySelector('.related-locations #viewMoreLoc');
+          if (moreLocations) moreLocations = moreLocations.href;
+          return moreLocations;
+        });
+
         servicesBody.push({
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
-          content: articleContent,
+          content: {
+            articleContent,
+            providers,
+            moreProviders,
+            locations,
+            moreLocations,
+          },
         });
 
         console.log('Services & Conditions Article', i + 1, 'Done');

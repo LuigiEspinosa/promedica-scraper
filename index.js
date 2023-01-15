@@ -7,14 +7,14 @@ import ServicesConditions from './pages/ProMedica/ServicesConditions/services-co
 import EducationalArticles from './pages/Paramount/EducationalArticles/educational-articles.js';
 import ParamountNews from './pages/Paramount/News/news.js';
 
-// ProMedica
-PressReleases();
-News();
-OurStories();
-Locations();
-DoctorsProviders();
+// // ProMedica
+// PressReleases();
+// News();
+// OurStories();
+// Locations();
+// DoctorsProviders();
 ServicesConditions();
 
-// Paramount
-EducationalArticles();
-ParamountNews();
+// // Paramount
+// EducationalArticles();
+// ParamountNews();
