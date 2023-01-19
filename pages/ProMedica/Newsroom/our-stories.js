@@ -53,23 +53,14 @@ export default async function OurStories() {
         await page.click('.pagination li.active + li a');
       }
 
-      articles.push({
-        articles: articlesPerPage,
-      });
-
+      articles.push(articlesPerPage);
       console.log('Our Stories Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
   }
 
-  const eachItem = articles.map((item, idx) =>
-    item.articles.map((card, i) => {
-      return { id: parseFloat(`${idx + 1}.${i}`), card };
-    })
-  );
-  const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
-
+  const mergeItems = articles.flat().map((item, index) => ({ id: index + 1, ...item }));
   const jsonArticles = JSON.stringify(mergeItems, null, 2);
   fs.writeFile(
     './json/ProMedica/newsroom/Our Stories/our-stories.json',
@@ -84,10 +75,10 @@ export default async function OurStories() {
   // Articles content
   const mergeLinks = mergeItems.map((item) => {
     if (
-      item.card.linkSrc.startsWith('https://www.promedica.org/') &&
-      item.card.linkSrc !== 'https://www.promedica.org/newsroom/our-stories/?'
+      item.linkSrc.startsWith('https://www.promedica.org/') &&
+      item.linkSrc !== 'https://www.promedica.org/newsroom/our-stories/?'
     ) {
-      return item.card.linkSrc;
+      return item.linkSrc;
     }
   });
 
