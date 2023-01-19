@@ -12,9 +12,9 @@ import Agency from './pages/ProMedica/Agency/agency.js';
 // PressReleases();
 // News();
 // OurStories();
-Locations();
+// Locations();
 // DoctorsProviders();
-// ServicesConditions();
+ServicesConditions();
 // Agency();
 
 // // Paramount
