@@ -38,14 +38,12 @@ export default async function EducationalArticles() {
       }
     );
 
-    articles.push({
-      articles: articlesPerPage,
-    });
+    articles.push(articlesPerPage);
   } catch (error) {
     console.log({ error });
   }
 
-  const jsonContent = JSON.stringify(articles, null, 2);
+  const jsonContent = JSON.stringify(articles.flat(), null, 2);
   fs.writeFile(
     './json/Paramount/EducationalArticles/educational-articles.json',
     jsonContent,
@@ -57,7 +55,7 @@ export default async function EducationalArticles() {
   );
 
   // Articles content
-  const mergeLinks = articles[0].articles.map((item) => {
+  const mergeLinks = articles.flat().map((item) => {
     if (item.linkSrc.startsWith('https://www.paramounthealthcare.com/')) {
       return item.linkSrc;
     }

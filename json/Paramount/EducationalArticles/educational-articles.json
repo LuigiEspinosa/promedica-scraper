@@ -1,96 +1,92 @@
 [
   {
-    "articles": [
-      {
-        "id": 1,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/6reasons-325x325.jpg",
-        "imgAlt": "",
-        "title": "Six ways Paramount Elite can help keep you healthy.",
-        "description": "If you’re looking for a Medicare plan that will go to great lengths to help keep you healthy, Paramount Elite may be right for you.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/six-ways-paramount-elite-can-help-keep-you-healthy",
-        "linkText": "Read more"
-      },
-      {
-        "id": 2,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/healthier_year_with_silver_sneakers_thumb.jpg",
-        "imgAlt": "",
-        "title": "Get Ready for a Healthier Year with SilverSneakers",
-        "description": "Here are three simple steps to start and keep going with a healthy activity habit. First, change the way you set goals. Specifically, start with smaller goals. Does 150 minutes of activity a week sound like a lot? It’s only 30 minutes a day for 5 weekdays – or however you choose to split it up.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/get-ready-for-a-healthier-year-with-silversneakers",
-        "linkText": "Read more"
-      },
-      {
-        "id": 3,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/tips-for-travel-hearing-aids-thumbnail.jpg",
-        "imgAlt": "",
-        "title": "Tips for Holiday Travel with Hearing Loss",
-        "description": "With more people vaccinated every day, the world is learning how to travel again. You can only go so long without seeing family, friends, and loved ones, and for those discovering they have hearing loss, holiday travel has a different set of challenges. From road noise to communication issues—there’s a lot to navigate.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/tips-for-holiday-travel-with-hearing-loss",
-        "linkText": "Read more"
-      },
-      {
-        "id": 4,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/may2021_medicare_silver_sneakers_square.jpg",
-        "imgAlt": "",
-        "title": "Make Health and Wellness Your Top Priority",
-        "description": "Celebrate Senior Health & Fitness Month with 3 life-changing habits. Eating a nutrient-rich diet and staying active are two important lifestyle choices that can help you feel your best at any age. It’s never too late to replace old, unhealthy habits with new ones so you can feel better and do more of the things you love to do. May is National Senior Health and Fitness Month, making it the perfect time to commit to taking care of yourself – mind, body and spirit.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/make-health-and-wellness-your-top-priority",
-        "linkText": "Read more"
-      },
-      {
-        "id": 5,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/silver_sneakers_blog_2021.jpg",
-        "imgAlt": "",
-        "title": "Stay Active for Healthy Blood Pressure",
-        "description": "Did you know properly managing your blood pressure may also help lower your risk for heart disease and stroke? During April, High Blood Pressure Month, focus on how to keep your blood pressure in a healthy range for overall good health.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/stay-active-for-healthy-blood-pressure",
-        "linkText": "Read more"
-      },
-      {
-        "id": 6,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/holidays_hearing_loss_covid_thumbnail.jpg",
-        "imgAlt": "",
-        "title": "Holidays, Hearing Loss, and COVID-19",
-        "description": "The holidays are a time to gather, celebrate, and connect with the people we love, but it’s also a tough time for people who experience hearing loss—especially during COVID-19. Beyond typical holiday parties, the hard of hearing have to navigate socially distant group gatherings, unreliable video call quality and audio, and mask wearing, which inhibits lip reading. Here are a few simple ways we can be more empathetic of those with hearing loss:",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/holidays-hearing-loss-and-covid-19",
-        "linkText": "Read more"
-      },
-      {
-        "id": 7,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/elite/donut-hole-325x325.jpg",
-        "imgAlt": "",
-        "title": "Understanding the Prescription Coverage Gap, AKA the Medicare Donut Hole",
-        "description": "We know it’s an odd term to use to explain Medicare coverage. But it’s commonly used to describe the coverage gap that’s part of all Medicare Part D plans.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/understanding-the-prescription-coverage-gap-aka-the-medicare-donut-hole",
-        "linkText": "Read more"
-      },
-      {
-        "id": 8,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/elite/five-stars-325x325.jpg",
-        "imgAlt": "",
-        "title": "Do Medicare star ratings really matter",
-        "description": "Star ratings let you see how current members rate the plans you’re considering, as well as shed light on how plans have performed in various areas.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/do-medicare-star-ratings-really-matter",
-        "linkText": "Read more"
-      },
-      {
-        "id": 9,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/5reasons-325x325.jpg",
-        "imgAlt": "",
-        "title": "Five reasons to join a Medicare Advantage plan",
-        "description": "A Medicare Advantage plan, also known as Medicare Part C or an MA plan, could offer you more comprehensive healthcare coverage.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/five-reasons-to-join-a-medicare-advantage-plan",
-        "linkText": "Read more"
-      },
-      {
-        "id": 10,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/silversneakers-325x325.jpg",
-        "imgAlt": "",
-        "title": "Here's why Medicare plans with SilverSneakers are so popular",
-        "description": "SilverSneakers® is a fitness program for seniors that comes with qualifying Medicare health plans and provides access to thousands of fitness locations across the country.",
-        "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/heres-why-medicare-plans-with-silversneakers-are-so-popular",
-        "linkText": "Read more"
-      }
-    ]
+    "id": 1,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/6reasons-325x325.jpg",
+    "imgAlt": "",
+    "title": "Six ways Paramount Elite can help keep you healthy.",
+    "description": "If you’re looking for a Medicare plan that will go to great lengths to help keep you healthy, Paramount Elite may be right for you.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/six-ways-paramount-elite-can-help-keep-you-healthy",
+    "linkText": "Read more"
+  },
+  {
+    "id": 2,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/healthier_year_with_silver_sneakers_thumb.jpg",
+    "imgAlt": "",
+    "title": "Get Ready for a Healthier Year with SilverSneakers",
+    "description": "Here are three simple steps to start and keep going with a healthy activity habit. First, change the way you set goals. Specifically, start with smaller goals. Does 150 minutes of activity a week sound like a lot? It’s only 30 minutes a day for 5 weekdays – or however you choose to split it up.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/get-ready-for-a-healthier-year-with-silversneakers",
+    "linkText": "Read more"
+  },
+  {
+    "id": 3,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/tips-for-travel-hearing-aids-thumbnail.jpg",
+    "imgAlt": "",
+    "title": "Tips for Holiday Travel with Hearing Loss",
+    "description": "With more people vaccinated every day, the world is learning how to travel again. You can only go so long without seeing family, friends, and loved ones, and for those discovering they have hearing loss, holiday travel has a different set of challenges. From road noise to communication issues—there’s a lot to navigate.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/tips-for-holiday-travel-with-hearing-loss",
+    "linkText": "Read more"
+  },
+  {
+    "id": 4,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/may2021_medicare_silver_sneakers_square.jpg",
+    "imgAlt": "",
+    "title": "Make Health and Wellness Your Top Priority",
+    "description": "Celebrate Senior Health & Fitness Month with 3 life-changing habits. Eating a nutrient-rich diet and staying active are two important lifestyle choices that can help you feel your best at any age. It’s never too late to replace old, unhealthy habits with new ones so you can feel better and do more of the things you love to do. May is National Senior Health and Fitness Month, making it the perfect time to commit to taking care of yourself – mind, body and spirit.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/make-health-and-wellness-your-top-priority",
+    "linkText": "Read more"
+  },
+  {
+    "id": 5,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/silver_sneakers_blog_2021.jpg",
+    "imgAlt": "",
+    "title": "Stay Active for Healthy Blood Pressure",
+    "description": "Did you know properly managing your blood pressure may also help lower your risk for heart disease and stroke? During April, High Blood Pressure Month, focus on how to keep your blood pressure in a healthy range for overall good health.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/stay-active-for-healthy-blood-pressure",
+    "linkText": "Read more"
+  },
+  {
+    "id": 6,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/holidays_hearing_loss_covid_thumbnail.jpg",
+    "imgAlt": "",
+    "title": "Holidays, Hearing Loss, and COVID-19",
+    "description": "The holidays are a time to gather, celebrate, and connect with the people we love, but it’s also a tough time for people who experience hearing loss—especially during COVID-19. Beyond typical holiday parties, the hard of hearing have to navigate socially distant group gatherings, unreliable video call quality and audio, and mask wearing, which inhibits lip reading. Here are a few simple ways we can be more empathetic of those with hearing loss:",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/holidays-hearing-loss-and-covid-19",
+    "linkText": "Read more"
+  },
+  {
+    "id": 7,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/elite/donut-hole-325x325.jpg",
+    "imgAlt": "",
+    "title": "Understanding the Prescription Coverage Gap, AKA the Medicare Donut Hole",
+    "description": "We know it’s an odd term to use to explain Medicare coverage. But it’s commonly used to describe the coverage gap that’s part of all Medicare Part D plans.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/understanding-the-prescription-coverage-gap-aka-the-medicare-donut-hole",
+    "linkText": "Read more"
+  },
+  {
+    "id": 8,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/elite/five-stars-325x325.jpg",
+    "imgAlt": "",
+    "title": "Do Medicare star ratings really matter",
+    "description": "Star ratings let you see how current members rate the plans you’re considering, as well as shed light on how plans have performed in various areas.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/do-medicare-star-ratings-really-matter",
+    "linkText": "Read more"
+  },
+  {
+    "id": 9,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/5reasons-325x325.jpg",
+    "imgAlt": "",
+    "title": "Five reasons to join a Medicare Advantage plan",
+    "description": "A Medicare Advantage plan, also known as Medicare Part C or an MA plan, could offer you more comprehensive healthcare coverage.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/five-reasons-to-join-a-medicare-advantage-plan",
+    "linkText": "Read more"
+  },
+  {
+    "id": 10,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/silversneakers-325x325.jpg",
+    "imgAlt": "",
+    "title": "Here's why Medicare plans with SilverSneakers are so popular",
+    "description": "SilverSneakers® is a fitness program for seniors that comes with qualifying Medicare health plans and provides access to thousands of fitness locations across the country.",
+    "linkSrc": "https://www.paramounthealthcare.com/medicare/2023/educational-articles/heres-why-medicare-plans-with-silversneakers-are-so-popular",
+    "linkText": "Read more"
   }
 ]

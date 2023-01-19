@@ -107,6 +107,22 @@ export default async function Locations() {
     console.log('\nLocations Imported!\n');
   });
 
+  // Locations Images
+  const mergeImagesLinks = [
+    ...new Set([].concat(...eachItem.map((item) => item.map((src) => src.card.imgSrc)))),
+  ];
+
+  const jsonLocationsImages = JSON.stringify(mergeImagesLinks, null, 2);
+  fs.writeFile(
+    './json/ProMedica/locations/locations-images.json',
+    jsonLocationsImages,
+    'utf8',
+    (err) => {
+      if (err) return console.log(err);
+      console.log('\nLocations Images Imported!\n');
+    }
+  );
+
   // Press Release content
   const mergeLinks = mergeItems.map((item) => {
     if (item.card.linkSrc.startsWith('https://www.promedica.org/')) {
@@ -293,7 +309,6 @@ export default async function Locations() {
           let PFAC = i.querySelector(
             'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationpfacouncil > div'
           );
-          console.log(PFAC);
           if (PFAC) PFAC = PFAC.innerHTML;
           return PFAC;
         });

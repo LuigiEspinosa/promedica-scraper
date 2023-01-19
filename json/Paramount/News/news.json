@@ -1,96 +1,92 @@
 [
   {
-    "articles": [
-      {
-        "id": 1,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/marketplace_star_rating_couple_thumbnail.jpg",
-        "imgAlt": "",
-        "title": "Marketplace Five Star Rating",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/marketplace-five-star-rating",
-        "linkText": "Read more "
-      },
-      {
-        "id": 2,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/star-rating-couple-tablet-thumbnail.jpg",
-        "imgAlt": "",
-        "title": "Paramount Elite’s (HMO) Medicare Plans Receive High Star Rating from CMS",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/paramount-elites-hmo-medicare-plans-receive-high-star-rating-from-cms",
-        "linkText": "Read more "
-      },
-      {
-        "id": 3,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/provider-network-nurse-and-patient-hospital-paperwork-thumbnail.jpg",
-        "imgAlt": "",
-        "title": "Paramount Elite Medicare adds McLaren St. Luke’s and Mercy Health to provider network",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/paramount-elite-medicare-adds-mclaren-st-lukes-and-mercy-health-to-provider-network",
-        "linkText": "Read more "
-      },
-      {
-        "id": 4,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/medicare-open-enrollment-women-beach-thumbnail.jpg",
-        "imgAlt": "",
-        "title": "It’s Open Enrollment for Medicare until December 7",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/its-open-enrollment-for-medicare-until-december-7",
-        "linkText": "Read more "
-      },
-      {
-        "id": 5,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/paramount_is_moving_325x325.jpg",
-        "imgAlt": "",
-        "title": "Paramount Has Moved",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/paramount-has-moved",
-        "linkText": "Read more "
-      },
-      {
-        "id": 6,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/news/covid-rapid-test.jpg",
-        "imgAlt": "",
-        "title": "New for Paramount Employer-Sponsored and Marketplace Health Plans",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/reimbursement-for-over-the-counter-covid-19-at-home-test-kits",
-        "linkText": "Read more "
-      },
-      {
-        "id": 7,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/5-11_vaccine_thumb.jpg",
-        "imgAlt": "",
-        "title": "Vaccinated Children on Medicaid Approved to Receive $100 Gift Card",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/vaccinated-children-on-medicaid-approved-to-receive-100-gift-card",
-        "linkText": "Read more "
-      },
-      {
-        "id": 8,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/telehealth-appointments-thumbnail.png",
-        "imgAlt": "",
-        "title": "See a doctor from the comfort of your home",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/see-a-doctor-from-the-comfort-of-your-home",
-        "linkText": "Read more "
-      },
-      {
-        "id": 9,
-        "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/generic_wine_glasses.jpg",
-        "imgAlt": "",
-        "title": "7 strategies for cutting back or quitting drinking",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/7-strategies-for-cutting-back-or-quitting-drinking",
-        "linkText": "Read more "
-      },
-      {
-        "id": 10,
-        "imgSrc": "https://www.paramounthealthcare.com/news/",
-        "imgAlt": "",
-        "title": "Wearing a Face Mask: Tips on How to Properly Mask",
-        "description": "",
-        "linkSrc": "https://www.paramounthealthcare.com/news/wearing-a-face-mask-tips-on-how-to-properly-mask",
-        "linkText": "Read more "
-      }
-    ]
+    "id": 1,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/marketplace_star_rating_couple_thumbnail.jpg",
+    "imgAlt": "",
+    "title": "Marketplace Five Star Rating",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/marketplace-five-star-rating",
+    "linkText": "Read more "
+  },
+  {
+    "id": 2,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/star-rating-couple-tablet-thumbnail.jpg",
+    "imgAlt": "",
+    "title": "Paramount Elite’s (HMO) Medicare Plans Receive High Star Rating from CMS",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/paramount-elites-hmo-medicare-plans-receive-high-star-rating-from-cms",
+    "linkText": "Read more "
+  },
+  {
+    "id": 3,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/provider-network-nurse-and-patient-hospital-paperwork-thumbnail.jpg",
+    "imgAlt": "",
+    "title": "Paramount Elite Medicare adds McLaren St. Luke’s and Mercy Health to provider network",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/paramount-elite-medicare-adds-mclaren-st-lukes-and-mercy-health-to-provider-network",
+    "linkText": "Read more "
+  },
+  {
+    "id": 4,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/medicare-open-enrollment-women-beach-thumbnail.jpg",
+    "imgAlt": "",
+    "title": "It’s Open Enrollment for Medicare until December 7",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/its-open-enrollment-for-medicare-until-december-7",
+    "linkText": "Read more "
+  },
+  {
+    "id": 5,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/paramount_is_moving_325x325.jpg",
+    "imgAlt": "",
+    "title": "Paramount Has Moved",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/paramount-has-moved",
+    "linkText": "Read more "
+  },
+  {
+    "id": 6,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/news/covid-rapid-test.jpg",
+    "imgAlt": "",
+    "title": "New for Paramount Employer-Sponsored and Marketplace Health Plans",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/reimbursement-for-over-the-counter-covid-19-at-home-test-kits",
+    "linkText": "Read more "
+  },
+  {
+    "id": 7,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/5-11_vaccine_thumb.jpg",
+    "imgAlt": "",
+    "title": "Vaccinated Children on Medicaid Approved to Receive $100 Gift Card",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/vaccinated-children-on-medicaid-approved-to-receive-100-gift-card",
+    "linkText": "Read more "
+  },
+  {
+    "id": 8,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/telehealth-appointments-thumbnail.png",
+    "imgAlt": "",
+    "title": "See a doctor from the comfort of your home",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/see-a-doctor-from-the-comfort-of-your-home",
+    "linkText": "Read more "
+  },
+  {
+    "id": 9,
+    "imgSrc": "https://www.paramounthealthcare.com/assets/images/thumbnails/generic_wine_glasses.jpg",
+    "imgAlt": "",
+    "title": "7 strategies for cutting back or quitting drinking",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/7-strategies-for-cutting-back-or-quitting-drinking",
+    "linkText": "Read more "
+  },
+  {
+    "id": 10,
+    "imgSrc": "https://www.paramounthealthcare.com/news/",
+    "imgAlt": "",
+    "title": "Wearing a Face Mask: Tips on How to Properly Mask",
+    "description": "",
+    "linkSrc": "https://www.paramounthealthcare.com/news/wearing-a-face-mask-tips-on-how-to-properly-mask",
+    "linkText": "Read more "
   }
 ]
