@@ -30,6 +30,7 @@ export default async function Locations() {
 
   const totalPages = Math.max(...numberPages.filter((p) => !isNaN(p)));
 
+  await delay(2000);
   await page.waitForSelector(
     `${root} div:nth-child(4) > div > div > ul > li.pagination-first.ng-scope > a`
   );
@@ -38,12 +39,13 @@ export default async function Locations() {
   let locations = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
+      await delay(2000);
       await page.waitForSelector(
-        `${root} div:nth-child(3) > div > div > div > div > div > div > div.tab-pane.ng-scope.active > div > div.ih-tab-list div.row.ng-scope`
+        '#location_PublicListView_searchresults div[data-ng-include="\'search-record-template.html\'"]'
       );
 
       const locationsPerPage = await page.$$eval(
-        `${root} div:nth-child(3) > div > div > div > div > div > div > div.tab-pane.ng-scope.active > div > div.ih-tab-list div.row.ng-scope`,
+        'xpath=/html/body/div/div[2]/div/div[3]/div[2]/div/div[4]/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div/div/div[1]/div/div/div',
         (itemLocation) => {
           return itemLocation.map((location) => {
             const imgSrc = location.querySelector('.ih-field-locationimage img').src;
@@ -84,35 +86,23 @@ export default async function Locations() {
         );
       }
 
-      locations.push({
-        locations: locationsPerPage,
-      });
-
+      locations.push(locationsPerPage);
       console.log('Locations Page', i, 'Done');
     } catch (error) {
       console.log({ error });
     }
   }
 
-  const eachItem = locations.map((item, idx) =>
-    item.locations.map((card, i) => {
-      return { id: parseFloat(`${idx + 1}.${i}`), card };
-    })
-  );
-  const mergeItems = [...new Set([].concat(...eachItem.map((item) => item)))];
-
-  const jsonContent = JSON.stringify(mergeItems, null, 2);
+  const mergeLocations = locations.flat().map((item, index) => ({ id: index + 1, ...item }));
+  const jsonContent = JSON.stringify(mergeLocations, null, 2);
   fs.writeFile('./json/ProMedica/locations/locations.json', jsonContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nLocations Imported!\n');
   });
 
   // Locations Images
-  const mergeImagesLinks = [
-    ...new Set([].concat(...eachItem.map((item) => item.map((src) => src.card.imgSrc)))),
-  ];
-
-  const jsonLocationsImages = JSON.stringify(mergeImagesLinks, null, 2);
+  const locationsImages = mergeLocations.map((item) => item.imgSrc);
+  const jsonLocationsImages = JSON.stringify(locationsImages, null, 2);
   fs.writeFile(
     './json/ProMedica/locations/locations-images.json',
     jsonLocationsImages,
@@ -124,9 +114,12 @@ export default async function Locations() {
   );
 
   // Press Release content
-  const mergeLinks = mergeItems.map((item) => {
-    if (item.card.linkSrc.startsWith('https://www.promedica.org/')) {
-      return item.card.linkSrc;
+  const mergeLinks = mergeLocations.map((item) => {
+    if (
+      item.linkSrc.startsWith('https://www.promedica.org/') &&
+      item.linkSrc !== 'https://www.promedica.org/find-locations/location-results'
+    ) {
+      return item.linkSrc;
     }
   });
 
@@ -407,4 +400,10 @@ export default async function Locations() {
   // close page and browser
   await page.close();
   await browser.close();
+}
+
+function delay(time) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, time);
+  });
 }

@@ -11,8 +11,8 @@ import Agency from './pages/ProMedica/Agency/agency.js';
 // // ProMedica
 // PressReleases();
 // News();
-OurStories();
-// Locations();
+// OurStories();
+Locations();
 // DoctorsProviders();
 // ServicesConditions();
 // Agency();
