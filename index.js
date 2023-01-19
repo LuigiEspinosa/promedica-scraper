@@ -9,8 +9,8 @@ import ParamountNews from './pages/Paramount/News/news.js';
 import Agency from './pages/ProMedica/Agency/agency.js';
 
 // // ProMedica
-PressReleases();
-// News();
+// PressReleases();
+News();
 // OurStories();
 // Locations();
 // DoctorsProviders();
