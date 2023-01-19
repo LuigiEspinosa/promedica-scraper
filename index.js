@@ -8,8 +8,8 @@ import EducationalArticles from './pages/Paramount/EducationalArticles/education
 import ParamountNews from './pages/Paramount/News/news.js';
 import Agency from './pages/ProMedica/Agency/agency.js';
 
-// ProMedica
-// PressReleases();
+// // ProMedica
+PressReleases();
 // News();
 // OurStories();
 // Locations();
@@ -17,6 +17,6 @@ import Agency from './pages/ProMedica/Agency/agency.js';
 // ServicesConditions();
 // Agency();
 
-// Paramount
-EducationalArticles();
-ParamountNews();
+// // Paramount
+// EducationalArticles();
+// ParamountNews();
