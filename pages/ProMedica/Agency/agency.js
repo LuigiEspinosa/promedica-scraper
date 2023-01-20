@@ -1,5 +1,7 @@
-import { agencyLinks } from './agencyLinks.js';
+import { hospiceLinks } from './agencyLinks.js';
+
+import Hospice from './hospice.js';
 
 export default async function Agency() {
-  console.log(agencyLinks);
+  Hospice(hospiceLinks);
 }

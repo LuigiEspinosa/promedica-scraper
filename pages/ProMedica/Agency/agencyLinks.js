@@ -1,4 +1,4 @@
-export const agencyLinks = [
+export const hospiceLinks = [
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-akron/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-albuquerque/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-allentown/',
