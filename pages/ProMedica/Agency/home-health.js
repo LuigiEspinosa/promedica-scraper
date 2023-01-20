@@ -1,11 +1,11 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
 
-export default async function Hospice(links) {
+export default async function HomeHealth(links) {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  let hospiceDetaills = [];
+  let homeHealth = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -90,18 +90,64 @@ export default async function Hospice(links) {
           let content = i.querySelector(
             'main > .flex-wrapper > div.flex-row > div > section.grid-section > h2'
           );
+
           if (content && content.innerText === 'Enriching Life') {
+            let content = i.querySelector(
+              'main > .flex-wrapper > div.flex-row > div > section.grid-section > h2 + p'
+            );
+            let video = i.querySelector(
+              'main > .flex-wrapper > div.flex-row > div > section.grid-section > figure iframe'
+            );
+            let imageSrc = i.querySelector(
+              'main > .flex-wrapper > div.flex-row > div > section.grid-section > figure img'
+            );
+            let imageAlt = i.querySelector(
+              'main > .flex-wrapper > div.flex-row > div > section.grid-section > figure img'
+            );
+
+            if (content) content = content.innerText;
+            if (video) video = video.src;
+            if (imageSrc) imageSrc = imageSrc.src;
+            if (imageAlt) imageAlt = imageAlt.alt;
+
             return (content = {
-              content:
-                i.querySelector(
-                  'main > .flex-wrapper > div.flex-row > div > section.grid-section > h2 + p'
-                ).innerText || null,
-              video:
-                i.querySelector(
-                  'main > .flex-wrapper > div.flex-row > div > section.grid-section > figure iframe'
-                ).src || null,
+              content: content,
+              video: video,
+              imageSrc: imageSrc,
+              imageAlt: imageAlt,
             });
           }
+
+          return null;
+        });
+
+        const ourServices = await page.$eval('main > .umb-grid', (i) => {
+          let content = i.querySelector(
+            'main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section > h2'
+          );
+
+          if (content && content.innerText === 'Our Services') {
+            let content = i.querySelector(
+              'main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section'
+            );
+            let imageSrc = i.querySelector(
+              'main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section figure > img'
+            );
+            let imageAlt = i.querySelector(
+              'main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section figure > img'
+            );
+
+            if (content) content = content.innerHTML;
+            if (imageSrc) imageSrc = imageSrc.src;
+            if (imageAlt) imageAlt = imageAlt.alt;
+
+            return (content = {
+              content: content,
+              imageSrc: imageSrc,
+              imageAlt: imageAlt,
+            });
+          }
+
           return null;
         });
 
@@ -124,11 +170,11 @@ export default async function Hospice(links) {
           return null;
         });
 
-        const familySupport = await page.$eval('main > .flex-wrapper', (i) => {
+        const ourTeam = await page.$eval('main > .flex-wrapper', (i) => {
           let content = i.querySelector(
             'main > .flex-wrapper > div:not(.flex-row) > div.background-color-DFEAEB > section.content-section > h2'
           );
-          if (content && content.innerText === 'Family Support') {
+          if (content && content.innerText === 'Our Team') {
             return (content = {
               content:
                 i.querySelector(
@@ -143,23 +189,26 @@ export default async function Hospice(links) {
           return null;
         });
 
-        const memorialFund = await page.$eval('main > .grid-row', (i) => {
+        const HowCanHelp = await page.$eval('main > .umb-grid', (i) => {
           let content = i.querySelector(
-            '.flex-wrapper.configured-2-Column > div.flex-row > div > section.grid-section > h2'
+            'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div.content-section-Yes > section.grid-section'
           );
-          if (content && content.innerText === 'ProMedica Hospice Memorial Fund') {
-            return (content = {
-              content:
-                i.querySelector(
-                  '.flex-wrapper.configured-2-Column > div.flex-row > div > section.grid-section > h2 + p'
-                ).innerText || null,
-              donate:
-                i.querySelector(
-                  '.flex-wrapper.configured-2-Column > div.flex-row > div > section.grid-section > a'
-                ).href || null,
-            });
-          }
-          return null;
+          let imageSrc = i.querySelector(
+            'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div > section.grid-section figure > img'
+          );
+          let imageAlt = i.querySelector(
+            'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div > section.grid-section figure > img'
+          );
+
+          if (content) content = content.innerHTML;
+          if (imageSrc) imageSrc = imageSrc.src;
+          if (imageAlt) imageAlt = imageAlt.alt;
+
+          return {
+            content: content,
+            imageSrc: imageSrc,
+            imageAlt: imageAlt,
+          };
         });
 
         await page.$$eval('.umb-grid section.grid-section div.testimonials > div', (item) => {
@@ -213,7 +262,7 @@ export default async function Hospice(links) {
           return content;
         });
 
-        hospiceDetaills.push({
+        homeHealth.push({
           id: i + 1,
           title: articlesTitle,
           url: links[i],
@@ -228,30 +277,31 @@ export default async function Hospice(links) {
             title,
             description,
             enrichingLife,
+            ourServices,
             patientServices,
-            familySupport,
-            memorialFund,
+            ourTeam,
+            HowCanHelp,
             testimonials,
             moreInfo,
             contact,
           },
         });
 
-        console.log('Hospice', i + 1, 'Details Done');
+        console.log('Home Health', i + 1, 'Details Done');
       } catch (error) {
         console.log({ error });
       }
     }
   }
 
-  const jsonHospiceDetaills = JSON.stringify(hospiceDetaills, null, 2);
+  const jsonHomeHealth = JSON.stringify(homeHealth, null, 2);
   fs.writeFile(
-    './json/ProMedica/agency/hospice-details.json',
-    jsonHospiceDetaills,
+    './json/ProMedica/agency/home-health-details.json',
+    jsonHomeHealth,
     'utf8',
     (err) => {
       if (err) return console.log(err);
-      console.log('\nHospice Details Imported!\n');
+      console.log('\nHome Health Details Imported!\n');
     }
   );
 
