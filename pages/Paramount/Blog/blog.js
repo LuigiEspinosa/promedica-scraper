@@ -1,29 +1,28 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
 
-export default async function ParamountNews() {
+export default async function ParamountBlog() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  await page.goto('https://www.paramounthealthcare.com/news/', {
+  await page.goto('https://www.paramounthealthcare.com/blog', {
     waitUntil: 'networkidle',
   });
 
   let articles = [];
 
   try {
-    await page.waitForSelector('#resultsWrapper_3057afcf-c543-4c83-ac10-71bbd42e7454');
+    await page.waitForSelector('#resultsWrapper_65e06b4f-b697-403e-a57e-6f47a40c9550');
 
     const articlesPerPage = await page.$$eval(
-      '#resultsWrapper_3057afcf-c543-4c83-ac10-71bbd42e7454 > div.media',
+      '#resultsWrapper_65e06b4f-b697-403e-a57e-6f47a40c9550 > div.row',
       (articleItem) => {
         return articleItem.map((article, idx) => {
-          const imgSrc = article.querySelector('.media-left img').src;
-          const imgAlt = article.querySelector('.media-left img').alt;
-          const title = article.querySelector('.media-body h2').innerText;
-          const description = article.querySelector('.media-body p:nth-child(2)').innerText;
-          const linkSrc = article.querySelector('.media-body a').href;
-          const linkText = article.querySelector('.media-body a').innerText;
+          const imgSrc = article.querySelector('.col-md-3 img').src;
+          const imgAlt = article.querySelector('.col-md-3 img').alt;
+          const title = article.querySelector('.col-md-9 h2').innerText;
+          const description = article.querySelector('.col-md-9 p:nth-child(3)').innerText;
+          const linkSrc = article.querySelector('.col-md-9 a').href;
 
           return {
             id: idx + 1,
@@ -32,7 +31,6 @@ export default async function ParamountNews() {
             title,
             description,
             linkSrc,
-            linkText,
           };
         });
       }
@@ -44,9 +42,9 @@ export default async function ParamountNews() {
   }
 
   const jsonContent = JSON.stringify(articles.flat(), null, 2);
-  fs.writeFile('./json/Paramount/News/news.json', jsonContent, 'utf8', (err) => {
+  fs.writeFile('./json/Paramount/Blog/blog.json', jsonContent, 'utf8', (err) => {
     if (err) return console.log(err);
-    console.log('Paramount News Imported!\n');
+    console.log('Paramount Blog Imported!\n');
   });
 
   // Articles content
@@ -94,7 +92,7 @@ export default async function ParamountNews() {
           },
         });
 
-        console.log('News Article', i + 1, 'Done');
+        console.log('Blog Articles', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
       }
@@ -102,9 +100,9 @@ export default async function ParamountNews() {
   }
 
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
-  fs.writeFile('./json/Paramount/News/news-articles.json', jsonArticlesContent, 'utf8', (err) => {
+  fs.writeFile('./json/Paramount/Blog/blog-articles.json', jsonArticlesContent, 'utf8', (err) => {
     if (err) return console.log(err);
-    console.log('\nParamount News Articles Imported!\n');
+    console.log('\nParamount Blog Articles Imported!\n');
   });
 
   await page.close();
