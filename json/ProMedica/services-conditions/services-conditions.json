@@ -401,22 +401,14 @@
   },
   {
     "id": 51,
-    "name": "DEXA SCAN (BONE DENSITY TEST)",
-    "description": "A bone scan can quickly find the source of bone pain or swelling. Early detection is the key to preventing fractures or the spread of disease and infection.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
-    "details": "https://www.promedica.org/services-and-conditions/dexa-scan"
+    "name": "DEEP VEIN THROMBOSIS (DVT)",
+    "description": "DVT blood clots are deep blot clot that break and release into your bloodstream. Our vascular surgeons treat these dangerous blood clots with skill and compassion.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=89",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
+    "details": "https://www.promedica.org/services-and-conditions/deep-vein-thrombosis"
   },
   {
     "id": 52,
-    "name": "DIABETES",
-    "description": "Don’t just manage your diabetes. Take control of it. We provide treatment and guidance to help you live your healthiest life.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=15",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=96",
-    "details": "https://www.promedica.org/services-and-conditions/diabetes"
-  },
-  {
-    "id": 53,
     "name": "DEPRESSION",
     "description": "Everyone feels down sometimes. If your blues are constant, and keep you from doing the things you love, turn to our behavioral health experts for help.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=40",
@@ -424,20 +416,28 @@
     "details": "https://www.promedica.org/services-and-conditions/depression"
   },
   {
+    "id": 53,
+    "name": "DEXA SCAN (BONE DENSITY TEST)",
+    "description": "A bone scan can quickly find the source of bone pain or swelling. Early detection is the key to preventing fractures or the spread of disease and infection.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
+    "details": "https://www.promedica.org/services-and-conditions/dexa-scan"
+  },
+  {
     "id": 54,
+    "name": "DIABETES",
+    "description": "Don’t just manage your diabetes. Take control of it. We provide treatment and guidance to help you live your healthiest life.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=15",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=96",
+    "details": "https://www.promedica.org/services-and-conditions/diabetes"
+  },
+  {
+    "id": 55,
     "name": "DIABETIC RETINOPATHY",
     "description": "Diabetic retinopathy is a leading cause of blindness in adults. Though not preventable, eye care experts can help lower your risk and ease symptoms.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=50",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=163",
     "details": "https://www.promedica.org/services-and-conditions/diabetic-retinopathy"
-  },
-  {
-    "id": 55,
-    "name": "DEEP VEIN THROMBOSIS (DVT)",
-    "description": "DVT blood clots are deep blot clot that break and release into your bloodstream. Our vascular surgeons treat these dangerous blood clots with skill and compassion.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=89",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
-    "details": "https://www.promedica.org/services-and-conditions/deep-vein-thrombosis"
   },
   {
     "id": 56,
@@ -505,14 +505,6 @@
   },
   {
     "id": 64,
-    "name": "FITNESS",
-    "description": "Fitness programs help you get in shape and feel better. Our trainers, specialists and nutritionists can guide your journey to a healthier you.",
-    "providers": null,
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=236",
-    "details": "https://www.promedica.org/services-and-conditions/fitness"
-  },
-  {
-    "id": 65,
     "name": "FAMILY MEDICINE",
     "description": "Our family medicine physicians treat the overall health and wellness of every member of your family, including infants, children and adults of all ages.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=5",
@@ -520,12 +512,20 @@
     "details": null
   },
   {
+    "id": 65,
+    "name": "FITNESS",
+    "description": "Fitness programs help you get in shape and feel better. Our trainers, specialists and nutritionists can guide your journey to a healthier you.",
+    "providers": null,
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=236",
+    "details": "https://www.promedica.org/services-and-conditions/fitness"
+  },
+  {
     "id": 66,
-    "name": "GYNECOLOGY",
-    "description": "Our women's health experts are available for screenings, routine exams and other specialized gynecologic care.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=18",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=217",
-    "details": "https://www.promedica.org/services-and-conditions/gynecology"
+    "name": "GALLBLADDER SURGERY",
+    "description": null,
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=22&SpecialtyText=General%20Surgery",
+    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=general%20surgery",
+    "details": null
   },
   {
     "id": 67,
@@ -569,11 +569,11 @@
   },
   {
     "id": 72,
-    "name": "GALLBLADDER SURGERY",
-    "description": null,
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=22&SpecialtyText=General%20Surgery",
-    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=general%20surgery",
-    "details": null
+    "name": "GYNECOLOGY",
+    "description": "Our women's health experts are available for screenings, routine exams and other specialized gynecologic care.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=18",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=217",
+    "details": "https://www.promedica.org/services-and-conditions/gynecology"
   },
   {
     "id": 73,
@@ -705,19 +705,19 @@
   },
   {
     "id": 89,
-    "name": "INTERNAL MEDICINE",
-    "description": "Internal medicine specialists provide a comprehensive array of health services, including diagnosis, treatment and wellness care to adults over 18.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=15",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=111",
-    "details": null
-  },
-  {
-    "id": 90,
     "name": "INFANT MONITOR PROGRAM",
     "description": "High-risk infants need diagnostic, therapeutic and educational support to grow. We support families who need home monitoring services to keep babies healthy.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=135",
     "details": "https://www.promedica.org/services-and-conditions/infant-monitor-program"
+  },
+  {
+    "id": 90,
+    "name": "INTERNAL MEDICINE",
+    "description": "Internal medicine specialists provide a comprehensive array of health services, including diagnosis, treatment and wellness care to adults over 18.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=15",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=111",
+    "details": null
   },
   {
     "id": 91,
@@ -793,14 +793,6 @@
   },
   {
     "id": 100,
-    "name": "MATERNAL-FETAL MEDICINE (HIGH-RISK PREGNANCY)",
-    "description": "If you or your baby are considered high-risk, you can get expert, compassionate care from our multi-disciplinary team of maternal-fetal medicine specialists.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=43",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=114",
-    "details": "https://www.promedica.org/services-and-conditions/maternal-fetal-medicine-high-risk-pregnancy"
-  },
-  {
-    "id": 101,
     "name": "MATERNITY",
     "description": "You want a happy, healthy baby. Our maternity experts are ready to care for you during and after your pregnancy, as well as helping you prepare for the big day.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=17",
@@ -808,23 +800,7 @@
     "details": "https://www.promedica.org/services-and-conditions/maternity"
   },
   {
-    "id": 102,
-    "name": "MEMORY CARE",
-    "description": null,
-    "providers": null,
-    "locations": null,
-    "details": "https://www.arden-courts.com/"
-  },
-  {
-    "id": 103,
-    "name": "MENOPAUSE",
-    "description": "Menopause is a natural part of the aging process, but its side effects can be challenging. Our midlife care team is here to lend support and ease your symptoms.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=18",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=100",
-    "details": "https://www.promedica.org/services-and-conditions/menopause"
-  },
-  {
-    "id": 104,
+    "id": 101,
     "name": "MIDWIFERY",
     "description": "Our certified nurse midwives provide a wide range of women’s care services. From pregnancy and childbirth to adolescence and menopause, they're here to help.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
@@ -832,7 +808,7 @@
     "details": "https://www.promedica.org/services-and-conditions/midwifery"
   },
   {
-    "id": 105,
+    "id": 102,
     "name": "MIGRAINE HEADACHES",
     "description": "From maintenance drugs to prevent their onset to medications to stop migraines in their tracks, we're here to help when headache pain disrupts your life.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
@@ -840,7 +816,23 @@
     "details": "https://www.promedica.org/services-and-conditions/migraine-headaches"
   },
   {
-    "id": 106,
+    "id": 103,
+    "name": "MATERNAL-FETAL MEDICINE (HIGH-RISK PREGNANCY)",
+    "description": "If you or your baby are considered high-risk, you can get expert, compassionate care from our multi-disciplinary team of maternal-fetal medicine specialists.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=43",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=114",
+    "details": "https://www.promedica.org/services-and-conditions/maternal-fetal-medicine-high-risk-pregnancy"
+  },
+  {
+    "id": 104,
+    "name": "MENOPAUSE",
+    "description": "Menopause is a natural part of the aging process, but its side effects can be challenging. Our midlife care team is here to lend support and ease your symptoms.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=18",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=100",
+    "details": "https://www.promedica.org/services-and-conditions/menopause"
+  },
+  {
+    "id": 105,
     "name": "MOLECULAR BREAST IMAGING",
     "description": "Some women have dense breast tissue. That’s why our women’s health experts offer molecular breast imaging (MBI) to get a more accurate reading.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
@@ -848,7 +840,7 @@
     "details": "https://www.promedica.org/services-and-conditions/molecular-breast-imaging"
   },
   {
-    "id": 107,
+    "id": 106,
     "name": "MRI (MAGNETIC RESONANCE IMAGING)",
     "description": "An MRI can be needed to diagnose a disease or check on your progress during treatment. Using state-of-the-art technology, our radiologists capture high-resolution images.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
@@ -856,7 +848,7 @@
     "details": "https://www.promedica.org/services-and-conditions/magnetic-resonance-imaging-mri"
   },
   {
-    "id": 108,
+    "id": 107,
     "name": "MULTIPLE SCLEROSIS",
     "description": "MS is a disease that causes your immune system to attack your nerves, disrupting communication from your brain to your body. We can help you control your symptoms.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
@@ -864,15 +856,15 @@
     "details": "https://www.promedica.org/services-and-conditions/multiple-sclerosis"
   },
   {
-    "id": 109,
-    "name": "NEUROSCIENCES",
-    "description": "Our award-winning ProMedica Neurosciences Institute team combines academics, research, prevention, screening and treatment to give you access to leading-edge care.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=327",
-    "details": "https://www.promedica.org/services-and-conditions/neurosciences/"
+    "id": 108,
+    "name": "MEMORY CARE",
+    "description": null,
+    "providers": null,
+    "locations": null,
+    "details": "https://www.arden-courts.com/"
   },
   {
-    "id": 110,
+    "id": 109,
     "name": "NEONATAL INTENSIVE CARE UNIT (NICU)",
     "description": "When your newborn needs immediate, critical care, the Neonatal Intensive Care Unit at the ProMedica Russell J. Ebeid Children's Hospital can help.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=76",
@@ -880,7 +872,7 @@
     "details": "https://www.promedica.org/services-and-conditions/neonatal-intensive-care"
   },
   {
-    "id": 111,
+    "id": 110,
     "name": "NEURO CANCER",
     "description": "Did you know neuro cancer can affect both the brain and spine at the same time? Our neurological team offers a variety of treatment options.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
@@ -888,12 +880,20 @@
     "details": null
   },
   {
-    "id": 112,
+    "id": 111,
     "name": "NEUROLOGIC REHABILITATION",
     "description": "We create personalized care plans to address the physical, emotional and psychological needs of those recovering from injuries of the central nervous system.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=115",
     "details": "https://www.promedica.org/services-and-conditions/neurologic-rehabilitation"
+  },
+  {
+    "id": 112,
+    "name": "NEUROSCIENCES",
+    "description": "Our award-winning ProMedica Neurosciences Institute team combines academics, research, prevention, screening and treatment to give you access to leading-edge care.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=327",
+    "details": "https://www.promedica.org/services-and-conditions/neurosciences/"
   },
   {
     "id": 113,
@@ -1009,30 +1009,6 @@
   },
   {
     "id": 127,
-    "name": "PEDIATRICS",
-    "description": "Our compassionate pediatric team cares about the health of all children. We'll never stop working to keep your child growing strong, now and into the future.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=10",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=136",
-    "details": "https://www.promedica.org/services-and-conditions/pediatric-care"
-  },
-  {
-    "id": 128,
-    "name": "PRIMARY CARE",
-    "description": "Your primary care provider is your main advocate in your day-to-day health. ProMedica Physicians is here to help you with prevention and manage health conditions.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=5",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=324",
-    "details": "https://www.promedica.org/services-and-conditions/primary-care"
-  },
-  {
-    "id": 129,
-    "name": "PHYSICAL THERAPY",
-    "description": "Our licensed physical therapists can treat problems that interfere with your ability to move naturally and perform normal daily activities.",
-    "providers": null,
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=140",
-    "details": "https://www.promedica.org/services-and-conditions/physical-therapy"
-  },
-  {
-    "id": 130,
     "name": "PAIN MANAGEMENT",
     "description": "When you’re in pain, all you want is relief. That's why our pain management programs are designed to help you control your pain and start living your life again.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=29",
@@ -1040,7 +1016,7 @@
     "details": "https://www.promedica.org/services-and-conditions/pain-management"
   },
   {
-    "id": 131,
+    "id": 128,
     "name": "PALLIATIVE CARE",
     "description": null,
     "providers": null,
@@ -1048,7 +1024,7 @@
     "details": "https://promedicapalliativecare.org/"
   },
   {
-    "id": 132,
+    "id": 129,
     "name": "PARKINSON'S DISEASE",
     "description": "Parkinson's disease is a chronic and progressive disease of the central nervous system. Comprehensive rehabilitation programs can help you improve your motor skills.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
@@ -1056,23 +1032,7 @@
     "details": "https://www.promedica.org/services-and-conditions/parkinsons-disease"
   },
   {
-    "id": 133,
-    "name": "PEDIATRIC HEMATOLOGY/ONCOLOGY",
-    "description": "The pediatric specialists at ProMedica diagnose and treat a variety of blood diseases (hematology) and cancers (oncology) in children of all ages.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=37",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=131",
-    "details": null
-  },
-  {
-    "id": 134,
-    "name": "PEDIATRIC GASTROENTEROLOGY",
-    "description": "For digestive disorders, ProMedica Russell J. Ebeid Children’s Hospital offers a full range of inpatient and outpatient services, diagnostic procedures and treatments.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=25",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=130",
-    "details": "https://www.promedica.org/services-and-conditions/pediatric-gastroenterology"
-  },
-  {
-    "id": 135,
+    "id": 130,
     "name": "PEDIATRIC ASTHMA",
     "description": "Our ProMedica’s Pediatric Pulmonary Clinic meets the highest national standards for quality and safety in asthma diagnosis, treatment and education.\n",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
@@ -1080,7 +1040,23 @@
     "details": "https://www.promedica.org/services-and-conditions/pediatric-asthma"
   },
   {
-    "id": 136,
+    "id": 131,
+    "name": "PEDIATRIC GASTROENTEROLOGY",
+    "description": "For digestive disorders, ProMedica Russell J. Ebeid Children’s Hospital offers a full range of inpatient and outpatient services, diagnostic procedures and treatments.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=25",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=130",
+    "details": "https://www.promedica.org/services-and-conditions/pediatric-gastroenterology"
+  },
+  {
+    "id": 132,
+    "name": "PEDIATRIC HEMATOLOGY/ONCOLOGY",
+    "description": "The pediatric specialists at ProMedica diagnose and treat a variety of blood diseases (hematology) and cancers (oncology) in children of all ages.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=37",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=131",
+    "details": null
+  },
+  {
+    "id": 133,
     "name": "PEDIATRIC OPHTHALMOLOGY",
     "description": "Pediatric eye care specialists provide vision care and diagnose and treat eye diseases in children.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=64",
@@ -1088,103 +1064,7 @@
     "details": null
   },
   {
-    "id": 137,
-    "name": "PELVIC PAIN",
-    "description": "Chronic pelvic pain takes a toll physically and mentally. Pelvic health experts pinpoint the cause and craft a treatment plan to help you feel healthy and strong.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
-    "details": "https://www.promedica.org/services-and-conditions/pelvic-pain"
-  },
-  {
-    "id": 138,
-    "name": "PLASTIC AND RECONSTRUCTIVE SURGERY",
-    "description": "Look and feel your best with reconstructive and cosmetic procedures performed by expert and compassionate plastic and reconstructive surgeons.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=41",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=141",
-    "details": "https://www.promedica.org/services-and-conditions/plastic-and-reconstructive-surgery"
-  },
-  {
-    "id": 139,
-    "name": "PODIATRY",
-    "description": "If pain is holding you back, get back on your feet again with help from foot care specialists. We treat a wide variety of problematic foot and ankle conditions.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=75",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=162",
-    "details": "https://www.promedica.org/services-and-conditions/podiatry"
-  },
-  {
-    "id": 140,
-    "name": "POSITRON EMISSION TOMOGRAPHY",
-    "description": "Our radiologists offer state-of-the-art PET scans to help doctors see organs and tissues in the brain, heart, lungs and breasts using a special dye.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
-    "details": "https://www.promedica.org/services-and-conditions/positron-emission-tomography"
-  },
-  {
-    "id": 141,
-    "name": "POSTPARTUM DEPRESSION",
-    "description": "Postpartum depression is a common mental condition following the birth of a child. Our caring team is here to help.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=17",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
-    "details": null
-  },
-  {
-    "id": 142,
-    "name": "POST-TRAUMATIC STRESS DISORDER",
-    "description": "If you or a loved one are coping with memories of a terrifying event, our mental health experts can help diagnose and treat your PTSD with care and compassion.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=40",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
-    "details": "https://www.promedica.org/services-and-conditions/post-traumatic-stress-disorder"
-  },
-  {
-    "id": 143,
-    "name": "PSYCHIATRY",
-    "description": "Our psychiatric team is devoted to the diagnosis, prevention and treatment of mental illness, emotional disturbance and behavior disorders.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=40",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
-    "details": null
-  },
-  {
-    "id": 144,
-    "name": "PULMONARY EMBOLISM",
-    "description": "A pulmonary embolism occurs when one or more arteries in your lungs become blocked by a blood clot. The specialists at Jobst Vascular Institute can help.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
-    "details": "https://www.promedica.org/services-and-conditions/pulmonary-embolism"
-  },
-  {
-    "id": 145,
-    "name": "PROSTATE CANCER",
-    "description": "As the second-leading cause of cancer death in men, prostate cancer requires advanced technology and treatment options to improve outcomes.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=19",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=325",
-    "details": "https://www.promedica.org/services-and-conditions/prostate-cancer"
-  },
-  {
-    "id": 146,
-    "name": "PEDIATRIC PSYCHIATRY",
-    "description": "Children and adolescents have specific mental and behavioral health needs. Our programs and specialists are specially trained to engage — and listen to — your child.",
-    "providers": null,
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/pediatric-psychiatry"
-  },
-  {
-    "id": 147,
-    "name": "PELVIC CONGESTION SYNDROME",
-    "description": "We offer compassionate treatment for pelvic congestion syndrome, which causes chronic pelvic pain in women.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
-    "details": "https://www.promedica.org/services-and-conditions/pelvic-congestion-syndrome"
-  },
-  {
-    "id": 148,
-    "name": "PELVIC FLOOR DISORDERS",
-    "description": "A weak pelvic floor can cause a variety of disruptive symptoms. Our fellowship-trained specialists have the most experience in the region.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
-    "details": "https://www.promedica.org/services-and-conditions/pelvic-floor-disorders"
-  },
-  {
-    "id": 149,
+    "id": 134,
     "name": "PEDIATRIC ORTHOPAEDICS",
     "description": "Our pediatric orthopaedic experts understand the unique needs of children who have bone and joint conditions. We diagnose and treat a variety of injuries and deformities.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=11",
@@ -1192,39 +1072,15 @@
     "details": "https://www.promedica.org/services-and-conditions/pediatric-orthopaedics"
   },
   {
-    "id": 150,
-    "name": "PELVIC FLOOR PHYSICAL THERAPY",
-    "description": "Our team offers pelvic floor physical therapy as a non-surgical treatment for severe pelvic pain to rebuild the strength, motor control and endurance of pelvic muscles.",
+    "id": 135,
+    "name": "PEDIATRIC PSYCHIATRY",
+    "description": "Children and adolescents have specific mental and behavioral health needs. Our programs and specialists are specially trained to engage — and listen to — your child.",
     "providers": null,
     "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/pelvic-floor-physical-therapy"
+    "details": "https://www.promedica.org/services-and-conditions/pediatric-psychiatry"
   },
   {
-    "id": 151,
-    "name": "PEDIATRIC REHABILITATION",
-    "description": "Our speech, occupational and physical therapists work under the direction of a pediatric physiatrist to provide expert care for growing children.",
-    "providers": null,
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=189",
-    "details": "https://www.promedica.org/services-and-conditions/pediatric-rehabilitation"
-  },
-  {
-    "id": 152,
-    "name": "PELVIC HEALTH",
-    "description": "Your pelvic region includes your bladder, rectum and reproductive organs. When something is wrong, it causes pain and incontinence. We're here to help.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
-    "details": "https://www.promedica.org/services-and-conditions/pelvic-health"
-  },
-  {
-    "id": 153,
-    "name": "PERIPHERAL ARTERY DISEASE (PAD)",
-    "description": "Peripheral artery disease (PAD) causes pain when narrowed arteries reduce blood flow to your legs. Our vascular experts can guide your healing and get you moving again.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
-    "details": "https://www.promedica.org/services-and-conditions/peripheral-artery-disease-pad"
-  },
-  {
-    "id": 154,
+    "id": 136,
     "name": "PEDIATRIC PULMONOLOGY",
     "description": null,
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24&SpecialtyText=Pediatric%20Pulmonary%20Medicine",
@@ -1232,7 +1088,135 @@
     "details": "https://www.promedica.org/services-and-conditions/pediatric-pulmonology"
   },
   {
-    "id": 155,
+    "id": 137,
+    "name": "PEDIATRIC REHABILITATION",
+    "description": "Our speech, occupational and physical therapists work under the direction of a pediatric physiatrist to provide expert care for growing children.",
+    "providers": null,
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=189",
+    "details": "https://www.promedica.org/services-and-conditions/pediatric-rehabilitation"
+  },
+  {
+    "id": 138,
+    "name": "PEDIATRIC SLEEP MEDICINE",
+    "description": null,
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=454",
+    "details": "https://www.promedica.org/services-and-conditions/pediatric-sleep-medicine"
+  },
+  {
+    "id": 139,
+    "name": "PEDIATRICS",
+    "description": "Our compassionate pediatric team cares about the health of all children. We'll never stop working to keep your child growing strong, now and into the future.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=10",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=136",
+    "details": "https://www.promedica.org/services-and-conditions/pediatric-care"
+  },
+  {
+    "id": 140,
+    "name": "PELVIC CONGESTION SYNDROME",
+    "description": "We offer compassionate treatment for pelvic congestion syndrome, which causes chronic pelvic pain in women.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
+    "details": "https://www.promedica.org/services-and-conditions/pelvic-congestion-syndrome"
+  },
+  {
+    "id": 141,
+    "name": "PELVIC FLOOR DISORDERS",
+    "description": "A weak pelvic floor can cause a variety of disruptive symptoms. Our fellowship-trained specialists have the most experience in the region.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
+    "details": "https://www.promedica.org/services-and-conditions/pelvic-floor-disorders"
+  },
+  {
+    "id": 142,
+    "name": "PELVIC FLOOR PHYSICAL THERAPY",
+    "description": "Our team offers pelvic floor physical therapy as a non-surgical treatment for severe pelvic pain to rebuild the strength, motor control and endurance of pelvic muscles.",
+    "providers": null,
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/pelvic-floor-physical-therapy"
+  },
+  {
+    "id": 143,
+    "name": "PELVIC HEALTH",
+    "description": "Your pelvic region includes your bladder, rectum and reproductive organs. When something is wrong, it causes pain and incontinence. We're here to help.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
+    "details": "https://www.promedica.org/services-and-conditions/pelvic-health"
+  },
+  {
+    "id": 144,
+    "name": "PELVIC PAIN",
+    "description": "Chronic pelvic pain takes a toll physically and mentally. Pelvic health experts pinpoint the cause and craft a treatment plan to help you feel healthy and strong.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=59",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=318",
+    "details": "https://www.promedica.org/services-and-conditions/pelvic-pain"
+  },
+  {
+    "id": 145,
+    "name": "PERIPHERAL ARTERY DISEASE (PAD)",
+    "description": "Peripheral artery disease (PAD) causes pain when narrowed arteries reduce blood flow to your legs. Our vascular experts can guide your healing and get you moving again.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
+    "details": "https://www.promedica.org/services-and-conditions/peripheral-artery-disease-pad"
+  },
+  {
+    "id": 146,
+    "name": "PHYSICAL THERAPY",
+    "description": "Our licensed physical therapists can treat problems that interfere with your ability to move naturally and perform normal daily activities.",
+    "providers": null,
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=140",
+    "details": "https://www.promedica.org/services-and-conditions/physical-therapy"
+  },
+  {
+    "id": 147,
+    "name": "PLASTIC AND RECONSTRUCTIVE SURGERY",
+    "description": "Look and feel your best with reconstructive and cosmetic procedures performed by expert and compassionate plastic and reconstructive surgeons.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=41",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=141",
+    "details": "https://www.promedica.org/services-and-conditions/plastic-and-reconstructive-surgery"
+  },
+  {
+    "id": 148,
+    "name": "PODIATRY",
+    "description": "If pain is holding you back, get back on your feet again with help from foot care specialists. We treat a wide variety of problematic foot and ankle conditions.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=75",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=162",
+    "details": "https://www.promedica.org/services-and-conditions/podiatry"
+  },
+  {
+    "id": 149,
+    "name": "POSITRON EMISSION TOMOGRAPHY",
+    "description": "Our radiologists offer state-of-the-art PET scans to help doctors see organs and tissues in the brain, heart, lungs and breasts using a special dye.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
+    "details": "https://www.promedica.org/services-and-conditions/positron-emission-tomography"
+  },
+  {
+    "id": 150,
+    "name": "POST-TRAUMATIC STRESS DISORDER",
+    "description": "If you or a loved one are coping with memories of a terrifying event, our mental health experts can help diagnose and treat your PTSD with care and compassion.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=40",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
+    "details": "https://www.promedica.org/services-and-conditions/post-traumatic-stress-disorder"
+  },
+  {
+    "id": 151,
+    "name": "POSTPARTUM DEPRESSION",
+    "description": "Postpartum depression is a common mental condition following the birth of a child. Our caring team is here to help.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=17",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
+    "details": null
+  },
+  {
+    "id": 152,
+    "name": "PRIMARY CARE",
+    "description": "Your primary care provider is your main advocate in your day-to-day health. ProMedica Physicians is here to help you with prevention and manage health conditions.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=5",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=324",
+    "details": "https://www.promedica.org/services-and-conditions/primary-care"
+  },
+  {
+    "id": 153,
     "name": "PRIVATE DUTY",
     "description": null,
     "providers": null,
@@ -1240,12 +1224,28 @@
     "details": "https://promedicahomehealth.org/find-an-agency/promedica-at-home-private-duty/"
   },
   {
+    "id": 154,
+    "name": "PROSTATE CANCER",
+    "description": "As the second-leading cause of cancer death in men, prostate cancer requires advanced technology and treatment options to improve outcomes.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=19",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=325",
+    "details": "https://www.promedica.org/services-and-conditions/prostate-cancer"
+  },
+  {
+    "id": 155,
+    "name": "PSYCHIATRY",
+    "description": "Our psychiatric team is devoted to the diagnosis, prevention and treatment of mental illness, emotional disturbance and behavior disorders.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=40",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=142",
+    "details": null
+  },
+  {
     "id": 156,
-    "name": "PEDIATRIC SLEEP MEDICINE",
-    "description": null,
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=454",
-    "details": "https://www.promedica.org/services-and-conditions/pediatric-sleep-medicine"
+    "name": "PULMONARY EMBOLISM",
+    "description": "A pulmonary embolism occurs when one or more arteries in your lungs become blocked by a blood clot. The specialists at Jobst Vascular Institute can help.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
+    "details": "https://www.promedica.org/services-and-conditions/pulmonary-embolism"
   },
   {
     "id": 157,
@@ -1257,19 +1257,19 @@
   },
   {
     "id": 158,
-    "name": "RADIATION THERAPY",
-    "description": "Radiation therapy is high-energy, therapeutic X-rays that can help prevent cancer cells from growing and multiplying.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=79",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=242",
-    "details": "https://www.promedica.org/services-and-conditions/radiation-therapy"
-  },
-  {
-    "id": 159,
     "name": "RADIOLOGY",
     "description": "When you need diagnostic imaging to get a clearer picture of your health, we offer board-certified radiologists and state-of-the- art technology at 30 locations.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
     "details": "https://www.promedica.org/services-and-conditions/radiology"
+  },
+  {
+    "id": 159,
+    "name": "ROBOTIC EXOSKELETON THERAPY AND REHAB",
+    "description": "ProMedica offers the EksoGT,™ the first-ever FDA approved, wearable robotic exoskeleton to help stroke and spinal cord patients stand up and walk again.",
+    "providers": null,
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/robotic-exoskeleton-therapy-and-rehab"
   },
   {
     "id": 160,
@@ -1289,22 +1289,14 @@
   },
   {
     "id": 162,
-    "name": "RESEARCH",
-    "description": null,
-    "providers": null,
-    "locations": null,
-    "details": "https://www.promedica.org/for-health-professionals/for-researchers/research-opportunities/patient-resources"
+    "name": "RADIATION THERAPY",
+    "description": "Radiation therapy is high-energy, therapeutic X-rays that can help prevent cancer cells from growing and multiplying.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=79",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=242",
+    "details": "https://www.promedica.org/services-and-conditions/radiation-therapy"
   },
   {
     "id": 163,
-    "name": "RESPIRATORY / PULMONARY CARE",
-    "description": "If you tire easily or struggle to breathe, our expert clinicians are here to help with treatment options for a variety of breathing and respiratory issues.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=12",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=143",
-    "details": "https://www.promedica.org/services-and-conditions/respiratory-pulmonary-care"
-  },
-  {
-    "id": 164,
     "name": "RHEUMATOLOGY",
     "description": "If you have arthritis, our specialists can treat a wide range of rheumatic diseases that cause pain in your joints, muscles, bones, skin and tissues.",
     "providers": null,
@@ -1312,15 +1304,15 @@
     "details": null
   },
   {
-    "id": 165,
-    "name": "ROBOTIC EXOSKELETON THERAPY AND REHAB",
-    "description": "ProMedica offers the EksoGT,™ the first-ever FDA approved, wearable robotic exoskeleton to help stroke and spinal cord patients stand up and walk again.",
-    "providers": null,
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/robotic-exoskeleton-therapy-and-rehab"
+    "id": 164,
+    "name": "RESPIRATORY / PULMONARY CARE",
+    "description": "If you tire easily or struggle to breathe, our expert clinicians are here to help with treatment options for a variety of breathing and respiratory issues.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=12",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=143",
+    "details": "https://www.promedica.org/services-and-conditions/respiratory-pulmonary-care"
   },
   {
-    "id": 166,
+    "id": 165,
     "name": "ROBOTIC SURGERY",
     "description": null,
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=robotic%20surgery",
@@ -1328,31 +1320,15 @@
     "details": "https://www.promedica.org/services-and-conditions/surgical-services#roboticSurgery"
   },
   {
+    "id": 166,
+    "name": "RESEARCH",
+    "description": null,
+    "providers": null,
+    "locations": null,
+    "details": "https://www.promedica.org/for-health-professionals/for-researchers/research-opportunities/patient-resources"
+  },
+  {
     "id": 167,
-    "name": "SEIZURES AND EPILEPSY",
-    "description": "Epilepsy is a nervous system disorder that can cause seizures. Though there’s no cure, there are a number of treatment options for controlling and eliminating seizures.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=115",
-    "details": "https://www.promedica.org/services-and-conditions/seizures-and-epilepsy"
-  },
-  {
-    "id": 168,
-    "name": "SHOULDER REPLACEMENT",
-    "description": "Don’t let shoulder pain keep you from being active. Our orthopaedic surgeons can replace your shoulder with a new, artificial joint to restore your movement.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=3",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=122",
-    "details": null
-  },
-  {
-    "id": 169,
-    "name": "SICKLE CELL DISEASE",
-    "description": "If you have sickle cell disease, you need comprehensive treatment, pain management and transfusions. The caring team at our Pediatric and Adult Sickle Cell Clinics can help.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=sickle%20cell%20disease",
-    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=sickle%20cell",
-    "details": "https://www.promedica.org/services-and-conditions/sickle-cell-disease"
-  },
-  {
-    "id": 170,
     "name": "SINUS CONDITIONS",
     "description": "Never let sinus issues keep you from doing what you love. Let our ear, nose and throat specialists diagnose and treat your condition so you can breathe easier.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=35",
@@ -1360,20 +1336,44 @@
     "details": null
   },
   {
-    "id": 171,
-    "name": "SKILLED NURSING & REHABILITATION",
-    "description": null,
-    "providers": null,
-    "locations": null,
-    "details": "https://www.promedicaskillednursing.org/"
+    "id": 168,
+    "name": "SICKLE CELL DISEASE",
+    "description": "If you have sickle cell disease, you need comprehensive treatment, pain management and transfusions. The caring team at our Pediatric and Adult Sickle Cell Clinics can help.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=sickle%20cell%20disease",
+    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=sickle%20cell",
+    "details": "https://www.promedica.org/services-and-conditions/sickle-cell-disease"
   },
   {
-    "id": 172,
+    "id": 169,
     "name": "SKIN CANCER",
     "description": "Typically caused by sun exposure, skin cancer is the most common cancer. It requires expert treatment from a specially trained team.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=19",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=325",
     "details": "https://www.promedica.org/services-and-conditions/skin-cancer"
+  },
+  {
+    "id": 170,
+    "name": "SLEEP MEDICINE",
+    "description": "If you struggle to get a good night’s sleep, our sleep experts can help with a variety of different treatment options to help you rest easy again.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=13",
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/sleep-medicine"
+  },
+  {
+    "id": 171,
+    "name": "SPINE CARE",
+    "description": "Our comprehensive approach includes a spine care clinic, connected to neurosciences experts and orthopaedic specialists, to give you options in finding relief.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=3",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=122",
+    "details": "https://www.promedica.org/services-and-conditions/spine-care"
+  },
+  {
+    "id": 172,
+    "name": "SPEECH THERAPY",
+    "description": "If you have a medical issue that affects your speech, our Total Rehab Program offers a variety of therapies, including speech and language pathology, to help.",
+    "providers": null,
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=147",
+    "details": "https://www.promedica.org/services-and-conditions/speech-therapy"
   },
   {
     "id": 173,
@@ -1385,38 +1385,6 @@
   },
   {
     "id": 174,
-    "name": "SLEEP MEDICINE",
-    "description": "If you struggle to get a good night’s sleep, our sleep experts can help with a variety of different treatment options to help you rest easy again.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=13",
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/sleep-medicine"
-  },
-  {
-    "id": 175,
-    "name": "SLEEP MEDICINE - PEDIATRIC",
-    "description": null,
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=454",
-    "details": null
-  },
-  {
-    "id": 176,
-    "name": "SPEECH THERAPY",
-    "description": "If you have a medical issue that affects your speech, our Total Rehab Program offers a variety of therapies, including speech and language pathology, to help.",
-    "providers": null,
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=147",
-    "details": "https://www.promedica.org/services-and-conditions/speech-therapy"
-  },
-  {
-    "id": 177,
-    "name": "SPINE CARE",
-    "description": "Our comprehensive approach includes a spine care clinic, connected to neurosciences experts and orthopaedic specialists, to give you options in finding relief.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=3",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=122",
-    "details": "https://www.promedica.org/services-and-conditions/spine-care"
-  },
-  {
-    "id": 178,
     "name": "SPORTS MEDICINE",
     "description": "From sports-related injuries and tendonitis to joint pain and arthritis, our sports medicine experts can help keep you in the game.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=31",
@@ -1424,15 +1392,7 @@
     "details": "https://www.promedica.org/services-and-conditions/sports-medicine"
   },
   {
-    "id": 179,
-    "name": "STROKE",
-    "description": "At hospitals and outpatient clinics throughout our region, our stroke experts in our award-winning program are committed to exceptional outcomes.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/stroke"
-  },
-  {
-    "id": 180,
+    "id": 175,
     "name": "STRUCTURAL HEART DISEASE",
     "description": "Structural heart disease experts treat a variety of conditions inside your heart, including damage and flaws in your heart’s valves, walls and chambers.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=9",
@@ -1440,12 +1400,52 @@
     "details": "https://www.promedica.org/services-and-conditions/structural-heart-disease"
   },
   {
-    "id": 181,
+    "id": 176,
+    "name": "STROKE",
+    "description": "At hospitals and outpatient clinics throughout our region, our stroke experts in our award-winning program are committed to exceptional outcomes.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/stroke"
+  },
+  {
+    "id": 177,
     "name": "SURGICAL SERVICES",
     "description": "If you need surgery, our board-certified surgeons are here to help. We perform about 60,000 general and specialty surgeries each year for a wide range of conditions.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=114",
     "locations": null,
     "details": "https://www.promedica.org/services-and-conditions/surgical-services"
+  },
+  {
+    "id": 178,
+    "name": "SEIZURES AND EPILEPSY",
+    "description": "Epilepsy is a nervous system disorder that can cause seizures. Though there’s no cure, there are a number of treatment options for controlling and eliminating seizures.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=45",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=115",
+    "details": "https://www.promedica.org/services-and-conditions/seizures-and-epilepsy"
+  },
+  {
+    "id": 179,
+    "name": "SHOULDER REPLACEMENT",
+    "description": "Don’t let shoulder pain keep you from being active. Our orthopaedic surgeons can replace your shoulder with a new, artificial joint to restore your movement.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=3",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=122",
+    "details": null
+  },
+  {
+    "id": 180,
+    "name": "SLEEP MEDICINE - PEDIATRIC",
+    "description": null,
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=24",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=454",
+    "details": null
+  },
+  {
+    "id": 181,
+    "name": "SKILLED NURSING & REHABILITATION",
+    "description": null,
+    "providers": null,
+    "locations": null,
+    "details": "https://www.promedicaskillednursing.org/"
   },
   {
     "id": 182,
@@ -1473,14 +1473,6 @@
   },
   {
     "id": 185,
-    "name": "ULTRASOUND",
-    "description": "Ultrasound uses sound waves to create pictures of the inside of your body to help your doctors form an accurate diagnosis and plan effective treatment.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
-    "details": "https://www.promedica.org/services-and-conditions/ultrasound"
-  },
-  {
-    "id": 186,
     "name": "URGENT CARE",
     "description": "Urgent care is open to patients of all ages who need immediate, nonemergency medical care. We have urgent care locations throughout greater Toledo, and one just for kids",
     "providers": null,
@@ -1488,15 +1480,15 @@
     "details": "https://www.promedica.org/services-and-conditions/urgent-care"
   },
   {
-    "id": 187,
-    "name": "URINARY INCONTINENCE",
-    "description": "A loss of bladder control can happen at any age, and can be managed with treatments ranging from lifestyle changes to surgery.",
+    "id": 186,
+    "name": "UROLOGY",
+    "description": "Our urologists provide care for male and female conditions, like kidney stones, cancer, vasectomies, urinary tract infections, bladder issues and more.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=7",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=153",
-    "details": "https://www.promedica.org/services-and-conditions/urinary-incontinence"
+    "details": "https://www.promedica.org/services-and-conditions/urology"
   },
   {
-    "id": 188,
+    "id": 187,
     "name": "URINARY TRACT INFECTION",
     "description": "Urinary tract infections (UTIs) are infections that make it painful to urinate. We help thousands of patients each year with safe, effective UTI treatments.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=7",
@@ -1504,12 +1496,20 @@
     "details": "https://www.promedica.org/services-and-conditions/urinary-tract-infection"
   },
   {
-    "id": 189,
-    "name": "UROLOGY",
-    "description": "Our urologists provide care for male and female conditions, like kidney stones, cancer, vasectomies, urinary tract infections, bladder issues and more.",
+    "id": 188,
+    "name": "URINARY INCONTINENCE",
+    "description": "A loss of bladder control can happen at any age, and can be managed with treatments ranging from lifestyle changes to surgery.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=7",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=153",
-    "details": "https://www.promedica.org/services-and-conditions/urology"
+    "details": "https://www.promedica.org/services-and-conditions/urinary-incontinence"
+  },
+  {
+    "id": 189,
+    "name": "ULTRASOUND",
+    "description": "Ultrasound uses sound waves to create pictures of the inside of your body to help your doctors form an accurate diagnosis and plan effective treatment.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=77",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=144",
+    "details": "https://www.promedica.org/services-and-conditions/ultrasound"
   },
   {
     "id": 190,
@@ -1529,22 +1529,6 @@
   },
   {
     "id": 192,
-    "name": "VARICOSE AND SPIDER VEINS",
-    "description": "Don’t let varicose and spider veins make you self-conscious or uncomfortable. Minimally invasive treatments can help you feel confident and comfortable again.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=jobst%20vascular%20institute%20vein%20care",
-    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=156",
-    "details": "https://www.promedica.org/services-and-conditions/varicose-veins-and-spider-veins"
-  },
-  {
-    "id": 193,
-    "name": "VASCULAR CARE",
-    "description": "Jobst Vascular Institute brings you world-class care close to home. We offer a innovative and personal approach to testing, medical treatment and surgery.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=89",
-    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=jobst",
-    "details": "https://www.promedica.org/services-and-conditions/vascular-care/"
-  },
-  {
-    "id": 194,
     "name": "VASCULAR DISEASE",
     "description": "Vascular disease is when blood vessels carrying blood to and from your heart get blocked. But medical treatment and lifestyle changes can help improve your health.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
@@ -1552,7 +1536,7 @@
     "details": "https://www.promedica.org/services-and-conditions/vascular-disease"
   },
   {
-    "id": 195,
+    "id": 193,
     "name": "VASCULAR LAB",
     "description": "Vascular labs help your doctor understand what’s going on with your circulatory system. Jobst Vascular Institute performs more than 30,000 of these studies each year.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=89",
@@ -1560,20 +1544,36 @@
     "details": "https://www.promedica.org/services-and-conditions/vascular-lab"
   },
   {
-    "id": 196,
-    "name": "VASCULAR NEUROLOGY",
-    "description": "Vascular neurology is a specialized treatment of strokes and its risk factors. ProMedica provides care in a state-of-the-art stroke unit with a neuro-interventional lab.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=107",
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/vascular-neurology"
+    "id": 194,
+    "name": "VARICOSE AND SPIDER VEINS",
+    "description": "Don’t let varicose and spider veins make you self-conscious or uncomfortable. Minimally invasive treatments can help you feel confident and comfortable again.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=jobst%20vascular%20institute%20vein%20care",
+    "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=156",
+    "details": "https://www.promedica.org/services-and-conditions/varicose-veins-and-spider-veins"
   },
   {
-    "id": 197,
+    "id": 195,
+    "name": "VASCULAR CARE",
+    "description": "Jobst Vascular Institute brings you world-class care close to home. We offer a innovative and personal approach to testing, medical treatment and surgery.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=89",
+    "locations": "https://www.promedica.org/find-locations/location-results?LocationText=jobst",
+    "details": "https://www.promedica.org/services-and-conditions/vascular-care/"
+  },
+  {
+    "id": 196,
     "name": "VASCULAR SURGERY",
     "description": "Our vascular surgeons provide the surgical treatment of disease in your circulatory system outside of your heart and brain, including the arteries and veins.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
     "locations": "https://www.promedica.org/find-locations/location-results?ServicesId=155",
     "details": "https://www.promedica.org/services-and-conditions/vascular-surgery"
+  },
+  {
+    "id": 197,
+    "name": "VASCULAR NEUROLOGY",
+    "description": "Vascular neurology is a specialized treatment of strokes and its risk factors. ProMedica provides care in a state-of-the-art stroke unit with a neuro-interventional lab.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=107",
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/vascular-neurology"
   },
   {
     "id": 198,
@@ -1585,14 +1585,6 @@
   },
   {
     "id": 199,
-    "name": "VEIN CARE",
-    "description": "Say goodbye to unsightly varicose veins and hello to healthier-looking legs with help from our vein care team. We'll restore your confidence and help you feel better.",
-    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=promedica%20jobst%20vascular%20institute%20vein%20care",
-    "locations": null,
-    "details": "https://www.promedica.org/services-and-conditions/varicose-veins-and-spider-veins"
-  },
-  {
-    "id": 200,
     "name": "VENOUS SCLEROTHERAPY",
     "description": "Venous sclerotherapy is a minimally invasive treatment option used to improve the appearance of varicose and spider veins.",
     "providers": "https://www.promedica.org/find-a-doctor/provider-results?SpecialtyId=51",
@@ -1600,12 +1592,20 @@
     "details": null
   },
   {
-    "id": 201,
+    "id": 200,
     "name": "VIDEO VISIT",
     "description": "Your ProMedica Physician may offer a scheduled video visit through your mobile device or computer.",
     "providers": null,
     "locations": null,
     "details": null
+  },
+  {
+    "id": 201,
+    "name": "VEIN CARE",
+    "description": "Say goodbye to unsightly varicose veins and hello to healthier-looking legs with help from our vein care team. We'll restore your confidence and help you feel better.",
+    "providers": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=promedica%20jobst%20vascular%20institute%20vein%20care",
+    "locations": null,
+    "details": "https://www.promedica.org/services-and-conditions/varicose-veins-and-spider-veins"
   },
   {
     "id": 202,

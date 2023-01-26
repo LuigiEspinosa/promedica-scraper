@@ -116,6 +116,8 @@ export default async function ServicesConditions() {
   });
 
   let servicesBody = [];
+  let servicesImages = [];
+
   for (let i = 0; i <= mergeLinks.length; i++) {
     if (mergeLinks[i] !== undefined) {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
@@ -830,6 +832,11 @@ export default async function ServicesConditions() {
         });
 
         console.log('Services & Conditions Article', i + 1, 'Done');
+
+        const allImg = await page.$$eval('#site-body img', (img) => img.map((i) => i.src));
+        servicesImages.push(allImg);
+
+        console.log('Images from Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
       }
@@ -844,6 +851,17 @@ export default async function ServicesConditions() {
     (err) => {
       if (err) return console.log(err);
       console.log('\nServices & Conditions Articles Imported!\n');
+    }
+  );
+
+  const jsonArticlesImages = JSON.stringify(servicesImages, null, 2);
+  fs.writeFile(
+    './json/ProMedica/services-conditions/services-conditions-images.json',
+    jsonArticlesImages,
+    'utf8',
+    (err) => {
+      if (err) return console.log(err);
+      console.log('\nServices & Conditions Images Imported!\n');
     }
   );
 

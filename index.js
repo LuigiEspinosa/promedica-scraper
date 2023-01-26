@@ -15,10 +15,10 @@ import Agency from './pages/ProMedica/Agency/agency.js';
 // OurStories();
 // Locations();
 // DoctorsProviders();
-// ServicesConditions();
+ServicesConditions();
 // Agency();
 
-// Paramount
-EducationalArticles();
-ParamountNews();
-ParamountBlog();
+// // Paramount
+// EducationalArticles();
+// ParamountNews();
+// ParamountBlog();
