@@ -20,23 +20,69 @@ export default async function MemoryCare(links) {
           .getByText('Photo Gallery')
           .isVisible();
 
-        let imgSrc, imgAlt;
+        const vTourButton = await page
+          .locator('.hero-buttons-container > a[href*="https:"]')
+          .getByText('Virtual Tour')
+          .first()
+          .isVisible();
+
+        const testimonialsButton = await page
+          .locator('.hero-buttons-container > a.testimonialVideoOverlay_open')
+          .getByText('Testimonials')
+          .first()
+          .isVisible();
+
+        const vEventsButton = await page
+          .locator('.hero-buttons-container > a.button')
+          .getByText('Virtual Events')
+          .first()
+          .isVisible();
+
+        let photoGallery;
         if (banner) {
           await page.click('.hero-buttons-container > a.image-gallery');
 
-          imgSrc = await page.$eval('#image-gallery', (i) => {
-            let img = i.querySelector('#image-gallery .slick-slider img');
-            if (img) img = img.src;
-            return img;
-          });
+          photoGallery = await page.$$eval(
+            '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
+            (item) => {
+              let images = [];
+              item.forEach((item) => images.push({ imgSrc: item.src, imgAlt: item.alt }));
+              return images;
+            }
+          );
 
-          imgAlt = await page.$eval('#image-gallery', (i) => {
-            let img = i.querySelector('#image-gallery .slick-slider img');
-            if (img) img = img.alt;
-            return img;
+          await page.keyboard.press('Escape');
+        }
+
+        let virtualTour;
+        if (vTourButton) {
+          virtualTour = await page
+            .locator('.hero-buttons-container > a[href*="https:"]')
+            .getByText('Virtual Tour')
+            .first()
+            .getAttribute('href');
+        }
+
+        let testimonialsVideo;
+        if (testimonialsButton) {
+          await page.click('.hero-buttons-container > a.testimonialVideoOverlay_open');
+
+          testimonialsVideo = await page.$eval('#testimonialVideoOverlay', (i) => {
+            let video = i.querySelector('#testimonialVideoOverlay iframe');
+            if (video) video = video.src;
+            return video;
           });
 
           await page.keyboard.press('Escape');
+        }
+
+        let virtualEvents;
+        if (vEventsButton) {
+          virtualEvents = await page
+            .locator('.hero-buttons-container > a.button')
+            .getByText('Virtual Events')
+            .first()
+            .getAttribute('href');
         }
 
         const hospiceName = await page.$eval('.hero-section', (i) => {
@@ -45,14 +91,20 @@ export default async function MemoryCare(links) {
           return content;
         });
 
-        const counties = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay > p > strong');
-          if (content && content.innerText === 'COUNTIES SERVED') {
-            return (content = i.querySelector(
-              '.hero-overlay > p:not(.no-margin) > strong'
-            ).innerText);
-          }
-          return null;
+        const address = await page.$eval('.hero-section', (item) => {
+          let address1 = item.querySelector('.hero-overlay p:not(.hero-map-link)');
+          let address2 = item.querySelector('.hero-overlay p.hero-map-link');
+          let directions = item.querySelector('.hero-overlay p.directions > a[href*="http"]');
+
+          if (address1) address1 = address1.innerText;
+          if (address2) address2 = address2.innerText;
+          if (directions) directions = directions.href;
+
+          return {
+            address1,
+            address2,
+            directions,
+          };
         });
 
         const email = await page.$eval('.hero-section', (i) => {
@@ -86,30 +138,11 @@ export default async function MemoryCare(links) {
           return content;
         });
 
-        const enrichingLife = await page.$eval('main > .flex-wrapper', (i) => {
-          let content = i.querySelector(
-            'main > .flex-wrapper > div.flex-row > div > section.grid-section > h2'
-          );
-          if (content && content.innerText === 'Enriching Life') {
-            return (content = {
-              content:
-                i.querySelector(
-                  'main > .flex-wrapper > div.flex-row > div > section.grid-section > h2 + p'
-                ).innerText || null,
-              video:
-                i.querySelector(
-                  'main > .flex-wrapper > div.flex-row > div > section.grid-section > figure iframe'
-                ).src || null,
-            });
-          }
-          return null;
-        });
-
-        const patientServices = await page.$eval('main > .flex-wrapper', (i) => {
+        const customizedCare = await page.$eval('main > .flex-wrapper', (i) => {
           let content = i.querySelector(
             'main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > h2'
           );
-          if (content && content.innerText === 'Patient Services') {
+          if (content && content.innerText === 'Customized Care & Services') {
             return (content = {
               content:
                 i.querySelector(
@@ -118,6 +151,25 @@ export default async function MemoryCare(links) {
               learnMore:
                 i.querySelector(
                   'main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > a'
+                ).href || null,
+            });
+          }
+          return null;
+        });
+
+        const designLayout = await page.$eval('main > .flex-wrapper', (i) => {
+          let content = i.querySelector(
+            'main > .flex-wrapper > div:not(.flex-row) > div.background-color-white > section.content-section > h2'
+          );
+          if (content && content.innerText === 'Design & Layout') {
+            return (content = {
+              content:
+                i.querySelector(
+                  'main > .flex-wrapper > div:not(.flex-row) > div.background-color-white > section.content-section > h2 + p'
+                ).innerText || null,
+              learnMore:
+                i.querySelector(
+                  'main > .flex-wrapper > div:not(.flex-row) > div.background-color-white > section.content-section > a'
                 ).href || null,
             });
           }
@@ -163,7 +215,7 @@ export default async function MemoryCare(links) {
           let content = i.querySelector(
             '.flex-wrapper.configured-2-Column > div.flex-row > div > section.grid-section > h2'
           );
-          if (content && content.innerText === 'ProMedica Hospice Memorial Fund') {
+          if (content && content.innerText === 'ProMedica Memory Care Fund') {
             return (content = {
               content:
                 i.querySelector(
@@ -199,17 +251,19 @@ export default async function MemoryCare(links) {
           title: articlesTitle,
           url: links[i],
           content: {
-            imgSrc,
-            imgAlt,
+            photoGallery,
+            virtualTour,
+            testimonialsVideo,
+            virtualEvents,
             hospiceName,
-            counties,
+            address,
             email,
             phone,
             fax,
             title,
             description,
-            enrichingLife,
-            patientServices,
+            customizedCare,
+            designLayout,
             testimonials,
             memorialFund,
             moreInfo,
