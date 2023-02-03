@@ -12,6 +12,7 @@ export default async function ALIL(links) {
 
       try {
         const articlesTitle = await page.title();
+        let subpageTitle;
 
         const banner = await page
           .locator('.hero-buttons-container > a[data-popup-ordinal="0"]')
@@ -159,9 +160,12 @@ export default async function ALIL(links) {
           return null;
         });
 
+        await page.goto(`${links[i]}/floor-plans`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let floorPlansDescription = null;
         let floorPlansDetails = null;
-        if (articlesTitle.includes('Floor Plans')) {
+        if (subpageTitle.includes('Floor Plans')) {
           floorPlansDescription = await page.$eval('.hero-section', (i) => {
             let content = i.querySelector('.hero-overlay');
             if (content) content = content.innerHTML;
@@ -174,9 +178,9 @@ export default async function ALIL(links) {
               let images = [];
               item.forEach((item) =>
                 images.push({
-                  floorPlanSrc: item.querySelector('section.content-section > img').src,
-                  floorPlanName: item.querySelector('section.content-section > h2').innerText,
-                  floorPlanDetail: item.querySelector('section.content-section > p').innerHTML,
+                  floorPlanSrc: item.querySelector('section.content-section > img')?.src,
+                  floorPlanName: item.querySelector('section.content-section > h2')?.innerText,
+                  floorPlanDetail: item.querySelector('section.content-section > p')?.innerHTML,
                 })
               );
               return images;
@@ -184,9 +188,12 @@ export default async function ALIL(links) {
           );
         }
 
+        await page.goto(`${links[i]}/services`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let generalServices = null;
         let expandedServices = null;
-        if (articlesTitle.includes('Services')) {
+        if (subpageTitle.includes('Services')) {
           generalServices = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
@@ -206,9 +213,12 @@ export default async function ALIL(links) {
           );
         }
 
+        await page.goto(`${links[i]}/features-amenities`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let generalAmenities = null;
         let expandedAmenities = null;
-        if (articlesTitle.includes('Amenities')) {
+        if (subpageTitle.includes('Amenities')) {
           generalAmenities = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
@@ -228,9 +238,12 @@ export default async function ALIL(links) {
           );
         }
 
+        await page.goto(`${links[i]}/payment`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let paymentInfo = null;
         let paymentLink = null;
-        if (articlesTitle.includes('Payment')) {
+        if (subpageTitle.includes('Payment')) {
           paymentInfo = await page.$eval('.hero-section', (i) => {
             let content = i.querySelector('.hero-overlay');
             if (content) content = content.innerHTML;
@@ -244,21 +257,22 @@ export default async function ALIL(links) {
           });
         }
 
+        await page.goto(`${links[i]}/payment/veteran-benefits`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let veteranBenefits = null;
         let processingApproval = null;
         let benefitLevels = null;
         let requirements = null;
-        if (articlesTitle.includes('Veteran')) {
+        if (subpageTitle.includes('Veteran')) {
           veteranBenefits = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
             let content = i.querySelector('main > div.umb-grid section.grid-section > p');
             if (content) content = content.innerText;
             return content;
           });
 
-          processingApproval = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
-            let content = i.querySelector(
-              'main > div.umb-grid div.background-color-DFEAEB > section.grid-section'
-            );
+          processingApproval = await page.$eval('main > div.umb-grid', (i) => {
+            let content = i.querySelector('div.background-color-DFEAEB > section.grid-section');
             if (content) content = content.innerHTML;
             return content;
           });
@@ -287,8 +301,11 @@ export default async function ALIL(links) {
           );
         }
 
+        await page.goto(`${links[i]}/contact-us`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
         let contactForm = null;
-        if (articlesTitle.includes('Contact')) {
+        if (subpageTitle.includes('Contact')) {
           contactForm = await page.$eval('section.grid-section', (i) => {
             let content = document.evaluate(
               '//div[starts-with(@id,"umbraco_form")]',
@@ -303,8 +320,13 @@ export default async function ALIL(links) {
           });
         }
 
+        await page.goto(`${links[i]}/special-needs-communications`, {
+          waitUntil: 'domcontentloaded',
+        });
+        subpageTitle = await page.title();
+
         let specialNeeds = null;
-        if (articlesTitle.includes('Special Needs')) {
+        if (subpageTitle.includes('Special Needs')) {
           specialNeeds = await page.$eval('main > div.umb-grid div.configured-2-Column', (i) => {
             let content = i.querySelector('section.grid-section');
             if (content) content = content.innerHTML;
@@ -312,17 +334,26 @@ export default async function ALIL(links) {
           });
         }
 
-        const englisPDF = await page.$eval('section.grid-section', (i) => {
-          let content = i.querySelector('a[data-id="12218"]');
-          if (content) content = content.href;
-          return content;
+        await page.goto(`${links[i]}/notice-of-information-practices`, {
+          waitUntil: 'domcontentloaded',
         });
+        subpageTitle = await page.title();
 
-        const spanishPDF = await page.$eval('section.grid-section', (i) => {
-          let content = i.querySelector('a[data-id="12342"]');
-          if (content) content = content.href;
-          return content;
-        });
+        let englisPDF = null;
+        let spanishPDF = null;
+        if (subpageTitle.includes('Notice of Information')) {
+          englisPDF = await page.$eval('section.grid-section', (i) => {
+            let content = i.querySelector('a[data-id="12218"]');
+            if (content) content = content.href;
+            return content;
+          });
+
+          spanishPDF = await page.$eval('section.grid-section', (i) => {
+            let content = i.querySelector('a[data-id="12342"]');
+            if (content) content = content.href;
+            return content;
+          });
+        }
 
         const moreInfo = await page.$eval('main', (i) => {
           let content = i.querySelector(
@@ -374,7 +405,7 @@ export default async function ALIL(links) {
             englisPDF,
             spanishPDF,
             contact,
-            contactForm,
+            // contactForm,
           },
         });
 
