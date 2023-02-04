@@ -188,13 +188,64 @@ export default async function ALIL(links) {
           );
         }
 
+        await page.goto(`${links[i]}/design-and-layout`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
+        let designLayout = [];
+        if (subpageTitle.includes('Design and Layout')) {
+          const designLayoutDescription = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-overlay');
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          const communityLayout = await page.$eval('main > div.umb-grid', (i) => {
+            let content = i.querySelector(
+              'div.grid-row:first-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+            );
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          const residentialAcommodations = await page.$eval('main > div.umb-grid', (i) => {
+            let content = i.querySelector(
+              'div.grid-row.pattern-F8F8F5 > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+            );
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          const memoryCareServices = await page.$eval('main > div.umb-grid', (i) => {
+            let content = i.querySelector(
+              'div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes.background-color-0C466C > section.grid-section'
+            );
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          const safety = await page.$eval('main > div.umb-grid', (i) => {
+            let content = i.querySelector(
+              'div.grid-row:last-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+            );
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          designLayout.push({
+            designLayoutDescription,
+            communityLayout,
+            residentialAcommodations,
+            memoryCareServices,
+            safety,
+          });
+        }
+
         await page.goto(`${links[i]}/services`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
-        let generalServices = null;
-        let expandedServices = null;
+        let services = [];
         if (subpageTitle.includes('Services')) {
-          generalServices = await page.$$eval(
+          const generalServices = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
@@ -203,7 +254,7 @@ export default async function ALIL(links) {
             }
           );
 
-          expandedServices = await page.$$eval(
+          const expandedServices = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
@@ -211,15 +262,69 @@ export default async function ALIL(links) {
               return services;
             }
           );
+
+          const healthServices = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(1) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const socialServices = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(2) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const personalServices = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(1) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const foodServices = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(2) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const additionalServices = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(3) > div:nth-child(1) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          services.push({
+            generalServices,
+            expandedServices,
+            healthServices,
+            socialServices,
+            personalServices,
+            foodServices,
+            additionalServices,
+          });
         }
 
         await page.goto(`${links[i]}/features-amenities`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
-        let generalAmenities = null;
-        let expandedAmenities = null;
+        let amenities = [];
         if (subpageTitle.includes('Amenities')) {
-          generalAmenities = await page.$$eval(
+          const generalAmenities = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
@@ -228,7 +333,7 @@ export default async function ALIL(links) {
             }
           );
 
-          expandedAmenities = await page.$$eval(
+          const expandedAmenities = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
@@ -236,6 +341,11 @@ export default async function ALIL(links) {
               return services;
             }
           );
+
+          amenities.push({
+            generalAmenities,
+            expandedAmenities,
+          });
         }
 
         await page.goto(`${links[i]}/payment`, { waitUntil: 'domcontentloaded' });
@@ -390,10 +500,9 @@ export default async function ALIL(links) {
             floorPlansVariety,
             floorPlansDescription,
             floorPlansDetails,
-            generalServices,
-            expandedServices,
-            generalAmenities,
-            expandedAmenities,
+            designLayout,
+            services,
+            amenities,
             paymentInfo,
             paymentLink,
             veteranBenefits,
@@ -405,7 +514,7 @@ export default async function ALIL(links) {
             englisPDF,
             spanishPDF,
             contact,
-            // contactForm,
+            contactForm,
           },
         });
 
