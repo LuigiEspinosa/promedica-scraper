@@ -47,6 +47,7 @@
       "fax": "239-775-9085",
       "title": "Senior Living At Its Best",
       "description": "Located on 28 acres of beautifully tropical landscaped property in Naples, Florida, Lely Palms ProMedica Senior Living offers independent living for persons ages 55 and over. Lely Palms also offers the only retirement villa rentals in Naples. Choose from an all-inclusive rental package, general rental, or trial stay – with an array of floor plans including studios, alcoves, one and two bedroom apartments. Our rental community is designed for your active and healthy lifestyle.",
+      "rightTime": null,
       "featuresAmenities": {
         "content": "Independent Living Apartments and Villas\nFull-service rental plans for those looking to simplify their lifestyle\nGeneral rental plans to customize and add the services you desire\nOne of the few Naples area Continuing Care Retirement Communities (CCRC) with rental units",
         "learnMore": "https://www.lelypalmsretirementliving.com/features-amenities/"
@@ -269,6 +270,7 @@
       "fax": "717-274-8800",
       "title": "Senior Living At Its Best",
       "description": "Linden Village ProMedica Senior Living is nestled on Tuck Court, sharing a campus with ProMedica Skilled Nursing and Rehabilitation in Lebanon, Pennsylvania. Linden Village residents can take advantage of a long list of services: health care, personal care, social programs and wellness programs all delivered by a warm, caring and knowledgeable staff.",
+      "rightTime": null,
       "featuresAmenities": {
         "content": "Month-to-month Rent\nNo Buy-in Fees\nSmall Pets Welcome",
         "learnMore": "umb://document/9ce5707f8cc64badb455d31e98463f6a"
@@ -474,6 +476,7 @@
       "fax": "419-874-2803",
       "title": "Senior Living At Its Best",
       "description": "Conveniently located on Fremont Pike near Interstate 75 and sharing a campus with ProMedica Skilled Nursing and Rehabilitation,  The Commons offers all-inclusive monthly independent living rental options for persons ages 55 and over. Our community is designed for your active and healthy lifestyle offering an array of floor plans including studios, one and two bedroom apartments.  Take a look yourself or experience first-hand with our short-stay trial period option.",
+      "rightTime": null,
       "featuresAmenities": {
         "content": "Month-to-month Rent\nNo buy-in Fees\nSmall Pets Welcome\nMonthly Community Diabetes Program",
         "learnMore": "https://www.perrysburgcommons.com/features/"
@@ -684,6 +687,7 @@
       "fax": "517-266-0704",
       "title": "Assisted Living and Memory Care",
       "description": "No longer able to live alone, but want to maintain some independence? Supportive and dignified assisted living is your solution. ProMedica Charlotte Stephenson Manor provides assisted living and memory care services in their community located in Adrian, Michigan.",
+      "rightTime": null,
       "featuresAmenities": {
         "content": "Dining and Housekeeping Services\nMedication Management\nSecure dementia unit",
         "learnMore": "https://www.promedicaseniorliving.org/senior-living-locations/promedica-charlotte-stephenson-manor/features-amenities/"
@@ -791,6 +795,207 @@
       "englisPDF": "https://www.promedicaseniorliving.org/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
       "spanishPDF": "https://www.promedicaseniorliving.org/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
       "contact": "https://www.promedicaseniorliving.org/contact-us/"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Springhouse ProMedica Senior Living (Pikesville) - ProMedica Senior Living Communities",
+    "url": "https://www.springhouse-al.com/pikesville/",
+    "content": {
+      "photoGallery": [
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8202/springhouse-exterior-13.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8203/springhouse-lobby-1.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8206/springhouse-pvt-dining-1.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8201/springhouse-dining-4.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8199/springhouse-corridor-1.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8205/springhouse-mainstreet-3.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8198/couples-bedroom.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/8200/springhouse-couples-br-4.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10406/breakfast-bar-area.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10407/kitchenette.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10408/model-room-2.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10409/model-room-4.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10410/model-room-bed-3.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10479/model-room-bed-1.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.springhouse-al.com/media/10478/chapel-3.jpg",
+          "imgAlt": "img-name"
+        }
+      ],
+      "hospiceName": "Welcome To Springhouse A ProMedica Senior Living Community (Pikesville)",
+      "address": {
+        "address1": "8911 Reisterstown Rd",
+        "address2": "Pikesville, MD 21208",
+        "directions": "http://maps.google.com/?q=8911%20Reisterstown%20Rd+Pikesville+MD+21208"
+      },
+      "email": "PikesvilleSpringhouse@promedica.org",
+      "phone": "410-486-5500",
+      "fax": "410-486-9300",
+      "title": "Senior Living At Its Best",
+      "description": "Springhouse ProMedica Senior Living is located just northwest of Baltimore in Pikesville, Maryland. Springhouse is a gracious assisted living community designed specifically to provide supportive care for seniors. With 20 years of experience, Springhouse is a place that gives residents control over their lives and reduces the stress of household management. Our community is a place which enhances life through wellness programs, activities, socialization and personal care services - a place with warm, caring and knowledgeable staff.",
+      "rightTime": {
+        "content": "Missed medication doses\nWeight loss due to lack of eating\nPoor personal hygiene\nLoneliness, anxiety and depression\nFrequent emergency room visits",
+        "learnMore": "https://www.springhouse-al.com/pikesville/services/"
+      },
+      "featuresAmenities": null,
+      "floorPlansVariety": {
+        "content": "Springhouse offers a selection of beautiful, private apartments to fit the differing needs of our seniors.",
+        "learnMore": "https://www.springhouse-al.com/pikesville/floor-plans/"
+      },
+      "floorPlansDescription": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Floor Plans</h1>\n\t<h3 class=\"larger\">Variety of Floor Plans</h3>\n</div>\n\n<p>Each Springhouse apartment is equipped with a kitchenette and a full, private bath. Residents can enjoy the spacious garden courtyard, restaurant-style dining, a library, game room, art studio and beauty salon.</p>\t\t\t\t\t\t",
+      "floorPlansDetails": [
+        {
+          "floorPlanSrc": "https://www.springhouse-al.com/media/8291/sh-1-bedroom.svg",
+          "floorPlanName": "One Bedroom Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.springhouse-al.com/media/8292/sh-2-bedroom.svg",
+          "floorPlanName": "Two Bedroom Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.springhouse-al.com/media/8294/sh-deluxe-1-bedroom.svg",
+          "floorPlanName": "One Bedroom Deluxe"
+        },
+        {
+          "floorPlanSrc": "https://www.springhouse-al.com/media/8295/sh-studio.svg",
+          "floorPlanName": "Grand Studio"
+        }
+      ],
+      "designLayout": [],
+      "services": [
+        {
+          "generalServices": [],
+          "expandedServices": [],
+          "healthServices": [
+            "Intellectually stimulating activities",
+            "Daily physical programs",
+            "Variety of religious services",
+            "Musical entertainment",
+            "Evening and weekend social programs",
+            "Personal hygiene",
+            "Bathing",
+            "Dressing and undressing",
+            "Night time care",
+            "Toileting"
+          ],
+          "socialServices": [
+            "Beautiful, spacious dining rooms",
+            "Specialty preparation and presentation of food",
+            "Assistance with eating",
+            "Special or modified dietary options"
+          ],
+          "personalServices": [
+            "Personal hygiene",
+            "Bathing",
+            "Dressing and undressing",
+            "Night time care",
+            "Toileting"
+          ],
+          "foodServices": [
+            "On-site licensed nurses 24/7",
+            "Assistance with medications",
+            "Monitoring – blood pressure, vital signs, weight, etc.",
+            "Responding to and treating health problems",
+            "On-site access to specialty physicians",
+            "On-site physical, occupational, and speech rehabilitation services from HCR ManorCare"
+          ],
+          "additionalServices": [
+            "Ordering health and personal supplies",
+            "Arranging physician appointments",
+            "Assisting with personal business matters",
+            "Arranging personal transportation",
+            "Assisting with personal business matters",
+            "Assisting with special services like shoe shining, clothes mending, dry cleaning, etc."
+          ]
+        }
+      ],
+      "features": [],
+      "amenities": [
+        {
+          "generalAmenities": [
+            "Living rooms on each floor",
+            "Main dining room",
+            "Community Center",
+            "Movie Theater",
+            "Internet Café",
+            "Beauty/barber salon",
+            "Wellness Center",
+            "Club room",
+            "Laundry room & Services",
+            "Outdoor courtyards and patio areas"
+          ],
+          "expandedAmenities": [
+            "Wall-to-wall carpeting",
+            "Window treatments",
+            "Private bathroom with shower",
+            "Spacious closet and storage spaces",
+            "Kitchenette with refrigerator, microwave, sink and cabinet space",
+            "Individually controlled heating and air conditioning",
+            "Cable-ready hook-up",
+            "24-hour emergency call system"
+          ],
+          "roomAmenities": [
+            "Beautiful, spacious dining rooms",
+            "Three meals daily",
+            "Specialty preparation and presentation of food",
+            "Assistance with eating",
+            "Special or modified dietary options"
+          ],
+          "lifeEnrichment": [],
+          "hospitality": [],
+          "culinary": [],
+          "transportation": []
+        }
+      ],
+      "payment": [],
+      "veterans": [],
+      "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
+      "moreInfo": "https://balance.promedicaseniorcare.org/",
+      "englisPDF": "https://www.springhouse-al.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
+      "spanishPDF": "https://www.springhouse-al.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
+      "contact": "https://www.springhouse-al.com/contact-us/"
     }
   }
 ]

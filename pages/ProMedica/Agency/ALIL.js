@@ -139,6 +139,23 @@ export default async function ALIL(links) {
           return content;
         });
 
+        const rightTime = await page.$eval('main > .umb-grid', (i) => {
+          let content = i.querySelector(
+            'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
+          );
+          if (content && content.innerText === 'The Right Time') {
+            return (content = {
+              content: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + * + *'
+              )?.innerText,
+              learnMore: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+              )?.href,
+            });
+          }
+          return null;
+        });
+
         const featuresAmenities = await page.$eval('main > .umb-grid', (i) => {
           let content = i.querySelector(
             'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
@@ -604,6 +621,7 @@ export default async function ALIL(links) {
             fax,
             title,
             description,
+            rightTime,
             featuresAmenities,
             floorPlansVariety,
             floorPlansDescription,
