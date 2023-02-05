@@ -19,8 +19,8 @@ export default async function ALIL(links) {
           .getByText('Photo Gallery')
           .isVisible();
 
-        const vTourButton = await page
-          .locator('.hero-buttons-container > a[href*="https:"]')
+        let vTourButton = await page
+          .locator('.hero-buttons-container > a[href*="http"]')
           .getByText('Virtual Tour')
           .first()
           .isVisible();
@@ -50,10 +50,27 @@ export default async function ALIL(links) {
         let virtualTour;
         if (vTourButton) {
           virtualTour = await page
-            .locator('.hero-buttons-container > a[href*="https:"]')
+            .locator('.hero-buttons-container > a[href*="http"]')
             .getByText('Virtual Tour')
             .first()
             .getAttribute('href');
+        } else {
+          vTourButton = await page
+            .locator('.hero-buttons-container > a.vt_overlay_open[data-popup-ordinal="0"]')
+            .getByText('Virtual Tour')
+            .isVisible();
+
+          if (vTourButton) {
+            await page.click('.hero-buttons-container > a.vt_overlay_open');
+
+            virtualTour = await page.$eval('#vt_overlay', (i) => {
+              let video = i.querySelector('#vt_overlay iframe');
+              if (video) video = video.src;
+              return video;
+            });
+
+            await page.keyboard.press('Escape');
+          }
         }
 
         let testimonialsVideo;
@@ -104,7 +121,7 @@ export default async function ALIL(links) {
         });
 
         const fax = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay > p:not(.no-margin) > a');
+          let content = i.querySelector('.hero-overlay > p:not(.no-margin) > a[href*="tel:"]');
           if (content) content = content.innerText;
           return content;
         });
@@ -128,14 +145,12 @@ export default async function ALIL(links) {
           );
           if (content && content.innerText === 'Features') {
             return (content = {
-              content:
-                i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + p'
-                ).innerText || null,
-              learnMore:
-                i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
-                ).href || null,
+              content: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + *'
+              )?.innerText,
+              learnMore: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+              )?.href,
             });
           }
           return null;
@@ -147,14 +162,12 @@ export default async function ALIL(links) {
           );
           if (content && content.innerText === 'Variety of Floor Plans') {
             return (content = {
-              content:
-                i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + p'
-                ).innerText || null,
-              learnMore:
-                i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
-                ).href || null,
+              content: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + *'
+              )?.innerText,
+              learnMore: i.querySelector(
+                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
+              )?.href,
             });
           }
           return null;
@@ -376,6 +389,15 @@ export default async function ALIL(links) {
             }
           );
 
+          const roomAmenities = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(3) > div.bordered-content > div.bordered-content-inner > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
           const lifeEnrichment = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(1) > section > ul > li',
             (item) => {
@@ -415,6 +437,7 @@ export default async function ALIL(links) {
           amenities.push({
             generalAmenities,
             expandedAmenities,
+            roomAmenities,
             lifeEnrichment,
             hospitality,
             culinary,
@@ -520,10 +543,10 @@ export default async function ALIL(links) {
         });
         subpageTitle = await page.title();
 
-        let specialNeeds = null;
+        let specialNeeds = [];
         if (subpageTitle.includes('Special Needs')) {
           specialNeeds = await page.$eval('main > div.umb-grid div.configured-2-Column', (i) => {
-            let content = i.querySelector('section.grid-section');
+            let content = i.querySelector('div.content-section-Yes > section.grid-section');
             if (content) content = content.innerHTML;
             return content;
           });

@@ -44,7 +44,7 @@
       },
       "email": "LelyPalmsRetirement@promedica.org",
       "phone": "239-775-7661",
-      "fax": "GET DIRECTIONS",
+      "fax": "239-775-9085",
       "title": "Senior Living At Its Best",
       "description": "Located on 28 acres of beautifully tropical landscaped property in Naples, Florida, Lely Palms ProMedica Senior Living offers independent living for persons ages 55 and over. Lely Palms also offers the only retirement villa rentals in Naples. Choose from an all-inclusive rental package, general rental, or trial stay – with an array of floor plans including studios, alcoves, one and two bedroom apartments. Our rental community is designed for your active and healthy lifestyle.",
       "featuresAmenities": {
@@ -139,6 +139,7 @@
             "Non-denominational chapel",
             "Entertainment and excursions"
           ],
+          "roomAmenities": [],
           "lifeEnrichment": [],
           "hospitality": [],
           "culinary": [],
@@ -256,6 +257,7 @@
           "imgAlt": "img-name"
         }
       ],
+      "virtualTour": "https://play.vidyard.com/xKAm_WF96KOC1bRxEzJGCQ.html?",
       "hospiceName": "Welcome To Linden Village A ProMedica Senior Living Community",
       "address": {
         "address1": "100 Tuck Court",
@@ -264,7 +266,7 @@
       },
       "email": "LindenVillage@ProMedica.org",
       "phone": "717-274-7400",
-      "fax": "GET DIRECTIONS",
+      "fax": "717-274-8800",
       "title": "Senior Living At Its Best",
       "description": "Linden Village ProMedica Senior Living is nestled on Tuck Court, sharing a campus with ProMedica Skilled Nursing and Rehabilitation in Lebanon, Pennsylvania. Linden Village residents can take advantage of a long list of services: health care, personal care, social programs and wellness programs all delivered by a warm, caring and knowledgeable staff.",
       "featuresAmenities": {
@@ -459,6 +461,7 @@
           "imgAlt": "img-name"
         }
       ],
+      "virtualTour": "http://tours.h3vt.com/public/vtour/display/353915?a=1",
       "testimonialsVideo": "https://www.youtube.com/embed/videoseries?list=PLss_Fyel1accb83cpPSUOdpi000GOxMp9",
       "hospiceName": "Welcome To The Commons",
       "address": {
@@ -468,11 +471,11 @@
       },
       "email": "TheCommonsSeniorLiving@promedica.org",
       "phone": "419-874-1931",
-      "fax": "GET DIRECTIONS",
+      "fax": "419-874-2803",
       "title": "Senior Living At Its Best",
       "description": "Conveniently located on Fremont Pike near Interstate 75 and sharing a campus with ProMedica Skilled Nursing and Rehabilitation,  The Commons offers all-inclusive monthly independent living rental options for persons ages 55 and over. Our community is designed for your active and healthy lifestyle offering an array of floor plans including studios, one and two bedroom apartments.  Take a look yourself or experience first-hand with our short-stay trial period option.",
       "featuresAmenities": {
-        "content": "The Commons, a ProMedica Senior Living Community offers six different spacious floor plans. ",
+        "content": "Month-to-month Rent\nNo buy-in Fees\nSmall Pets Welcome\nMonthly Community Diabetes Program",
         "learnMore": "https://www.perrysburgcommons.com/features/"
       },
       "floorPlansVariety": {
@@ -553,6 +556,7 @@
         {
           "generalAmenities": [],
           "expandedAmenities": [],
+          "roomAmenities": [],
           "lifeEnrichment": [
             "Monthly Calendar of events",
             "Live entertainment",
@@ -590,6 +594,203 @@
       "englisPDF": "https://www.perrysburgcommons.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
       "spanishPDF": "https://www.perrysburgcommons.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
       "contact": "https://www.perrysburgcommons.com/contact-us/"
+    }
+  },
+  {
+    "id": 4,
+    "title": "ProMedica Charlotte Stephenson Manor - ProMedica Senior Living Communities",
+    "url": "https://www.promedicaseniorliving.org/senior-living-locations/promedica-charlotte-stephenson-manor/",
+    "content": {
+      "photoGallery": [
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/10935/exterior-3.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8358/charlotte_stephenson_manor.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8488/front-exterior.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8369/sun_room.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8987/eag_1422_3_4_5_6_7.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8980/eag_1285_86_87_88_89_90.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8981/eag_1303_4_5_6_7_8.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8982/eag_1315_16_17_18_19_20.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/10936/photo_52274444-1100x733deluxe-studio.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8983/eag_1371.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8985/eag_1374_5_6_7_8_9.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8986/eag_1386_87_88_89_90_91.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/8988/eag_1440_1_2_3_4_5_1.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/11484/eag_1303_4_5_6_7_8.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/11482/charlotte-20.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/11483/charlotte-306.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.promedicaseniorliving.org/media/11481/charlotte-1.jpg",
+          "imgAlt": "img-name"
+        }
+      ],
+      "virtualTour": "http://h3vt.com/h3panos/CharlotteStephenson-Skilled/index.htm",
+      "testimonialsVideo": "https://www.youtube.com/embed/videoseries?list=PL8b-3gF1YqHGx-RDmG8figNAvDvUF_9V0",
+      "hospiceName": "Welcome To Charlotte Stephenson - A ProMedica Senior Living Community",
+      "address": {
+        "address1": "581 Kimole Ln",
+        "address2": "Adrian, MI 49221",
+        "directions": "http://maps.google.com/?q=581%20Kimole%20Ln+Adrian+MI+49221"
+      },
+      "email": "CharlotteStephensonManor@promedica.org",
+      "phone": "517-265-0690",
+      "fax": "517-266-0704",
+      "title": "Assisted Living and Memory Care",
+      "description": "No longer able to live alone, but want to maintain some independence? Supportive and dignified assisted living is your solution. ProMedica Charlotte Stephenson Manor provides assisted living and memory care services in their community located in Adrian, Michigan.",
+      "featuresAmenities": {
+        "content": "Dining and Housekeeping Services\nMedication Management\nSecure dementia unit",
+        "learnMore": "https://www.promedicaseniorliving.org/senior-living-locations/promedica-charlotte-stephenson-manor/features-amenities/"
+      },
+      "floorPlansVariety": {
+        "content": "Charlotte Stephenson Manor offers three floor plan options. All apartments are equipped with a number of safety features to give you peace of mind.",
+        "learnMore": "https://www.promedicaseniorliving.org/senior-living-locations/promedica-charlotte-stephenson-manor/floor-plans/"
+      },
+      "floorPlansDescription": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Floor Plans</h1>\n\t<h3 class=\"larger\">Variety of Floor Plans</h3>\n</div>\n\n<p>Choose from among three apartment styles for singles or married couples:</p>\n<ul>\n<li><strong>The L-shaped studio with a private sleeping area</strong></li>\n<li><strong>A deluxe studio apartment with separate living and sleeping areas</strong></li>\n<li><strong>A spacious one-bedroom apartment with living room</strong></li>\n</ul>\n<p><a rel=\"noopener\" href=\"/media/8351/charlotte-stephenson-manor-blueprint-1.pdf\" target=\"_blank\" title=\"charlotte-stephenson-manor-blueprint(1).pdf\" class=\"button primary\" data-udi=\"umb://media/75accdb8d4c2492d9637081ab88a3b21\">Download the apartment layout guide</a></p>\t\t\t\t\t\t",
+      "floorPlansDetails": [
+        {
+          "floorPlanSrc": "https://www.promedicaseniorliving.org/media/8301/csm-1-bedroom-apt.svg",
+          "floorPlanName": "1 Bedroom Apartment",
+          "floorPlanDetail": "This apartment has living/sitting room, bedroom, over-sized bathroom, kitchenette with refrigerator/freezer, and view of outlying country scenery."
+        },
+        {
+          "floorPlanSrc": "https://www.promedicaseniorliving.org/media/8302/csm-deluxe-studio.svg",
+          "floorPlanName": "Deluxe Studio",
+          "floorPlanDetail": "This apartment has separate sitting and sleeping areas, over-sized bathroom, kitchenette with refrigerator/freezer, and view of outlying country scenery or courtyard."
+        },
+        {
+          "floorPlanSrc": "https://www.promedicaseniorliving.org/media/8303/csm-studio-apt.svg",
+          "floorPlanName": "Studio Apartment",
+          "floorPlanDetail": "This apartment has an \"L\" shaped design to allow privacy for sleeping and an area for sitting or entertainment. Contains an over-sized bathroom, kitchenette with refrigerator/freezer, and view of outlying country scenery or courtyard."
+        }
+      ],
+      "designLayout": [],
+      "services": [
+        {
+          "generalServices": [],
+          "expandedServices": [],
+          "healthServices": [
+            "10 private apartments",
+            "Secure, calm and home-like environment",
+            "Assistance with activities of daily living",
+            "Activities and programs designed to engage people with memory impairments."
+          ],
+          "socialServices": [
+            "Community room with daily engaging social and fitness activities",
+            "Off-site outings include trips to the local senior center & Croswell Opera House",
+            "Faith based services and Bible studies",
+            "Visits from daycare/Vo-tech students",
+            "Bookmobile",
+            "Live entertainment ",
+            "Pet Therapy"
+          ],
+          "personalServices": [
+            "Three delicious meals, served restaurant-style with a la carte items available. ",
+            "Personal dining experience provided from individual servers",
+            "Oversight from registered dietitian for specific diets",
+            "Use of homemade recipes made fresh daily"
+          ],
+          "foodServices": [
+            "Daily medication management and administration",
+            "Transportation to local medical appointments",
+            "Easy access to hospital care, emergency services and other medical services"
+          ],
+          "additionalServices": [
+            "Daily housekeeping services",
+            "Individually washed laundry services including daily fresh towels and linens as needed",
+            "24 hour security system including an emergency call system for each apartment"
+          ]
+        }
+      ],
+      "features": [],
+      "amenities": [
+        {
+          "generalAmenities": [
+            "Physical Therapy Gym",
+            "Beautiful courtyard",
+            "Beauty/Barber shop",
+            "Lounges and family visiting areas",
+            "Sun Porch",
+            "Community room",
+            "Daily newspaper delivery (optional)",
+            "Post office with private mailboxes",
+            "Daily social, recreational and cultural activities",
+            "Entertainment and excursions"
+          ],
+          "expandedAmenities": [
+            "Kitchenette with refrigerator",
+            "In-room individual thermostat",
+            "Emergency assistance alarm",
+            "Necklace/wrist assistance pendant",
+            "Oversized bathroom with personal shower and bench",
+            "Twin bed and night stand are included or bring your own furniture",
+            "Free Wi-Fi and extended cable TV service",
+            "Utilities including electric, heat and water"
+          ],
+          "roomAmenities": [
+            "Restaurant style dining with a la carte options",
+            "Menus supervised by registered dietitian",
+            "Special diets accommodated"
+          ],
+          "lifeEnrichment": [],
+          "hospitality": [],
+          "culinary": [],
+          "transportation": []
+        }
+      ],
+      "payment": [],
+      "veterans": [],
+      "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
+      "moreInfo": "https://balance.promedicaseniorcare.org/",
+      "englisPDF": "https://www.promedicaseniorliving.org/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
+      "spanishPDF": "https://www.promedicaseniorliving.org/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
+      "contact": "https://www.promedicaseniorliving.org/contact-us/"
     }
   }
 ]
