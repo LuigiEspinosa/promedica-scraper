@@ -122,7 +122,7 @@ export default async function ALIL(links) {
           return content;
         });
 
-        const features = await page.$eval('main > .umb-grid', (i) => {
+        const featuresAmenities = await page.$eval('main > .umb-grid', (i) => {
           let content = i.querySelector(
             'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
           );
@@ -319,8 +319,42 @@ export default async function ALIL(links) {
           });
         }
 
+        await page.goto(`${links[i]}/features`, { waitUntil: 'domcontentloaded' });
+        subpageTitle = await page.title();
+
+        let features = [];
+        if (subpageTitle.includes('Features')) {
+          const generalFeatures = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
+            (item) => {
+              let features = [];
+              item.forEach((item) => features.push(item.innerText));
+              return features;
+            }
+          );
+
+          const suiteFeatures = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
+            (item) => {
+              let features = [];
+              item.forEach((item) => features.push(item.innerText));
+              return features;
+            }
+          );
+
+          features.push({
+            generalFeatures,
+            suiteFeatures,
+          });
+        }
+
         await page.goto(`${links[i]}/features-amenities`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
+
+        if (!subpageTitle.includes('Amenities')) {
+          await page.goto(`${links[i]}/amenities`, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
 
         let amenities = [];
         if (subpageTitle.includes('Amenities')) {
@@ -342,52 +376,96 @@ export default async function ALIL(links) {
             }
           );
 
+          const lifeEnrichment = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(1) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const hospitality = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(2) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const culinary = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(1) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
+          const transportation = await page.$$eval(
+            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(2) > section > ul > li',
+            (item) => {
+              let services = [];
+              item.forEach((item) => services.push(item.innerText));
+              return services;
+            }
+          );
+
           amenities.push({
             generalAmenities,
             expandedAmenities,
+            lifeEnrichment,
+            hospitality,
+            culinary,
+            transportation,
           });
         }
 
         await page.goto(`${links[i]}/payment`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
-        let paymentInfo = null;
-        let paymentLink = null;
+        let payment = [];
         if (subpageTitle.includes('Payment')) {
-          paymentInfo = await page.$eval('.hero-section', (i) => {
+          const paymentInfo = await page.$eval('.hero-section', (i) => {
             let content = i.querySelector('.hero-overlay');
             if (content) content = content.innerHTML;
             return content;
           });
 
-          paymentLink = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
+          const paymentLink = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
             let content = i.querySelector('a.paymentLink');
             if (content) content = content.href;
             return content;
+          });
+
+          payment.push({
+            paymentInfo,
+            paymentLink,
           });
         }
 
         await page.goto(`${links[i]}/payment/veteran-benefits`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
-        let veteranBenefits = null;
-        let processingApproval = null;
-        let benefitLevels = null;
-        let requirements = null;
+        let veterans = [];
         if (subpageTitle.includes('Veteran')) {
-          veteranBenefits = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
-            let content = i.querySelector('main > div.umb-grid section.grid-section > p');
-            if (content) content = content.innerText;
-            return content;
-          });
+          const veteranBenefits = await page.$eval(
+            'main > div.umb-grid section.grid-section',
+            (i) => {
+              let content = i.querySelector('main > div.umb-grid section.grid-section > p');
+              if (content) content = content.innerText;
+              return content;
+            }
+          );
 
-          processingApproval = await page.$eval('main > div.umb-grid', (i) => {
+          const processingApproval = await page.$eval('main > div.umb-grid', (i) => {
             let content = i.querySelector('div.background-color-DFEAEB > section.grid-section');
             if (content) content = content.innerHTML;
             return content;
           });
 
-          benefitLevels = await page.$$eval(
+          const benefitLevels = await page.$$eval(
             'main > div.umb-grid div.grid-row > div.configured-4-Column > div > div.span3',
             (item) => {
               let benefits = [];
@@ -401,7 +479,7 @@ export default async function ALIL(links) {
             }
           );
 
-          requirements = await page.$$eval(
+          const requirements = await page.$$eval(
             'main > div.umb-grid div.grid-row div.content-section-Yes > section.grid-section > ul > li',
             (item) => {
               let requirements = [];
@@ -409,6 +487,13 @@ export default async function ALIL(links) {
               return requirements;
             }
           );
+
+          veterans.push({
+            veteranBenefits,
+            processingApproval,
+            benefitLevels,
+            requirements,
+          });
         }
 
         await page.goto(`${links[i]}/contact-us`, { waitUntil: 'domcontentloaded' });
@@ -496,25 +581,22 @@ export default async function ALIL(links) {
             fax,
             title,
             description,
-            features,
+            featuresAmenities,
             floorPlansVariety,
             floorPlansDescription,
             floorPlansDetails,
             designLayout,
             services,
+            features,
             amenities,
-            paymentInfo,
-            paymentLink,
-            veteranBenefits,
-            processingApproval,
-            benefitLevels,
-            requirements,
+            payment,
+            veterans,
             specialNeeds,
             moreInfo,
             englisPDF,
             spanishPDF,
             contact,
-            contactForm,
+            // contactForm,
           },
         });
 

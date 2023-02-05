@@ -47,7 +47,7 @@
       "fax": "GET DIRECTIONS",
       "title": "Senior Living At Its Best",
       "description": "Located on 28 acres of beautifully tropical landscaped property in Naples, Florida, Lely Palms ProMedica Senior Living offers independent living for persons ages 55 and over. Lely Palms also offers the only retirement villa rentals in Naples. Choose from an all-inclusive rental package, general rental, or trial stay – with an array of floor plans including studios, alcoves, one and two bedroom apartments. Our rental community is designed for your active and healthy lifestyle.",
-      "features": {
+      "featuresAmenities": {
         "content": "Independent Living Apartments and Villas\nFull-service rental plans for those looking to simplify their lifestyle\nGeneral rental plans to customize and add the services you desire\nOne of the few Naples area Continuing Care Retirement Communities (CCRC) with rental units",
         "learnMore": "https://www.lelypalmsretirementliving.com/features-amenities/"
       },
@@ -116,6 +116,7 @@
           "additionalServices": []
         }
       ],
+      "features": [],
       "amenities": [
         {
           "generalAmenities": [
@@ -137,40 +138,51 @@
             "Religious activities",
             "Non-denominational chapel",
             "Entertainment and excursions"
+          ],
+          "lifeEnrichment": [],
+          "hospitality": [],
+          "culinary": [],
+          "transportation": []
+        }
+      ],
+      "payment": [
+        {
+          "paymentInfo": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Payment</h1>\n\t<h3 class=\"larger\">Payment Information</h3>\n</div>\n\n<p>Lely Palms Retirement offers month-to-month rent with no buy-in fees. Some of your medical needs may be covered through Medicare, Medicaid or managed care and commercial insurance. You may be eligible for additional benefits outlined below. Our admissions team will be happy to provide information to understand your options.</p>\t\t\t\t\t\t",
+          "paymentLink": "https://www.lelypalmsretirementliving.com/test"
+        }
+      ],
+      "veterans": [
+        {
+          "veteranBenefits": "The Aid and Attendance Benefit is a pension program offered by the U.S. Department of Veterans Affairs to eligible veterans and their surviving spouses. This benefit can provide a significant monthly income to those who need assisted living or similar services. For many of our residents, this benefit program has enabled them to receive the care they need at a cost they can afford.",
+          "processingApproval": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Processing &amp; Approval</h2>\n\n\n\n<p>Processing and approval can generally take 4-8 months or longer. Once approved, the pension is paid directly to the applicant and is retroactive to the first of the month following the VA’s receipt of the application.</p>\n<p>The care and services we provide at our community will qualify you in receiving this benefit. We will be happy to help you learn more about the Aid and Attendance program.</p>\n\n\n        \n\n\n\n                        ",
+          "benefitLevels": [
+            {
+              "Veteran and Spouse": "$2,085/mo"
+            },
+            {
+              "Single Veteran": "$1,758/mo"
+            },
+            {
+              "Surviving Spouse of a Veteran": "$1,130/mo"
+            },
+            {
+              "Healthy Veteran and Sick Spouse": "$1,380/mo"
+            }
+          ],
+          "requirements": [
+            "The veteran must have served at least 90 days of total service, with at least one day during a period of war (WWII, Korean or Vietnam).",
+            "The veteran or spouse must have a physical or mental condition which requires the care or assistance of another person on a regular basis.",
+            "There are income considerations, however, most people in assisted living communities qualify for the maximum benefit amount because their cost of the care is greater than their fixed monthly income.",
+            "The VA does look at assets in making the determination, however, with proper planning most people can become eligible, regardless of worth.",
+            "Unfortunatley, divorce makes a surviving spouse ineligible for benefits."
           ]
         }
-      ],
-      "paymentInfo": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Payment</h1>\n\t<h3 class=\"larger\">Payment Information</h3>\n</div>\n\n<p>Lely Palms Retirement offers month-to-month rent with no buy-in fees. Some of your medical needs may be covered through Medicare, Medicaid or managed care and commercial insurance. You may be eligible for additional benefits outlined below. Our admissions team will be happy to provide information to understand your options.</p>\t\t\t\t\t\t",
-      "paymentLink": "https://www.lelypalmsretirementliving.com/test",
-      "veteranBenefits": "The Aid and Attendance Benefit is a pension program offered by the U.S. Department of Veterans Affairs to eligible veterans and their surviving spouses. This benefit can provide a significant monthly income to those who need assisted living or similar services. For many of our residents, this benefit program has enabled them to receive the care they need at a cost they can afford.",
-      "processingApproval": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Processing &amp; Approval</h2>\n\n\n\n<p>Processing and approval can generally take 4-8 months or longer. Once approved, the pension is paid directly to the applicant and is retroactive to the first of the month following the VA’s receipt of the application.</p>\n<p>The care and services we provide at our community will qualify you in receiving this benefit. We will be happy to help you learn more about the Aid and Attendance program.</p>\n\n\n        \n\n\n\n                        ",
-      "benefitLevels": [
-        {
-          "Veteran and Spouse": "$2,085/mo"
-        },
-        {
-          "Single Veteran": "$1,758/mo"
-        },
-        {
-          "Surviving Spouse of a Veteran": "$1,130/mo"
-        },
-        {
-          "Healthy Veteran and Sick Spouse": "$1,380/mo"
-        }
-      ],
-      "requirements": [
-        "The veteran must have served at least 90 days of total service, with at least one day during a period of war (WWII, Korean or Vietnam).",
-        "The veteran or spouse must have a physical or mental condition which requires the care or assistance of another person on a regular basis.",
-        "There are income considerations, however, most people in assisted living communities qualify for the maximum benefit amount because their cost of the care is greater than their fixed monthly income.",
-        "The VA does look at assets in making the determination, however, with proper planning most people can become eligible, regardless of worth.",
-        "Unfortunatley, divorce makes a surviving spouse ineligible for benefits."
       ],
       "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
       "moreInfo": "https://balance.promedicaseniorcare.org/",
       "englisPDF": "https://www.lelypalmsretirementliving.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
       "spanishPDF": "https://www.lelypalmsretirementliving.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
-      "contact": "https://www.lelypalmsretirementliving.com/contact-us/",
-      "contactForm": "\n\n<form action=\"/contact-us\" enctype=\"multipart/form-data\" method=\"post\" novalidate=\"novalidate\"><input name=\"__RequestVerificationToken\" type=\"hidden\" value=\"PrIC-yzg1NCdAClzqKgE4YCPeVMiN201xDgB4U9EMm4EPiEIUPz57EFuZOoKWD_cOqEYzlnNeUuI6_nYlGqd_lk6Gn8R2VbDLND-jdVQetc1\"><input data-val=\"true\" data-val-required=\"The FormId field is required.\" id=\"FormId\" name=\"FormId\" type=\"hidden\" value=\"f611f93b-7e23-481d-ba4e-5ff4d410160c\"><input id=\"FormName\" name=\"FormName\" type=\"hidden\" value=\"Location Page Contact Form\"><input data-val=\"true\" data-val-required=\"The RecordId field is required.\" id=\"RecordId\" name=\"RecordId\" type=\"hidden\" value=\"00000000-0000-0000-0000-000000000000\"><input id=\"PreviousClicked\" name=\"PreviousClicked\" type=\"hidden\" value=\"\">            <input type=\"hidden\" name=\"FormStep\" value=\"0\">\n            <input type=\"hidden\" name=\"RecordState\" value=\"AAEAAAD/////AQAAAAAAAAAEAQAAAOQBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuRGljdGlvbmFyeWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uT2JqZWN0W10sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dBAAAAAdWZXJzaW9uCENvbXBhcmVyCEhhc2hTaXplDUtleVZhbHVlUGFpcnMAAwADCJIBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuR2VuZXJpY0VxdWFsaXR5Q29tcGFyZXJgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0I6AFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLk9iamVjdFtdLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXVtdCwAAAAkCAAAAEQAAAAkDAAAABAIAAACSAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkdlbmVyaWNFcXVhbGl0eUNvbXBhcmVyYDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAAAAAAcDAAAAAAEAAAALAAAAA+YBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5PYmplY3RbXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0E/P///+YBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5PYmplY3RbXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAA2tleQV2YWx1ZQEFBgUAAAAkZDBlNjgxOTAtNmJkMy00MzgxLWZmMjgtOTM0NGEzZGRmNjMzCQYAAAAB+f////z///8GCAAAACQ4ODRkYTM3Zi0wMTQ2LTQxMjAtZGY5NS03MTQ0ODQ4OGFkOWYJCQAAAAH2/////P///wYLAAAAJDZkYmNlMzc3LTE1ZWUtNDRhYi1jMjg0LTUwMGEwZTNiMDc2YQkMAAAAAfP////8////Bg4AAAAkNmE3NWM4MmQtMTFkOC00ZjBhLWQzNjEtYWZkMzJlZTQwYjlmCQ8AAAAB8P////z///8GEQAAACQyMTU3MTliOC01Y2U5LTQ0OWMtODQ1OS1lMTJkZGE3Nzk4YTEJEgAAAAHt/////P///wYUAAAAJDE0NWRiMjExLTE3YTYtNGYyMS04MTY0LTgzNjg5YzFiOTU1ZgkVAAAAAer////8////BhcAAAAkNTQ5MTUwN2ItZmNiYy00NjQ2LWJjYTItNTg1MjM5MDUwZmQ3CRgAAAAB5/////z///8GGgAAACRlZjUwODk5MS1hMzZmLTQyNWItZmJjMC1hZjgyZTllN2Y0NDUJGwAAAAHk/////P///wYdAAAAJDA0ZTc4ZDMzLTVmMzEtNGI0OS1iYzA4LWJhZjc5MmNlMTJkZAkeAAAAAeH////8////BiAAAAAkNzNhYTVmMDMtZWE4Yi00NGFjLTlkN2YtOWI1ZWU3Y2Y4Y2IzCSEAAAAB3v////z///8GIwAAACQzYzRjMmI5OS00YWJkLTQ2NWMtOTdkZi1kMDdhNTMzNjVmNzgJJAAAABAGAAAAAAAAABAJAAAAAAAAABAMAAAAAAAAABAPAAAAAAAAABASAAAAAAAAABAVAAAAAAAAABAYAAAAAAAAABAbAAAAAAAAABAeAAAAAAAAABAhAAAAAAAAABAkAAAAAAAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\">\n\n\n\n\n\n\n\n\n<div class=\"umbraco-forms-page form-horizontal\">\n\n                \n\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"405b9424-1c11-44bf-843c-6144c1f32497\">\n\n            <legend>Preferred Method of Contact</legend>\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field preferredmethodofcontact singlechoice\">\n\n                                <label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Preferred Method of Contact \n                                </label>\n\n                              \n\n\n\n<div id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\">\n\t<fieldset class=\"button-group\">\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_0\" value=\"By Phone\">\n\t\t\t<label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_0\" class=\"btn\">By Phone</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_1\" value=\"By Email\">\n\t\t\t<label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_1\" class=\"btn\">By Email</label>\n\t    \n\t\t</div>\n\t</fieldset>\n</div>\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"2e88ac36-5d6a-4b8f-f6e8-35094676ea70\">\n\n            <legend>I'm Interested In</legend>\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field iminterestedin singlechoice alternating\">\n\n                                <label for=\"884da37f-0146-4120-df95-71448488ad9f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    I'm Interested In \n                                </label>\n\n                              \n\n\n\n<div id=\"884da37f-0146-4120-df95-71448488ad9f\">\n\t<fieldset class=\"button-group\">\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_0\" value=\"Finding Care for Myself\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_0\" class=\"btn\">Finding Care for Myself</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_1\" value=\"Finding Care for a Loved One\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_1\" class=\"btn\">Finding Care for a Loved One</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_2\" value=\"Inquiring About a Job\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_2\" class=\"btn\">Inquiring About a Job</label>\n\t    \n\t\t</div>\n\t</fieldset>\n</div>\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"884da37f-0146-4120-df95-71448488ad9f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"517e1650-78d7-4e7f-9cca-5eb4202c361d\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field firstname shortanswer mandatory\">\n\n                                <label for=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    First Name \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" id=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for First Name\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field lastname shortanswer mandatory alternating\">\n\n                                <label for=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Last Name \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" id=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for Last Name\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"8b838210-833f-4dc8-cc80-7931dbad9fcd\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field phone shortanswer\">\n\n                                <label for=\"215719b8-5ce9-449c-8459-e12dda7798a1\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Phone \n                                </label>\n\n                            \n<input type=\"text\" name=\"215719b8-5ce9-449c-8459-e12dda7798a1\" id=\"215719b8-5ce9-449c-8459-e12dda7798a1\" class=\"form-control text\" value=\"\" maxlength=\"500\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"215719b8-5ce9-449c-8459-e12dda7798a1\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field emailaddress shortanswer mandatory alternating\">\n\n                                <label for=\"145db211-17a6-4f21-8164-83689c1b955f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Email Address \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"145db211-17a6-4f21-8164-83689c1b955f\" id=\"145db211-17a6-4f21-8164-83689c1b955f\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for Email Address\" data-val-regex=\"Please provide a valid value for Email Address\" data-regex=\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"145db211-17a6-4f21-8164-83689c1b955f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"2b91243c-8f19-427a-9d58-cec4d0226933\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field city shortanswer mandatory\">\n\n                                <label for=\"5491507b-fcbc-4646-bca2-585239050fd7\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    City \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"5491507b-fcbc-4646-bca2-585239050fd7\" id=\"5491507b-fcbc-4646-bca2-585239050fd7\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for City\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"5491507b-fcbc-4646-bca2-585239050fd7\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field state dropdown mandatory alternating\">\n\n                                <label for=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    State \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<select class=\"form-control\" name=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" id=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" data-val=\"true\" data-val-required=\"Please provide a value for State\">\n    <option value=\"\"></option>\n        <option value=\"AL\">AL</option>\n        <option value=\"AK\">AK</option>\n        <option value=\"AZ\">AZ</option>\n        <option value=\"AR\">AR</option>\n        <option value=\"CA\">CA</option>\n        <option value=\"CO\">CO</option>\n        <option value=\"CT\">CT</option>\n        <option value=\"DE\">DE</option>\n        <option value=\"DC\">DC</option>\n        <option value=\"FL\">FL</option>\n        <option value=\"GA\">GA</option>\n        <option value=\"HI\">HI</option>\n        <option value=\"ID\">ID</option>\n        <option value=\"IL\">IL</option>\n        <option value=\"IN\">IN</option>\n        <option value=\"IA\">IA</option>\n        <option value=\"KS\">KS</option>\n        <option value=\"KY\">KY</option>\n        <option value=\"LA\">LA</option>\n        <option value=\"ME\">ME</option>\n        <option value=\"MD\">MD</option>\n        <option value=\"MA\">MA</option>\n        <option value=\"MI\">MI</option>\n        <option value=\"MN\">MN</option>\n        <option value=\"MS\">MS</option>\n        <option value=\"MO\">MO</option>\n        <option value=\"MT\">MT</option>\n        <option value=\"NE\">NE</option>\n        <option value=\"NV\">NV</option>\n        <option value=\"NH\">NH</option>\n        <option value=\"NJ\">NJ</option>\n        <option value=\"NM\">NM</option>\n        <option value=\"NY\">NY</option>\n        <option value=\"NC\">NC</option>\n        <option value=\"ND\">ND</option>\n        <option value=\"OH\">OH</option>\n        <option value=\"OK\">OK</option>\n        <option value=\"OR\">OR</option>\n        <option value=\"PA\">PA</option>\n        <option value=\"RI\">RI</option>\n        <option value=\"SC\">SC</option>\n        <option value=\"SD\">SD</option>\n        <option value=\"TN\">TN</option>\n        <option value=\"TX\">TX</option>\n        <option value=\"UT\">UT</option>\n        <option value=\"VT\">VT</option>\n        <option value=\"VA\">VA</option>\n        <option value=\"WA\">WA</option>\n        <option value=\"WV\">WV</option>\n        <option value=\"WI\">WI</option>\n        <option value=\"WY\">WY</option>\n</select>\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field zipcode shortanswer\">\n\n                                <label for=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Zipcode \n                                </label>\n\n                            \n<input type=\"text\" name=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" id=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" class=\"form-control text\" value=\"\" maxlength=\"500\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"8c46ece3-a9a6-4879-dc6b-f8ec4af62091\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field message longanswer mandatory alternating\">\n\n                                <label for=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Message \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<textarea class=\"form-control\" name=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" id=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" rows=\"2\" cols=\"20\" data-val=\"true\" data-val-required=\"Please provide a value for Message\"></textarea>\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"51258e93-f56d-4309-feaa-ec2da8761eaa\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field recaptcha recaptcha2\">\n\n                                <label for=\"3c4c2b99-4abd-465c-97df-d07a53365f78\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Recaptcha \n                                </label>\n\n                                    <script src=\"https://www.google.com/recaptcha/api.js\" async=\"\" defer=\"\"></script>\n        <div class=\"g-recaptcha\" data-sitekey=\"6LeJTkcUAAAAANa3KaZLM-OFpIoNVu0vklQGMxFE\" data-theme=\"\" data-size=\"\"></div>\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"3c4c2b99-4abd-465c-97df-d07a53365f78\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n\n\n    <div style=\"display: none\">\n        <input type=\"text\" name=\"f611f93b7e23481dba4e5ff4d410160c\">\n    </div>\n\n\t\t\n    <div class=\"umbraco-forms-navigation row-fluid\">\n\t\t\n        <div class=\"col-sm-10 col-sm-offset-2\">\n                <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\" name=\"submitbtn\">\n        </div>\n\n\n    </div>\n\n</div><input name=\"ufprt\" type=\"hidden\" value=\"D9BE3146E55C782504E17248549FF129E2F13C66E04C7701B85D4833883D2D0D664FF1AE75B7FBCE123FD17668DD5B4814C1462F553B1C3225F960AEDB22396A78283A8BDF626783C103D526A586BA6A8A53D989B5138C0C096C5766DE15DBDD4184DC066DA8855274E6F17A07A917DAE4379CD793B5337B256DD5067DE8C9DCFC65B801BBC5C4E6A1960363326410AB\"></form>\n\n        \n\n\n\n\n\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js\"></script>\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms.js\"></script>\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-conditions.js\"></script>\n        <script type=\"text/javascript\">\n            (function () {\n          \n\n            var contourDateFormat = 'm/d/yy',\n                formId = 'f611f93b7e23481dba4e5ff4d410160c',\n                fieldSetConditions = {},\n                fieldConditions = {},\n                recordvalues = {};\n            \n            umbracoForms.dependencyCheck(formId);\n\n            var form = $('#umbraco_form_' + formId + ' .umbraco-forms-page');\n            var conditions = new umbracoForms.conditions(form, fieldSetConditions, fieldConditions, recordvalues);\n            conditions.watch();\n            }());\n        </script>\n                    <link rel=\"stylesheet\" href=\"/app_plugins/umbracoforms/assets/defaultform.css\">\n    "
+      "contact": "https://www.lelypalmsretirementliving.com/contact-us/"
     }
   },
   {
@@ -255,7 +267,7 @@
       "fax": "GET DIRECTIONS",
       "title": "Senior Living At Its Best",
       "description": "Linden Village ProMedica Senior Living is nestled on Tuck Court, sharing a campus with ProMedica Skilled Nursing and Rehabilitation in Lebanon, Pennsylvania. Linden Village residents can take advantage of a long list of services: health care, personal care, social programs and wellness programs all delivered by a warm, caring and knowledgeable staff.",
-      "features": {
+      "featuresAmenities": {
         "content": "Month-to-month Rent\nNo Buy-in Fees\nSmall Pets Welcome",
         "learnMore": "umb://document/9ce5707f8cc64badb455d31e98463f6a"
       },
@@ -341,19 +353,243 @@
           ]
         }
       ],
+      "features": [],
       "amenities": [],
-      "paymentInfo": null,
-      "paymentLink": null,
-      "veteranBenefits": null,
-      "processingApproval": null,
-      "benefitLevels": null,
-      "requirements": null,
+      "payment": [],
+      "veterans": [],
       "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
       "moreInfo": "https://balance.promedicaseniorcare.org/",
       "englisPDF": "https://www.linden-village.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
       "spanishPDF": "https://www.linden-village.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
-      "contact": "https://www.linden-village.com/contact-us/",
-      "contactForm": "\n\n<form action=\"/contact-us\" enctype=\"multipart/form-data\" method=\"post\" novalidate=\"novalidate\"><input name=\"__RequestVerificationToken\" type=\"hidden\" value=\"xhNaixAUNb92SvssXRCJzQObQd_ZHhxxO3S-xphOLmRNElAXaoJN3u5JsTemjGkOyYM3dc5b6bDB6AhsFVhmUz8IAzRzaJMCgedBI-Wmxho1\"><input data-val=\"true\" data-val-required=\"The FormId field is required.\" id=\"FormId\" name=\"FormId\" type=\"hidden\" value=\"f611f93b-7e23-481d-ba4e-5ff4d410160c\"><input id=\"FormName\" name=\"FormName\" type=\"hidden\" value=\"Location Page Contact Form\"><input data-val=\"true\" data-val-required=\"The RecordId field is required.\" id=\"RecordId\" name=\"RecordId\" type=\"hidden\" value=\"00000000-0000-0000-0000-000000000000\"><input id=\"PreviousClicked\" name=\"PreviousClicked\" type=\"hidden\" value=\"\">            <input type=\"hidden\" name=\"FormStep\" value=\"0\">\n            <input type=\"hidden\" name=\"RecordState\" value=\"AAEAAAD/////AQAAAAAAAAAEAQAAAOQBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuRGljdGlvbmFyeWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uT2JqZWN0W10sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dBAAAAAdWZXJzaW9uCENvbXBhcmVyCEhhc2hTaXplDUtleVZhbHVlUGFpcnMAAwADCJIBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuR2VuZXJpY0VxdWFsaXR5Q29tcGFyZXJgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0I6AFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLk9iamVjdFtdLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXVtdCwAAAAkCAAAAEQAAAAkDAAAABAIAAACSAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkdlbmVyaWNFcXVhbGl0eUNvbXBhcmVyYDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAAAAAAcDAAAAAAEAAAALAAAAA+YBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5PYmplY3RbXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0E/P///+YBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5PYmplY3RbXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAA2tleQV2YWx1ZQEFBgUAAAAkZDBlNjgxOTAtNmJkMy00MzgxLWZmMjgtOTM0NGEzZGRmNjMzCQYAAAAB+f////z///8GCAAAACQ4ODRkYTM3Zi0wMTQ2LTQxMjAtZGY5NS03MTQ0ODQ4OGFkOWYJCQAAAAH2/////P///wYLAAAAJDZkYmNlMzc3LTE1ZWUtNDRhYi1jMjg0LTUwMGEwZTNiMDc2YQkMAAAAAfP////8////Bg4AAAAkNmE3NWM4MmQtMTFkOC00ZjBhLWQzNjEtYWZkMzJlZTQwYjlmCQ8AAAAB8P////z///8GEQAAACQyMTU3MTliOC01Y2U5LTQ0OWMtODQ1OS1lMTJkZGE3Nzk4YTEJEgAAAAHt/////P///wYUAAAAJDE0NWRiMjExLTE3YTYtNGYyMS04MTY0LTgzNjg5YzFiOTU1ZgkVAAAAAer////8////BhcAAAAkNTQ5MTUwN2ItZmNiYy00NjQ2LWJjYTItNTg1MjM5MDUwZmQ3CRgAAAAB5/////z///8GGgAAACRlZjUwODk5MS1hMzZmLTQyNWItZmJjMC1hZjgyZTllN2Y0NDUJGwAAAAHk/////P///wYdAAAAJDA0ZTc4ZDMzLTVmMzEtNGI0OS1iYzA4LWJhZjc5MmNlMTJkZAkeAAAAAeH////8////BiAAAAAkNzNhYTVmMDMtZWE4Yi00NGFjLTlkN2YtOWI1ZWU3Y2Y4Y2IzCSEAAAAB3v////z///8GIwAAACQzYzRjMmI5OS00YWJkLTQ2NWMtOTdkZi1kMDdhNTMzNjVmNzgJJAAAABAGAAAAAAAAABAJAAAAAAAAABAMAAAAAAAAABAPAAAAAAAAABASAAAAAAAAABAVAAAAAAAAABAYAAAAAAAAABAbAAAAAAAAABAeAAAAAAAAABAhAAAAAAAAABAkAAAAAAAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\">\n\n\n\n\n\n\n\n\n<div class=\"umbraco-forms-page form-horizontal\">\n\n                \n\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"405b9424-1c11-44bf-843c-6144c1f32497\">\n\n            <legend>Preferred Method of Contact</legend>\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field preferredmethodofcontact singlechoice\">\n\n                                <label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Preferred Method of Contact \n                                </label>\n\n                              \n\n\n\n<div id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\">\n\t<fieldset class=\"button-group\">\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_0\" value=\"By Phone\">\n\t\t\t<label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_0\" class=\"btn\">By Phone</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" id=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_1\" value=\"By Email\">\n\t\t\t<label for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633_1\" class=\"btn\">By Email</label>\n\t    \n\t\t</div>\n\t</fieldset>\n</div>\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"d0e68190-6bd3-4381-ff28-9344a3ddf633\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"2e88ac36-5d6a-4b8f-f6e8-35094676ea70\">\n\n            <legend>I'm Interested In</legend>\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field iminterestedin singlechoice alternating\">\n\n                                <label for=\"884da37f-0146-4120-df95-71448488ad9f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    I'm Interested In \n                                </label>\n\n                              \n\n\n\n<div id=\"884da37f-0146-4120-df95-71448488ad9f\">\n\t<fieldset class=\"button-group\">\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_0\" value=\"Finding Care for Myself\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_0\" class=\"btn\">Finding Care for Myself</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_1\" value=\"Finding Care for a Loved One\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_1\" class=\"btn\">Finding Care for a Loved One</label>\n\t    \n\t\t</div>\n\t\t<div class=\"form-control radio\">\n\t    \t<input type=\"radio\" name=\"884da37f-0146-4120-df95-71448488ad9f\" id=\"884da37f-0146-4120-df95-71448488ad9f_2\" value=\"Inquiring About a Job\">\n\t\t\t<label for=\"884da37f-0146-4120-df95-71448488ad9f_2\" class=\"btn\">Inquiring About a Job</label>\n\t    \n\t\t</div>\n\t</fieldset>\n</div>\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"884da37f-0146-4120-df95-71448488ad9f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"517e1650-78d7-4e7f-9cca-5eb4202c361d\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field firstname shortanswer mandatory\">\n\n                                <label for=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    First Name \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" id=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for First Name\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"6dbce377-15ee-44ab-c284-500a0e3b076a\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field lastname shortanswer mandatory alternating\">\n\n                                <label for=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Last Name \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" id=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for Last Name\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"6a75c82d-11d8-4f0a-d361-afd32ee40b9f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"8b838210-833f-4dc8-cc80-7931dbad9fcd\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field phone shortanswer\">\n\n                                <label for=\"215719b8-5ce9-449c-8459-e12dda7798a1\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Phone \n                                </label>\n\n                            \n<input type=\"text\" name=\"215719b8-5ce9-449c-8459-e12dda7798a1\" id=\"215719b8-5ce9-449c-8459-e12dda7798a1\" class=\"form-control text\" value=\"\" maxlength=\"500\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"215719b8-5ce9-449c-8459-e12dda7798a1\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span6\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field emailaddress shortanswer mandatory alternating\">\n\n                                <label for=\"145db211-17a6-4f21-8164-83689c1b955f\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Email Address \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"145db211-17a6-4f21-8164-83689c1b955f\" id=\"145db211-17a6-4f21-8164-83689c1b955f\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for Email Address\" data-val-regex=\"Please provide a valid value for Email Address\" data-regex=\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"145db211-17a6-4f21-8164-83689c1b955f\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"2b91243c-8f19-427a-9d58-cec4d0226933\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field city shortanswer mandatory\">\n\n                                <label for=\"5491507b-fcbc-4646-bca2-585239050fd7\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    City \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<input type=\"text\" name=\"5491507b-fcbc-4646-bca2-585239050fd7\" id=\"5491507b-fcbc-4646-bca2-585239050fd7\" class=\"form-control text\" value=\"\" maxlength=\"500\" data-val=\"true\" data-val-required=\"Please provide a value for City\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"5491507b-fcbc-4646-bca2-585239050fd7\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field state dropdown mandatory alternating\">\n\n                                <label for=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    State \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<select class=\"form-control\" name=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" id=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" data-val=\"true\" data-val-required=\"Please provide a value for State\">\n    <option value=\"\"></option>\n        <option value=\"AL\">AL</option>\n        <option value=\"AK\">AK</option>\n        <option value=\"AZ\">AZ</option>\n        <option value=\"AR\">AR</option>\n        <option value=\"CA\">CA</option>\n        <option value=\"CO\">CO</option>\n        <option value=\"CT\">CT</option>\n        <option value=\"DE\">DE</option>\n        <option value=\"DC\">DC</option>\n        <option value=\"FL\">FL</option>\n        <option value=\"GA\">GA</option>\n        <option value=\"HI\">HI</option>\n        <option value=\"ID\">ID</option>\n        <option value=\"IL\">IL</option>\n        <option value=\"IN\">IN</option>\n        <option value=\"IA\">IA</option>\n        <option value=\"KS\">KS</option>\n        <option value=\"KY\">KY</option>\n        <option value=\"LA\">LA</option>\n        <option value=\"ME\">ME</option>\n        <option value=\"MD\">MD</option>\n        <option value=\"MA\">MA</option>\n        <option value=\"MI\">MI</option>\n        <option value=\"MN\">MN</option>\n        <option value=\"MS\">MS</option>\n        <option value=\"MO\">MO</option>\n        <option value=\"MT\">MT</option>\n        <option value=\"NE\">NE</option>\n        <option value=\"NV\">NV</option>\n        <option value=\"NH\">NH</option>\n        <option value=\"NJ\">NJ</option>\n        <option value=\"NM\">NM</option>\n        <option value=\"NY\">NY</option>\n        <option value=\"NC\">NC</option>\n        <option value=\"ND\">ND</option>\n        <option value=\"OH\">OH</option>\n        <option value=\"OK\">OK</option>\n        <option value=\"OR\">OR</option>\n        <option value=\"PA\">PA</option>\n        <option value=\"RI\">RI</option>\n        <option value=\"SC\">SC</option>\n        <option value=\"SD\">SD</option>\n        <option value=\"TN\">TN</option>\n        <option value=\"TX\">TX</option>\n        <option value=\"UT\">UT</option>\n        <option value=\"VT\">VT</option>\n        <option value=\"VA\">VA</option>\n        <option value=\"WA\">WA</option>\n        <option value=\"WV\">WV</option>\n        <option value=\"WI\">WI</option>\n        <option value=\"WY\">WY</option>\n</select>\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"ef508991-a36f-425b-fbc0-af82e9e7f445\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n                <div class=\"umbraco-forms-container col span4\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field zipcode shortanswer\">\n\n                                <label for=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Zipcode \n                                </label>\n\n                            \n<input type=\"text\" name=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" id=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" class=\"form-control text\" value=\"\" maxlength=\"500\">\n\n\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"04e78d33-5f31-4b49-bc08-baf792ce12dd\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"8c46ece3-a9a6-4879-dc6b-f8ec4af62091\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field message longanswer mandatory alternating\">\n\n                                <label for=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Message \n                                        <span class=\"umbracoForms-Indicator\">*</span>\n                                </label>\n\n                            \n<textarea class=\"form-control\" name=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" id=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" rows=\"2\" cols=\"20\" data-val=\"true\" data-val-required=\"Please provide a value for Message\"></textarea>\n\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"73aa5f03-ea8b-44ac-9d7f-9b5ee7cf8cb3\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n    <fieldset class=\"umbraco-forms-fieldset\" id=\"51258e93-f56d-4309-feaa-ec2da8761eaa\">\n\n\n        <div class=\"row-fluid\">\n\n                <div class=\"umbraco-forms-container col span12\">\n\n                        <div class=\"input-block bottom-margin form-group  umbraco-forms-field recaptcha recaptcha2\">\n\n                                <label for=\"3c4c2b99-4abd-465c-97df-d07a53365f78\" class=\"col-sm-2 control-label umbraco-forms-label\">\n                                    Recaptcha \n                                </label>\n\n                                    <script src=\"https://www.google.com/recaptcha/api.js\" async=\"\" defer=\"\"></script>\n        <div class=\"g-recaptcha\" data-sitekey=\"6LeJTkcUAAAAANa3KaZLM-OFpIoNVu0vklQGMxFE\" data-theme=\"\" data-size=\"\"></div>\n\n\n<span class=\"field-validation-valid\" data-valmsg-for=\"3c4c2b99-4abd-465c-97df-d07a53365f78\" data-valmsg-replace=\"true\"></span>\n\n\n                        </div>\n\n                </div>\n        </div>\n\n    </fieldset>\n\n\n    <div style=\"display: none\">\n        <input type=\"text\" name=\"f611f93b7e23481dba4e5ff4d410160c\">\n    </div>\n\n\t\t\n    <div class=\"umbraco-forms-navigation row-fluid\">\n\t\t\n        <div class=\"col-sm-10 col-sm-offset-2\">\n                <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\" name=\"submitbtn\">\n        </div>\n\n\n    </div>\n\n</div><input name=\"ufprt\" type=\"hidden\" value=\"1BBC3B8605508CA92737344BEA2BBE5C3B84AC465031AA39DDB101CEF806D7E8E218A513923DAB7EB7AEEA3264A0B8321AE1DBB646A7766C2FF455645D745E1EC9137A65F1BE16D99DA26829DF465E26511AA0977B289990F27C7363701CBF06AD74E087D528EB8B7C74A0B042D580DFDFFC1076C9E17F77FE2ABE2DFC31F8A30E49DC378A2CC4CA2D9989666649AC84\"></form>\n\n        \n\n\n\n\n\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js\"></script>\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms.js\"></script>\n            <script type=\"text/javascript\" src=\"/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-conditions.js\"></script>\n        <script type=\"text/javascript\">\n            (function () {\n          \n\n            var contourDateFormat = 'm/d/yy',\n                formId = 'f611f93b7e23481dba4e5ff4d410160c',\n                fieldSetConditions = {},\n                fieldConditions = {},\n                recordvalues = {};\n            \n            umbracoForms.dependencyCheck(formId);\n\n            var form = $('#umbraco_form_' + formId + ' .umbraco-forms-page');\n            var conditions = new umbracoForms.conditions(form, fieldSetConditions, fieldConditions, recordvalues);\n            conditions.watch();\n            }());\n        </script>\n                    <link rel=\"stylesheet\" href=\"/app_plugins/umbracoforms/assets/defaultform.css\">\n    "
+      "contact": "https://www.linden-village.com/contact-us/"
+    }
+  },
+  {
+    "id": 3,
+    "title": "The Commons (Perrysburg) - ProMedica Senior Living Communities",
+    "url": "http://www.perrysburgcommons.com/",
+    "content": {
+      "photoGallery": [
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/11814/_gcp5276.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/10552/the-commons-signage-804x452.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3653/jfk_4378.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3358/4115_perrysburg-commonscourtyard.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8276/perrysburg-dsc_0035.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8275/perrysburg-dsc_0032.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8283/pic-8.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3651/outside-activities-area-fov3300x80.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3649/courtyard-fov3600x79.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8281/perrysburg-dsc_0047.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8277/perrysburg-dsc_0039.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8278/perrysburg-dsc_0040.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8280/perrysburg-dsc_0042.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8282/perrysburg-dsc_0048.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/8279/perrysburg-dsc_0041.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3646/apartment-c-fov322.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3647/chapel-fov2869x78.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3652/lobby-area-fov2577x82.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3658/set036from_dsc_2232.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3654/second-floor-activity-area-fov3600x78.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/3656/second-floor-common-area-fov2534x80.jpg",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.perrysburgcommons.com/media/11815/_gcp5278.jpg",
+          "imgAlt": "img-name"
+        }
+      ],
+      "testimonialsVideo": "https://www.youtube.com/embed/videoseries?list=PLss_Fyel1accb83cpPSUOdpi000GOxMp9",
+      "hospiceName": "Welcome To The Commons",
+      "address": {
+        "address1": "10542 Fremont Pike",
+        "address2": "Perrysburg, OH 43551",
+        "directions": "http://maps.google.com/?q=10542%20Fremont%20Pike+Perrysburg+OH+43551"
+      },
+      "email": "TheCommonsSeniorLiving@promedica.org",
+      "phone": "419-874-1931",
+      "fax": "GET DIRECTIONS",
+      "title": "Senior Living At Its Best",
+      "description": "Conveniently located on Fremont Pike near Interstate 75 and sharing a campus with ProMedica Skilled Nursing and Rehabilitation,  The Commons offers all-inclusive monthly independent living rental options for persons ages 55 and over. Our community is designed for your active and healthy lifestyle offering an array of floor plans including studios, one and two bedroom apartments.  Take a look yourself or experience first-hand with our short-stay trial period option.",
+      "featuresAmenities": {
+        "content": "The Commons, a ProMedica Senior Living Community offers six different spacious floor plans. ",
+        "learnMore": "https://www.perrysburgcommons.com/features/"
+      },
+      "floorPlansVariety": {
+        "content": "The Commons, a ProMedica Senior Living Community offers six different spacious floor plans. ",
+        "learnMore": "https://www.perrysburgcommons.com/floor-plans/"
+      },
+      "floorPlansDescription": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Floor Plans</h1>\n\t<h3 class=\"larger\">Variety of Floor Plans</h3>\n</div>\n\n<p>Perrysburg Commons Retirement Center offers six different spacious floor plans. Our one and two bedroom apartments offer kitchens with full-size appliances and our studios offer kitchenettes. All apartments are equipped with a number of safety features to give you peace of mind.</p>\t\t\t\t\t\t",
+      "floorPlansDetails": [
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8270/pc-standard-studio.svg",
+          "floorPlanName": "Special Studio",
+          "floorPlanDetail": "Bath: 3' x 8'<br>Kitchen: 4' x 8'<br>Living Area: 13'8\" x 13'10\""
+        },
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8268/pc-special-studio.svg",
+          "floorPlanName": "Special Studio",
+          "floorPlanDetail": "Bath: 3' x 8'<br>Kitchen: 6' x 8'<br>Living Area: 11'3\" x 15'"
+        },
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8267/pc-deluxe-studio.svg",
+          "floorPlanName": "Deluxe Studio",
+          "floorPlanDetail": "Bath: 5' x 8'<br>Kitchen: 6' x 7'<br>Living Area: 15'7\" x 14'"
+        },
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8269/pc-standard-1-bedroom.svg",
+          "floorPlanName": "Standard 1 Bedroom",
+          "floorPlanDetail": "Bath: 5' x 8'<br>Kitchen: 6'6\" x 4'5\"<br>Bedroom: 10' x 14'<br>Living Room: 10'4\" x 14'7\""
+        },
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8265/pc-deluxe-1-bedroom.svg",
+          "floorPlanName": "Deluxe 1 Bedroom",
+          "floorPlanDetail": "Bath: 5'6\" x 5'2\"<br>Kitchen: 6'6\" x 6'7\"<br>Bedroom: 10' x 14'10\"<br>Living Room: 13'3\" x 14'"
+        },
+        {
+          "floorPlanSrc": "https://www.perrysburgcommons.com/media/8266/pc-deluxe-2-bedroom.svg",
+          "floorPlanName": "Deluxe 2 Bedroom",
+          "floorPlanDetail": "Bath: 5' x 8'<br>Bath: 5' x 8'<br>Kitchen: 8' x 8'<br>Bedroom: 10' x 14'10\"<br>Bedroom: 11'8\" x 15'<br>Living Room: 13'3\" x 14'10\""
+        }
+      ],
+      "designLayout": [],
+      "services": [],
+      "features": [
+        {
+          "generalFeatures": [
+            "Three delicious meals daily",
+            "Month-to-month Rent",
+            "No Buy-in Fees",
+            "Small pets welcome",
+            "Private lounges for visiting",
+            "Beautiful courtyard",
+            "Beauty/Barber shop",
+            "Lounges and activity areas",
+            "Billiard room",
+            "Library/Computer lab",
+            "Atrium",
+            "Community room",
+            "Furnished guest suites",
+            "Indoor secured mailboxes",
+            "Daily newspaper delivery",
+            "Daily social, recreational and cultural activities",
+            "Religious activities",
+            "Non-denominational chapel",
+            "Entertainment and excursions",
+            "Designated smoking areas"
+          ],
+          "suiteFeatures": [
+            "All utilities included (private telephone and cable excluded)",
+            "WiFi access",
+            "Individual thermostat controls",
+            "Smoke/fire detectors and sprinklers",
+            "All maintenance repairs included",
+            "Personal laundry/linen service available",
+            "Housekeeping"
+          ]
+        }
+      ],
+      "amenities": [
+        {
+          "generalAmenities": [],
+          "expandedAmenities": [],
+          "lifeEnrichment": [
+            "Monthly Calendar of events",
+            "Live entertainment",
+            "Outings to local points of interest",
+            "Personal shopping service",
+            "Crafts, educational lectures, games",
+            "Weekly happy hours"
+          ],
+          "hospitality": [
+            "Weekly laundry service",
+            "Daily disinfecting of common spaces",
+            "Weekly light housekeeping & freshening linens",
+            "Nightly trash removal right from your door",
+            "Maintenance-free lifestyle",
+            "Mail & packages delivered right to your door"
+          ],
+          "culinary": [
+            "Restaurant style meals (3 a day)",
+            "Dine in our spacious dining room for all 3 meals",
+            "Beer & wine available with the evening meal",
+            "Private dining room for special events and parties"
+          ],
+          "transportation": [
+            "Weekly outings to local grocery stores by our chauffeur",
+            "Transportation to appointments (with 2 week notice given) by our chauffeur",
+            "Perrysburg transit serves our community Monday – Saturday with only a $1 fee each way",
+            "AOA provides local transportation services to our community within Wood County"
+          ]
+        }
+      ],
+      "payment": [],
+      "veterans": [],
+      "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
+      "moreInfo": "https://balance.promedicaseniorcare.org/",
+      "englisPDF": "https://www.perrysburgcommons.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
+      "spanishPDF": "https://www.perrysburgcommons.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
+      "contact": "https://www.perrysburgcommons.com/contact-us/"
     }
   }
 ]
