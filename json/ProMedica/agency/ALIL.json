@@ -150,6 +150,7 @@
       "payment": [
         {
           "paymentInfo": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Payment</h1>\n\t<h3 class=\"larger\">Payment Information</h3>\n</div>\n\n<p>Lely Palms Retirement offers month-to-month rent with no buy-in fees. Some of your medical needs may be covered through Medicare, Medicaid or managed care and commercial insurance. You may be eligible for additional benefits outlined below. Our admissions team will be happy to provide information to understand your options.</p>\t\t\t\t\t\t",
+          "servicesFees": "You can pay online using the link below.",
           "paymentLink": "https://www.lelypalmsretirementliving.com/test"
         }
       ],
@@ -259,6 +260,7 @@
         }
       ],
       "virtualTour": "https://play.vidyard.com/xKAm_WF96KOC1bRxEzJGCQ.html?",
+      "testimonialsVideo": null,
       "hospiceName": "Welcome To Linden Village A ProMedica Senior Living Community",
       "address": {
         "address1": "100 Tuck Court",
@@ -864,6 +866,8 @@
           "imgAlt": "img-name"
         }
       ],
+      "virtualTour": null,
+      "testimonialsVideo": null,
       "hospiceName": "Welcome To Springhouse A ProMedica Senior Living Community (Pikesville)",
       "address": {
         "address1": "8911 Reisterstown Rd",
@@ -996,6 +1000,128 @@
       "englisPDF": "https://www.springhouse-al.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
       "spanishPDF": "https://www.springhouse-al.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
       "contact": "https://www.springhouse-al.com/contact-us/"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Home - Hill Valley Healthcare",
+    "url": "http://www.villageatmanorcare.com/",
+    "content": {
+      "photoGallery": null,
+      "virtualTour": null,
+      "testimonialsVideo": null,
+      "hospiceName": null,
+      "address": null,
+      "email": null,
+      "phone": null,
+      "fax": null,
+      "title": null,
+      "description": null,
+      "rightTime": null,
+      "featuresAmenities": null,
+      "floorPlansVariety": null,
+      "floorPlansDescription": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Floor Plans</h1>\n\t<h3 class=\"larger\">Variety of Floor Plans</h3>\n</div>\n\n\t\t\t\t\t\t",
+      "floorPlansDetails": [
+        {
+          "floorPlanSrc": "https://www.villageatmanorcare.com/media/8305/vmc-studio.svg",
+          "floorPlanName": "Studio"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatmanorcare.com/media/8304/vmc-large-studio.svg",
+          "floorPlanName": "Large Studio",
+          "floorPlanDetail": "Bath: 3' x 8'<br>Kitchen: 6' x 8'<br>Living Area: 11'3\" x 15'"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatmanorcare.com/media/8306/vmc-suite.svg",
+          "floorPlanName": "Suite"
+        }
+      ],
+      "designLayout": [],
+      "services": [
+        {
+          "generalServices": [],
+          "expandedServices": [],
+          "healthServices": [
+            "Orientation",
+            "Communication",
+            "Structured programs and activities seven-days-a-week",
+            "Advice, reassurance and support",
+            "Personal shopper or local shopping services"
+          ],
+          "socialServices": [
+            "Three meals per day and snacks",
+            "Special preparation and presentation of food to meet the unique needs\nand varied abilities of our residents and respect cultural and religious\nchoices",
+            "Assistance with dining and eating if necessary"
+          ],
+          "personalServices": [
+            "Personal hygiene",
+            "Bathing",
+            "Dressing and undressing",
+            "Mobility—help with walking, transferring from bed",
+            "Toileting",
+            "Schedule Housekeeping and linen/laundry service, or use our\nlaundry facilities"
+          ],
+          "foodServices": [
+            "Monitoring—blood pressure, vital signs, weight, etc.",
+            "Responding to and treating health problems",
+            "Assisting with medications",
+            "Assistance in arranging medical care, including physical rehabilitation\nservices available",
+            "Family physician on-site one day a week"
+          ],
+          "additionalServices": []
+        }
+      ],
+      "features": [],
+      "amenities": [
+        {
+          "generalAmenities": [
+            "Private dining rooms for special parties",
+            "Private lounges for visiting",
+            "Beautiful courtyard",
+            "Beauty/Barber shop",
+            "Lounges and activity areas",
+            "Furnished respite rooms",
+            "Diverse social and recreational activities",
+            "Religious activities",
+            "Entertainment and excursions"
+          ],
+          "expandedAmenities": [
+            "Kitchenettes with mini refrigerators in each apartment",
+            "All utilities including basic cable included",
+            "Private telephone line available",
+            "Wireless internet services",
+            "In-room individual thermostat controls",
+            "Smoke/fire detectors and sprinklers",
+            "All maintenance repairs included",
+            "Individualized emergency response system",
+            "Weekly housekeeping and linen services",
+            "Resident access to fully equipped laundry room",
+            "Complimentary transportation to physicians, shopping and bank"
+          ],
+          "roomAmenities": [
+            "Beautifully appointed dining room",
+            "Restaurant style menu selections with 3 meals per day prepared in-house",
+            "Accommodations made for special diets"
+          ],
+          "lifeEnrichment": [],
+          "hospitality": [],
+          "culinary": [],
+          "transportation": []
+        }
+      ],
+      "payment": [
+        {
+          "paymentInfo": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Payment</h1>\n\t<h3 class=\"larger\">Payment Information</h3>\n</div>\n\n\t\t\t\t\t\t",
+          "servicesFees": "Our goal is to satisfy your need for fair prices and good value. That’s why your monthly fees are based on your choice of accommodations and the level of care you need or want - as determined by your assessment.",
+          "paymentLink": null
+        }
+      ],
+      "veterans": [],
+      "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
+      "moreInfo": "https://balance.promedicaseniorcare.org/",
+      "englisPDF": "https://www.villageatmanorcare.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
+      "spanishPDF": "https://www.villageatmanorcare.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
+      "contact": "https://www.villageatmanorcare.com/contact-us/"
     }
   }
 ]

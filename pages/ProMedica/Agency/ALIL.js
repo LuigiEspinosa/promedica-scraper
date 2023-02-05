@@ -14,181 +14,194 @@ export default async function ALIL(links) {
         const articlesTitle = await page.title();
         let subpageTitle;
 
-        const banner = await page
-          .locator('.hero-buttons-container > a[data-popup-ordinal="0"]')
-          .getByText('Photo Gallery')
-          .isVisible();
+        // THIS PAGE IT'S A REDDIRECT BUT IT DO HAVE SUBPEAGES SO...
+        let photoGallery = null;
+        let virtualTour = null;
+        let testimonialsVideo = null;
+        let hospiceName = null;
+        let address = null;
+        let email = null;
+        let phone = null;
+        let fax = null;
+        let title = null;
+        let description = null;
+        let rightTime = null;
+        let featuresAmenities = null;
+        let floorPlansVariety = null;
+        if (links[i] !== 'http://www.villageatmanorcare.com/') {
+          const banner = await page
+            .locator('.hero-buttons-container > a[data-popup-ordinal="0"]')
+            .getByText('Photo Gallery')
+            .isVisible();
 
-        let vTourButton = await page
-          .locator('.hero-buttons-container > a[href*="http"]')
-          .getByText('Virtual Tour')
-          .first()
-          .isVisible();
-
-        const testimonialsButton = await page
-          .locator('.hero-buttons-container > a.testimonialVideoOverlay_open')
-          .getByText('Testimonials')
-          .first()
-          .isVisible();
-
-        let photoGallery;
-        if (banner) {
-          await page.click('.hero-buttons-container > a.image-gallery');
-
-          photoGallery = await page.$$eval(
-            '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
-            (item) => {
-              let images = [];
-              item.forEach((item) => images.push({ imgSrc: item.src, imgAlt: item.alt }));
-              return images;
-            }
-          );
-
-          await page.keyboard.press('Escape');
-        }
-
-        let virtualTour;
-        if (vTourButton) {
-          virtualTour = await page
+          let vTourButton = await page
             .locator('.hero-buttons-container > a[href*="http"]')
             .getByText('Virtual Tour')
             .first()
-            .getAttribute('href');
-        } else {
-          vTourButton = await page
-            .locator('.hero-buttons-container > a.vt_overlay_open[data-popup-ordinal="0"]')
-            .getByText('Virtual Tour')
             .isVisible();
 
-          if (vTourButton) {
-            await page.click('.hero-buttons-container > a.vt_overlay_open');
+          const testimonialsButton = await page
+            .locator('.hero-buttons-container > a.testimonialVideoOverlay_open')
+            .getByText('Testimonials')
+            .first()
+            .isVisible();
 
-            virtualTour = await page.$eval('#vt_overlay', (i) => {
-              let video = i.querySelector('#vt_overlay iframe');
+          if (banner) {
+            await page.click('.hero-buttons-container > a.image-gallery');
+
+            photoGallery = await page.$$eval(
+              '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
+              (item) => {
+                let images = [];
+                item.forEach((item) => images.push({ imgSrc: item.src, imgAlt: item.alt }));
+                return images;
+              }
+            );
+
+            await page.keyboard.press('Escape');
+          }
+
+          if (vTourButton) {
+            virtualTour = await page
+              .locator('.hero-buttons-container > a[href*="http"]')
+              .getByText('Virtual Tour')
+              .first()
+              .getAttribute('href');
+          } else {
+            vTourButton = await page
+              .locator('.hero-buttons-container > a.vt_overlay_open[data-popup-ordinal="0"]')
+              .getByText('Virtual Tour')
+              .isVisible();
+
+            if (vTourButton) {
+              await page.click('.hero-buttons-container > a.vt_overlay_open');
+
+              virtualTour = await page.$eval('#vt_overlay', (i) => {
+                let video = i.querySelector('#vt_overlay iframe');
+                if (video) video = video.src;
+                return video;
+              });
+
+              await page.keyboard.press('Escape');
+            }
+          }
+
+          if (testimonialsButton) {
+            await page.click('.hero-buttons-container > a.testimonialVideoOverlay_open');
+
+            testimonialsVideo = await page.$eval('#testimonialVideoOverlay', (i) => {
+              let video = i.querySelector('#testimonialVideoOverlay iframe');
               if (video) video = video.src;
               return video;
             });
 
             await page.keyboard.press('Escape');
           }
-        }
 
-        let testimonialsVideo;
-        if (testimonialsButton) {
-          await page.click('.hero-buttons-container > a.testimonialVideoOverlay_open');
-
-          testimonialsVideo = await page.$eval('#testimonialVideoOverlay', (i) => {
-            let video = i.querySelector('#testimonialVideoOverlay iframe');
-            if (video) video = video.src;
-            return video;
+          hospiceName = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-overlay > h2');
+            if (content) content = content.innerText;
+            return content;
           });
 
-          await page.keyboard.press('Escape');
+          address = await page.$eval('.hero-section', (item) => {
+            let address1 = item.querySelector('.hero-overlay p:not(.hero-map-link)');
+            let address2 = item.querySelector('.hero-overlay p.hero-map-link');
+            let directions = item.querySelector('.hero-overlay p.directions > a[href*="http"]');
+
+            if (address1) address1 = address1.innerText;
+            if (address2) address2 = address2.innerText;
+            if (directions) directions = directions.href;
+
+            return {
+              address1,
+              address2,
+              directions,
+            };
+          });
+
+          email = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-overlay a#email-link');
+            if (content) content = content.innerText;
+            return content;
+          });
+
+          phone = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-overlay a#phone-link');
+            if (content) content = content.innerText;
+            return content;
+          });
+
+          fax = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-overlay > p:not(.no-margin) > a[href*="tel:"]');
+            if (content) content = content.innerText;
+            return content;
+          });
+
+          title = await page.$eval('.hero-section', (i) => {
+            let content = i.querySelector('.hero-copy > h1');
+            if (content) content = content.innerText;
+            return content;
+          });
+
+          description = await page.$eval('.hero-section', (i) => {
+            let content =
+              i.querySelector('.hero-copy > p > span') || i.querySelector('.hero-copy > p');
+            if (content) content = content.innerText;
+            return content;
+          });
+
+          rightTime = await page.$eval('main > .umb-grid', (i) => {
+            let content = i.querySelector(
+              'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
+            );
+            if (content && content.innerText === 'The Right Time') {
+              return (content = {
+                content: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + * + *'
+                )?.innerText,
+                learnMore: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+                )?.href,
+              });
+            }
+            return null;
+          });
+
+          featuresAmenities = await page.$eval('main > .umb-grid', (i) => {
+            let content = i.querySelector(
+              'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
+            );
+            if (content && content.innerText === 'Features') {
+              return (content = {
+                content: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + *'
+                )?.innerText,
+                learnMore: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+                )?.href,
+              });
+            }
+            return null;
+          });
+
+          floorPlansVariety = await page.$eval('main > .umb-grid', (i) => {
+            let content = i.querySelector(
+              'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2'
+            );
+            if (content && content.innerText === 'Variety of Floor Plans') {
+              return (content = {
+                content: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + *'
+                )?.innerText,
+                learnMore: i.querySelector(
+                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
+                )?.href,
+              });
+            }
+            return null;
+          });
         }
-
-        const hospiceName = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay > h2');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const address = await page.$eval('.hero-section', (item) => {
-          let address1 = item.querySelector('.hero-overlay p:not(.hero-map-link)');
-          let address2 = item.querySelector('.hero-overlay p.hero-map-link');
-          let directions = item.querySelector('.hero-overlay p.directions > a[href*="http"]');
-
-          if (address1) address1 = address1.innerText;
-          if (address2) address2 = address2.innerText;
-          if (directions) directions = directions.href;
-
-          return {
-            address1,
-            address2,
-            directions,
-          };
-        });
-
-        const email = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay a#email-link');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const phone = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay a#phone-link');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const fax = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-overlay > p:not(.no-margin) > a[href*="tel:"]');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const title = await page.$eval('.hero-section', (i) => {
-          let content = i.querySelector('.hero-copy > h1');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const description = await page.$eval('.hero-section', (i) => {
-          let content =
-            i.querySelector('.hero-copy > p > span') || i.querySelector('.hero-copy > p');
-          if (content) content = content.innerText;
-          return content;
-        });
-
-        const rightTime = await page.$eval('main > .umb-grid', (i) => {
-          let content = i.querySelector(
-            'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
-          );
-          if (content && content.innerText === 'The Right Time') {
-            return (content = {
-              content: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + * + *'
-              )?.innerText,
-              learnMore: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
-              )?.href,
-            });
-          }
-          return null;
-        });
-
-        const featuresAmenities = await page.$eval('main > .umb-grid', (i) => {
-          let content = i.querySelector(
-            'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
-          );
-          if (content && content.innerText === 'Features') {
-            return (content = {
-              content: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + *'
-              )?.innerText,
-              learnMore: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
-              )?.href,
-            });
-          }
-          return null;
-        });
-
-        const floorPlansVariety = await page.$eval('main > .umb-grid', (i) => {
-          let content = i.querySelector(
-            'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2'
-          );
-          if (content && content.innerText === 'Variety of Floor Plans') {
-            return (content = {
-              content: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + *'
-              )?.innerText,
-              learnMore: i.querySelector(
-                'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
-              )?.href,
-            });
-          }
-          return null;
-        });
 
         await page.goto(`${links[i]}/floor-plans`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
@@ -465,10 +478,23 @@ export default async function ALIL(links) {
         await page.goto(`${links[i]}/payment`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
+        if (!subpageTitle.includes('Payment')) {
+          await page.goto(`${links[i]}/services-and-fees`, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
+
         let payment = [];
-        if (subpageTitle.includes('Payment')) {
+        if (subpageTitle.includes('Payment') || subpageTitle.includes('Services and Fees')) {
           const paymentInfo = await page.$eval('.hero-section', (i) => {
             let content = i.querySelector('.hero-overlay');
+            if (content) content = content.innerHTML;
+            return content;
+          });
+
+          const servicesFees = await page.$eval('main > div.umb-grid ', (i) => {
+            let content = i.querySelector(
+              'div.content-section-Yes > section.grid-section > h2 + *'
+            );
             if (content) content = content.innerHTML;
             return content;
           });
@@ -481,6 +507,7 @@ export default async function ALIL(links) {
 
           payment.push({
             paymentInfo,
+            servicesFees,
             paymentLink,
           });
         }
