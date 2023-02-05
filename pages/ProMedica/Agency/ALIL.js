@@ -14,7 +14,7 @@ export default async function ALIL(links) {
         const articlesTitle = await page.title();
         let subpageTitle;
 
-        // THIS PAGE IT'S A REDDIRECT BUT IT DO HAVE SUBPEAGES SO...
+        // THIS PAGE IT'S A REDDIRECT BUT IT DOES HAVE SUBPEAGES SO...
         let photoGallery = null;
         let virtualTour = null;
         let testimonialsVideo = null;

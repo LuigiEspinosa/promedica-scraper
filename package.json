@@ -1,6 +1,6 @@
 {
   "name": "promedica-scraper",
-  "version": "1.8.20",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
   "type": "module",
   "dependencies": {
     "file-system": "^2.2.2",
-    "playwright": "^1.29.1"
+    "playwright": "^1.29.1",
+    "sanitize-html": "^2.9.0"
   }
 }
 
