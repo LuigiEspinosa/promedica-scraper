@@ -1123,5 +1123,141 @@
       "spanishPDF": "https://www.villageatmanorcare.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
       "contact": "https://www.villageatmanorcare.com/contact-us/"
     }
+  },
+  {
+    "id": 7,
+    "title": "The Village (Westerville) - ProMedica Senior Living Communities",
+    "url": "http://www.villageatwesterville.com/",
+    "content": {
+      "photoGallery": [
+        {
+          "imgSrc": "https://www.villageatwesterville.com/media/3402/imgfacility_4125.png",
+          "imgAlt": "img-name"
+        },
+        {
+          "imgSrc": "https://www.villageatwesterville.com/media/11989/promedica2.jpg",
+          "imgAlt": "img-name"
+        }
+      ],
+      "virtualTour": null,
+      "testimonialsVideo": null,
+      "hospiceName": "Welcome To The Village (Westerville)",
+      "address": {
+        "address1": "215 Huber Village Blvd.",
+        "address2": "Westerville, OH 43081",
+        "directions": "http://maps.google.com/?q=215%20Huber%20Village%20Blvd.+Westerville+OH+43081"
+      },
+      "email": "WestervilleTheVillageSeniorLivingCommunity@promedica.org",
+      "phone": "614-882-3782",
+      "fax": "614-882-1107",
+      "title": "Senior Living At Its Best",
+      "description": "The Village A ProMedica Senior Living Community, a not-for-profit mission-based health and well-being organization, is nestled in the charming community of Westerville on the northeast outskirts of Columbus, Ohio. This historic village features a beautifully restored “uptown,” many lovely parks and Otterbein College, a highly respected liberal arts university.",
+      "rightTime": null,
+      "featuresAmenities": null,
+      "floorPlansVariety": {
+        "content": "The Village (Westerville) offers a variety of floor plans.",
+        "learnMore": "https://www.villageatwesterville.com/floor-plans/"
+      },
+      "floorPlansDescription": "\n<div class=\"hgroup\">\n\t<h1 class=\"h2\">Floor Plans</h1>\n\t<h3 class=\"larger\">Variety of Floor Plans</h3>\n</div>\n\n<p><span>The Village offers twelve different spacious floor plans. You may choose from a selection of roomy apartments. These include studio, one-bedroom and two-bedroom floor plans. Each apartment is nicely appointed with a convenient kitchenette and full bath. Some floor plans include two full baths. All apartments are equipped with a number of safety features for your peace of mind.</span></p>\t\t\t\t\t\t",
+      "floorPlansDetails": [
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11163/studio-suite-010522.svg",
+          "floorPlanName": "Studio Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11162/special-suite-010522.svg",
+          "floorPlanName": "Special Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11161/one-bedroom-suite-010522.svg",
+          "floorPlanName": "One Bedroom Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11160/deluxe-suit-010522.svg",
+          "floorPlanName": "Deluxe Suite"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11161/one-bedroom-suite-010522.svg",
+          "floorPlanName": "Deluxe 1 Bedroom"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11155/deluxe-one-bedroom-suite-1-010522.svg",
+          "floorPlanName": "Deluxe 1 Bedroom 1"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11156/deluxe-one-bedroom-suite-2-010522.svg",
+          "floorPlanName": "Deluxe 1 Bedroom 2"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11157/deluxe-one-bedroom-suite-3-010522.svg",
+          "floorPlanName": "Deluxe 1 Bedroom 3"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11158/deluxe-one-bedroom-suite-4-010522.svg",
+          "floorPlanName": "Deluxe 1 Bedroom 4"
+        },
+        {
+          "floorPlanSrc": "https://www.villageatwesterville.com/media/11154/2-bedroom-suite-010522.svg",
+          "floorPlanName": "2 Bedroom Suite"
+        }
+      ],
+      "designLayout": [],
+      "services": [],
+      "features": [],
+      "amenities": [
+        {
+          "generalAmenities": [
+            "Private rooms available for parties & meetings",
+            "Complimentary chauffeured transportation",
+            "Beauty salon and barber shop",
+            "Full schedule of activities & outings",
+            "Wood burning fireplace",
+            "Exercise room",
+            "Billiards table",
+            "Video and book library",
+            "Magnifying readers",
+            "Computers with printer and Internet access",
+            "Rehabilitation center",
+            "Massage therapy available",
+            "Laundry facilities for personal laundry",
+            "Two beautiful courtyards & gazebo",
+            "Quarter-mile walking path",
+            "Raised garden beds for residents' use",
+            "Smoke detectors and safety features",
+            "Professional, on-site, after-hours security",
+            "Physician and psychological counseling services",
+            "In-house dental, podiatry and audiology care"
+          ],
+          "expandedAmenities": [
+            "Overnight guest suite available",
+            "All utilities included (private telephone and cable excluded)",
+            "Wifi",
+            "Individual heat and air conditioning controls electric and water",
+            "Smoke/fire detectors and sprinklers",
+            "All maintenance repairs included",
+            "Personalized Emergency Response Call System",
+            "Personal laundry/linen service available",
+            "Housekeeping"
+          ],
+          "roomAmenities": [
+            "Three restaurant-style meals a day with various menu selections",
+            "24-hour snack & beverage center",
+            "Private dining room to entertain guests for mealsRoom service available",
+            "Catering available for private parties & meetings"
+          ],
+          "lifeEnrichment": [],
+          "hospitality": [],
+          "culinary": [],
+          "transportation": []
+        }
+      ],
+      "payment": [],
+      "veterans": [],
+      "specialNeeds": "\n                                    \n    \n        \n               \n\n\n\n\t\t<h2 class=\"align-text- heading-border-True\">Special Needs Communications</h2>\n\n\n\n<p><span>We are committed to communicating with sensory impaired persons and persons with limited English proficiency. If you need assistance with understanding communications because of a hearing, language, sensory or sight impairment, we will provide the appropriate intervention to help with communication.</span></p>\n<p><span>Appropriate auxiliary aids are provided at no charge to persons with disabilities when necessary to ensure effective communication with patients/residents and their companions, including any family member, friend or associate of a person seeking or receiving services with whom communication is appropriate. Free auxiliary aids may include, but are not limited to: sign language interpreters, TTYs, note takers, written materials, telephone handset amplifiers, assistive listening devices, closed caption decoders, and other services.&nbsp;</span></p>\n\n\n        \n\n\n\n                        ",
+      "moreInfo": "https://balance.promedicaseniorcare.org/",
+      "englisPDF": "https://www.villageatwesterville.com/media/6125/npp-and-state-addendum-oct-2016-final.pdf",
+      "spanishPDF": "https://www.villageatwesterville.com/media/6185/npp-and-state-addendum-oct2016-spanish.pdf",
+      "contact": "https://www.villageatwesterville.com/contact-us/"
+    }
   }
 ]

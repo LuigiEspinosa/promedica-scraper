@@ -280,5 +280,5 @@ export const alilLinks = [
   'https://www.promedicaseniorliving.org/senior-living-locations/promedica-charlotte-stephenson-manor/',
   'https://www.springhouse-al.com/pikesville/',
   'http://www.villageatmanorcare.com/',
-  // 'http://www.villageatwesterville.com/',
+  'http://www.villageatwesterville.com/',
 ];
