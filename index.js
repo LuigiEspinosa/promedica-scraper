@@ -16,9 +16,9 @@ import Agency from './pages/ProMedica/Agency/agency.js';
 // Locations();
 // DoctorsProviders();
 // ServicesConditions();
-// Agency();
+Agency();
 
 // // Paramount
 // EducationalArticles();
-ParamountNews();
+// ParamountNews();
 // ParamountBlog();

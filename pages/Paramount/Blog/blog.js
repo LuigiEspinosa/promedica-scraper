@@ -15,27 +15,24 @@ export default async function ParamountBlog() {
   try {
     await page.waitForSelector('#resultsWrapper_65e06b4f-b697-403e-a57e-6f47a40c9550');
 
-    const articlesPerPage = await page.$$eval(
-      '#resultsWrapper_65e06b4f-b697-403e-a57e-6f47a40c9550 > div.row',
-      (articleItem) => {
-        return articleItem.map((article, idx) => {
-          const imgSrc = article.querySelector('.col-md-3 img').src;
-          const imgAlt = article.querySelector('.col-md-3 img').alt;
-          const title = article.querySelector('.col-md-9 h2').innerText;
-          const description = article.querySelector('.col-md-9 p:nth-child(3)').innerText;
-          const linkSrc = article.querySelector('.col-md-9 a').href;
+    const articlesPerPage = await page.$$eval('#resultsWrapper_65e06b4f-b697-403e-a57e-6f47a40c9550 > div.row', (articleItem) => {
+      return articleItem.map((article, idx) => {
+        const imgSrc = article.querySelector('.col-md-3 img')?.src || null;
+        const imgAlt = article.querySelector('.col-md-3 img')?.alt || null;
+        const title = article.querySelector('.col-md-9 h2')?.innerText;
+        const description = article.querySelector('.col-md-9 p:nth-child(3)')?.innerText || null;
+        const linkSrc = article.querySelector('.col-md-9 a')?.href || null;
 
-          return {
-            id: idx + 1,
-            imgSrc,
-            imgAlt,
-            title,
-            description,
-            linkSrc,
-          };
-        });
-      }
-    );
+        return {
+          id: idx + 1,
+          imgSrc,
+          imgAlt,
+          title,
+          description,
+          linkSrc,
+        };
+      });
+    });
 
     articles.push(articlesPerPage);
   } catch (error) {
@@ -65,22 +62,11 @@ export default async function ParamountBlog() {
 
         const articlesTitle = await page.title();
 
-        const banner = await page.$eval('#article-banner', (i) => {
-          let banner = i.querySelector('#article-banner > div > img');
-          if (banner) banner = banner.src;
-          return banner;
-        });
+        const banner = await page.$eval('#article-banner', (i) => i.querySelector('#article-banner > div > img')?.src || null);
 
-        const bannerAlt = await page.$eval('#article-banner', (i) => {
-          let bannerAlt = i.querySelector('#article-banner > div > img');
-          if (bannerAlt) bannerAlt = bannerAlt.alt;
-          return bannerAlt;
-        });
+        const bannerAlt = await page.$eval('#article-banner', (i) => i.querySelector('#article-banner > div > img')?.alt || null);
 
-        const articleContent = await page.$eval(
-          '#article-content',
-          (i) => i.querySelector('div.row > div').innerHTML
-        );
+        const articleContent = await page.$eval('#article-content', (i) => i.querySelector('div.row > div')?.innerHTML || null);
 
         articlesBody.push({
           id: i + 1,

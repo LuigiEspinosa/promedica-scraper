@@ -15,29 +15,26 @@ export default async function EducationalArticles() {
   try {
     await page.waitForSelector('#resultsWrapper_0bb4d5ab-4a87-438f-bfb4-2e234628f601');
 
-    const articlesPerPage = await page.$$eval(
-      '#resultsWrapper_0bb4d5ab-4a87-438f-bfb4-2e234628f601 > div.row',
-      (articleItem) => {
-        return articleItem.map((article, idx) => {
-          const imgSrc = article.querySelector('.row div img').src;
-          const imgAlt = article.querySelector('.row div img').alt;
-          const title = article.querySelector('.row div h2').innerText;
-          const description = article.querySelector('.row div p').innerText;
-          const linkSrc = article.querySelector('.row div a').href;
-          const linkText = article.querySelector('.row div a').innerText;
+    const articlesPerPage = await page.$$eval('#resultsWrapper_0bb4d5ab-4a87-438f-bfb4-2e234628f601 > div.row', (articleItem) => {
+      return articleItem.map((article, idx) => {
+        const imgSrc = article.querySelector('.row div img')?.src || null;
+        const imgAlt = article.querySelector('.row div img')?.alt || null;
+        const title = article.querySelector('.row div h2')?.innerText || null;
+        const description = article.querySelector('.row div p')?.innerText || null;
+        const linkSrc = article.querySelector('.row div a')?.href || null;
+        const linkText = article.querySelector('.row div a')?.innerText || null;
 
-          return {
-            id: idx + 1,
-            imgSrc,
-            imgAlt,
-            title,
-            description,
-            linkSrc,
-            linkText,
-          };
-        });
-      }
-    );
+        return {
+          id: idx + 1,
+          imgSrc,
+          imgAlt,
+          title,
+          description,
+          linkSrc,
+          linkText,
+        };
+      });
+    });
 
     articles.push(articlesPerPage);
   } catch (error) {
@@ -45,15 +42,10 @@ export default async function EducationalArticles() {
   }
 
   const jsonContent = JSON.stringify(articles.flat(), null, 2);
-  fs.writeFile(
-    './json/Paramount/EducationalArticles/educational-articles.json',
-    jsonContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('Educational Articles Imported!\n');
-    }
-  );
+  fs.writeFile('./json/Paramount/EducationalArticles/educational-articles.json', jsonContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('Educational Articles Imported!\n');
+  });
 
   // Articles content
   const mergeLinks = articles.flat().map((item) => {
@@ -72,22 +64,11 @@ export default async function EducationalArticles() {
 
         const articlesTitle = await page.title();
 
-        const banner = await page.$eval('#article-banner div.article-banner', (i) => {
-          let img = i.querySelector('img');
-          if (img) img = img.src;
-          return img;
-        });
+        const banner = await page.$eval('#article-banner div.article-banner', (i) => i.querySelector('img')?.src || null);
 
-        const bannerAlt = await page.$eval('#article-banner div.article-banner', (i) => {
-          let imgAlt = i.querySelector('img');
-          if (imgAlt) imgAlt = imgAlt.alt;
-          return imgAlt;
-        });
+        const bannerAlt = await page.$eval('#article-banner div.article-banner', (i) => i.querySelector('img')?.alt || null);
 
-        const articleContent = await page.$eval(
-          '#article-content',
-          (i) => i.querySelector('div.row > div').innerHTML
-        );
+        const articleContent = await page.$eval('#article-content', (i) => i.querySelector('div.row > div')?.innerHTML || null);
 
         articlesBody.push({
           id: i + 1,
@@ -108,15 +89,10 @@ export default async function EducationalArticles() {
   }
 
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
-  fs.writeFile(
-    './json/Paramount/EducationalArticles/educational-articles-articles.json',
-    jsonArticlesContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log("\nEducational Articles' Articles Imported!\n");
-    }
-  );
+  fs.writeFile('./json/Paramount/EducationalArticles/educational-articles-articles.json', jsonArticlesContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nEducational Articles' Articles Imported!\n");
+  });
 
   await page.close();
   await browser.close();

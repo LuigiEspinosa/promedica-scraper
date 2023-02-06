@@ -1,10 +1,4 @@
-import {
-  hospiceLinks,
-  homeHealthLinks,
-  palliativeCareLinks,
-  memoryCareLinks,
-  alilLinks,
-} from './agencyLinks.js';
+import { hospiceLinks, homeHealthLinks, palliativeCareLinks, memoryCareLinks, alilLinks } from './agencyLinks.js';
 
 import Hospice from './hospice.js';
 import HomeHealth from './home-health.js';

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import sanitize from '../../../lib/sanitize.js';
 
 export default async function ALIL(links) {
   const browser = await chromium.launch({ headless: true });
@@ -29,16 +30,9 @@ export default async function ALIL(links) {
         let featuresAmenities = null;
         let floorPlansVariety = null;
         if (links[i] !== 'http://www.villageatmanorcare.com/') {
-          const banner = await page
-            .locator('.hero-buttons-container > a[data-popup-ordinal="0"]')
-            .getByText('Photo Gallery')
-            .isVisible();
+          const banner = await page.locator('.hero-buttons-container > a[data-popup-ordinal="0"]').getByText('Photo Gallery').isVisible();
 
-          let vTourButton = await page
-            .locator('.hero-buttons-container > a[href*="http"]')
-            .getByText('Virtual Tour')
-            .first()
-            .isVisible();
+          let vTourButton = await page.locator('.hero-buttons-container > a[href*="http"]').getByText('Virtual Tour').first().isVisible();
 
           const testimonialsButton = await page
             .locator('.hero-buttons-container > a.testimonialVideoOverlay_open')
@@ -53,7 +47,7 @@ export default async function ALIL(links) {
               '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
               (item) => {
                 let images = [];
-                item.forEach((item) => images.push({ imgSrc: item.src, imgAlt: item.alt }));
+                item.forEach((item) => images.push({ imgSrc: item?.src || null, imgAlt: item?.alt || null }));
                 return images;
               }
             );
@@ -76,11 +70,7 @@ export default async function ALIL(links) {
             if (vTourButton) {
               await page.click('.hero-buttons-container > a.vt_overlay_open');
 
-              virtualTour = await page.$eval('#vt_overlay', (i) => {
-                let video = i.querySelector('#vt_overlay iframe');
-                if (video) video = video.src;
-                return video;
-              });
+              virtualTour = await page.$eval('#vt_overlay', (i) => i.querySelector('#vt_overlay iframe')?.src || null);
 
               await page.keyboard.press('Escape');
             }
@@ -89,82 +79,57 @@ export default async function ALIL(links) {
           if (testimonialsButton) {
             await page.click('.hero-buttons-container > a.testimonialVideoOverlay_open');
 
-            testimonialsVideo = await page.$eval('#testimonialVideoOverlay', (i) => {
-              let video = i.querySelector('#testimonialVideoOverlay iframe');
-              if (video) video = video.src;
-              return video;
-            });
+            testimonialsVideo = await page.$eval(
+              '#testimonialVideoOverlay',
+              (i) => i.querySelector('#testimonialVideoOverlay iframe')?.src || null
+            );
 
             await page.keyboard.press('Escape');
           }
 
-          hospiceName = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay > h2');
-            if (content) content = content.innerText;
-            return content;
-          });
+          hospiceName = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay > h2')?.innerText || null);
 
           address = await page.$eval('.hero-section', (item) => {
-            let address1 = item.querySelector('.hero-overlay p:not(.hero-map-link)');
-            let address2 = item.querySelector('.hero-overlay p.hero-map-link');
-            let directions = item.querySelector('.hero-overlay p.directions > a[href*="http"]');
-
-            if (address1) address1 = address1.innerText;
-            if (address2) address2 = address2.innerText;
-            if (directions) directions = directions.href;
-
             return {
-              address1,
-              address2,
-              directions,
+              address1: item.querySelector('.hero-overlay p:not(.hero-map-link)')?.innerText || null,
+              address2: item.querySelector('.hero-overlay p.hero-map-link')?.innerText || null,
+              directions: item.querySelector('.hero-overlay p.directions > a[href*="http"]')?.href || null,
             };
           });
 
-          email = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay a#email-link');
-            if (content) content = content.innerText;
-            return content;
-          });
+          email = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay a#email-link')?.innerText || null);
 
-          phone = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay a#phone-link');
-            if (content) content = content.innerText;
-            return content;
-          });
+          phone = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay a#phone-link')?.innerText || null);
 
-          fax = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay > p:not(.no-margin) > a[href*="tel:"]');
-            if (content) content = content.innerText;
-            return content;
-          });
+          fax =
+            (await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay > p:not(.no-margin) > a[href*="tel:"]')?.innerText)) ||
+            null;
 
-          title = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-copy > h1');
-            if (content) content = content.innerText;
-            return content;
-          });
+          title = (await page.$eval('.hero-section', (i) => i.querySelector('.hero-copy > h1')?.innerText)) || null;
 
-          description = await page.$eval('.hero-section', (i) => {
-            let content =
-              i.querySelector('.hero-copy > p > span') || i.querySelector('.hero-copy > p');
-            if (content) content = content.innerText;
-            return content;
-          });
+          description = await page.$eval(
+            '.hero-section',
+            (i) => i.querySelector('.hero-copy > p > span') || i.querySelector('.hero-copy > p')?.innerText || null
+          );
 
           rightTime = await page.$eval('main > .umb-grid', (i) => {
             let content = i.querySelector(
               'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
             );
-            if (content && content.innerText === 'The Right Time') {
+
+            if (content && content?.innerText === 'The Right Time') {
               return (content = {
-                content: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + * + *'
-                )?.innerText,
-                learnMore: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
-                )?.href,
+                content:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + * + *'
+                  )?.innerText || null,
+                learnMore:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+                  )?.href || null,
               });
             }
+
             return null;
           });
 
@@ -172,16 +137,20 @@ export default async function ALIL(links) {
             let content = i.querySelector(
               'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2'
             );
-            if (content && content.innerText === 'Features') {
+
+            if (content && content?.innerText === 'Features') {
               return (content = {
-                content: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + *'
-                )?.innerText,
-                learnMore: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
-                )?.href,
+                content:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > h2 + *'
+                  )?.innerText || null,
+                learnMore:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes > section.grid-section > a'
+                  )?.href || null,
               });
             }
+
             return null;
           });
 
@@ -189,16 +158,20 @@ export default async function ALIL(links) {
             let content = i.querySelector(
               'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2'
             );
-            if (content && content.innerText === 'Variety of Floor Plans') {
+
+            if (content && content?.innerText === 'Variety of Floor Plans') {
               return (content = {
-                content: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + *'
-                )?.innerText,
-                learnMore: i.querySelector(
-                  'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
-                )?.href,
+                content:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > h2 + *'
+                  )?.innerText || null,
+                learnMore:
+                  i.querySelector(
+                    'main > .umb-grid > .grid-section > .grid-row > div > div.flex-row > .content-section-Yes.background-color-DFEAEB > section.grid-section > a'
+                  )?.href || null,
               });
             }
+
             return null;
           });
         }
@@ -209,23 +182,19 @@ export default async function ALIL(links) {
         let floorPlansDescription = null;
         let floorPlansDetails = null;
         if (subpageTitle.includes('Floor Plans')) {
-          floorPlansDescription = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay');
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          floorPlansDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
 
           floorPlansDetails = await page.$$eval(
             'div.configured-Full-Width section.grid-section div.layout-slider > div > div.full-width > .slick-list > .slick-track > section.slick-slide',
             (item) => {
               let images = [];
-              item.forEach((item) =>
+              item.forEach((item) => {
                 images.push({
-                  floorPlanSrc: item.querySelector('section.content-section > img')?.src,
-                  floorPlanName: item.querySelector('section.content-section > h2')?.innerText,
-                  floorPlanDetail: item.querySelector('section.content-section > p')?.innerHTML,
-                })
-              );
+                  floorPlanSrc: item.querySelector('section.content-section > img')?.src || null,
+                  floorPlanName: item.querySelector('section.content-section > h2')?.innerText || null,
+                  floorPlanDetail: item.querySelector('section.content-section > p')?.innerHTML || null,
+                });
+              });
               return images;
             }
           );
@@ -236,129 +205,96 @@ export default async function ALIL(links) {
 
         let designLayout = [];
         if (subpageTitle.includes('Design and Layout')) {
-          const designLayoutDescription = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay');
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const designLayoutDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
 
-          const communityLayout = await page.$eval('main > div.umb-grid', (i) => {
-            let content = i.querySelector(
-              'div.grid-row:first-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
-            );
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const communityLayout = await page.$eval(
+            'main > div.umb-grid',
+            (i) =>
+              i.querySelector(
+                'div.grid-row:first-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+              )?.innerHTML || null
+          );
 
-          const residentialAcommodations = await page.$eval('main > div.umb-grid', (i) => {
-            let content = i.querySelector(
-              'div.grid-row.pattern-F8F8F5 > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
-            );
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const residentialAcommodations = await page.$eval(
+            'main > div.umb-grid',
+            (i) =>
+              i.querySelector(
+                'div.grid-row.pattern-F8F8F5 > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+              )?.innerHTML || null
+          );
 
-          const memoryCareServices = await page.$eval('main > div.umb-grid', (i) => {
-            let content = i.querySelector(
-              'div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes.background-color-0C466C > section.grid-section'
-            );
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const memoryCareServices = await page.$eval(
+            'main > div.umb-grid',
+            (i) =>
+              i.querySelector(
+                'div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes.background-color-0C466C > section.grid-section'
+              )?.innerHTML || null
+          );
 
-          const safety = await page.$eval('main > div.umb-grid', (i) => {
-            let content = i.querySelector(
-              'div.grid-row:last-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
-            );
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const safety = await page.$eval(
+            'main > div.umb-grid',
+            (i) =>
+              i.querySelector(
+                'div.grid-row:last-child > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section'
+              )?.innerHTML || null
+          );
 
           designLayout.push({
-            designLayoutDescription,
-            communityLayout,
-            residentialAcommodations,
-            memoryCareServices,
-            safety,
+            designLayoutDescription: sanitize(designLayoutDescription),
+            communityLayout: sanitize(communityLayout),
+            residentialAcommodations: sanitize(residentialAcommodations),
+            memoryCareServices: sanitize(memoryCareServices),
+            safety: sanitize(safety),
           });
         }
 
         await page.goto(`${links[i]}/services`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
 
-        let services = [];
+        let generalServices = null;
+        let expandedServices = null;
+        let otherServices = null;
         if (subpageTitle.includes('Services')) {
-          const generalServices = await page.$$eval(
+          generalServices = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText || null));
               return services;
             }
           );
 
-          const expandedServices = await page.$$eval(
+          expandedServices = await page.$$eval(
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText || null));
               return services;
             }
           );
 
-          const healthServices = await page.$$eval(
-            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(1) > section > ul > li',
-            (item) => {
-              let services = [];
-              item.forEach((item) => services.push(item.innerText));
-              return services;
-            }
-          );
+          otherServices = await page.$$eval('main > div.umb-grid section.grid-section > div.row', (item) => {
+            let services = [];
 
-          const socialServices = await page.$$eval(
-            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(2) > section > ul > li',
-            (item) => {
-              let services = [];
-              item.forEach((item) => services.push(item.innerText));
-              return services;
-            }
-          );
+            item.forEach((item) => {
+              const child = item.querySelectorAll('div.span6');
 
-          const personalServices = await page.$$eval(
-            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(1) > section > ul > li',
-            (item) => {
-              let services = [];
-              item.forEach((item) => services.push(item.innerText));
-              return services;
-            }
-          );
+              let children = [];
+              child.forEach((item) => {
+                const key = item.querySelector('div.span6 > section > h2')?.innerText;
+                if (!key) return null;
 
-          const foodServices = await page.$$eval(
-            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(2) > section > ul > li',
-            (item) => {
-              let services = [];
-              item.forEach((item) => services.push(item.innerText));
-              return services;
-            }
-          );
+                let value = [];
+                const list = item.querySelectorAll('div.span6 > section > ul > li');
+                list.forEach((li) => value.push(li?.innerText || null));
 
-          const additionalServices = await page.$$eval(
-            'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(3) > div:nth-child(1) > section > ul > li',
-            (item) => {
-              let services = [];
-              item.forEach((item) => services.push(item.innerText));
-              return services;
-            }
-          );
+                children.push({ [key]: value });
+              });
 
-          services.push({
-            generalServices,
-            expandedServices,
-            healthServices,
-            socialServices,
-            personalServices,
-            foodServices,
-            additionalServices,
+              return services.push(children);
+            });
+
+            return services.flat();
           });
         }
 
@@ -371,7 +307,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let features = [];
-              item.forEach((item) => features.push(item.innerText));
+              item.forEach((item) => features.push(item?.innerText || null));
               return features;
             }
           );
@@ -380,7 +316,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let features = [];
-              item.forEach((item) => features.push(item.innerText));
+              item.forEach((item) => features.push(item?.innerText || null));
               return features;
             }
           );
@@ -405,7 +341,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(1) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -414,7 +350,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(2) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -423,7 +359,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.even-height > div:nth-child(3) > div.bordered-content > div.bordered-content-inner > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -432,7 +368,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(1) > section > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -441,7 +377,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(1) > div:nth-child(2) > section > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -450,7 +386,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(1) > section > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -459,7 +395,7 @@ export default async function ALIL(links) {
             'main > div.umb-grid section.grid-section > div.inset-grid-lines > div.row:nth-child(2) > div:nth-child(2) > section > ul > li',
             (item) => {
               let services = [];
-              item.forEach((item) => services.push(item.innerText));
+              item.forEach((item) => services.push(item?.innerText));
               return services;
             }
           );
@@ -485,29 +421,21 @@ export default async function ALIL(links) {
 
         let payment = [];
         if (subpageTitle.includes('Payment') || subpageTitle.includes('Services and Fees')) {
-          const paymentInfo = await page.$eval('.hero-section', (i) => {
-            let content = i.querySelector('.hero-overlay');
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const paymentInfo = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
 
-          const servicesFees = await page.$eval('main > div.umb-grid ', (i) => {
-            let content = i.querySelector(
-              'div.content-section-Yes > section.grid-section > h2 + *'
-            );
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const servicesFees = await page.$eval(
+            'main > div.umb-grid ',
+            (i) => i.querySelector('div.content-section-Yes > section.grid-section > h2 + *')?.innerHTML || null
+          );
 
-          const paymentLink = await page.$eval('main > div.umb-grid section.grid-section', (i) => {
-            let content = i.querySelector('a.paymentLink');
-            if (content) content = content.href;
-            return content;
-          });
+          const paymentLink = await page.$eval(
+            'main > div.umb-grid section.grid-section',
+            (i) => i.querySelector('a.paymentLink')?.href || null
+          );
 
           payment.push({
-            paymentInfo,
-            servicesFees,
+            paymentInfo: sanitize(paymentInfo),
+            servicesFees: sanitize(servicesFees),
             paymentLink,
           });
         }
@@ -519,27 +447,24 @@ export default async function ALIL(links) {
         if (subpageTitle.includes('Veteran')) {
           const veteranBenefits = await page.$eval(
             'main > div.umb-grid section.grid-section',
-            (i) => {
-              let content = i.querySelector('main > div.umb-grid section.grid-section > p');
-              if (content) content = content.innerText;
-              return content;
-            }
+            (i) => i.querySelector('main > div.umb-grid section.grid-section > p')?.innerText || null
           );
 
-          const processingApproval = await page.$eval('main > div.umb-grid', (i) => {
-            let content = i.querySelector('div.background-color-DFEAEB > section.grid-section');
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          const processingApproval = await page.$eval(
+            'main > div.umb-grid',
+            (i) => i.querySelector('div.background-color-DFEAEB > section.grid-section')?.innerHTML || null
+          );
 
           const benefitLevels = await page.$$eval(
             'main > div.umb-grid div.grid-row > div.configured-4-Column > div > div.span3',
             (item) => {
               let benefits = [];
               item.forEach((item) => {
-                const key = item.querySelector('h3').innerText;
+                const key = item.querySelector('h3')?.innerText;
+                if (!key) return null;
+
                 return benefits.push({
-                  [key]: item.querySelector('h4').innerText,
+                  [key]: item.querySelector('h4')?.innerText || null,
                 });
               });
               return benefits;
@@ -550,14 +475,14 @@ export default async function ALIL(links) {
             'main > div.umb-grid div.grid-row div.content-section-Yes > section.grid-section > ul > li',
             (item) => {
               let requirements = [];
-              item.forEach((item) => requirements.push(item.innerText));
+              item.forEach((item) => requirements.push(item?.innerText || null));
               return requirements;
             }
           );
 
           veterans.push({
             veteranBenefits,
-            processingApproval,
+            processingApproval: sanitize(processingApproval),
             benefitLevels,
             requirements,
           });
@@ -568,18 +493,13 @@ export default async function ALIL(links) {
 
         let contactForm = null;
         if (subpageTitle.includes('Contact')) {
-          contactForm = await page.$eval('section.grid-section', (i) => {
-            let content = document.evaluate(
-              '//div[starts-with(@id,"umbraco_form")]',
-              document.body,
-              null,
-              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-              null
-            );
-
-            if (content) content = content.snapshotItem(0).innerHTML;
-            return content;
-          });
+          contactForm = await page.$eval(
+            'section.grid-section',
+            () =>
+              document
+                .evaluate('//div[starts-with(@id,"umbraco_form")]', document.body, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null)
+                .snapshotItem(0)?.innerHTML || null
+          );
         }
 
         await page.goto(`${links[i]}/special-needs-communications`, {
@@ -587,13 +507,12 @@ export default async function ALIL(links) {
         });
         subpageTitle = await page.title();
 
-        let specialNeeds = [];
+        let specialNeeds = null;
         if (subpageTitle.includes('Special Needs')) {
-          specialNeeds = await page.$eval('main > div.umb-grid div.configured-2-Column', (i) => {
-            let content = i.querySelector('div.content-section-Yes > section.grid-section');
-            if (content) content = content.innerHTML;
-            return content;
-          });
+          specialNeeds = await page.$eval(
+            'main > div.umb-grid div.configured-2-Column',
+            (i) => i.querySelector('div.content-section-Yes > section.grid-section')?.innerHTML || null
+          );
         }
 
         await page.goto(`${links[i]}/notice-of-information-practices`, {
@@ -604,34 +523,19 @@ export default async function ALIL(links) {
         let englisPDF = null;
         let spanishPDF = null;
         if (subpageTitle.includes('Notice of Information')) {
-          englisPDF = await page.$eval('section.grid-section', (i) => {
-            let content = i.querySelector('a[data-id="12218"]');
-            if (content) content = content.href;
-            return content;
-          });
-
-          spanishPDF = await page.$eval('section.grid-section', (i) => {
-            let content = i.querySelector('a[data-id="12342"]');
-            if (content) content = content.href;
-            return content;
-          });
+          englisPDF = await page.$eval('section.grid-section', (i) => i.querySelector('a[data-id="12218"]')?.href || null);
+          spanishPDF = await page.$eval('section.grid-section', (i) => i.querySelector('a[data-id="12342"]')?.href || null);
         }
 
-        const moreInfo = await page.$eval('main', (i) => {
-          let content = i.querySelector(
-            'main > div:last-of-type > div > div:nth-child(1) > section > a'
-          );
-          if (content) content = content.href;
-          return content;
-        });
+        const moreInfo = await page.$eval(
+          'main',
+          (i) => i.querySelector('main > div:last-of-type > div > div:nth-child(1) > section > a')?.href || null
+        );
 
-        const contact = await page.$eval('main', (i) => {
-          let content = i.querySelector(
-            'main > div:last-of-type > div > div:nth-child(2) > section > a'
-          );
-          if (content) content = content.href;
-          return content;
-        });
+        const contact = await page.$eval(
+          'main',
+          (i) => i.querySelector('main > div:last-of-type > div > div:nth-child(2) > section > a')?.href || null
+        );
 
         ALILDetails.push({
           id: i + 1,
@@ -651,20 +555,22 @@ export default async function ALIL(links) {
             rightTime,
             featuresAmenities,
             floorPlansVariety,
-            floorPlansDescription,
+            floorPlansDescription: sanitize(floorPlansDescription),
             floorPlansDetails,
             designLayout,
-            services,
+            generalServices,
+            expandedServices,
+            otherServices,
             features,
             amenities,
             payment,
             veterans,
-            specialNeeds,
+            specialNeeds: sanitize(specialNeeds),
             moreInfo,
             englisPDF,
             spanishPDF,
             contact,
-            // contactForm,
+            contactForm,
           },
         });
 

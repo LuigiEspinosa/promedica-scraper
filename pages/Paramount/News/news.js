@@ -15,29 +15,26 @@ export default async function ParamountNews() {
   try {
     await page.waitForSelector('#resultsWrapper_3057afcf-c543-4c83-ac10-71bbd42e7454');
 
-    const articlesPerPage = await page.$$eval(
-      '#resultsWrapper_3057afcf-c543-4c83-ac10-71bbd42e7454 > div.media',
-      (articleItem) => {
-        return articleItem.map((article, idx) => {
-          const imgSrc = article.querySelector('.media-left img').src;
-          const imgAlt = article.querySelector('.media-left img').alt;
-          const title = article.querySelector('.media-body h2').innerText;
-          const description = article.querySelector('.media-body p:nth-child(2)').innerText;
-          const linkSrc = article.querySelector('.media-body a').href;
-          const linkText = article.querySelector('.media-body a').innerText;
+    const articlesPerPage = await page.$$eval('#resultsWrapper_3057afcf-c543-4c83-ac10-71bbd42e7454 > div.media', (articleItem) => {
+      return articleItem.map((article, idx) => {
+        const imgSrc = article.querySelector('.media-left img')?.src || null;
+        const imgAlt = article.querySelector('.media-left img')?.alt || null;
+        const title = article.querySelector('.media-body h2')?.innerText || null;
+        const description = article.querySelectorAll('.media-body p')[1]?.innerText || null;
+        const linkSrc = article.querySelector('.media-body a')?.href || null;
+        const linkText = article.querySelector('.media-body a')?.innerText || null;
 
-          return {
-            id: idx + 1,
-            imgSrc,
-            imgAlt,
-            title,
-            description,
-            linkSrc,
-            linkText,
-          };
-        });
-      }
-    );
+        return {
+          id: idx + 1,
+          imgSrc,
+          imgAlt,
+          title,
+          description,
+          linkSrc,
+          linkText,
+        };
+      });
+    });
 
     articles.push(articlesPerPage);
   } catch (error) {
@@ -67,22 +64,11 @@ export default async function ParamountNews() {
 
         const articlesTitle = await page.title();
 
-        const banner = await page.$eval('#article-banner', (i) => {
-          let banner = i.querySelector('#article-banner > div > img');
-          if (banner) banner = banner.src;
-          return banner;
-        });
+        const banner = await page.$eval('#article-banner', (i) => i.querySelector('#article-banner > div > img')?.src || null);
 
-        const bannerAlt = await page.$eval('#article-banner', (i) => {
-          let bannerAlt = i.querySelector('#article-banner > div > img');
-          if (bannerAlt) bannerAlt = bannerAlt.alt;
-          return bannerAlt;
-        });
+        const bannerAlt = await page.$eval('#article-banner', (i) => i.querySelector('#article-banner > div > img')?.alt || null);
 
-        const articleContent = await page.$eval(
-          '#article-content',
-          (i) => i.querySelector('div.row > div').innerHTML
-        );
+        const articleContent = await page.$eval('#article-content', (i) => i.querySelector('div.row > div')?.innerHTML || null);
 
         articlesBody.push({
           id: i + 1,
