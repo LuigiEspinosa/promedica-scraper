@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import sanitize from '../../../lib/sanitize.js';
 
 export default async function ParamountNews() {
   const browser = await chromium.launch({ headless: true });
@@ -90,7 +91,7 @@ export default async function ParamountNews() {
           content: {
             banner,
             bannerAlt,
-            body: articleContent,
+            body: sanitize(articleContent),
           },
         });
 
