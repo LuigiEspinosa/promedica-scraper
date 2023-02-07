@@ -284,11 +284,13 @@ export default async function ALIL(links) {
                 const key = item.querySelector('div.span6 > section > h2')?.innerText;
                 if (!key) return null;
 
-                let value = [];
-                const list = item.querySelectorAll('div.span6 > section > ul > li');
-                list.forEach((li) => value.push(li?.innerText || null));
+                let list = [];
+                const value = item.querySelectorAll('div.span6 > section > ul > li');
+                value.forEach((li) => list.push(li?.innerText || null));
 
-                children.push({ [key]: value });
+                const description = item.querySelector('div.span6 > section > p')?.innerText || null;
+
+                children.push({ [key]: { description, list } });
               });
 
               return services.push(children);

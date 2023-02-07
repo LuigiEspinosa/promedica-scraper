@@ -10,6 +10,6 @@ export default async function Agency() {
   // Hospice(hospiceLinks);
   // HomeHealth(homeHealthLinks);
   // PalliativeCare(palliativeCareLinks);
-  // MemoryCare(memoryCareLinks);
-  ALIL(alilLinks);
+  MemoryCare(memoryCareLinks);
+  // ALIL(alilLinks);
 }
