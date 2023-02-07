@@ -53,6 +53,7 @@ export default async function ParamountBlog() {
   });
 
   let articlesBody = [];
+  let articleImages = [];
   for (let i = 0; i <= mergeLinks.length; i++) {
     if (mergeLinks[i] !== undefined) {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
@@ -79,6 +80,12 @@ export default async function ParamountBlog() {
           },
         });
 
+        const allImg = await page.$$eval('#page-body img', (img) => img.map((i) => i.src));
+        articleImages.push({
+          article: articlesTitle,
+          images: allImg,
+        });
+
         console.log('Blog Articles', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
@@ -90,6 +97,12 @@ export default async function ParamountBlog() {
   fs.writeFile('./json/Paramount/Blog/blog-articles.json', jsonArticlesContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nParamount Blog Articles Imported!\n');
+  });
+
+  const jsonArticlesImages = JSON.stringify(articleImages, null, 2);
+  fs.writeFile('./json/Paramount/Blog/blog-articles-images.json', jsonArticlesImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nParamount Blog Articles' Images Imported!\n");
   });
 
   await page.close();

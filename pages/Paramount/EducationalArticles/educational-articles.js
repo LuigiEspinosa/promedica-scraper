@@ -55,6 +55,7 @@ export default async function EducationalArticles() {
   });
 
   let articlesBody = [];
+  let articleImages = [];
   for (let i = 0; i <= mergeLinks.length; i++) {
     if (mergeLinks[i] !== undefined) {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
@@ -81,6 +82,12 @@ export default async function EducationalArticles() {
           },
         });
 
+        const allImg = await page.$$eval('#page-body img', (img) => img.map((i) => i.src));
+        articleImages.push({
+          article: articlesTitle,
+          images: allImg,
+        });
+
         console.log('Educational Articles Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
@@ -92,6 +99,12 @@ export default async function EducationalArticles() {
   fs.writeFile('./json/Paramount/EducationalArticles/educational-articles-articles.json', jsonArticlesContent, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log("\nEducational Articles' Articles Imported!\n");
+  });
+
+  const jsonArticlesImages = JSON.stringify(articleImages, null, 2);
+  fs.writeFile('./json/Paramount/EducationalArticles/educational-articles-images.json', jsonArticlesImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nEducational Articles' Images Imported!\n");
   });
 
   await page.close();
