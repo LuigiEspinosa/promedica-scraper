@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import sanitize from '../../../lib/sanitize.js';
 
 export default async function Locations() {
   const browser = await chromium.launch({ headless: true });
@@ -11,14 +12,12 @@ export default async function Locations() {
 
   const root = '#location_PublicListView_searchresults > div >';
 
-  await page.waitForSelector(
-    `${root} div:nth-child(4) > div > div > ul > li.pagination-last.ng-scope > a`
-  );
+  await page.waitForSelector(`${root} div:nth-child(4) > div > div > ul > li.pagination-last.ng-scope > a`);
+
   await page.click(`${root} div:nth-child(4) > div > div > ul > li.pagination-last.ng-scope > a`);
 
-  await page.waitForSelector(
-    `${root} div:nth-child(4) > div > div > ul > li.pagination-page.ng-scope.active > a`
-  );
+  await page.waitForSelector(`${root} div:nth-child(4) > div > div > ul > li.pagination-page.ng-scope.active > a`);
+
   const numberPages = await page.$$eval(
     `${root} div:nth-child(4) > div > div > ul > li.pagination-page.ng-scope.active > a`,
     (numberpages) => {
@@ -31,40 +30,28 @@ export default async function Locations() {
   const totalPages = Math.max(...numberPages.filter((p) => !isNaN(p)));
 
   await delay(2000);
-  await page.waitForSelector(
-    `${root} div:nth-child(4) > div > div > ul > li.pagination-first.ng-scope > a`
-  );
+  await page.waitForSelector(`${root} div:nth-child(4) > div > div > ul > li.pagination-first.ng-scope > a`);
+
   await page.click(`${root} div:nth-child(4) > div > div > ul > li.pagination-first.ng-scope > a`);
 
   let locations = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
       await delay(2000);
-      await page.waitForSelector(
-        '#location_PublicListView_searchresults div[data-ng-include="\'search-record-template.html\'"]'
-      );
+      await page.waitForSelector('#location_PublicListView_searchresults div[data-ng-include="\'search-record-template.html\'"]');
 
       const locationsPerPage = await page.$$eval(
         'xpath=/html/body/div/div[2]/div/div[3]/div[2]/div/div[4]/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div/div/div[1]/div/div/div',
         (itemLocation) => {
           return itemLocation.map((location) => {
-            const imgSrc = location.querySelector('.ih-field-locationimage img').src;
-            const imgText = location.querySelector('.ih-field-locationimage img').alt;
-            const title = location.querySelector('.ih-field-locationname > div').innerText;
-            const linkSrc = location.querySelector('.form-group a.btn.btn-primary').href;
-            const linkText = location.querySelector('.form-group a.btn.btn-primary').innerText;
-
-            let addressOne = location.querySelector(
-              '.ih-field-locationaddress .locationaddress-one'
-            );
-            let addressTwo = location.querySelector(
-              '.ih-field-locationaddress .locationaddress-two'
-            );
-            let phone = location.querySelector('.ih-field-locationphone > a');
-
-            if (addressOne) addressOne = addressOne.innerText;
-            if (addressTwo) addressTwo = addressTwo.innerText;
-            if (phone) phone = phone.innerText;
+            const imgSrc = location.querySelector('.ih-field-locationimage img')?.src || null;
+            const imgText = location.querySelector('.ih-field-locationimage img')?.alt || null;
+            const title = location.querySelector('.ih-field-locationname > div')?.innerText || null;
+            const linkSrc = location.querySelector('.form-group a.btn.btn-primary')?.href || null;
+            const linkText = location.querySelector('.form-group a.btn.btn-primary')?.innerText || null;
+            const addressOne = location.querySelector('.ih-field-locationaddress .locationaddress-one')?.innerText || null;
+            const addressTwo = location.querySelector('.ih-field-locationaddress .locationaddress-two')?.innerText || null;
+            const phone = location.querySelector('.ih-field-locationphone > a')?.innerText || null;
 
             return {
               imgSrc,
@@ -81,9 +68,7 @@ export default async function Locations() {
       );
 
       if (i != totalPages) {
-        await page.click(
-          `${root} div:nth-child(4) > div > div > ul > li.pagination-next.ng-scope > a`
-        );
+        await page.click(`${root} div:nth-child(4) > div > div > ul > li.pagination-next.ng-scope > a`);
       }
 
       locations.push(locationsPerPage);
@@ -103,15 +88,10 @@ export default async function Locations() {
   // Locations Images
   const locationsImages = mergeLocations.map((item) => item.imgSrc);
   const jsonLocationsImages = JSON.stringify(locationsImages, null, 2);
-  fs.writeFile(
-    './json/ProMedica/locations/locations-images.json',
-    jsonLocationsImages,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nLocations Images Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/locations/locations-images.json', jsonLocationsImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nLocations Images Imported!\n');
+  });
 
   // Press Release content
   const mergeLinks = mergeLocations.map((item) => {
@@ -129,102 +109,88 @@ export default async function Locations() {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
 
       try {
+        let articlesTitle = await page.title();
+
+        // * 403 ERROR - Uncomment if necessary
+        function delay(time) {
+          return new Promise(function (resolve) {
+            setTimeout(resolve, time);
+          });
+        }
+
+        while (articlesTitle.includes('ERROR')) {
+          let wait = 200000;
+
+          console.log('\n403 ERROR DETECTED');
+          await delay(wait);
+          wait = wait * 2;
+
+          console.log('RELOADING PAGE\n');
+          await page.reload();
+          articlesTitle = await page.title();
+        }
+
         await page.waitForSelector('ih-static-zone');
         await page.waitForSelector('ih-tabbed-zone');
 
-        const articlesTitle = await page.title();
+        const imgSrc = await page.$eval('ih-static-zone', (i) => i.querySelector('.ih-field-locationimage > img')?.src || null);
 
-        const imgSrc = await page.$eval('ih-static-zone', (i) => {
-          let img = i.querySelector('.ih-field-locationimage > img');
-          if (img) img = img.src;
-          return img;
-        });
+        const imgAlt = await page.$eval('ih-static-zone', (i) => i.querySelector('.ih-field-locationimage > img')?.alt || null);
 
-        const imgAlt = await page.$eval('ih-static-zone', (i) => {
-          let img = i.querySelector('.ih-field-locationimage > img');
-          if (img) img = img.alt;
-          return img;
-        });
-
-        const name = await page.$eval('ih-static-zone', (i) => {
-          let name = i.querySelector('.ih-location-info-box .location-info > h2');
-          if (name) name = name.innerText;
-          return name;
-        });
-
-        const address = await page.$$eval(
-          'ih-static-zone .ih-location-info-box .location-info .location-address',
-          (item) => {
-            return item.map((location) => {
-              let addressOne = location.querySelector('p:nth-child(1)');
-              let addressTwo = location.querySelector('p:nth-child(2)');
-
-              if (addressOne) addressOne = addressOne.innerText;
-              if (addressTwo) addressTwo = addressTwo.innerText;
-
-              return {
-                addressOne,
-                addressTwo,
-              };
-            });
-          }
+        const name = await page.$eval(
+          'ih-static-zone',
+          (i) => i.querySelector('.ih-location-info-box .location-info > h2')?.innerText || null
         );
 
-        const directions = await page.$eval('ih-static-zone', (i) => {
-          let directions = i.querySelector('.ih-location-info-box .location-info > a');
-          if (directions) directions = directions.href;
-          return directions;
+        const address = await page.$$eval('ih-static-zone .ih-location-info-box .location-info .location-address', (item) => {
+          return item.map((location) => {
+            const addressOne = location.querySelector('p:nth-child(1)')?.innerText || null;
+            const addressTwo = location.querySelector('p:nth-child(2)')?.innerText || null;
+
+            return {
+              addressOne,
+              addressTwo,
+            };
+          });
         });
 
-        const phone = await page.$eval('ih-static-zone', (i) => {
-          let phone = i.querySelector('.ih-location-info-box > div > a.ih-location-phone');
-          if (phone) phone = phone.innerText;
-          return phone;
-        });
+        const directions = await page.$eval(
+          'ih-static-zone',
+          (i) => i.querySelector('.ih-location-info-box .location-info > a')?.href || null
+        );
 
-        const fax = await page.$eval('ih-static-zone', (i) => {
-          let fax = i.querySelector('.ih-location-info-box > div > p.location-fax');
-          if (fax) fax = fax.innerText;
-          return fax;
-        });
+        const phone = await page.$eval(
+          'ih-static-zone',
+          (i) => i.querySelector('.ih-location-info-box > div > a.ih-location-phone')?.innerText || null
+        );
 
-        const campusMap = await page.$eval('ih-static-zone', (i) => {
-          let campusMap = i.querySelector('#downloadMap');
-          if (campusMap) campusMap = campusMap.href;
-          return campusMap;
-        });
+        const fax = await page.$eval(
+          'ih-static-zone',
+          (i) => i.querySelector('.ih-location-info-box > div > p.location-fax')?.innerText || null
+        );
 
-        const floorMap = await page.$eval('ih-static-zone', (i) => {
-          let floorMap = i.querySelector('#downloadFirstFloor');
-          if (floorMap) floorMap = floorMap.href;
-          return floorMap;
-        });
+        const campusMap = await page.$eval('ih-static-zone', (i) => i.querySelector('#downloadMap')?.href || null);
 
-        const description = await page.$eval('ih-static-zone', (i) => {
-          let description = i.querySelector('.form-group.ih-field-locationdescription');
-          if (description) description = description.innerHTML;
-          return description;
-        });
+        const floorMap = await page.$eval('ih-static-zone', (i) => i.querySelector('#downloadFirstFloor')?.href || null);
 
-        const virtualTour = await page.$eval('#ih-page-body', (i) => {
-          let virtualTour = i.querySelector('a[href*="tourmkr.com"]');
-          if (virtualTour) virtualTour = virtualTour.href;
-          return virtualTour;
-        });
+        const description = await page.$eval(
+          'ih-static-zone',
+          (i) => i.querySelector('.form-group.ih-field-locationdescription')?.innerHTML || null
+        );
 
-        const operatingBody = await page.$eval('ih-tabbed-zone', (i) => {
-          let operatingBody = i.querySelector(
-            'div.tab-pane.ng-scope > div > div > div.form-group.ih-field-dynamiccol_locationoperatinghoursbodycopy > div'
-          );
-          if (operatingBody) operatingBody = operatingBody.innerHTML;
-          return operatingBody;
-        });
+        const virtualTour = await page.$eval('#ih-page-body', (i) => i.querySelector('a[href*="tourmkr.com"]')?.href || null);
+
+        const operatingBody = await page.$eval(
+          'ih-tabbed-zone',
+          (i) =>
+            i.querySelector('div.tab-pane.ng-scope > div > div > div.form-group.ih-field-dynamiccol_locationoperatinghoursbodycopy > div')
+              ?.textContent || null
+        );
 
         const operatingTable = await page.$eval('ih-tabbed-zone', (i) => {
           let operatingTable = i.querySelector(
             'div.tab-pane.ng-scope > div > div > div.form-group.ih-field-rawtextwithtokens > div > div[data-location-hours-prefix]'
           );
-          console.log(operatingTable);
           if (operatingTable) operatingTable = operatingTable.innerHTML;
           return operatingTable;
         });
@@ -233,32 +199,25 @@ export default async function Locations() {
           'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.form-group.ih-field-conditionalfield > ul > li',
           (item) => {
             let hours = [];
-            item.forEach((item) => hours.push(item.innerText));
+            item.forEach((item) => hours.push(item?.innerText || null));
             return hours;
           }
         );
 
-        const services = await page.$$eval(
-          'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > .ih-tab-1 > div',
-          (item) => {
-            let services = [];
-
-            item.forEach((item) => {
-              let serviceName = item.querySelectorAll(
-                '.ih-field-services .ih-field-servicename > div'
-              );
-              if (serviceName) serviceName.forEach((service) => services.push(service.innerText));
-            });
-
-            return services;
-          }
-        );
+        const services = await page.$$eval('ih-tabbed-zone > div > div > div.tab-pane.ng-scope > .ih-tab-1 > div', (item) => {
+          let services = [];
+          item.forEach((item) => {
+            let serviceName = item.querySelectorAll('.ih-field-services .ih-field-servicename > div');
+            if (serviceName) serviceName.forEach((service) => services.push(service?.innerText || null));
+          });
+          return services;
+        });
 
         const amenities = await page.$$eval(
           'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationamenities > div > ul > li',
           (item) => {
             let amenities = [];
-            item.forEach((item) => amenities.push(item.innerText));
+            item.forEach((item) => amenities.push(item?.innerText || null));
             return amenities;
           }
         );
@@ -267,66 +226,50 @@ export default async function Locations() {
           'ih-tabbed-zone > div > div > div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationeduprogcopy > div > ul > li',
           (item) => {
             let education = [];
-            item.forEach((item) => education.push(item.innerText));
+            item.forEach((item) => education.push(item?.innerText || null));
             return education;
           }
         );
 
-        const pricing = await page.$eval('.ih-location-detail-middle', (i) => {
-          let pricing = i.querySelector(
-            'ih-static-zone div.pricing-not-empty > div.card > div.cta-card-btm > a'
-          );
-          if (pricing) pricing = pricing.href;
-          return pricing;
-        });
+        const pricing = await page.$eval(
+          '.ih-location-detail-middle',
+          (i) => i.querySelector('ih-static-zone div.pricing-not-empty > div.card > div.cta-card-btm > a')?.href || null
+        );
 
-        const volunteer = await page.$eval('#ih-page-footer', (i) => {
-          let volunteer = i.querySelector(
-            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationvolunteeringcopy > div'
-          );
-          console.log(volunteer);
-          if (volunteer) volunteer = volunteer.innerHTML;
-          return volunteer;
-        });
+        const volunteer = await page.$eval(
+          '#ih-page-footer',
+          (i) =>
+            i.querySelector('ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationvolunteeringcopy > div')
+              ?.innerHTML || null
+        );
 
-        const foundations = await page.$eval('#ih-page-footer', (i) => {
-          let foundations = i.querySelector(
-            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationfoundationcopy > div'
-          );
-          console.log(foundations);
-          if (foundations) foundations = foundations.innerHTML;
-          return foundations;
-        });
+        const foundations = await page.$eval(
+          '#ih-page-footer',
+          (i) =>
+            i.querySelector('ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationfoundationcopy > div')
+              ?.innerHTML || null
+        );
 
-        const PFAC = await page.$eval('#ih-page-footer', (i) => {
-          let PFAC = i.querySelector(
-            'ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationpfacouncil > div'
-          );
-          if (PFAC) PFAC = PFAC.innerHTML;
-          return PFAC;
-        });
+        const PFAC = await page.$eval(
+          '#ih-page-footer',
+          (i) =>
+            i.querySelector('ih-tabbed-zone div.tab-pane.ng-scope > div > div > div.ih-field-dynamiccol_locationpfacouncil > div')
+              ?.innerHTML || null
+        );
 
         const providers = await page.$$eval('#resultsWrapper_locationProviders > div', (item) => {
           return item.map((item) => {
-            let imageSrc = item.querySelector('.card > img');
-            let imageAlt = item.querySelector('.card > img');
-            let name = item.querySelector('.card .prov-name');
-            let gender = item.querySelector('.card[data-gender]');
-            let phone = item.querySelector('.card .prov-phone');
-            let specialty = item.querySelector('.card .prov-specialty');
-            let location = item.querySelector('.card .prov-locations');
-            let newPatients = item.querySelector('.card .prov-accept-new');
-            let details = item.querySelector('.card a.btn.btn-primary');
+            const imageSrc = item.querySelector('.card > img')?.src || null;
+            const imageAlt = item.querySelector('.card > img')?.alt || null;
+            const name = item.querySelector('.card .prov-name')?.innerText || null;
+            const gender = item.querySelector('.card[data-gender]')?.getAttribute('data-gender') || null;
+            const phone = item.querySelector('.card .prov-phone')?.innerText || null;
+            const specialty = item.querySelector('.card .prov-specialty')?.innerText || null;
+            const location = item.querySelector('.card .prov-locations')?.innerText || null;
+            const details = item.querySelector('.card a.btn.btn-primary')?.href || null;
 
-            if (imageSrc) imageSrc = imageSrc.src;
-            if (imageAlt) imageAlt = imageAlt.alt;
-            if (name) name = name.innerText;
-            if (gender) gender = gender.getAttribute('data-gender');
-            if (phone) phone = phone.innerText;
-            if (specialty) specialty = specialty.innerText;
-            if (location) location = location.innerText;
+            let newPatients = item.querySelector('.card .prov-accept-new');
             newPatients ? (newPatients = true) : (newPatients = false);
-            if (details) details = details.href;
 
             return {
               imageSrc,
@@ -342,11 +285,10 @@ export default async function Locations() {
           });
         });
 
-        const moreProviders = await page.$eval('#ih-page-footer', (i) => {
-          let moreProviders = i.querySelector('.ih-location-providers #viewAllProviders');
-          if (moreProviders) moreProviders = moreProviders.href;
-          return moreProviders;
-        });
+        const moreProviders = await page.$eval(
+          '#ih-page-footer',
+          (i) => i.querySelector('.ih-location-providers #viewAllProviders')?.href || null
+        );
 
         locationsContent.push({
           id: i + 1,
@@ -362,18 +304,18 @@ export default async function Locations() {
             fax,
             campusMap,
             floorMap,
-            description,
+            description: sanitize(description),
             virtualTour,
             operatingBody,
-            operatingTable,
+            operatingTable: sanitize(operatingTable),
             operating,
             services,
             amenities,
             education,
             pricing,
-            volunteer,
-            foundations,
-            PFAC,
+            volunteer: sanitize(volunteer),
+            foundations: sanitize(foundations),
+            PFAC: sanitize(PFAC),
             providers,
             moreProviders,
           },
@@ -381,21 +323,18 @@ export default async function Locations() {
 
         console.log('Locations Details', i + 1, 'Done');
       } catch (error) {
+        await page.close();
+        await browser.close();
         console.log({ error });
       }
     }
   }
 
   const jsonArticlesContent = JSON.stringify(locationsContent, null, 2);
-  fs.writeFile(
-    './json/ProMedica/locations/locations-details.json',
-    jsonArticlesContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nLocations Details Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/locations/locations-details.json', jsonArticlesContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nLocations Details Imported!\n');
+  });
 
   // close page and browser
   await page.close();

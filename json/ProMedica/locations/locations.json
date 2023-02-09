@@ -771,7 +771,7 @@
   },
   {
     "id": 71,
-    "imgSrc": "https://www.promedica.org/assets/images/updated-default-images/location-promedica-updated-png.png",
+    "imgSrc": "https://www.promedica.org/assets/images/ih/locations/oncology-associates-122.jpg",
     "imgText": "ProMedica Cancer Institute Genetic Counseling Program",
     "title": "PROMEDICA CANCER INSTITUTE GENETIC COUNSELING PROGRAM",
     "addressOne": "5300 Harroun Road",
@@ -862,7 +862,7 @@
     "imgSrc": "https://www.promedica.org/assets/images/ih/locations/promedica-coldwater-regional-hospital-1149.jpg",
     "imgText": "ProMedica Coldwater Regional Hospital - Cardiac Rehab",
     "title": "PROMEDICA COLDWATER REGIONAL HOSPITAL - CARDIAC REHAB",
-    "addressOne": "374 W. Chicago St.",
+    "addressOne": "274 W. Chicago St.",
     "addressTwo": "Coldwater, Michigan 49036",
     "phone": "517-279-5300",
     "linkSrc": "https://www.promedica.org/location/promedica-coldwater-regional-hospital-cardiac-rehab",
@@ -1368,9 +1368,9 @@
     "imgSrc": "https://www.promedica.org/assets/images/updated-default-images/location-promedica-updated-png.png",
     "imgText": "ProMedica Fostoria Community Hospital - Orthopaedics",
     "title": "PROMEDICA FOSTORIA COMMUNITY HOSPITAL - ORTHOPAEDICS",
-    "addressOne": "501 Van Buren St.",
+    "addressOne": "455 W. Fourth St.",
     "addressTwo": "Fostoria, Ohio 44830",
-    "phone": "419-435-7734",
+    "phone": "419-427-1984",
     "linkSrc": "https://www.promedica.org/location/promedica-fostoria-community-hospital-orthopaedics",
     "linkText": "Location Details"
   },
@@ -2644,7 +2644,7 @@
     "imgSrc": "https://www.promedica.org/assets/images/ih/locations/promedica-physicians-cardiology-fostoria-204.jpg",
     "imgText": "ProMedica Physicians Cardiology - Fostoria",
     "title": "PROMEDICA PHYSICIANS CARDIOLOGY - FOSTORIA",
-    "addressOne": "Specialty Clinic",
+    "addressOne": "501 Van Buren St.",
     "addressTwo": "Fostoria, Ohio 44830",
     "phone": "419-436-6622",
     "linkSrc": "https://www.promedica.org/location/promedica-physicians-cardiology-fostoria",
@@ -2721,10 +2721,10 @@
     "imgSrc": "https://www.promedica.org/assets/images/updated-default-images/location-promedica-updated-png.png",
     "imgText": "ProMedica Physicians Cardiology - Toledo Hospital",
     "title": "PROMEDICA PHYSICIANS CARDIOLOGY - TOLEDO HOSPITAL",
-    "addressOne": "ProMedica Toledo Hospital - McIntosh Tower",
+    "addressOne": "2121 Hughes Drive, McIntosh Tower",
     "addressTwo": "Toledo, Ohio 43606",
     "phone": "419-291-1700",
-    "linkSrc": "https://www.promedica.org/location/promedica-physicians-cardiology-toledo-hospital-1",
+    "linkSrc": "https://www.promedica.org/location/promedica-physicians-cardiology-toledo-hospital-mcintosh",
     "linkText": "Location Details"
   },
   {
@@ -3097,7 +3097,7 @@
     "title": "PROMEDICA PHYSICIANS FAMILY MEDICINE - LAMBERTVILLE",
     "addressOne": "3175 Smith Road",
     "addressTwo": "Lambertville, Michigan 48144",
-    "phone": "734-854-5494",
+    "phone": "734-856-5494",
     "linkSrc": "https://www.promedica.org/location/promedica-physicians-family-medicine-lambertville",
     "linkText": "Location Details"
   },
@@ -3819,12 +3819,12 @@
   {
     "id": 348,
     "imgSrc": "https://www.promedica.org/assets/images/ih/locations/promedica-physicians-monroe-cardiology-amin-1192.jpg",
-    "imgText": "ProMedica Physicians Monroe Cardiology - Amin",
-    "title": "PROMEDICA PHYSICIANS MONROE CARDIOLOGY - AMIN",
+    "imgText": "ProMedica Physicians Monroe Cardiology",
+    "title": "PROMEDICA PHYSICIANS MONROE CARDIOLOGY",
     "addressOne": "730 N. Macomb St.",
     "addressTwo": "Monroe, Michigan 48162",
     "phone": "734-242-7060",
-    "linkSrc": "https://www.promedica.org/location/promedica-physicians-monroe-cardiology-amin",
+    "linkSrc": "https://www.promedica.org/location/promedica-physicians-monroe-cardiology",
     "linkText": "Location Details"
   },
   {
