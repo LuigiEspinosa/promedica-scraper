@@ -1,12 +1,13 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import sanitize from '../../../lib/sanitize.js';
 
 export default async function OurStories() {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  await page.goto('https://www.promedica.org/newsroom/our-stories/?', { waitUntil: 'networkidle' });
+  await page.goto('https://www.promedica.org/newsroom/our-stories/?', { waitUntil: 'domcontentloaded' });
 
   await page.waitForSelector("a[aria-label='Next']");
   await page.click("a[aria-label='Next']");
@@ -23,7 +24,6 @@ export default async function OurStories() {
   await page.waitForSelector("a[aria-label='Previous']");
   await page.click("a[aria-label='Previous']");
 
-  // get the articles per page
   let articles = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
@@ -31,12 +31,12 @@ export default async function OurStories() {
 
       const articlesPerPage = await page.$$eval('.ih-item', (itemArticle) => {
         return itemArticle.map((article) => {
-          const title = article.querySelector('.row div h2.ih-title').innerText;
-          const description = article.querySelector('.row div p').innerText;
-          const linkSrc = article.querySelector('.row div a:not(.hidden)').href;
-          const linkText = article.querySelector('.row div a:not(.hidden)').innerText;
-          const imgSrc = article.querySelector('.row div img:not(.hidden)').src;
-          const imgAlt = article.querySelector('.row div img:not(.hidden)').alt;
+          const title = article.querySelector('.row div h2.ih-title')?.innerText || null;
+          const description = article.querySelector('.row div p')?.innerText || null;
+          const linkSrc = article.querySelector('.row div a:not(.hidden)')?.href || null;
+          const linkText = article.querySelector('.row div a:not(.hidden)')?.innerText || null;
+          const imgSrc = article.querySelector('.row div img:not(.hidden)')?.src || null;
+          const imgAlt = article.querySelector('.row div img:not(.hidden)')?.alt || null;
 
           return {
             title,
@@ -62,27 +62,20 @@ export default async function OurStories() {
 
   const mergeItems = articles.flat().map((item, index) => ({ id: index + 1, ...item }));
   const jsonArticles = JSON.stringify(mergeItems, null, 2);
-  fs.writeFile(
-    './json/ProMedica/newsroom/Our Stories/our-stories.json',
-    jsonArticles,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nOur Stories Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/newsroom/Our Stories/our-stories.json', jsonArticles, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nOur Stories Imported!\n');
+  });
 
   // Articles content
   const mergeLinks = mergeItems.map((item) => {
-    if (
-      item.linkSrc.startsWith('https://www.promedica.org/') &&
-      item.linkSrc !== 'https://www.promedica.org/newsroom/our-stories/?'
-    ) {
+    if (item.linkSrc.startsWith('https://www.promedica.org/') && item.linkSrc !== 'https://www.promedica.org/newsroom/our-stories/?') {
       return item.linkSrc;
     }
   });
 
   let articlesBody = [];
+  let articleImages = [];
   for (let i = 0; i <= mergeLinks.length; i++) {
     if (mergeLinks[i] !== undefined) {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
@@ -91,16 +84,19 @@ export default async function OurStories() {
         await page.waitForSelector('.ih-content-column');
 
         const articlesTitle = await page.title();
-        const articleContent = await page.$eval(
-          '.ih-content-column',
-          (i) => i.querySelector('#ih-page-body').innerHTML
-        );
+        const articleContent = await page.$eval('.ih-content-column', (i) => i.querySelector('#ih-page-body')?.innerHTML || null);
 
         articlesBody.push({
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
-          content: articleContent,
+          content: sanitize(articleContent),
+        });
+
+        const allImg = await page.$$eval('.ih-content-column img', (img) => img.map((i) => i.src));
+        articleImages.push({
+          article: articlesTitle,
+          images: allImg,
         });
 
         console.log('Our Stories Article', i + 1, 'Done');
@@ -111,15 +107,16 @@ export default async function OurStories() {
   }
 
   const jsonArticlesContent = JSON.stringify(articlesBody, null, 2);
-  fs.writeFile(
-    './json/ProMedica/newsroom/Our Stories/our-stories-articles.json',
-    jsonArticlesContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nOur Stories Articles Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/newsroom/Our Stories/our-stories-articles.json', jsonArticlesContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nOur Stories Articles Imported!\n');
+  });
+
+  const jsonArticlesImages = JSON.stringify(articleImages, null, 2);
+  fs.writeFile('./json/ProMedica/newsroom/Our Stories/our-stories-images.json', jsonArticlesImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log("\nOur Stories Articles' Images Imported!\n");
+  });
 
   // close page and browser
   await page.close();
