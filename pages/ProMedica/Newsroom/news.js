@@ -92,7 +92,7 @@ export default async function News() {
         // }
 
         // while (newsTitle.includes('ERROR')) {
-        //   let wait = 40000;
+        //   let wait = 200000;
 
         //   console.log('403 ERROR DETECTED');
         //   await delay(wait);

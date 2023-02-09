@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import sanitize from '../../../lib/sanitize.js';
 
 export default async function ServicesConditions() {
   const browser = await chromium.launch({ headless: true });
@@ -48,36 +49,23 @@ export default async function ServicesConditions() {
 
       await page.waitForSelector('#resultsWrapper_serviceSearchResults');
 
-      const servicesCards = await page.$$eval(
-        '#resultsWrapper_serviceSearchResults > div',
-        (cardItem) => {
-          return cardItem.map((card) => {
-            let name = card.querySelector('.service-text .service-name');
-            let description = card.querySelector('.service-text .service-desc > div > p > span');
-            let providers = card.querySelector(
-              '.service-text .service-links > a[href*="/find-a-doctor"]'
-            );
-            let locations = card.querySelector(
-              '.service-text .service-links > a[href*="/find-locations"]'
-            );
-            let details = card.querySelector('a.btn.btn-primary');
+      const servicesCards = await page.$$eval('#resultsWrapper_serviceSearchResults > div', (cardItem) => {
+        return cardItem.map((card) => {
+          const name = card.querySelector('.service-text .service-name')?.innerText || null;
+          const description = card.querySelector('.service-text .service-desc > div > p > span')?.innerText || null;
+          const providers = card.querySelector('.service-text .service-links > a[href*="/find-a-doctor"]')?.href || null;
+          const locations = card.querySelector('.service-text .service-links > a[href*="/find-locations"]')?.href || null;
+          const details = card.querySelector('a.btn.btn-primary')?.href || null;
 
-            if (name) name = name.innerText;
-            if (description) description = description.innerText;
-            if (providers) providers = providers.href;
-            if (locations) locations = locations.href;
-            if (details) details = details.href;
-
-            return {
-              name,
-              description,
-              providers,
-              locations,
-              details,
-            };
-          });
-        }
-      );
+          return {
+            name,
+            description,
+            providers,
+            locations,
+            details,
+          };
+        });
+      });
 
       if (i < totalSelectors) {
         await page.click(`#select_${alphabeticalSelectors[i + 1]}`);
@@ -90,27 +78,17 @@ export default async function ServicesConditions() {
     }
   }
 
-  const mergeServices = servicesConditions
-    .flat()
-    .map((item, index) => ({ id: index + 1, ...item }));
+  const mergeServices = servicesConditions.flat().map((item, index) => ({ id: index + 1, ...item }));
 
   const jsonServicesConditions = JSON.stringify(mergeServices, null, 2);
-  fs.writeFile(
-    './json/ProMedica/services-conditions/services-conditions.json',
-    jsonServicesConditions,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nServices & Conditions Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/services-conditions/services-conditions.json', jsonServicesConditions, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nServices & Conditions Imported!\n');
+  });
 
   // Services & Conditions content
   const mergeLinks = mergeServices.map((item) => {
-    if (
-      item.details !== null &&
-      item.details.startsWith('https://www.promedica.org/services-and-conditions')
-    ) {
+    if (item.details !== null && item.details.startsWith('https://www.promedica.org/services-and-conditions')) {
       return item.details;
     }
   });
@@ -125,11 +103,7 @@ export default async function ServicesConditions() {
       try {
         const articlesTitle = await page.title();
 
-        const articleContent = await page.$eval('#ih-page-body', (i) => {
-          let content = i.querySelector('.row > div');
-          if (content) content = content.innerHTML;
-          return content;
-        });
+        const articleContent = await page.$eval('#ih-page-body', (i) => i.querySelector('.row > div')?.innerHTML || null);
 
         const about = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('a[name="about"]');
@@ -151,51 +125,42 @@ export default async function ServicesConditions() {
 
         const getStarted = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('#ih-page-footer div.panel h2');
-          if (content && content.innerText === 'Getting Started on Your Bariatric Journey')
-            return content.parentElement.innerHTML;
+          if (content && content.innerText === 'Getting Started on Your Bariatric Journey') return content.parentElement.innerHTML;
           return null;
         });
 
         const toKnow = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('#ih-page-footer div > div > div.panel > div > div > h2');
-          if (content && content.innerText === 'Things to Know')
-            return content.parentElement.innerHTML;
+          if (content && content.innerText === 'Things to Know') return content.parentElement.innerHTML;
           return null;
         });
 
         const journey = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('#ih-page-footer div.panel h2.alt');
-          if (content && content.innerText === 'Understanding Your Bariatric Journey')
-            return content.parentElement.innerHTML;
+          if (content && content.innerText === 'Understanding Your Bariatric Journey') return content.parentElement.innerHTML;
           return null;
         });
 
         const dvtSymptoms = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('#ih-page-footer div.panel h3');
-          if (content && content.innerText === 'WHAT ARE THE SYMPTOMS OF A DVT?')
-            return content.parentElement.innerHTML;
+          if (content && content.innerText === 'WHAT ARE THE SYMPTOMS OF A DVT?') return content.parentElement.innerHTML;
           return null;
         });
 
         const dvtRisks = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('#ih-page-footer > div > div > div:not(.panel) > h3');
-          if (content && content.innerHTML === 'What are your risks for forming a&nbsp;DVT?')
-            return content.parentElement.innerHTML;
+          if (content && content.innerHTML === 'What are your risks for forming a&nbsp;DVT?') return content.parentElement.innerHTML;
           return null;
         });
 
         const mammogram = await page.$eval('#ih-page-footer', (i) => {
-          let content = i.querySelector(
-            '#ih-page-footer > div > div > .mammogram-section > div > div'
-          );
+          let content = i.querySelector('#ih-page-footer > div > div > .mammogram-section > div > div');
           if (content) return content.parentElement.innerHTML;
           return null;
         });
 
         const mobile = await page.$eval('#ih-page-footer', (i) => {
-          let content = i.querySelector(
-            '#ih-page-footer > div > div.row > div.panel > div.mobile-indent:nth-child(1)'
-          );
+          let content = i.querySelector('#ih-page-footer > div > div.row > div.panel > div.mobile-indent:nth-child(1)');
           if (content) return content.parentElement.innerHTML;
           return null;
         });
@@ -249,8 +214,7 @@ export default async function ServicesConditions() {
         });
 
         const expect = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="expect"]') | i.querySelector('a[name="whatToExpect"]');
+          let content = i.querySelector('a[name="expect"]') || i.querySelector('a[name="whatToExpect"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -262,8 +226,7 @@ export default async function ServicesConditions() {
         });
 
         const care = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="care"]') || i.querySelector('a[name="connectedCare"]');
+          let content = i.querySelector('a[name="care"]') || i.querySelector('a[name="connectedCare"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -305,8 +268,7 @@ export default async function ServicesConditions() {
         });
 
         const donations = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="donations"]') || i.querySelector('a[name="donate"]');
+          let content = i.querySelector('a[name="donations"]') || i.querySelector('a[name="donate"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -330,8 +292,7 @@ export default async function ServicesConditions() {
         });
 
         const understanding = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="understanding"]') || i.querySelector('a[name="understand"]');
+          let content = i.querySelector('a[name="understanding"]') || i.querySelector('a[name="understand"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -463,22 +424,19 @@ export default async function ServicesConditions() {
         });
 
         const beforeAfter = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="beforeAfter"]') || i.querySelector('a[name="bafSurgery"]');
+          let content = i.querySelector('a[name="beforeAfter"]') || i.querySelector('a[name="bafSurgery"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
 
         const before = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="before"]') || i.querySelector('a[name="beforeSurgery"]');
+          let content = i.querySelector('a[name="before"]') || i.querySelector('a[name="beforeSurgery"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
 
         const after = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="after"]') || i.querySelector('a[name="afterSurgery"]');
+          let content = i.querySelector('a[name="after"]') || i.querySelector('a[name="afterSurgery"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -532,8 +490,7 @@ export default async function ServicesConditions() {
         });
 
         const treatment = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="treatment"]') || i.querySelector('a[name="treatments"]');
+          let content = i.querySelector('a[name="treatment"]') || i.querySelector('a[name="treatments"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -581,8 +538,7 @@ export default async function ServicesConditions() {
         });
 
         const contact = await page.$eval('#ih-page-footer', (i) => {
-          let content =
-            i.querySelector('a[name="contact"]') || i.querySelector('a[name="contactUs"]');
+          let content = i.querySelector('a[name="contact"]') || i.querySelector('a[name="contactUs"]');
           if (content) content = content.parentElement.innerHTML;
           return content;
         });
@@ -590,23 +546,16 @@ export default async function ServicesConditions() {
         let providers;
         providers = await page.$$eval('#resultsWrapper_serviceProviders > div', (item) => {
           return item.map((item) => {
-            let imageSrc = item.querySelector('.card > a > img');
-            let imageAlt = item.querySelector('.card > a > img');
-            let name = item.querySelector('.card .prov-name');
-            let phone = item.querySelector('.card .prov-phone > a');
-            let specialty = item.querySelector('.card .prov-specialty');
-            let location = item.querySelector('.card .prov-locations');
-            let newPatients = item.querySelector('.card .prov-accept-new');
-            let details = item.querySelector('.card a.btn.btn-primary');
+            const imageSrc = item.querySelector('.card > a > img')?.src || null;
+            const imageAlt = item.querySelector('.card > a > img')?.alt || null;
+            const name = item.querySelector('.card .prov-name')?.innerText || null;
+            const phone = item.querySelector('.card .prov-phone > a')?.innerText || null;
+            const specialty = item.querySelector('.card .prov-specialty')?.innerText || null;
+            const location = item.querySelector('.card .prov-locations')?.innerText || null;
+            const details = item.querySelector('.card a.btn.btn-primary')?.href || null;
 
-            if (imageSrc) imageSrc = imageSrc.src;
-            if (imageAlt) imageAlt = imageAlt.alt;
-            if (name) name = name.innerText;
-            if (phone) phone = phone.innerText;
-            if (specialty) specialty = specialty.innerText;
-            if (location) location = location.innerText;
+            let newPatients = item.querySelector('.card .prov-accept-new');
             newPatients ? (newPatients = true) : (newPatients = false);
-            if (details) details = details.href;
 
             return {
               imageSrc,
@@ -623,69 +572,46 @@ export default async function ServicesConditions() {
 
         if (providers.length <= 0) {
           await page.waitForSelector('#customList').catch((err) => (providers = err));
-          providers = await page.$$eval(
-            '.related-providers > div > .panel > #customList > div > div',
-            (item) => {
-              return item.map((item) => {
-                let imageSrc = item.querySelector('.card > a > img');
-                let imageAlt = item.querySelector('.card > a > img');
-                let name = item.querySelector('.card .prov-name');
-                let phone = item.querySelector('.card .prov-phone > a');
-                let specialty = item.querySelector('.card .prov-specialty');
-                let location = item.querySelector('.card .prov-locations');
-                let newPatients = item.querySelector('.card .prov-accept-new');
-                let details = item.querySelector('.card a.btn.btn-primary');
+          providers = await page.$$eval('.related-providers > div > .panel > #customList > div > div', (item) => {
+            return item.map((item) => {
+              const imageSrc = item.querySelector('.card > a > img')?.src || null;
+              const imageAlt = item.querySelector('.card > a > img')?.alt || null;
+              const name = item.querySelector('.card .prov-name')?.innerText || null;
+              const phone = item.querySelector('.card .prov-phone > a')?.innerText || null;
+              const specialty = item.querySelector('.card .prov-specialty')?.innerText || null;
+              const location = item.querySelector('.card .prov-locations')?.innerText || null;
+              const details = item.querySelector('.card a.btn.btn-primary')?.href || null;
 
-                if (imageSrc) imageSrc = imageSrc.src;
-                if (imageAlt) imageAlt = imageAlt.alt;
-                if (name) name = name.innerText;
-                if (phone) phone = phone.innerText;
-                if (specialty) specialty = specialty.innerText;
-                if (location) location = location.innerText;
-                newPatients ? (newPatients = true) : (newPatients = false);
-                if (details) details = details.href;
+              let newPatients = item.querySelector('.card .prov-accept-new');
+              newPatients ? (newPatients = true) : (newPatients = false);
 
-                return {
-                  imageSrc,
-                  imageAlt,
-                  name,
-                  phone,
-                  specialty,
-                  location,
-                  newPatients,
-                  details,
-                };
-              });
-            }
-          );
+              return {
+                imageSrc,
+                imageAlt,
+                name,
+                phone,
+                specialty,
+                location,
+                newPatients,
+                details,
+              };
+            });
+          });
         }
 
-        const moreProviders = await page.$eval('#ih-page-footer', (i) => {
-          let moreProviders = i.querySelector('.related-providers #viewMoreProv');
-          if (moreProviders) moreProviders = moreProviders.href;
-          return moreProviders;
-        });
+        const moreProviders = await page.$eval('#ih-page-footer', (i) => i.querySelector('.related-providers #viewMoreProv')?.href || null);
 
         let locations;
         locations = await page.$$eval('#resultsWrapper_serviceLocations > div', (item) => {
           return item.map((item) => {
-            let imageSrc = item.querySelector('.card > img');
-            let imageAlt = item.querySelector('.card > img');
-            let name = item.querySelector('.card .loc-name');
-            let city = item.querySelector('.card .loc-city');
-            let add1 = item.querySelector('.card .loc-add-1');
-            let add2 = item.querySelector('.card .loc-add-2');
-            let phone = item.querySelector('.card .loc-phone > a');
-            let details = item.querySelector('.card a.btn.btn-primary');
-
-            if (imageSrc) imageSrc = imageSrc.src;
-            if (imageAlt) imageAlt = imageAlt.alt;
-            if (name) name = name.innerText;
-            if (city) city = city.innerText;
-            if (add1) add1 = add1.innerText;
-            if (add2) add2 = add2.innerText;
-            if (phone) phone = phone.innerText;
-            if (details) details = details.href;
+            let imageSrc = item.querySelector('.card > img')?.src || null;
+            let imageAlt = item.querySelector('.card > img')?.alt || null;
+            let name = item.querySelector('.card .loc-name')?.innerText || null;
+            let city = item.querySelector('.card .loc-city')?.innerText || null;
+            let add1 = item.querySelector('.card .loc-add-1')?.innerText || null;
+            let add2 = item.querySelector('.card .loc-add-2')?.innerText || null;
+            let phone = item.querySelector('.card .loc-phone > a')?.innerText || null;
+            let details = item.querySelector('.card a.btn.btn-primary')?.href || null;
 
             return {
               imageSrc,
@@ -702,128 +628,112 @@ export default async function ServicesConditions() {
 
         if (locations.length <= 0) {
           await page.waitForSelector('#customList').catch((err) => (locations = err));
-          locations = await page.$$eval(
-            '.related-locations > div > .panel > #customList > div > div',
-            (item) => {
-              return item.map((item) => {
-                let imageSrc = item.querySelector('.card > img');
-                let imageAlt = item.querySelector('.card > img');
-                let name = item.querySelector('.card .loc-name');
-                let city = item.querySelector('.card .loc-city');
-                let add1 = item.querySelector('.card .loc-add-1');
-                let add2 = item.querySelector('.card .loc-add-2');
-                let phone = item.querySelector('.card .loc-phone > a');
-                let details = item.querySelector('.card a.btn.btn-primary');
+          locations = await page.$$eval('.related-locations > div > .panel > #customList > div > div', (item) => {
+            return item.map((item) => {
+              let imageSrc = item.querySelector('.card > img')?.src || null;
+              let imageAlt = item.querySelector('.card > img')?.alt || null;
+              let name = item.querySelector('.card .loc-name')?.innerText || null;
+              let city = item.querySelector('.card .loc-city')?.innerText || null;
+              let add1 = item.querySelector('.card .loc-add-1')?.innerText || null;
+              let add2 = item.querySelector('.card .loc-add-2')?.innerText || null;
+              let phone = item.querySelector('.card .loc-phone > a')?.innerText || null;
+              let details = item.querySelector('.card a.btn.btn-primary')?.href || null;
 
-                if (imageSrc) imageSrc = imageSrc.src;
-                if (imageAlt) imageAlt = imageAlt.alt;
-                if (name) name = name.innerText;
-                if (city) city = city.innerText;
-                if (add1) add1 = add1.innerText;
-                if (add2) add2 = add2.innerText;
-                if (phone) phone = phone.innerText;
-                if (details) details = details.href;
-
-                return {
-                  imageSrc,
-                  imageAlt,
-                  name,
-                  city,
-                  add1,
-                  add2,
-                  phone,
-                  details,
-                };
-              });
-            }
-          );
+              return {
+                imageSrc,
+                imageAlt,
+                name,
+                city,
+                add1,
+                add2,
+                phone,
+                details,
+              };
+            });
+          });
         }
 
-        const moreLocations = await page.$eval('#ih-page-footer', (i) => {
-          let moreLocations = i.querySelector('.related-locations #viewMoreLoc');
-          if (moreLocations) moreLocations = moreLocations.href;
-          return moreLocations;
-        });
+        const moreLocations = await page.$eval('#ih-page-footer', (i) => i.querySelector('.related-locations #viewMoreLoc')?.href || null);
 
         servicesBody.push({
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
           content: {
-            articleContent,
-            about,
-            interest,
-            whatIs,
-            getStarted,
-            toKnow,
-            journey,
-            dvtSymptoms,
-            dvtRisks,
-            mammogram,
-            mobile,
-            toledo,
-            clinic,
-            overview,
-            programs,
-            scaleDown,
-            approach,
-            development,
-            safety,
-            expect,
-            signs,
-            care,
-            survivorship,
-            risks,
-            injuries,
-            disorders,
-            causes,
-            services,
-            donations,
-            support,
-            devices,
-            management,
-            understanding,
-            prevention,
-            spine,
-            diabetes,
-            maleUrology,
-            urologicCancer,
-            aboutProstateCancer,
-            heartHealth,
-            bodyAndBreast,
-            facialProcedures,
-            eyeHealth,
-            eyewear,
-            talking,
-            ourProgram,
-            ourExpertise,
-            ourTeam,
-            patientStories,
-            faq,
-            conditions,
-            resources,
-            symptoms,
-            procedures,
-            beforeAfter,
-            before,
-            after,
-            surgery,
-            surgicalProcedures,
-            typesOfSurgery,
-            roboticSurgery,
-            specialtySurgery,
-            bariatricSurgery,
-            diagnosis,
-            types,
-            treatment,
-            prepareToQuit,
-            aboutTobacco,
-            contact,
-            yourVisit,
-            primarycare,
-            specials,
-            specialties,
-            emergency,
+            articleContent: sanitize(articleContent),
+            about: sanitize(about),
+            interest: sanitize(interest),
+            whatIs: sanitize(whatIs),
+            getStarted: sanitize(getStarted),
+            toKnow: sanitize(toKnow),
+            journey: sanitize(journey),
+            dvtSymptoms: sanitize(dvtSymptoms),
+            dvtRisks: sanitize(dvtRisks),
+            mammogram: sanitize(mammogram),
+            mobile: sanitize(mobile),
+            toledo: sanitize(toledo),
+            clinic: sanitize(clinic),
+            overview: sanitize(overview),
+            programs: sanitize(programs),
+            scaleDown: sanitize(scaleDown),
+            approach: sanitize(approach),
+            development: sanitize(development),
+            safety: sanitize(safety),
+            expect: sanitize(expect),
+            signs: sanitize(signs),
+            care: sanitize(care),
+            survivorship: sanitize(survivorship),
+            risks: sanitize(risks),
+            injuries: sanitize(injuries),
+            disorders: sanitize(disorders),
+            causes: sanitize(causes),
+            services: sanitize(services),
+            donations: sanitize(donations),
+            support: sanitize(support),
+            devices: sanitize(devices),
+            management: sanitize(management),
+            understanding: sanitize(understanding),
+            prevention: sanitize(prevention),
+            spine: sanitize(spine),
+            diabetes: sanitize(diabetes),
+            maleUrology: sanitize(maleUrology),
+            urologicCancer: sanitize(urologicCancer),
+            aboutProstateCancer: sanitize(aboutProstateCancer),
+            heartHealth: sanitize(heartHealth),
+            bodyAndBreast: sanitize(bodyAndBreast),
+            facialProcedures: sanitize(facialProcedures),
+            eyeHealth: sanitize(eyeHealth),
+            eyewear: sanitize(eyewear),
+            talking: sanitize(talking),
+            ourProgram: sanitize(ourProgram),
+            ourExpertise: sanitize(ourExpertise),
+            ourTeam: sanitize(ourTeam),
+            patientStories: sanitize(patientStories),
+            faq: sanitize(faq),
+            conditions: sanitize(conditions),
+            resources: sanitize(resources),
+            symptoms: sanitize(symptoms),
+            procedures: sanitize(procedures),
+            beforeAfter: sanitize(beforeAfter),
+            before: sanitize(before),
+            after: sanitize(after),
+            surgery: sanitize(surgery),
+            surgicalProcedures: sanitize(surgicalProcedures),
+            typesOfSurgery: sanitize(typesOfSurgery),
+            roboticSurgery: sanitize(roboticSurgery),
+            specialtySurgery: sanitize(specialtySurgery),
+            bariatricSurgery: sanitize(bariatricSurgery),
+            diagnosis: sanitize(diagnosis),
+            types: sanitize(types),
+            treatment: sanitize(treatment),
+            prepareToQuit: sanitize(prepareToQuit),
+            aboutTobacco: sanitize(aboutTobacco),
+            contact: sanitize(contact),
+            yourVisit: sanitize(yourVisit),
+            primarycare: sanitize(primarycare),
+            specials: sanitize(specials),
+            specialties: sanitize(specialties),
+            emergency: sanitize(emergency),
             providers,
             moreProviders,
             locations,
@@ -834,36 +744,31 @@ export default async function ServicesConditions() {
         console.log('Services & Conditions Article', i + 1, 'Done');
 
         const allImg = await page.$$eval('#site-body img', (img) => img.map((i) => i.src));
-        servicesImages.push(allImg);
+        servicesImages.push({
+          article: articlesTitle,
+          images: allImg,
+        });
 
         console.log('Images from Article', i + 1, 'Done');
       } catch (error) {
+        await page.close();
+        await browser.close();
         console.log({ error });
       }
     }
   }
 
   const jsonArticlesContent = JSON.stringify(servicesBody, null, 2);
-  fs.writeFile(
-    './json/ProMedica/services-conditions/services-conditions-articles.json',
-    jsonArticlesContent,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nServices & Conditions Articles Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/services-conditions/services-conditions-articles.json', jsonArticlesContent, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nServices & Conditions Articles Imported!\n');
+  });
 
   const jsonArticlesImages = JSON.stringify(servicesImages, null, 2);
-  fs.writeFile(
-    './json/ProMedica/services-conditions/services-conditions-images.json',
-    jsonArticlesImages,
-    'utf8',
-    (err) => {
-      if (err) return console.log(err);
-      console.log('\nServices & Conditions Images Imported!\n');
-    }
-  );
+  fs.writeFile('./json/ProMedica/services-conditions/services-conditions-images.json', jsonArticlesImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nServices & Conditions Images Imported!\n');
+  });
 
   // close page and browser
   await page.close();
