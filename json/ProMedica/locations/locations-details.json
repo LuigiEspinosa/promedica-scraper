@@ -425,7 +425,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -864,7 +864,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -951,7 +951,7 @@
           "details": "https://www.promedica.org/provider/tina-vilchez-fnp-blood-management"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=Jobst%20Medication%20Therapy%20Management%20-%20Sylvania"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=Jobst%20Medication%20Therapy%20Management%20-%20Sylvania"
     }
   },
   {
@@ -995,7 +995,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -3673,7 +3673,7 @@
           "details": "https://www.promedica.org/provider/lindsay-willard-ms-lgs-genetic-counseling"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Cancer%20Institute%20Genetic%20Counseling%20Program"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Cancer%20Institute%20Genetic%20Counseling%20Program"
     }
   },
   {
@@ -4025,7 +4025,7 @@
       "description": "Our hospital, physicians, and staff are dedicated to providing quality care and comfort for our patients. We also strive to increase awareness about healthy lifestyles and practices to improve the health of our community.​​",
       "virtualTour": null,
       "operatingBody": "Flexible visiting hours. Please call 517-279-5400 for more information.",
-      "operatingTable": "",
+      "operatingTable": "Cardiac RehabMonday0700a.m.0500p.m.Wednesday0700a.m.0500p.m.Friday0700a.m.0500p.m.",
       "operating": [],
       "services": [
         "Cardiac Rehab",
@@ -4136,7 +4136,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -4183,7 +4183,7 @@
           "details": "https://www.promedica.org/provider/michael-howell-dpm-facfas-podiatry"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Coldwater%20Regional%20Hospital%20-%20Foot%20and%20Ankle"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Coldwater%20Regional%20Hospital%20-%20Foot%20and%20Ankle"
     }
   },
   {
@@ -9319,7 +9319,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": null
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
     }
   },
   {
@@ -9452,7 +9452,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -12144,7 +12144,7 @@
           "details": "https://www.promedica.org/provider/zachary-stephan-md-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Arrowhead%20Family%20Practice"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Arrowhead%20Family%20Practice"
     }
   },
   {
@@ -12762,7 +12762,7 @@
           "details": "https://www.promedica.org/provider/simone-o-drobinak-pa-c-orthopaedic-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Beer%20Orthopaedics"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Beer%20Orthopaedics"
     }
   },
   {
@@ -16997,7 +16997,7 @@
           "details": "https://www.promedica.org/provider/lai-lai-kwok-do-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Family%20Medicine%20-%20Monroe"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Family%20Medicine%20-%20Monroe"
     }
   },
   {
@@ -17907,7 +17907,7 @@
           "details": "https://www.promedica.org/provider/kevin-siemen-pa-c-general-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20General%20Surgery%20-%20Adrian"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20General%20Surgery%20-%20Adrian"
     }
   },
   {
@@ -19831,7 +19831,7 @@
           "details": "https://www.promedica.org/provider/kelly-stasa-cnp-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Internal%20Medicine%20I%20Pediatrics%20I%20Family%20Medicine"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Internal%20Medicine%20I%20Pediatrics%20I%20Family%20Medicine"
     }
   },
   {
@@ -19986,7 +19986,7 @@
           "details": "https://www.promedica.org/provider/todd-e-russell-md-facs-vascular-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Jobst%20Vascular%20%20-%20Fremont"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Jobst%20Vascular%20%20-%20Fremont"
     }
   },
   {
@@ -20119,7 +20119,7 @@
           "details": "https://www.promedica.org/provider/todd-e-russell-md-facs-vascular-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Adrian"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Adrian"
     }
   },
   {
@@ -20358,7 +20358,7 @@
           "details": "https://www.promedica.org/provider/babatunde-oriowo-md-vascular-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Monroe"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Monroe"
     }
   },
   {
@@ -20699,7 +20699,7 @@
           "details": "https://www.promedica.org/provider/sophia-afridi-md-vascular-surgery"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Sylvania"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Sylvania"
     }
   },
   {
@@ -20900,7 +20900,7 @@
           "details": "https://www.promedica.org/provider/kelli-donovan-pa-c-critical-care-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Toledo"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Jobst%20Vascular%20-%20Toledo"
     }
   },
   {
@@ -21371,7 +21371,7 @@
           "details": "https://www.promedica.org/provider/catherine-smart-cnp-gastroenterology"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Monroe%20Gastroenterology"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Monroe%20Gastroenterology"
     }
   },
   {
@@ -21964,7 +21964,7 @@
           "details": "https://www.promedica.org/provider/david-szymanski-md-neurology"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Neurology%20-%20Monroe/Szymanski"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Neurology%20-%20Monroe/Szymanski"
     }
   },
   {
@@ -26292,7 +26292,7 @@
           "details": "https://www.promedica.org/provider/lori-c-wright-md-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Port%20Sylvania%20Family%20Practice"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Port%20Sylvania%20Family%20Practice"
     }
   },
   {
@@ -27327,7 +27327,7 @@
           "details": "https://www.promedica.org/provider/matthew-rennels-do-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Sports%20Medicine"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Sports%20Medicine"
     }
   },
   {
@@ -27511,7 +27511,7 @@
           "details": "https://www.promedica.org/provider/joann-m-rolf-andersen-md-obstetrics"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Sunforest%20Obstetrics%20|%20Gynecology"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Sunforest%20Obstetrics%20,%20Gynecology"
     }
   },
   {
@@ -27604,7 +27604,7 @@
           "details": "https://www.promedica.org/provider/joanna-shaw-cnp-family-medicine"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Sylvania%20Adult%20&%20Pediatric%20Medicine"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Physicians%20Sylvania%20Adult%20&%20Pediatric%20Medicine"
     }
   },
   {
@@ -27640,53 +27640,8 @@
       "volunteer": "",
       "foundations": "",
       "PFAC": "",
-      "providers": [
-        {
-          "imageSrc": "https://www.promedica.org/assets/images/ih/providers/angela-diuble-1903.jpg",
-          "imageAlt": "Angela Diuble PA-C",
-          "name": "ANGELA DIUBLE PA-C",
-          "gender": "Female",
-          "phone": null,
-          "specialty": "Family Medicine",
-          "location": "ProMedica Physicians Tecumseh Family Medicine",
-          "newPatients": true,
-          "details": "https://www.promedica.org/provider/angela-diuble-pa-c-family-medicine"
-        },
-        {
-          "imageSrc": "https://www.promedica.org/assets/images/ih/providers/daniel-doman-88.jpg",
-          "imageAlt": "Daniel Doman DO",
-          "name": "DANIEL DOMAN DO",
-          "gender": "Male",
-          "phone": "517-424-3070",
-          "specialty": "Family Medicine",
-          "location": "ProMedica Physicians Tecumseh Family Medicine",
-          "newPatients": true,
-          "details": "https://www.promedica.org/provider/daniel-doman-do-family-medicine"
-        },
-        {
-          "imageSrc": "https://www.promedica.org/assets/images/ih/providers/ryan-knape-1559.jpg",
-          "imageAlt": "Ryan Knape PA-C",
-          "name": "RYAN KNAPE PA-C",
-          "gender": null,
-          "phone": "517-424-3070",
-          "specialty": "Family Medicine",
-          "location": "ProMedica Physicians Tecumseh Family Medicine",
-          "newPatients": true,
-          "details": "https://www.promedica.org/provider/ryan-knape-pa-c-family-medicine"
-        },
-        {
-          "imageSrc": "https://www.promedica.org/assets/images/ih/providers/todd-niles-1940.jpg",
-          "imageAlt": "Todd Niles APRN-CNP",
-          "name": "TODD NILES APRN-CNP",
-          "gender": "Male",
-          "phone": "419-824-1100",
-          "specialty": "Family Medicine",
-          "location": "ProMedica Physicians Tecumseh Family Medicine",
-          "newPatients": true,
-          "details": "https://www.promedica.org/provider/todd-niles-aprn-cnp-family-medicine"
-        }
-      ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Physicians%20Tecumseh%20Family%20Medicine"
+      "providers": [],
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
     }
   },
   {
@@ -32422,7 +32377,7 @@
           "details": "https://www.promedica.org/provider/luska-puchala-cnp"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Urgent%20Care%20-%20Oregon"
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Urgent%20Care%20-%20Oregon"
     }
   },
   {
@@ -32484,7 +32439,7 @@
           "details": "https://www.promedica.org/provider/brian-snyder-cnp"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Urgent%20Care%20-%20Perrysburg."
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Urgent%20Care%20-%20Perrysburg."
     }
   },
   {
@@ -32534,7 +32489,7 @@
       "foundations": "",
       "PFAC": "",
       "providers": [],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results"
+      "moreProviders": null
     }
   },
   {
@@ -32596,7 +32551,7 @@
           "details": "https://www.promedica.org/provider/michele-smola-cnp"
         }
       ],
-      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?Keyword=ProMedica%20Urgent%20Care%20-%20Toledo,%20Secor%20Ave."
+      "moreProviders": "https://www.promedica.org/find-a-doctor/provider-results?LocationText=ProMedica%20Urgent%20Care%20-%20Toledo,%20Secor%20Ave."
     }
   },
   {
