@@ -85,23 +85,23 @@ export default async function News() {
         let newsTitle = await page.title();
 
         // * 403 ERROR - Uncomment if necessary
-        // function delay(time) {
-        //   return new Promise(function (resolve) {
-        //     setTimeout(resolve, time);
-        //   });
-        // }
+        function delay(time) {
+          return new Promise(function (resolve) {
+            setTimeout(resolve, time);
+          });
+        }
 
-        // while (newsTitle.includes('ERROR')) {
-        //   let wait = 200000;
+        while (newsTitle.includes('ERROR')) {
+          let wait = 200000;
 
-        //   console.log('403 ERROR DETECTED');
-        //   await delay(wait);
-        //   wait = wait * 2;
+          console.log('403 ERROR DETECTED');
+          await delay(wait);
+          wait = wait * 2;
 
-        //   console.log('RELOADING PAGE');
-        //   await page.reload();
-        //   newsTitle = await page.title();
-        // }
+          console.log('RELOADING PAGE');
+          await page.reload();
+          newsTitle = await page.title();
+        }
 
         await page.waitForSelector('.ih-content-column');
 
