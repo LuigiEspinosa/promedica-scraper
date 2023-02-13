@@ -7,9 +7,9 @@ import MemoryCare from './memory-care.js';
 import ALIL from './ALIL.js';
 
 export default async function Agency() {
-  // Hospice(hospiceLinks);
-  // HomeHealth(homeHealthLinks);
-  // PalliativeCare(palliativeCareLinks);
-  MemoryCare(memoryCareLinks);
-  // ALIL(alilLinks);
+  await Hospice(hospiceLinks);
+  await HomeHealth(homeHealthLinks);
+  await PalliativeCare(palliativeCareLinks);
+  await MemoryCare(memoryCareLinks);
+  await ALIL(alilLinks);
 }

@@ -7,6 +7,7 @@ export default async function MemoryCare(links) {
   const page = await browser.newPage();
 
   let memoryCareDetails = [];
+  let externalVideos = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -204,14 +205,21 @@ export default async function MemoryCare(links) {
           return null;
         });
 
+        // External Videos
+        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+        externalVideos.push(videos);
+
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Services"]')?.href || null);
         if (menuLink) {
           await page.goto(menuLink, { waitUntil: 'domcontentloaded' });
           subpageTitle = await page.title();
         }
 
+        let servicesDescription = null;
         let services = null;
         if (subpageTitle.includes('Services')) {
+          servicesDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
+
           services = await page.$$eval('main > div.umb-grid section.grid-section > div.row', (item) => {
             let services = [];
 
@@ -237,6 +245,10 @@ export default async function MemoryCare(links) {
 
             return services.flat();
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Design"]')?.href || null);
@@ -342,6 +354,10 @@ export default async function MemoryCare(links) {
               alt: roomOptionsAlt,
             },
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval(
@@ -394,6 +410,10 @@ export default async function MemoryCare(links) {
             likeHome: sanitize(likeHome),
             hours,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Programming"]')?.href || null);
@@ -444,6 +464,10 @@ export default async function MemoryCare(links) {
             lifestyle: sanitize(lifestyle),
             namaste: sanitize(namaste),
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval(
@@ -506,6 +530,10 @@ export default async function MemoryCare(links) {
             types,
             planning: sanitize(planning),
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Payment"]')?.href || null);
@@ -545,6 +573,10 @@ export default async function MemoryCare(links) {
             medicare,
             insurance,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         const moreInfo = await page.$eval(
@@ -595,6 +627,7 @@ export default async function MemoryCare(links) {
             upcomingEvents,
             testimonials,
             memorialFund,
+            servicesDescription,
             services,
             design,
             living,
@@ -618,6 +651,12 @@ export default async function MemoryCare(links) {
   fs.writeFile('./json/ProMedica/agency/memory-care-details.json', jsonMemoryCareDetaills, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nMemory Care Details Imported!\n');
+  });
+
+  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  fs.writeFile('./json/ProMedica/agency/Video/memory-care-videos.json', jsonExternalVideos, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nExternal Videos Imported!\n');
   });
 
   // close page and browser

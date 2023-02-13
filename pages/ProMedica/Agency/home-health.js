@@ -7,13 +7,14 @@ export default async function HomeHealth(links) {
   const page = await browser.newPage();
 
   let homeHealth = [];
+  let externalVideos = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
 
       try {
         const articlesTitle = await page.title();
-        let subpageTitle;
+        let subpageTitle, menuLink;
 
         await page.waitForSelector('.hero-section');
 
@@ -49,7 +50,7 @@ export default async function HomeHealth(links) {
 
         const description = await page.$eval(
           '.hero-section',
-          (i) => i.querySelector('.hero-copy > p > span')?.innerText || i.querySelector('.hero-copy > p')?.innerText || null
+          (i) => i.querySelector('.hero-copy > h1 + *')?.innerHTML || i.querySelector('.hero-copy > h1 + *')?.innerHTML || null
         );
 
         const enrichingLife = await page.$eval('main > .flex-wrapper', (i) => {
@@ -72,37 +73,13 @@ export default async function HomeHealth(links) {
           return null;
         });
 
-        const ourServices = await page.$eval('main > .umb-grid', (i) => {
-          let content = i.querySelector('main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section > h2');
-
-          if (content && content?.innerText === 'Our Services') {
-            let content =
-              i.querySelector('main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section')?.innerHTML ||
-              null;
-            let imageSrc =
-              i.querySelector('main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section figure > img')
-                ?.src || null;
-            let imageAlt =
-              i.querySelector('main > .umb-grid .flex-wrapper.configured-2-Column > .flex-row > div > section.grid-section figure > img')
-                ?.alt || null;
-
-            return (content = {
-              content: content,
-              imageSrc: imageSrc,
-              imageAlt: imageAlt,
-            });
-          }
-
-          return null;
-        });
-
         const patientServices = await page.$eval('main > .flex-wrapper', (i) => {
           let content = i.querySelector('main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > h2');
           if (content && content?.innerText === 'Patient Services') {
             return (content = {
               content:
-                i.querySelector('main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > h2 + p').innerText || null,
-              learnMore: i.querySelector('main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > a').href || null,
+                i.querySelector('main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > h2 + p')?.innerText || null,
+              learnMore: i.querySelector('main > .flex-wrapper > div:not(.flex-row) > div > section.content-section > a')?.href || null,
             });
           }
           return null;
@@ -126,27 +103,6 @@ export default async function HomeHealth(links) {
           return null;
         });
 
-        const HowCanHelp = await page.$eval('main > .umb-grid', (i) => {
-          let content =
-            i.querySelector(
-              'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div.content-section-Yes > section.grid-section'
-            )?.innerHTML || null;
-          let imageSrc =
-            i.querySelector(
-              'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div > section.grid-section figure > img'
-            )?.src || null;
-          let imageAlt =
-            i.querySelector(
-              'main > .umb-grid .pattern-0C466C .flex-wrapper.configured-2-Column .flex-row > div > section.grid-section figure > img'
-            )?.alt || null;
-
-          return {
-            content: content,
-            imageSrc: imageSrc,
-            imageAlt: imageAlt,
-          };
-        });
-
         await page.$$eval('.umb-grid section.grid-section div.testimonials > div', (item) => {
           return item.map((q) => {
             const quoteContent = q.querySelector('div.testimonials > div > section > a');
@@ -154,7 +110,7 @@ export default async function HomeHealth(links) {
           });
         });
 
-        const testimonials = await page.$$eval('.umb-grid section.grid-section div.testimonials > div', (item) => {
+        let testimonials = await page.$$eval('.umb-grid section.grid-section div.testimonials > div', (item) => {
           return item.map((q) => {
             let quoteTitle = q.querySelector('div.testimonials > div > section > h3')?.innerText || null;
             let quote = q.querySelector('div.testimonials > div > section > blockquote')?.innerText || null;
@@ -173,6 +129,190 @@ export default async function HomeHealth(links) {
             };
           });
         });
+
+        testimonials = testimonials.map((item) => {
+          return {
+            quoteTitle: item.quoteTitle,
+            quote: item.quote,
+            quoteContent: sanitize(item.quoteContent),
+          };
+        });
+
+        for (let i = 0; i < testimonials?.length; i++) {
+          await page.keyboard.press('Escape');
+        }
+
+        // External Videos
+        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+        externalVideos.push(videos);
+
+        menuLink = await page.$eval(
+          '#main-menu',
+          (item) => item.querySelector('a[href*="&contentNameString=What Is Home Health Care"]')?.href || null
+        );
+
+        if (menuLink !== null) {
+          await page.goto(menuLink, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
+
+        let whatIs = [];
+        if (subpageTitle?.includes('What Is')) {
+          const whatIsDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
+
+          const bestOf = await page.$eval('main > div.umb-grid', (i) => {
+            const root = 'div.grid-row > div.configured-2-Column > div.flex-row > ';
+
+            let list = [];
+            const li = i.querySelectorAll(
+              `${root} div:not(.background-color-FFFFFF, .background-color-F8F8F5).content-section-Yes > section.grid-section > ul > li`
+            );
+            li.forEach((item) => list.push(item?.innerText || null));
+
+            return {
+              image: i.querySelector(`${root} div.background-color-DFEAEB > section.grid-section > figure > img`)?.src || null,
+              imageAlt: i.querySelector(`${root} div.background-color-DFEAEB > section.grid-section > figure > img`)?.alt || null,
+              title: i.querySelector(`${root} div.content-section-Yes > section.grid-section > h2`)?.innerText || null,
+              list,
+            };
+          });
+
+          const whoIs = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > ul > li'
+            );
+            li.forEach((item) => list.push(item?.innerText || null));
+
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > p'
+                )?.innerText || null,
+              image:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
+                )?.alt || null,
+              list,
+            };
+          });
+
+          const consider = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section .bordered-content-inner ul > li'
+            );
+            li.forEach((item) => list.push(item?.innerText || null));
+
+            return {
+              title:
+                i.querySelector(
+                  'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2 + *'
+                )?.innerHTML || null,
+              list,
+            };
+          });
+
+          let myths = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > ul > li'
+            );
+
+            li.forEach((item) =>
+              list.push({
+                header: item.querySelector('div.toggle-title > h3')?.innerText || null,
+                content: item.querySelector('div.toggle-inner')?.textContent || null,
+              })
+            );
+
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > p'
+                )?.innerText || null,
+              image:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.alt || null,
+              list,
+            };
+          });
+
+          myths = {
+            title: myths.title,
+            description: myths.description,
+            image: myths.image,
+            imageAlt: myths.imageAlt,
+            list: myths.list.map((item) => {
+              return {
+                header: item.header,
+                content: sanitize(item.content),
+              };
+            }),
+          };
+
+          const payment = await page.$eval('main > div.umb-grid', (i) => {
+            const root = 'div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes.background-color-DFEAEB';
+
+            return {
+              title: i.querySelector(`${root} > section.grid-section > h2`)?.innerText || null,
+              description: i.querySelector(`${root} > section.grid-section > p`)?.innerText || null,
+              image: i.querySelector(`${root} + div.background-color-DFEAEB > section.grid-section > figure > img`)?.src || null,
+              imageAlt: i.querySelector(`${root} + div.background-color-DFEAEB > section.grid-section > figure > img`)?.alt || null,
+            };
+          });
+
+          whatIs.push({
+            whatIsDescription: sanitize(whatIsDescription),
+            bestOf,
+            whoIs,
+            consider,
+            myths,
+            payment,
+          });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
+        }
+
+        menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Contact Us"]')?.href || null);
+        if (menuLink) {
+          await page.goto(menuLink, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
+
+        let contactForm = null;
+        if (subpageTitle.includes('Contact')) {
+          contactForm = await page.$eval(
+            'section.grid-section',
+            () =>
+              document
+                .evaluate('//div[starts-with(@id,"umbraco_form")]', document.body, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null)
+                .snapshotItem(0)?.innerHTML || null
+          );
+        }
 
         const moreInfo = await page.$eval(
           'main',
@@ -197,15 +337,15 @@ export default async function HomeHealth(links) {
             phone,
             fax,
             title,
-            description,
+            description: sanitize(description),
             enrichingLife,
-            ourServices,
             patientServices,
             ourTeam,
-            HowCanHelp,
             testimonials,
+            whatIs,
             moreInfo,
             contact,
+            // contactForm,
           },
         });
 
@@ -220,6 +360,12 @@ export default async function HomeHealth(links) {
   fs.writeFile('./json/ProMedica/agency/home-health-details.json', jsonHomeHealth, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nHome Health Details Imported!\n');
+  });
+
+  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  fs.writeFile('./json/ProMedica/agency/Video/home-health-videos.json', jsonExternalVideos, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nExternal Videos Imported!\n');
   });
 
   // close page and browser

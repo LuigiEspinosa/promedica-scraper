@@ -43,7 +43,6 @@ export const hospiceLinks = [
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-indianapolis/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-irwin/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-jacksonville/',
-  'https://www.promedicahospice.org/find-an-agency/promedica-hospice-kingsland/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-kalamazoo/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-kansas-city/',
   'https://www.promedicahospice.org/find-an-agency/promedica-hospice-kenosha/',

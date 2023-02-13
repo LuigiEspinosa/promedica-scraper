@@ -7,6 +7,7 @@ export default async function Hospice(links) {
   const page = await browser.newPage();
 
   let hospiceDetaills = [];
+  let externalVideos = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -140,6 +141,10 @@ export default async function Hospice(links) {
             quoteContent: sanitize(item.quoteContent),
           };
         });
+
+        // External Videos
+        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+        externalVideos.push(videos);
 
         menuLink = await page.$eval(
           '#main-menu',
@@ -285,6 +290,10 @@ export default async function Hospice(links) {
             myths,
             payment,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval(
@@ -440,6 +449,10 @@ export default async function Hospice(links) {
             partners,
             satisfaction,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval(
@@ -531,6 +544,10 @@ export default async function Hospice(links) {
             donate,
             planning,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Stories"]')?.href || null);
@@ -616,6 +633,10 @@ export default async function Hospice(links) {
             quote,
             moments,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Volunteering"]')?.href || null);
@@ -711,6 +732,10 @@ export default async function Hospice(links) {
             becomeVolunteer,
             vetsToVets,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         const moreInfo = await page.$eval(
@@ -783,6 +808,12 @@ export default async function Hospice(links) {
   fs.writeFile('./json/ProMedica/agency/hospice-details.json', jsonHospiceDetaills, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nHospice Details Imported!\n');
+  });
+
+  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  fs.writeFile('./json/ProMedica/agency/Video/hospice-videos.json', jsonExternalVideos, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nExternal Videos Imported!\n');
   });
 
   // close page and browser

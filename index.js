@@ -10,15 +10,15 @@ import ParamountBlog from './pages/Paramount/Blog/blog.js';
 import Agency from './pages/ProMedica/Agency/agency.js';
 
 // // ProMedica
-// PressReleases();
-// News();
-// OurStories();
-// Locations();
-// DoctorsProviders();
-// ServicesConditions();
-Agency();
+// await PressReleases();
+// await News();
+// await OurStories();
+// await Locations();
+// await DoctorsProviders();
+// await ServicesConditions();
+await Agency();
 
 // // Paramount
-// EducationalArticles();
-// ParamountNews();
-// ParamountBlog();
+// await EducationalArticles();
+// await ParamountNews();
+// await ParamountBlog();

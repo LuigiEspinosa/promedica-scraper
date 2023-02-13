@@ -7,6 +7,7 @@ export default async function PalliativeCare(links) {
   const page = await browser.newPage();
 
   let palliativeCare = [];
+  let externalVideos = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -106,6 +107,10 @@ export default async function PalliativeCare(links) {
           });
         }
 
+        // External Videos
+        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+        externalVideos.push(videos);
+
         menuLink = await page.$eval(
           '#main-menu',
           (item) => item.querySelector('a[href*="&contentNameString=What is Palliative Care"]')?.href || null
@@ -117,15 +122,7 @@ export default async function PalliativeCare(links) {
 
         let whatIs = [];
         if (subpageTitle.includes('What is')) {
-          const whatIsDescription = await page.$eval('.hero-section', (i) => {
-            const banner = i.querySelector('.hero-image')?.style.backgroundImage;
-            // ?.replace(/\bbackground-image: url\s*\(\s*["']?([^"'\r\n,]+)["']?\s*\);/gi, '$1')
-
-            return {
-              banner: banner || null,
-              description: i.querySelector('.hero-overlay')?.innerHTML || null,
-            };
-          });
+          const whatIsDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
 
           const benefits = await page.$eval('main > div.umb-grid', (i) => {
             return {
@@ -189,6 +186,10 @@ export default async function PalliativeCare(links) {
             eligible,
             different,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval(
@@ -279,6 +280,10 @@ export default async function PalliativeCare(links) {
             symptoms,
             services,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Stories"]')?.href || null);
@@ -316,6 +321,10 @@ export default async function PalliativeCare(links) {
             storiesDescription: sanitize(storiesDescription),
             words,
           });
+
+          // External Videos
+          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
+          externalVideos.push(videos);
         }
 
         const moreInfo = await page.$eval(
