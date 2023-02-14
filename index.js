@@ -9,16 +9,16 @@ import ParamountNews from './pages/Paramount/News/news.js';
 import ParamountBlog from './pages/Paramount/Blog/blog.js';
 import Agency from './pages/ProMedica/Agency/agency.js';
 
-// // ProMedica
-// await PressReleases();
-// await News();
-// await OurStories();
-// await Locations();
-// await DoctorsProviders();
-// await ServicesConditions();
+// ProMedica
+await PressReleases();
+await News();
+await OurStories();
+await Locations();
+await DoctorsProviders();
+await ServicesConditions();
 await Agency();
 
-// // Paramount
-// await EducationalArticles();
-// await ParamountNews();
-// await ParamountBlog();
+// Paramount
+await EducationalArticles();
+await ParamountNews();
+await ParamountBlog();

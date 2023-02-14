@@ -8,6 +8,7 @@ export default async function Hospice(links) {
 
   let hospiceDetaills = [];
   let externalVideos = [];
+  let hospiceImages = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -107,6 +108,19 @@ export default async function Hospice(links) {
           return null;
         });
 
+        const upcomingEvents = await page.$$eval('main > .events > div.span8 > section > ul.accordion-list > li', (item) => {
+          return item.map(() => {
+            let events = [];
+            item.forEach((item) =>
+              events.push({
+                title: item.querySelector('div.toggle-title > h3')?.innerText || null,
+                content: item.querySelector('div.toggle-inner')?.textContent || null,
+              })
+            );
+            return events;
+          });
+        });
+
         await page.$$eval('.umb-grid section.grid-section div.testimonials > div', (item) => {
           return item.map((q) => {
             const quoteContent = q.querySelector('div.testimonials > div > section > a');
@@ -143,8 +157,20 @@ export default async function Hospice(links) {
         });
 
         // External Videos
-        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-        externalVideos.push(videos);
+        externalVideos.push(
+          await page.$eval('main', (i) => {
+            const video = i.querySelector('iframe[src*="vidyard"]');
+            if (video !== null) return video.src;
+          })
+        );
+
+        // Images
+        hospiceImages.push(
+          await page.$eval('main', (i) => {
+            const image = i.querySelector('img')?.src;
+            if (image !== null) return image;
+          })
+        );
 
         menuLink = await page.$eval(
           '#main-menu',
@@ -292,8 +318,20 @@ export default async function Hospice(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          hospiceImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval(
@@ -375,7 +413,7 @@ export default async function Hospice(links) {
             };
           });
 
-          const team = await page.$eval('main > div.umb-grid', (i) => {
+          let team = await page.$eval('main > div.umb-grid', (i) => {
             let list = [];
             const li = i.querySelectorAll(
               'div.grid-row > div.configured-2-Column > div.flex-row > div:not(.background-color-F8F8F5) > section.grid-section > ul > li'
@@ -403,7 +441,86 @@ export default async function Hospice(links) {
             };
           });
 
+          let bios = await page.$eval('main > div.umb-grid', (i) => {
+            const root = 'div.grid-row > div.configured-1-Column > div.flex-row > div.span12 > section.grid-section';
+
+            let list = [];
+            const li = i.querySelectorAll(`${root} > div.grid-row > div.background-color-0C466C section.content-section > ul > li`);
+
+            li.forEach((item) => {
+              let content = [];
+              const inner = item.querySelectorAll('div.toggle-inner');
+              inner.forEach((li) => content.push(li?.textContent || null));
+
+              list.push({
+                header: item.querySelector('div.toggle-title > h3')?.innerText || null,
+                content,
+              });
+            });
+
+            return {
+              title:
+                i.querySelector(`${root} > div.grid-row > div.background-color-0C466C section.content-section > h2`)?.innerText || null,
+              list,
+            };
+          });
+
+          bios = {
+            title: bios.title,
+            list: bios.list.map((item) => {
+              return {
+                header: item.header,
+                content: item.content.map((item) => sanitize(item)),
+              };
+            }),
+          };
+
+          const veterans = await page.$eval('main > div.umb-grid', (i) => {
+            const root = 'div.grid-row > div.configured-1-Column > div.flex-row > div.span12 > section.grid-section';
+
+            return {
+              title:
+                i.querySelector(`${root} > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2`)
+                  ?.innerText || null,
+              description:
+                i.querySelector(`${root} > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > p`)
+                  ?.innerText || null,
+              anchor:
+                i.querySelector(`${root} > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > a`)
+                  ?.href || null,
+              image:
+                i.querySelector(
+                  `${root} > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section > figure > img`
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  `${root} > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section > figure > img`
+                )?.alt || null,
+            };
+          });
+
           const partners = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              `div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > ul > li`
+            );
+
+            li.forEach((item) => {
+              let content = [];
+              const inner = item.querySelectorAll('div.toggle-inner ul > li');
+              inner.forEach((li) =>
+                content.push({
+                  anchor: li.querySelector('div.toggle-inner li a')?.innerText || null,
+                  url: li.querySelector('div.toggle-inner li a')?.href || null,
+                })
+              );
+
+              list.push({
+                header: item.querySelector('div.toggle-title > h3')?.innerText || null,
+                content,
+              });
+            });
+
             return {
               title:
                 i.querySelector(
@@ -421,6 +538,7 @@ export default async function Hospice(links) {
                 i.querySelector(
                   'div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
                 )?.alt || null,
+              list,
             };
           });
 
@@ -446,13 +564,27 @@ export default async function Hospice(links) {
             differents,
             offered,
             team,
+            bios,
+            veterans,
             partners,
             satisfaction,
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          hospiceImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval(
@@ -546,8 +678,20 @@ export default async function Hospice(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          hospiceImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Stories"]')?.href || null);
@@ -578,6 +722,41 @@ export default async function Hospice(links) {
                 i.querySelector(
                   'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
                 )?.alt || null,
+            };
+          });
+
+          await page.$$eval('.umb-grid section.grid-section div.featured-news-updates > article', (item) => {
+            return item.map((q) => {
+              const quoteContent = q.querySelector('div.featured-news-updates > article > a');
+              if (quoteContent) quoteContent.click();
+            });
+          });
+
+          let testimonials = await page.$$eval('.umb-grid section.grid-section div.featured-news-updates > article', (item) => {
+            return item.map((q) => {
+              let quote = q.querySelector('div.featured-news-updates > article > blockquote')?.innerText || null;
+              let quoteContent = q.querySelector('div.featured-news-updates > article > a');
+
+              if (quoteContent) {
+                classname = quoteContent.classList.value;
+                popup = classname.split('_open')[0];
+
+                // Specific Error Scenarios
+                if (popup !== 'popup_the"atea12' && popup !== 'popup_"madewit5' && popup !== 'popup_"heartac6')
+                  quoteContent = document.querySelector(`#${popup}_wrapper > #${popup} > article`)?.innerHTML || null;
+              }
+
+              return {
+                quote,
+                quoteContent,
+              };
+            });
+          });
+
+          testimonials = testimonials.map((item) => {
+            return {
+              quote: item.quote,
+              quoteContent: sanitize(item.quoteContent),
             };
           });
 
@@ -630,13 +809,26 @@ export default async function Hospice(links) {
           stories.push({
             storiesDescription: sanitize(storiesDescription),
             appreciation,
+            testimonials,
             quote,
             moments,
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          hospiceImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Volunteering"]')?.href || null);
@@ -734,8 +926,20 @@ export default async function Hospice(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          hospiceImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         const moreInfo = await page.$eval(
@@ -783,6 +987,7 @@ export default async function Hospice(links) {
             patientServices,
             familySupport,
             memorialFund,
+            upcomingEvents,
             testimonials,
             whatIs,
             services,
@@ -810,10 +1015,20 @@ export default async function Hospice(links) {
     console.log('\nHospice Details Imported!\n');
   });
 
-  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  const jsonExternalVideos = JSON.stringify(
+    externalVideos.filter((n) => n),
+    null,
+    2
+  );
   fs.writeFile('./json/ProMedica/agency/Video/hospice-videos.json', jsonExternalVideos, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nExternal Videos Imported!\n');
+  });
+
+  const jsonExternalImages = JSON.stringify(hospiceImages, null, 2);
+  fs.writeFile('./json/ProMedica/agency/Images/hospice-images.json', jsonExternalImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nImages Imported!\n');
   });
 
   // close page and browser
