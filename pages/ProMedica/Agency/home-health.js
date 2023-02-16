@@ -8,6 +8,7 @@ export default async function HomeHealth(links) {
 
   let homeHealth = [];
   let externalVideos = [];
+  let homeHealthImages = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -52,6 +53,57 @@ export default async function HomeHealth(links) {
           '.hero-section',
           (i) => i.querySelector('.hero-copy > h1 + *')?.innerHTML || i.querySelector('.hero-copy > h1 + *')?.innerHTML || null
         );
+
+        const services = await page.$eval('main > div.umb-grid', (i) => {
+          let list = [];
+          const li = i.querySelectorAll(
+            'div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > ul > li'
+          );
+          li.forEach((item) => list.push(item?.innerText || null));
+
+          return {
+            title:
+              i.querySelector('div.grid-row > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2')
+                ?.innerText || null,
+            image:
+              i.querySelector(
+                'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > figure > img'
+              )?.src || null,
+            imageAlt:
+              i.querySelector(
+                'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > figure > img'
+              )?.alt || null,
+            list,
+          };
+        });
+
+        const howHelp = await page.$eval('main > div.umb-grid', (i) => {
+          let list = [];
+          const li = i.querySelectorAll(
+            'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > ul > li'
+          );
+          li.forEach((item) => list.push(item?.innerText || null));
+
+          return {
+            title:
+              i.querySelector(
+                'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2'
+              )?.innerText || null,
+            description:
+              i.querySelector(
+                'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > p'
+              )?.innerText || null,
+            image:
+              i.querySelector(
+                'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section > figure > img'
+              )?.src || null,
+            imageAlt:
+              i.querySelector(
+                'div.pattern-0C466C > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section > figure > img'
+              )?.alt || null,
+            list,
+          };
+        });
 
         const enrichingLife = await page.$eval('main > .flex-wrapper', (i) => {
           let content = i.querySelector('main > .flex-wrapper > div.flex-row > div > section.grid-section > h2');
@@ -143,8 +195,20 @@ export default async function HomeHealth(links) {
         }
 
         // External Videos
-        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-        externalVideos.push(videos);
+        externalVideos.push(
+          await page.$eval('main', (i) => {
+            const video = i.querySelector('iframe[src*="vidyard"]');
+            if (video !== null) return video.src;
+          })
+        );
+
+        // Images
+        homeHealthImages.push(
+          await page.$eval('main', (i) => {
+            const image = i.querySelector('img')?.src;
+            if (image !== null) return image;
+          })
+        );
 
         menuLink = await page.$eval(
           '#main-menu',
@@ -293,8 +357,223 @@ export default async function HomeHealth(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          homeHealthImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
+        }
+
+        menuLink = await page.$eval(
+          '#main-menu',
+          (item) => item.querySelector('a[href*="&contentNameString=Patient Services"]')?.href || null
+        );
+        if (menuLink) {
+          await page.goto(menuLink, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
+
+        let pServices = [];
+        if (subpageTitle?.includes('Patient Services')) {
+          const pServicesDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
+
+          let makesUs = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > ul > li'
+            );
+
+            li.forEach((item) =>
+              list.push({
+                header: item.querySelector('div.toggle-title > h3')?.innerText || null,
+                content: item.querySelector('div.toggle-inner')?.textContent || null,
+              })
+            );
+
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > h2'
+                )?.innerText || null,
+              image:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
+                )?.alt || null,
+              list,
+            };
+          });
+
+          makesUs = {
+            title: makesUs.title,
+            description: makesUs.description,
+            image: makesUs.image,
+            imageAlt: makesUs.imageAlt,
+            list: makesUs.list.map((item) => {
+              return {
+                header: item.header,
+                content: sanitize(item.content),
+              };
+            }),
+          };
+
+          const offered = await page.$eval('main > div.umb-grid', (i) => {
+            const root =
+              'div.grid-row > div.configured-1-Column > div.flex-row > div.background-color-0C466C > section.grid-section > div.flex-row';
+
+            let list = [];
+            li = i.querySelectorAll(`${root} div.section-item-padding-large > section.grid-section ul.links-related > li`);
+            li.forEach((item) => list.push(item?.innerText || null));
+
+            return {
+              title: i.querySelector(`${root} section.grid-section > h2`)?.innerText || null,
+              list,
+            };
+          });
+
+          const expect = await page.$$eval('main > div.umb-grid div.grid-row > div.configured-4-Column > div.flex-row > div', (item) => {
+            return item.map((i) => {
+              return {
+                title: i.querySelector('section.grid-section > h4')?.innerText || null,
+                description: i.querySelector('section.grid-section > p')?.innerText || null,
+              };
+            });
+          });
+
+          const satisfaction = await page.$eval('main > div.umb-grid', (i) => {
+            return {
+              title:
+                i.querySelector(
+                  'div.pattern-FFFFFF > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.pattern-FFFFFF > div.configured-2-Column > div.flex-row > div.content-section-Yes > section.grid-section > h2 + *'
+                )?.innerHTML || null,
+              quote:
+                i.querySelector(
+                  'div.pattern-FFFFFF > div.configured-2-Column > div.flex-row > div:not(.content-section-Yes) > section.grid-section .bordered-content-inner blockquote'
+                )?.innerText || null,
+            };
+          });
+
+          pServices.push({
+            pServicesDescription: sanitize(pServicesDescription),
+            makesUs,
+            offered,
+            expect,
+            satisfaction,
+          });
+
+          // External Videos
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          homeHealthImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
+        }
+
+        menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Our Team"]')?.href || null);
+        if (menuLink) {
+          await page.goto(menuLink, { waitUntil: 'domcontentloaded' });
+          subpageTitle = await page.title();
+        }
+
+        let team = [];
+        if (subpageTitle?.includes('Our Team')) {
+          const teamDescription = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay')?.innerHTML || null);
+
+          let careTeam = await page.$eval('main > div.umb-grid', (i) => {
+            let list = [];
+            const li = i.querySelectorAll(
+              'div.grid-row > div.configured-2-Column > div.flex-row > div:not(.background-color-F8F8F5) > section.grid-section > ul > li'
+            );
+            li.forEach((item) => list.push(item?.innerText || null));
+
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div:not(.background-color-F8F8F5) > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div:not(.background-color-F8F8F5) > section.grid-section > p'
+                )?.innerText || null,
+              image:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > figure > img'
+                )?.alt || null,
+              list,
+            };
+          });
+
+          const partners = await page.$eval('main > div.umb-grid', (i) => {
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > p'
+                )?.innerText || null,
+              image:
+                i.querySelector(
+                  'div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div.grid-row:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.alt || null,
+            };
+          });
+
+          team.push({
+            teamDescription: sanitize(teamDescription),
+            careTeam,
+            partners,
+          });
+
+          // External Videos
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          homeHealthImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Contact Us"]')?.href || null);
@@ -338,14 +617,18 @@ export default async function HomeHealth(links) {
             fax,
             title,
             description: sanitize(description),
+            services,
+            howHelp,
             enrichingLife,
             patientServices,
             ourTeam,
             testimonials,
             whatIs,
+            pServices,
+            team,
             moreInfo,
             contact,
-            // contactForm,
+            contactForm,
           },
         });
 
@@ -362,10 +645,20 @@ export default async function HomeHealth(links) {
     console.log('\nHome Health Details Imported!\n');
   });
 
-  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  const jsonExternalVideos = JSON.stringify(
+    externalVideos.filter((n) => n),
+    null,
+    2
+  );
   fs.writeFile('./json/ProMedica/agency/Video/home-health-videos.json', jsonExternalVideos, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nExternal Videos Imported!\n');
+  });
+
+  const jsonExternalImages = JSON.stringify(homeHealthImages, null, 2);
+  fs.writeFile('./json/ProMedica/agency/Images/home-health-images.json', jsonExternalImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nImages Imported!\n');
   });
 
   // close page and browser
