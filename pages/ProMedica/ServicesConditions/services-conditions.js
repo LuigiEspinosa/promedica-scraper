@@ -103,7 +103,18 @@ export default async function ServicesConditions() {
       try {
         const articlesTitle = await page.title();
 
-        const articleContent = await page.$eval('#ih-page-body', (i) => i.querySelector('.row > div')?.innerHTML || null);
+        const articleBannerSrc = await page.$eval(
+          '#ih-page-body',
+          (i) => i.querySelector('.row > div.img-breakout-parent > img')?.src || null
+        );
+
+        const articleBannerAlt = await page.$eval(
+          '#ih-page-body',
+          (i) => i.querySelector('.row > div.img-breakout-parent > img')?.alt || null
+        );
+
+        let articleContent = await page.$eval('#ih-page-body', (i) => i.querySelector('.row > div')?.innerHTML || null);
+        if (articleContent !== null) articleContent = articleContent.replace(/<img .*?>/g, '');
 
         const about = await page.$eval('#ih-page-footer', (i) => {
           let content = i.querySelector('a[name="about"]');
@@ -660,6 +671,8 @@ export default async function ServicesConditions() {
           title: articlesTitle,
           url: mergeLinks[i],
           content: {
+            articleBannerSrc,
+            articleBannerAlt,
             articleContent: sanitize(articleContent),
             about: sanitize(about),
             interest: sanitize(interest),
