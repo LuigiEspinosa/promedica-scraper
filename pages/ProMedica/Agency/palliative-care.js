@@ -170,7 +170,7 @@ export default async function PalliativeCare(links) {
                 )?.innerText || null,
               image:
                 i.querySelector(
-                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-F8F8F5 > section.grid-section > figure > img'
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > figure > img'
                 )?.src || null,
               imageAlt:
                 i.querySelector(

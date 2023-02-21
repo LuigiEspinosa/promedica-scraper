@@ -8,6 +8,7 @@ export default async function ALIL(links) {
 
   let ALILDetails = [];
   let externalVideos = [];
+  let ALILImages = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -183,8 +184,20 @@ export default async function ALIL(links) {
         }
 
         // External Videos
-        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-        externalVideos.push(videos);
+        externalVideos.push(
+          await page.$eval('main', (i) => {
+            const video = i.querySelector('iframe[src*="vidyard"]');
+            if (video !== null) return video.src;
+          })
+        );
+
+        // Images
+        ALILImages.push(
+          await page.$eval('main', (i) => {
+            const image = i.querySelector('img')?.src;
+            if (image !== null) return image;
+          })
+        );
 
         await page.goto(`${links[i]}/floor-plans`, { waitUntil: 'domcontentloaded' });
         subpageTitle = await page.title();
@@ -210,8 +223,20 @@ export default async function ALIL(links) {
           );
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/design-and-layout`, { waitUntil: 'domcontentloaded' });
@@ -262,8 +287,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/services`, { waitUntil: 'domcontentloaded' });
@@ -318,8 +355,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/features`, { waitUntil: 'domcontentloaded' });
@@ -351,8 +400,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/features-amenities`, { waitUntil: 'domcontentloaded' });
@@ -439,8 +500,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/payment`, { waitUntil: 'domcontentloaded' });
@@ -472,8 +545,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/payment/veteran-benefits`, { waitUntil: 'domcontentloaded' });
@@ -524,8 +609,20 @@ export default async function ALIL(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          ALILImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         await page.goto(`${links[i]}/contact-us`, { waitUntil: 'domcontentloaded' });
@@ -627,10 +724,24 @@ export default async function ALIL(links) {
     console.log('\nALIL Details Imported!\n');
   });
 
-  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  const jsonExternalVideos = JSON.stringify(
+    externalVideos.filter((n) => n),
+    null,
+    2
+  );
   fs.writeFile('./json/ProMedica/agency/Video/ALIL-videos.json', jsonExternalVideos, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nExternal Videos Imported!\n');
+  });
+
+  const jsonExternalImages = JSON.stringify(
+    ALILImages.filter((n) => n),
+    null,
+    2
+  );
+  fs.writeFile('./json/ProMedica/agency/Images/ALIL-images.json', jsonExternalImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nImages Imported!\n');
   });
 
   // close page and browser

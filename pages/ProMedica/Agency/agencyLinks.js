@@ -281,3 +281,15 @@ export const alilLinks = [
   'http://www.villageatmanorcare.com/',
   'http://www.villageatwesterville.com/',
 ];
+
+export const skilledNursingLinks = [
+  'https://www.promedicaskillednursing.org/locations/promedica-skilled-nursing-and-rehabilitation-adrian/',
+  'https://www.promedicaskillednursing.org/locations/promedica-skilled-nursing-and-rehabilitation-monroe/',
+  'https://www.promedicaskillednursing.org/locations/promedica-skilled-nursing-and-rehabilitation-sylvania/',
+  'https://www.promedicaskillednursing.org/locations/promedica-goerlich-memory-care-center-sylvania/',
+  'https://www.promedicaskillednursing.org/ArlingtonHeights',
+  'https://www.promedicaskillednursing.org/locations/promedica-marvin-and-betty-danto-family-health-care-center/',
+  'https://www.promedicaskillednursing.org/WestAllen',
+  'https://www.promedicaskillednursing.org/lelypalms',
+  'https://www.promedicaskillednursing.org/locations/promedica-skilled-nursing-and-rehabilitation-at-metrohealth/',
+];
