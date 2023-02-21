@@ -1,12 +1,16 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
 import sanitize from '../../../lib/sanitize.js';
+import timeoutError from '../../../lib/403.js';
 
 export default async function News() {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
   await page.goto('https://www.promedica.org/newsroom/news/?', { waitUntil: 'domcontentloaded' });
+
+  let newsTitle = await page.title();
+  await timeoutError(newsTitle, page);
 
   await page.waitForSelector("a[aria-label='Next']");
   await page.click("a[aria-label='Next']");
@@ -27,6 +31,9 @@ export default async function News() {
   let articles = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
+      newsTitle = await page.title();
+      await timeoutError(newsTitle, page);
+
       await page.waitForSelector('.ih-item');
 
       const articlesPerPage = await page.$$eval('.ih-item', (headerArticle) => {
@@ -58,6 +65,8 @@ export default async function News() {
       console.log('News Page', i, 'Done');
     } catch (error) {
       console.log({ error });
+      await page.close();
+      await browser.close();
     }
   }
 
@@ -82,26 +91,10 @@ export default async function News() {
       await page.goto(mergeLinks[i], { waitUntil: 'domcontentloaded' });
 
       try {
-        let newsTitle = await page.title();
+        newsTitle = await page.title();
+        await timeoutError(newsTitle, page);
 
-        // * 403 ERROR - Uncomment if necessary
-        function delay(time) {
-          return new Promise(function (resolve) {
-            setTimeout(resolve, time);
-          });
-        }
-
-        while (newsTitle.includes('ERROR')) {
-          let wait = 200000;
-
-          console.log('403 ERROR DETECTED');
-          await delay(wait);
-          wait = wait * 2;
-
-          console.log('RELOADING PAGE');
-          await page.reload();
-          newsTitle = await page.title();
-        }
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
 
         await page.waitForSelector('.ih-content-column');
 
@@ -111,6 +104,7 @@ export default async function News() {
           id: i + 1,
           title: newsTitle,
           url: mergeLinks[i],
+          metaTags,
           content: sanitize(newsContent),
         });
 
@@ -123,6 +117,8 @@ export default async function News() {
         console.log('News Articles', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
+        await page.close();
+        await browser.close();
       }
     }
   }

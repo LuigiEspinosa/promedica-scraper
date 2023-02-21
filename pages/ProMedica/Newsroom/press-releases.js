@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright';
+import timeoutError from '../../../lib/403.js';
 import sanitize from '../../../lib/sanitize.js';
 
 export default async function Pressreleases() {
@@ -9,6 +10,9 @@ export default async function Pressreleases() {
   await page.goto('https://www.promedica.org/newsroom/press-releases/?', {
     waitUntil: 'domcontentloaded',
   });
+
+  let articlesTitle = await page.title();
+  await timeoutError(articlesTitle, page);
 
   await page.waitForSelector("a[aria-label='Next']");
   await page.click("a[aria-label='Next']");
@@ -29,6 +33,9 @@ export default async function Pressreleases() {
   let articles = [];
   for (let i = 1; i <= totalPages; i++) {
     try {
+      articlesTitle = await page.title();
+      await timeoutError(articlesTitle, page);
+
       await page.waitForSelector('.ih-item');
 
       const articlesPerPage = await page.$$eval('.ih-item', (headerArticle) => {
@@ -60,6 +67,8 @@ export default async function Pressreleases() {
       console.log('Press Releases Page', i, 'Done');
     } catch (error) {
       console.log({ error });
+      await page.close();
+      await browser.close();
     }
   }
 
@@ -86,13 +95,17 @@ export default async function Pressreleases() {
       try {
         await page.waitForSelector('.ih-content-column');
 
-        const articlesTitle = await page.title();
+        articlesTitle = await page.title();
+        await timeoutError(articlesTitle, page);
+
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
         const articleContent = await page.$eval('.ih-content-column', (i) => i.querySelector('#ih-page-body')?.innerHTML);
 
         articlesBody.push({
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
+          metaTags,
           content: sanitize(articleContent),
         });
 
@@ -105,6 +118,8 @@ export default async function Pressreleases() {
         console.log('Press Releases Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
+        await page.close();
+        await browser.close();
       }
     }
   }

@@ -110,6 +110,7 @@ export default async function DoctorsProviders() {
 
       try {
         let articlesTitle = await page.title();
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
 
         // * 403 ERROR - Uncomment if necessary
         function delay(time) {
@@ -300,6 +301,7 @@ export default async function DoctorsProviders() {
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
+          metaTags,
           content: {
             imgSrc,
             imgAlt,
@@ -337,9 +339,9 @@ export default async function DoctorsProviders() {
 
         console.log('Doctor', i + 1, 'Details Done');
       } catch (error) {
+        console.log({ error });
         await page.close();
         await browser.close();
-        console.log({ error });
       }
     }
   }

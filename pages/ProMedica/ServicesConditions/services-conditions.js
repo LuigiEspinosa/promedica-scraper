@@ -102,6 +102,7 @@ export default async function ServicesConditions() {
 
       try {
         const articlesTitle = await page.title();
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
 
         const articleBannerSrc = await page.$eval(
           '#ih-page-body',
@@ -670,6 +671,7 @@ export default async function ServicesConditions() {
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
+          metaTags,
           content: {
             articleBannerSrc,
             articleBannerAlt,
@@ -764,9 +766,9 @@ export default async function ServicesConditions() {
 
         console.log('Images from Article', i + 1, 'Done');
       } catch (error) {
+        console.log({ error });
         await page.close();
         await browser.close();
-        console.log({ error });
       }
     }
   }

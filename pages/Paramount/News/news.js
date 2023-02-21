@@ -64,6 +64,7 @@ export default async function ParamountNews() {
         await page.waitForSelector('#page-body');
 
         const articlesTitle = await page.title();
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
 
         const banner = await page.$eval('#article-banner', (i) => i.querySelector('#article-banner > div > img')?.src || null);
 
@@ -75,6 +76,7 @@ export default async function ParamountNews() {
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
+          metaTags,
           content: {
             banner,
             bannerAlt,
@@ -91,6 +93,8 @@ export default async function ParamountNews() {
         console.log('News Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
+        await page.close();
+        await browser.close();
       }
     }
   }

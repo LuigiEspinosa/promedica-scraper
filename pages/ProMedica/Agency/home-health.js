@@ -14,8 +14,9 @@ export default async function HomeHealth(links) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
 
       try {
-        const articlesTitle = await page.title();
         let subpageTitle, menuLink;
+        const articlesTitle = await page.title();
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
 
         await page.waitForSelector('.hero-section');
 
@@ -628,6 +629,7 @@ export default async function HomeHealth(links) {
           id: i + 1,
           title: articlesTitle,
           url: links[i],
+          metaTags,
           content: {
             imgSrc,
             imgAlt,
@@ -657,6 +659,8 @@ export default async function HomeHealth(links) {
         console.log('Home Health', i + 1, 'Details Done');
       } catch (error) {
         console.log({ error });
+        await page.close();
+        await browser.close();
       }
     }
   }

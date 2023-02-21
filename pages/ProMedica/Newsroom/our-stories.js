@@ -84,12 +84,15 @@ export default async function OurStories() {
         await page.waitForSelector('.ih-content-column');
 
         const articlesTitle = await page.title();
+        const metaTags = await page.$$eval('meta', (meta) => meta.map((i) => i.outerHTML));
+
         const articleContent = await page.$eval('.ih-content-column', (i) => i.querySelector('#ih-page-body')?.innerHTML || null);
 
         articlesBody.push({
           id: i + 1,
           title: articlesTitle,
           url: mergeLinks[i],
+          metaTags,
           content: sanitize(articleContent),
         });
 
@@ -102,6 +105,8 @@ export default async function OurStories() {
         console.log('Our Stories Article', i + 1, 'Done');
       } catch (error) {
         console.log({ error });
+        await page.close();
+        await browser.close();
       }
     }
   }
