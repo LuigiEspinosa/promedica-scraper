@@ -31,6 +31,27 @@ export default async function Hospice(links) {
           await page.keyboard.press('Escape');
         }
 
+        let photoGallery;
+        if (banner) {
+          await page.click('.hero-buttons-container > a.image-gallery');
+
+          photoGallery = await page.$$eval(
+            '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
+            (item) => {
+              let images = [];
+              item.forEach((item) =>
+                images.push({
+                  imgSrc: item?.src || null,
+                  imgAlt: item?.alt || null,
+                })
+              );
+              return images;
+            }
+          );
+
+          await page.keyboard.press('Escape');
+        }
+
         const hospiceName = await page.$eval('.hero-section', (i) => i.querySelector('.hero-overlay > h2')?.innerText || null);
 
         const counties = await page.$eval('.hero-section', (i) => {
@@ -976,6 +997,7 @@ export default async function Hospice(links) {
           content: {
             imgSrc,
             imgAlt,
+            photoGallery,
             hospiceName,
             counties,
             email,

@@ -8,6 +8,7 @@ export default async function MemoryCare(links) {
 
   let memoryCareDetails = [];
   let externalVideos = [];
+  let memoryImages = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -206,8 +207,20 @@ export default async function MemoryCare(links) {
         });
 
         // External Videos
-        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-        externalVideos.push(videos);
+        externalVideos.push(
+          await page.$eval('main', (i) => {
+            const video = i.querySelector('iframe[src*="vidyard"]');
+            if (video !== null) return video.src;
+          })
+        );
+
+        // Images
+        memoryImages.push(
+          await page.$eval('main', (i) => {
+            const image = i.querySelector('img')?.src;
+            if (image !== null) return image;
+          })
+        );
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Services"]')?.href || null);
         if (menuLink) {
@@ -247,8 +260,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Design"]')?.href || null);
@@ -356,8 +381,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval(
@@ -412,8 +449,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Programming"]')?.href || null);
@@ -466,8 +515,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval(
@@ -532,8 +593,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Payment"]')?.href || null);
@@ -575,8 +648,20 @@ export default async function MemoryCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          memoryImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         const moreInfo = await page.$eval(
@@ -653,10 +738,24 @@ export default async function MemoryCare(links) {
     console.log('\nMemory Care Details Imported!\n');
   });
 
-  const jsonExternalVideos = JSON.stringify(externalVideos, null, 2);
+  const jsonExternalVideos = JSON.stringify(
+    externalVideos.filter((n) => n),
+    null,
+    2
+  );
   fs.writeFile('./json/ProMedica/agency/Video/memory-care-videos.json', jsonExternalVideos, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nExternal Videos Imported!\n');
+  });
+
+  const jsonExternalImages = JSON.stringify(
+    memoryImages.filter((n) => n),
+    null,
+    2
+  );
+  fs.writeFile('./json/ProMedica/agency/Images/memory-care-images.json', jsonExternalImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nImages Imported!\n');
   });
 
   // close page and browser

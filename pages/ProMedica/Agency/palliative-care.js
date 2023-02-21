@@ -8,6 +8,7 @@ export default async function PalliativeCare(links) {
 
   let palliativeCare = [];
   let externalVideos = [];
+  let palliativeImages = [];
   for (let i = 0; i <= links.length; i++) {
     if (links[i] !== undefined) {
       await page.goto(links[i], { waitUntil: 'domcontentloaded' });
@@ -26,6 +27,27 @@ export default async function PalliativeCare(links) {
 
           imgSrc = await page.$eval('#image-gallery', (i) => i.querySelector('#image-gallery .slick-slider img')?.src || null);
           imgAlt = await page.$eval('#image-gallery', (i) => i.querySelector('#image-gallery .slick-slider img')?.alt || null);
+
+          await page.keyboard.press('Escape');
+        }
+
+        let photoGallery;
+        if (banner) {
+          await page.click('.hero-buttons-container > a.image-gallery');
+
+          photoGallery = await page.$$eval(
+            '#image-gallery section.image-gallery-container .slick-list .slick-track .slick-slide > img',
+            (item) => {
+              let images = [];
+              item.forEach((item) =>
+                images.push({
+                  imgSrc: item?.src || null,
+                  imgAlt: item?.alt || null,
+                })
+              );
+              return images;
+            }
+          );
 
           await page.keyboard.press('Escape');
         }
@@ -58,8 +80,8 @@ export default async function PalliativeCare(links) {
 
           if (content && content?.innerText === 'Improving Quality of Life') {
             return (content = {
-              content: i.querySelector('body > main > div:nth-child(7) > div > div:nth-child(2) > section > h2 + p')?.innerText || null,
-              learnMore: i.querySelector('body > main > div:nth-child(7) > div > div:nth-child(2) > section > a')?.href || null,
+              content: i.querySelector('body > main > div:nth-child(7) > div > div:nth-child(1) > section > h2 + p')?.innerText || null,
+              learnMore: i.querySelector('body > main > div:nth-child(7) > div > div:nth-child(1) > section > a')?.href || null,
             });
           }
 
@@ -108,8 +130,20 @@ export default async function PalliativeCare(links) {
         }
 
         // External Videos
-        let videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-        externalVideos.push(videos);
+        externalVideos.push(
+          await page.$eval('main', (i) => {
+            const video = i.querySelector('iframe[src*="vidyard"]');
+            if (video !== null) return video.src;
+          })
+        );
+
+        // Images
+        palliativeImages.push(
+          await page.$eval('main', (i) => {
+            const image = i.querySelector('img')?.src;
+            if (image !== null) return image;
+          })
+        );
 
         menuLink = await page.$eval(
           '#main-menu',
@@ -188,8 +222,20 @@ export default async function PalliativeCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          palliativeImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval(
@@ -282,8 +328,20 @@ export default async function PalliativeCare(links) {
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          palliativeImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         menuLink = await page.$eval('#main-menu', (item) => item.querySelector('a[href*="&contentNameString=Stories"]')?.href || null);
@@ -317,14 +375,70 @@ export default async function PalliativeCare(links) {
             };
           });
 
+          const thankful = await page.$eval('main > div.umb-grid', (i) => {
+            return {
+              title:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section > h2 + *'
+                )?.innerHTML || null,
+              quote:
+                i.querySelector(
+                  'div.grid-row > div.configured-2-Column > div.flex-row > div.background-color-DFEAEB > section.grid-section .bordered-content-inner blockquote'
+                )?.innerText || null,
+            };
+          });
+
+          const memorable = await page.$eval('main > div.umb-grid', (i) => {
+            return {
+              title:
+                i.querySelector(
+                  'div:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > h2'
+                )?.innerText || null,
+              description:
+                i.querySelector(
+                  'div:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > p'
+                )?.innerText || null,
+              anchor:
+                i.querySelector(
+                  'div:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > a'
+                )?.href || null,
+              image:
+                i.querySelector(
+                  'div:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.src || null,
+              imageAlt:
+                i.querySelector(
+                  'div:not(:first-child) > div.configured-2-Column > div.flex-row > div.background-color-FFFFFF > section.grid-section > figure > img'
+                )?.alt || null,
+            };
+          });
+
           stories.push({
             storiesDescription: sanitize(storiesDescription),
             words,
+            thankful,
+            memorable,
           });
 
           // External Videos
-          videos = await page.$eval('main', (i) => i.querySelector('iframe[src*="vidyard"]')?.src);
-          externalVideos.push(videos);
+          externalVideos.push(
+            await page.$eval('main', (i) => {
+              const video = i.querySelector('iframe[src*="vidyard"]');
+              if (video !== null) return video.src;
+            })
+          );
+
+          // Images
+          palliativeImages.push(
+            await page.$eval('main', (i) => {
+              const image = i.querySelector('img')?.src;
+              if (image !== null) return image;
+            })
+          );
         }
 
         const moreInfo = await page.$eval(
@@ -361,6 +475,7 @@ export default async function PalliativeCare(links) {
           content: {
             imgSrc,
             imgAlt,
+            photoGallery,
             hospiceName,
             counties,
             email,
@@ -375,7 +490,7 @@ export default async function PalliativeCare(links) {
             stories,
             moreInfo,
             contact,
-            // contactForm,
+            contactForm,
           },
         });
 
@@ -390,6 +505,26 @@ export default async function PalliativeCare(links) {
   fs.writeFile('./json/ProMedica/agency/palliative-care-details.json', jsonPalliativeCare, 'utf8', (err) => {
     if (err) return console.log(err);
     console.log('\nPalliative Care Details Imported!\n');
+  });
+
+  const jsonExternalVideos = JSON.stringify(
+    externalVideos.filter((n) => n),
+    null,
+    2
+  );
+  fs.writeFile('./json/ProMedica/agency/Video/palliative-care-videos.json', jsonExternalVideos, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nExternal Videos Imported!\n');
+  });
+
+  const jsonExternalImages = JSON.stringify(
+    palliativeImages.filter((n) => n),
+    null,
+    2
+  );
+  fs.writeFile('./json/ProMedica/agency/Images/palliative-care-images.json', jsonExternalImages, 'utf8', (err) => {
+    if (err) return console.log(err);
+    console.log('\nImages Imported!\n');
   });
 
   // close page and browser
